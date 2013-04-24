@@ -1,0 +1,97 @@
+--- 
+categories: 
+  - 转载
+comments: true
+excerpt: |-
+    没有人是完全独立的孤岛，每个人都是整体的一部分。——约翰·多恩
+    
+    对于缺乏编程知识的人来说，完全有可能编写一个网页或小程序。如果在用Google搜索相关示例时幸运的话，可以搜到现成的代码。即使是经验丰富的程序员，通常也会为了节省时间和精力而在网上搜索解决方案。
+layout: post
+published: true
+status: publish
+tags: 
+  - 搜索技巧
+  - 程序员
+  - 高效
+title: 如何使用搜索技巧来成为一名高效的程序员
+type: post
+---
+没有人是完全独立的孤岛，每个人都是整体的一部分。——约翰·多恩
+
+对于缺乏编程知识的人来说，完全有可能编写一个网页或小程序。如果在用Google搜索相关示例时幸运的话，可以搜到现成的代码。即使是经验丰富的程序员，通常也会为了节省时间和精力而在网上搜索解决方案。
+
+<a href="/wp-content/uploads/2010/12/logo1w.png"></a><a href="/wp-content/uploads/2010/12/logo1w.png"><img class="aligncenter size-full wp-image-62227" title="logo1w" src="http://nwy.me/wp-content/uploads/2010/12/logo1w.png" alt="" width="275" height="95"></a>
+
+如果不借助搜索技术、网络及集体智慧，现代化高效编程是难以想象的。因此，搜索技巧对高效程序员变得愈发重要。
+
+现在，我们不需要了解和记住如何解决众多的编程问题，可以采用搜索技术。我们正变得更加高效、高生产力，并能够解决更多的问题。但这是否意味着在构建软件时，拥有好的搜索技巧就足够了呢？本文将讨论，<strong>搜索技巧在程序员知识的形成过程中的作用，以及如何高效使用搜索技巧。</strong>
+
+<strong><!--more-->
+</strong>
+
+<span style="font-size: small;"><strong>知识的类型及它在程序员大脑中如何成长。</strong></span>
+
+<span style="font-size: x-small;"><strong><a href="/wp-content/uploads/2010/12/knowledge-types.jpg"><img class="aligncenter size-full wp-image-62230" title="knowledge-types" src="/wp-content/uploads/2010/12/knowledge-types.jpg" alt="" width="500" height="500"></a>
+</strong></span>
+
+有三类知识：
+
+<strong>概念知识</strong>（为什么、是什么、如果——  语义上的）——理解软件系统构建过程中的概念、原理、关系及主要方法。根据这类知识，能够找出体系结构或代码必须按特定方式设计的原因，以及从中选择最佳 设计方案的备选方案和逻辑是什么。概念知识，不是指用特定编程语言解决特定问题，而是对问题的长远看法和理解。
+<ul>
+<li>用途：对复杂的开放式问题寻找新的解决方案，并创建稳健的软件系统。</li>
+	<li>收获：学习计算机科学、体系结构以及编程概念，在实际实现和经验的基础上，构建自己的理论。</li>
+</ul>
+<strong>实践性知识</strong>（如何做 —— 过程中的）—— 关于如何解决特定编程问题的知识。这类知识不需要深入理解实现方法选择过程中隐含的概念及基本原理。搜索技术在这里最重要，因为对有限的编程语言问题所采取的特定解决方案，搜索能相对容易的加以共享并说明。
+<ul>
+<li> 用途：用已证实的和已知的解决方案快速解决问题，而不是每次都重新发明一种新的方法。</li>
+	<li> 收获：搜索现有的解决方案，通过例子学习或提出自己的解决方案并以后对其重利用。</li>
+</ul>
+<strong>隐性知识</strong>（专业知识、经验及直觉）——基于软件系统实现过程中所积累的个人经验，在大脑中形成的内在知识。通过强大的 大脑功能，隐性知识可以综合并协调其他两种知识。这类知识很难传授，因为它的大部分都存储在我们的潜意识中。在特定环境下，它和直觉一同发挥作用，能够在 经验、对概念性和实践性知识的反馈和评估的基础上，制定最佳决策。
+<ul>
+<li> 用途：利用自己的专长、经验及直觉来实现最佳解决方案。</li>
+	<li> 收获：构建软件并从结果中学习知识。<a href="/wp-content/uploads/2010/12/knowledge-growth.jpg"><img class="aligncenter size-full wp-image-62228" title="knowledge-growth" src="/wp-content/uploads/2010/12/knowledge-growth.jpg" alt="" width="500" height="500"></a>
+</li>
+</ul>
+设计模式（还有架构、领域及其他）是不同类型知识相结合的有趣的例子：“如何做”的例子，这些例子中隐含的概念及实现过程中积累的经验。这种知识的表现方式是模式成功及广泛应用的原因之一。
+
+随着越来越多的可供使用的实践性解决方案和示例出现在网络上，人们大脑中的实践性知识的价值越来越小。我们不需要记住实践性知识。现在我们能够处理软 件构建过程中几乎所有可能遇到的常见编程问题。然而，除能够解决问题的示例或从哪搜索这些示例以外，一名大师级的程序员还知道更多的知识。他能够提出自己 的解决方案，制定大部分最佳决策，并采用最好的方式应用它们。此外，很难在网上找到新的、复杂的、领域性的及特定环境下的问题的解决方案。而且，对所有重 要的软件工程，在制定优秀解决方案的过程中，都需要高水平的软件开发理论、这些理论的应用经验、对系统的深入了解、问题空间及环境等相关知识。
+
+因此，在软件开发过程中，概念知识和隐性知识仍然是非常重要的。在使用搜索技术时，我们应当努力扩充各种知识，而不是仅仅解决特定问题。随着解决更高级问题的能力的提高，你会取得成功，成为更高效的程序员。<a href="/wp-content/uploads/2010/12/knowledge-lifecycle.jpg"><img class="aligncenter size-full wp-image-62229" title="knowledge-lifecycle" src="/wp-content/uploads/2010/12/knowledge-lifecycle.jpg" alt="" width="400" height="400"></a>
+
+<span style="font-size: small;"><strong>可解决实际问题的高效搜索</strong></span>
+
+<strong>A. 查找</strong>
+<ul>
+<li> 1. 定义——弄清楚要解决什么问题，并以要查找的内容为焦点。网络上有如此多的有趣的材料，以至于搜索过程能轻易地占掉你全部的工作时间（和个人时间）。</li>
+	<li> 2. 检索（使用标准的Google、代码搜索或其他的检索引擎）—有很多关于如何高效的使用检索引擎的建议。</li>
+	<li> 3. 浏览结果（内容的质量、可信度及专业技术的水平；如果资料的可信度过低，无须再看）-> 阅读 -> 评估（人力物力、所需工具及函数库）</li>
+</ul>
+<strong>B. 使用</strong>
+<ul>
+<li> 1. 复制代码 - 单独复制（针对这一目的，带有长钉技术的显式单元测试最适合）</li>
+	<li> 2. 清除代码 - 仅保留最小限度、相关性代码，清除解决方案中的其它代码。</li>
+	<li> 3. 在系统中应用代码。</li>
+</ul>
+<strong>C. 学习</strong>
+<ul>
+<li> 1. 理解——你做了什么及你为什么那样做——从代码和实现中学习。</li>
+</ul>
+<ul>
+<li> 2. 扩充知识——
+<ul>
+<li> a. 实践性知识：解决问题的特定方法、技巧及风格；</li>
+	<li> b. 概念知识：学习新概念、提炼现有的并构建自己的概念；</li>
+	<li> c. 隐性知识：明智地使用并学习搜索到的解决方案，经验会自然而然地得到增长。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li> 3. 收集（链接、意见、参考文献、阅读清单）—任何对你今后搜索、发现及学习有用的有趣信息。为这些目标积累知识。</li>
+</ul>
+你还有其他高效搜索代码的诀窍吗？欢迎在评论或微博中和大家分享。
+
+-------------------------------------------------------------------<span style="font-size: large;">
+</span> <span style="font-size: large;"><strong><span style="font-size: small;"> </span></strong></span>本文出处：<a href="http://www.jobbole.com/" target="_blank">伯乐</a>在线 - <a href="http://www.jobbole.com/blog.php" target="_blank">职场</a>博客
+本文链接：<a href="http://www.jobbole.com/entry.php/371" target="_blank">http://www.jobbole.com/entry.php/371</a>
+
+Via：<a rel="nofollow" href="http://www.softwarecreation.org/2008/how-to-use-search-skills-to-become-effective-programmer/" target="_blank">softwarecreation</a> <a href="http://www.jobbole.com/showthread.php/3902" target="_blank">文章推荐</a>：关关　　编译：伯乐在线 <a href="http://www.jobbole.com/showthread.php/3546" target="_blank">敏捷翻译</a>组 - <strong><a href="http://www.jobbole.com/member.php/1244-%E7%89%9B%E5%86%AC%E6%A2%85" target="_blank"><strong><span style="color: #9900ff;"><strong>牛冬梅</strong></span></strong></a></strong>

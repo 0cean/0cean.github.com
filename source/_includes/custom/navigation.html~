@@ -1,0 +1,15 @@
+<ul>
+  <li><a href="{{ root_url }}/">主页</a></li>
+  <li><a href="{{ root_url }}/blog/archives">Archives</a></li>
+  <li><a href="{{ root_url }}/blog/categories">分类目录</a></li>
+  <li><a href="{{ root_url }}/blog/categories/CSS">CSS</a></li>
+  <li><a href="{{ root_url }}/blog/categories/Linux">Linux</a></li>
+  <li><a href="{{ root_url }}/blog/categories/shell">Shell</a></li>
+  <li><a href="{{ root_url }}/blog/categories/shou-ji-shu-ma">手机数码</a></li>
+  <li><a href="{{ root_url }}/blog/categories/sheng-huo-yu-le">生活娱乐</a></li>
+  <li><a href="{{ root_url }}/blog/categories/wang-luo-ji-zhu">网络</a></li>
+  <li><a href="{{ root_url }}/blog/categories/wang-ye-she-ji">网页设计</a></li>
+  <li><a href="{{ root_url }}/blog/categories/zhuan-zai">转载</a></li>
+  <li><a href="{{ root_url }}/blog/categories/wei-fen-lei">未分类</a></li>
+  <li><a href="{{ root_url }}/blog/about">关于</a></li>
+</ul>
