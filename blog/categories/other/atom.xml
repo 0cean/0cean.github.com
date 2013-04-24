@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Other | Ocean's Blog]]></title>
   <link href="http://0cean.github.com/blog/categories/other/atom.xml" rel="self"/>
   <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T19:57:32+08:00</updated>
+  <updated>2013-04-24T20:15:31+08:00</updated>
   <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
@@ -390,7 +390,7 @@
 
 <p>今天在csdn上看了一篇帖子：《这段代码描述我最近的心情》。 才发现原来用代码可以书写人生，对代码的作者十分钦佩。</p>
 
-<p>{% codeblock lang:C++ %}</p>
+<p><code></p>
 
 <pre><code> //一个程序员的爱情故事
 public class MyLoveStory
@@ -450,7 +450,7 @@ public class MyLoveStory
             return 2 - 1;
         }
     }
-{% endcodeblock %}
+<code>
 
 ]]></content>
   </entry>
