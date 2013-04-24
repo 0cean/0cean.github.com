@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: webdesign | Ocean's Blog]]></title>
+  <title><![CDATA[Category: Webdesign | Ocean's Blog]]></title>
   <link href="http://0cean.github.com/blog/categories/webdesign/atom.xml" rel="self"/>
   <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T14:12:10+08:00</updated>
+  <updated>2013-04-24T19:48:12+08:00</updated>
   <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
@@ -14,19 +14,19 @@
 
   
   <entry>
-    <title type="html"><![CDATA[每位webdesign师新手都应知道的10件事]]></title>
+    <title type="html"><![CDATA[每位Webdesign师新手都应知道的10件事]]></title>
     <link href="http://0cean.github.com/blog/2010/12/19/every-web-designer-should-know-the-10-things-novice/"/>
     <updated>2010-12-19T00:00:00+08:00</updated>
     <id>http://0cean.github.com/blog/2010/12/19/every-web-designer-should-know-the-10-things-novice</id>
-    <content type="html"><![CDATA[<p>在做网站时会遇到很多的问题，所以webdesign师通常要扮演多种角色，并且要掌握如何构建一个有效实用的网站布局知识。
-你在webdesign所学到的大多数教训都来自工作经验。学习是一个反复持续的过程，并且没有比犯错更好的方式来获得知识（从错误中学习）。在本文中，我们将讨论10个重要并常规的技巧，这是每位webdesign师新手都应该知道。</p>
+    <content type="html"><![CDATA[<p>在做网站时会遇到很多的问题，所以Webdesign师通常要扮演多种角色，并且要掌握如何构建一个有效实用的网站布局知识。
+你在Webdesign所学到的大多数教训都来自工作经验。学习是一个反复持续的过程，并且没有比犯错更好的方式来获得知识（从错误中学习）。在本文中，我们将讨论10个重要并常规的技巧，这是每位Webdesign师新手都应该知道。</p>
 
-<div><a href="http://0cean.github.com/wp-content/uploads/2010/12/webdesign1.jpg"><img class="aligncenter size-full wp-image-62468" title="webdesign1" src="http://0cean.github.com/wp-content/uploads/2010/12/webdesign1.jpg" alt="" width="550" height="250"></a></div>
+<div><a href="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign1.jpg"><img class="aligncenter size-full wp-image-62468" title="Webdesign1" src="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign1.jpg" alt="" width="550" height="250"></a></div>
 
 
-<p>在做网站时会遇到很多的问题，所以webdesign师通常要扮演多种角色，并且要掌握如何构建一个有效实用的网站布局知识。</p>
+<p>在做网站时会遇到很多的问题，所以Webdesign师通常要扮演多种角色，并且要掌握如何构建一个有效实用的网站布局知识。</p>
 
-<p>你在webdesign所学到的大多数教训都来自工作经验。学习是一个反复持续的过程，并且没有比犯错更好的方式来获得知识（从错误中学习）。在本文中，我们将讨论10个重要并常规的技巧，这是每位webdesign师新手都应该知道。</p>
+<p>你在Webdesign所学到的大多数教训都来自工作经验。学习是一个反复持续的过程，并且没有比犯错更好的方式来获得知识（从错误中学习）。在本文中，我们将讨论10个重要并常规的技巧，这是每位Webdesign师新手都应该知道。</p>
 
 <!--more-->
 
@@ -38,7 +38,7 @@
 <p>这里有个选择适合的文件格式的技巧：如果图片是单色，那最好保存成PNG或者GIF格式；如果是连续性的色调（如照片）则最好保存成 JPG格式。</p>
 
 <div>
-<a href="http://www.jobbole.com/attachment.php?attachmentid=2117&amp;amp;d=1292589636"> </a><a href="http://0cean.github.com/wp-content/uploads/2010/12/webdesign2.jpg"><img class="aligncenter size-full wp-image-62469" title="webdesign2" src="http://0cean.github.com/wp-content/uploads/2010/12/webdesign2.jpg" alt="" width="500" height="227"></a>
+<a href="http://www.jobbole.com/attachment.php?attachmentid=2117&amp;amp;d=1292589636"> </a><a href="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign2.jpg"><img class="aligncenter size-full wp-image-62469" title="Webdesign2" src="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign2.jpg" alt="" width="500" height="227"></a>
 </div>
 
 
@@ -46,7 +46,7 @@
 
 <p><strong>2. 保持干净和简单（即：简洁）</strong></p>
 
-<p>一个好的webdesign不光只是看起来好看而已，还要是用户友好型的。通常来说，一个干净、简单的webdesign最终会成为一个可用性高的webdesign，因为它在与用  户的交互中不会使其产生混淆。当页面上有太多的网站功能和组件时，将会分散网站用户的注意力而失去原本浏览网站的目的。确保每个页面元素都有其目的，然后  问自己以下问题：</p>
+<p>一个好的Webdesign不光只是看起来好看而已，还要是用户友好型的。通常来说，一个干净、简单的Webdesign最终会成为一个可用性高的Webdesign，因为它在与用  户的交互中不会使其产生混淆。当页面上有太多的网站功能和组件时，将会分散网站用户的注意力而失去原本浏览网站的目的。确保每个页面元素都有其目的，然后  问自己以下问题：</p>
 
 <ul>
 <li>是否真的需要这个设计么？</li>
@@ -80,53 +80,53 @@
 
 <p>4<strong>. 明智和有条理地使用字体</strong></p>
 
-<p>虽然有成千上万的字体，但你真的能用的只是一小部分（至少要等到主要的浏览器完全支持CSS3）。 所以坚持使用网页安全字体。如果你不喜欢网页安全字体，可以考虑利用sIFR或Cufon逐步增强的webdesign。</p>
+<p>虽然有成千上万的字体，但你真的能用的只是一小部分（至少要等到主要的浏览器完全支持CSS3）。 所以坚持使用网页安全字体。如果你不喜欢网页安全字体，可以考虑利用sIFR或Cufon逐步增强的Webdesign。</p>
 
 <p>保持字体的一致性，确认标题和段落的内容看起来有所不同。使用空白、调整行高、字体大小和字母间距属性，使用户轻松愉快地阅读和扫描内容。</p>
 
-<p>也许一个webdesign师常常犯的错误就是使用不对的字体大小。因为我们想尽可能的将内容都塞在一个网页中呈现，所以我们有时设置字体大小而让用户感觉到不  舒服。如果可能的话，尽量保持字体大小12像素以上，特别是对段落内容。虽然很多没有遇到因为字体太小而造成阅读上的困难，但是想想老人家、近视眼和其他  类似视觉障碍的族群吧。</p>
+<p>也许一个Webdesign师常常犯的错误就是使用不对的字体大小。因为我们想尽可能的将内容都塞在一个网页中呈现，所以我们有时设置字体大小而让用户感觉到不  舒服。如果可能的话，尽量保持字体大小12像素以上，特别是对段落内容。虽然很多没有遇到因为字体太小而造成阅读上的困难，但是想想老人家、近视眼和其他  类似视觉障碍的族群吧。</p>
 
 <p><strong>5. 理解色彩无障碍性</strong></p>
 
 <p>说完字体后，我们还需要指出使用正确颜色的重要性。例如，黑色文字在白色背景，如果使用高对比度，橙色背景上的红色文字会令你的眼睛感到紧张。</p>
 
-<div><a href="http://0cean.github.com/wp-content/uploads/2010/12/webdesign3.png"><img class="aligncenter size-full wp-image-62470" title="webdesign3" src="http://0cean.github.com/wp-content/uploads/2010/12/webdesign3.png" alt="" width="500" height="227"></a></div>
+<div><a href="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign3.png"><img class="aligncenter size-full wp-image-62470" title="Webdesign3" src="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign3.png" alt="" width="500" height="227"></a></div>
 
 
 <p>此外，使用一些对特殊形式色盲的用户友好的颜色（检查工具名为Vischeck，可以测试某些类型的色盲）。</p>
 
 <p>有些色彩组合只适合运用在前景色的部分，而不适合做背景色。举个例子来说，深蓝色的文字搭配粉红色的背景与粉红色的文字搭配深蓝色的背景，都是使用两  种一样的颜色，但用在不同的部分则影响了它的可读性和阅读的舒适度。重要的是，不仅要使用良好的色彩组合，而且要把它用在页面中的合适元素上。</p>
 
-<div><a href="http://0cean.github.com/wp-content/uploads/2010/12/webdesign4.png"><img class="aligncenter size-full wp-image-62471" title="webdesign4" src="http://0cean.github.com/wp-content/uploads/2010/12/webdesign4.png" alt="" width="500" height="227"></a></div>
+<div><a href="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign4.png"><img class="aligncenter size-full wp-image-62471" title="Webdesign4" src="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign4.png" alt="" width="500" height="227"></a></div>
 
 
 <p><strong>6. 知道如何编写代码</strong></p>
 
-<p>随著各种所见即所得的网页编辑器充斥市场，webdesign已经成为简单的1-2-3步骤就能设计好一个网站。然而，大多数网页编辑器掺杂了不必要的代码，使你的HTML结构设计不当，难以维护和更新，导致网页膨胀。</p>
+<p>随著各种所见即所得的网页编辑器充斥市场，Webdesign已经成为简单的1-2-3步骤就能设计好一个网站。然而，大多数网页编辑器掺杂了不必要的代码，使你的HTML结构设计不当，难以维护和更新，导致网页膨胀。</p>
 
-<p>通过自己编写的网页代码，能得到简洁的代码，能够愉快方便地阅读和维护。你可以自豪地说是自己写出来的代码。但知道如何使用所见即所得的IDE或预览功能并不会妨碍学习 HTML和CSS。你要知道发生了什么事情，才能创造有效并高度优化的webdesign。</p>
+<p>通过自己编写的网页代码，能得到简洁的代码，能够愉快方便地阅读和维护。你可以自豪地说是自己写出来的代码。但知道如何使用所见即所得的IDE或预览功能并不会妨碍学习 HTML和CSS。你要知道发生了什么事情，才能创造有效并高度优化的Webdesign。</p>
 
 <p><strong>7. 不要忘记搜索引擎优化</strong></p>
 
-<p>在设计网站时，一个好的webdesign师应该永远牢记基本的SEO概念。例如，网页内容结构、用文字表示标题（即网页的标题和标志）。此时，以前学习的如何  合理编码的能力就派上用场。认识正确、语义和基于标准的HTML/CSS  后，你会很快认识到Div比表格布局好得多，不仅更为准确地展现内容，而且对搜索引擎排名也有帮助。另外，知道用CSS更换背景、文字和图片也是一个好主  意。</p>
+<p>在设计网站时，一个好的Webdesign师应该永远牢记基本的SEO概念。例如，网页内容结构、用文字表示标题（即网页的标题和标志）。此时，以前学习的如何  合理编码的能力就派上用场。认识正确、语义和基于标准的HTML/CSS  后，你会很快认识到Div比表格布局好得多，不仅更为准确地展现内容，而且对搜索引擎排名也有帮助。另外，知道用CSS更换背景、文字和图片也是一个好主  意。</p>
 
 <p><strong>8. 理解人是没有耐性的</strong></p>
 
-<p>普通人用几秒钟就决定是否要阅读更多网页内容或到另一个网站。因此，作为一个webdesign师，要有个好方法，能在这珍贵的几秒钟鼓励用户选择前者（看更多内容）。</p>
+<p>普通人用几秒钟就决定是否要阅读更多网页内容或到另一个网站。因此，作为一个Webdesign师，要有个好方法，能在这珍贵的几秒钟鼓励用户选择前者（看更多内容）。</p>
 
-<p>要知道，如果用户在网页头部看不到感兴趣的内容，没有多少人会向下滚动，去查看整个网页的内容。所以，在网页头部很容易看到的地方放置网站上的重要元  素，但也不要过度拥挤在上半部分网页，否则会吓到用户，而不会往下继续看内容。记住上半部分webdesign的卖点：视其为推销员，使人们有购买想法，即他们想在  你的网站上看到什么。</p>
+<p>要知道，如果用户在网页头部看不到感兴趣的内容，没有多少人会向下滚动，去查看整个网页的内容。所以，在网页头部很容易看到的地方放置网站上的重要元  素，但也不要过度拥挤在上半部分网页，否则会吓到用户，而不会往下继续看内容。记住上半部分Webdesign的卖点：视其为推销员，使人们有购买想法，即他们想在  你的网站上看到什么。</p>
 
 <p><strong>9. 了解（并意识到）浏览器的兼容性</strong></p>
 
-<p>当一个webdesign师必须要知道的一件事，就是你的工作环境（浏览器）是挑剔和难以预料的。如果你的webdesign只能运行在的几种网页浏览器，那是不够的，你需要尽可能多浏览器下测试。这里有一款工具Browsershots，可以测试浏览器兼容性。</p>
+<p>当一个Webdesign师必须要知道的一件事，就是你的工作环境（浏览器）是挑剔和难以预料的。如果你的Webdesign只能运行在的几种网页浏览器，那是不够的，你需要尽可能多浏览器下测试。这里有一款工具Browsershots，可以测试浏览器兼容性。</p>
 
 <p><strong>10. 使设计有灵活性和可维护性</strong></p>
 
-<p>一个好的webdesign师可以确保以后可以很容易更新或修改网站。设计一个有可塑性、易于维护的网站，是一个伟大webdesign师的标志。让你的工作尽可能从结构化转向模块化。</p>
+<p>一个好的Webdesign师可以确保以后可以很容易更新或修改网站。设计一个有可塑性、易于维护的网站，是一个伟大Webdesign师的标志。让你的工作尽可能从结构化转向模块化。</p>
 
-<p>webdesign这个行业是动态的，而且还很“年轻”。事情往往在短暂中变化。牢记这种思想，将推动建立更加灵活的webdesign。</p>
+<p>Webdesign这个行业是动态的，而且还很“年轻”。事情往往在短暂中变化。牢记这种思想，将推动建立更加灵活的Webdesign。</p>
 
-<p><strong>那么，你的webdesign技巧是什么？</strong></p>
+<p><strong>那么，你的Webdesign技巧是什么？</strong></p>
 
 <p>如果你还有其他技巧分享给新手设计师，请在微博或评论中和大家一起分享。</p>
 
@@ -158,9 +158,9 @@
 
 <a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.conversion-rate-experts.com/articles/understanding-your-visitors/" target="_blank" rel="no-follow">14个免费工具让你了解为什么人们会放弃访问你的网站</a>
 
-<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.allwebdesignresources.com/webdesignblogs/graphics/40-css-generators-creators-and-makers/" target="_blank" rel="no-follow">40+CSS生成器</a>
+<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.allWebdesignresources.com/Webdesignblogs/graphics/40-css-generators-creators-and-makers/" target="_blank" rel="no-follow">40+CSS生成器</a>
 
-<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://speckyboy.com/2008/03/30/74-great-web-apps-for-web-designers-we-have-forgotten-about/" target="_blank" rel="no-follow">74个我们可能已经忘记的适合webdesign师的很棒的Web应用</a>
+<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://speckyboy.com/2008/03/30/74-great-web-apps-for-web-designers-we-have-forgotten-about/" target="_blank" rel="no-follow">74个我们可能已经忘记的适合Webdesign师的很棒的Web应用</a>
 
 <a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.insidecrm.com/features/webmaster-turbo-kit-042108/" target="_blank" rel="no-follow">50+能提高你的网站速度和性能的技巧和资源</a>
 
@@ -174,11 +174,11 @@
 
 <a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://webjackalope.com/15-things-every-web-developers-should-be-thankful-for/" target="_blank" rel="no-follow">作为Web前端开发工程师应到感谢的15件事</a>
 
-<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://blog.bingo929.com/15-bookmarklets.html" target="_blank" rel="no-follow">15个前端开发/webdesign师必备的Bookmarklet</a>(已翻译成中文)
+<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://blog.bingo929.com/15-bookmarklets.html" target="_blank" rel="no-follow">15个前端开发/Webdesign师必备的Bookmarklet</a>(已翻译成中文)
 
 <a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://woork.blogspot.com/2008/11/20-great-php-framework-for-developers.html" target="_blank" rel="no-follow">20大的PHP开发框架</a>
 
-<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.divitodesign.com/2008/08/66-links-to-learn-the-webdesign-basics/" target="_blank" rel="no-follow">66个学习webdesign基础的链接</a>
+<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.divitodesign.com/2008/08/66-links-to-learn-the-Webdesign-basics/" target="_blank" rel="no-follow">66个学习Webdesign基础的链接</a>
 
 <a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://mashable.com/2008/11/01/web-development-tools/" target="_blank" rel="no-follow">Web开发工具箱： 120 +Web开发新工具</a>
 <h3 style="font-size: 16px; margin: 0px 0px 5px; color: #000000;">脚本、补丁及Hack</h3>
@@ -284,9 +284,9 @@
 
 <a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://blog.bingo929.com/12-free-text-editors-for-web-developer.html" target="_blank" rel="no-follow">推荐12款可用于前端开发的免费文本编辑器</a>
 
-<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://blog.bingo929.com/10-beautiful-icons-for-web.html" target="_blank" rel="no-follow">webdesign必备的10套漂亮图标集</a>(已翻译成中文)
+<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://blog.bingo929.com/10-beautiful-icons-for-web.html" target="_blank" rel="no-follow">Webdesign必备的10套漂亮图标集</a>(已翻译成中文)
 <h3 style="font-size: 16px; margin: 0px 0px 5px; color: #000000;">生成器</h3>
-<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.thewebsqueeze.com/articles/25-color-palette-generating-resources-for-web-designing.html" target="_blank" rel="no-follow">25个用于webdesign的颜色调色板生成器资源</a>
+<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.thewebsqueeze.com/articles/25-color-palette-generating-resources-for-web-designing.html" target="_blank" rel="no-follow">25个用于Webdesign的颜色调色板生成器资源</a>
 
 <a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.smashingapps.com/2008/10/21/13-free-online-tools-that-helps-you-to-create-and-host-your-website.html" target="_blank" rel="no-follow">12款免费在线工具帮助你创建和托管你的网站</a>
 
@@ -302,7 +302,7 @@
 
 <a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://speckyboy.com/2008/01/26/top-30-wordpress-plugins-that-are-actually-useful/" target="_blank" rel="no-follow">30款确实有用的Wordpress插件</a>
 
-<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.1stwebdesigner.com/resources/130-wordpress-plugins-you-could-ever-need-the-best-of-part-1/" target="_blank" rel="no-follow">你早晚会用到的130款Wordpress插件-第一部分</a>-<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.1stwebdesigner.com/resources/130-wordpress-plugins-you-could-ever-need-the-best-of-part-2/" target="_blank" rel="no-follow">第二部分</a>
+<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.1stWebdesigner.com/resources/130-wordpress-plugins-you-could-ever-need-the-best-of-part-1/" target="_blank" rel="no-follow">你早晚会用到的130款Wordpress插件-第一部分</a>-<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://www.1stWebdesigner.com/resources/130-wordpress-plugins-you-could-ever-need-the-best-of-part-2/" target="_blank" rel="no-follow">第二部分</a>
 
 <a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://speckyboy.com/2008/10/06/18-wordpress-plugins-to-add-professionalism-to-your-blog/" target="_blank" rel="no-follow">18个让你的博客更专业的Wordpress插件</a>
 
@@ -311,7 +311,7 @@
 英文原文:<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://aytemir.com/best-of-2008-for-developers-2008-tips-tricks-scripts-and-sources/" target="_blank" rel="no-follow">Best of 2008 for developers: 2008+ tips, tricks, scripts and sources!</a>
 翻译原文:<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://blog.bingo929.com/best-of-2008-for-web-developers.html" target="_blank" rel="no-follow">2008年国外最佳前端开发技巧、脚本及资源总结</a>(暴风彬彬)
 
-原载:<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://blog.bingo929.com/index.php" target="_blank" rel="no-follow">彬Go</a>-集前端开发/webdesign/网站可用性/用户体验于一体的趣味互联网生活
+原载:<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://blog.bingo929.com/index.php" target="_blank" rel="no-follow">彬Go</a>-集前端开发/Webdesign/网站可用性/用户体验于一体的趣味互联网生活
 
 来自：<a style="text-decoration: none; color: #098cd9; cursor: pointer;" href="http://blog.bingo929.com/best-of-2008-for-web-developers.html" target="_blank" rel="no-follow">http://blog.bingo929.com/</a>
 

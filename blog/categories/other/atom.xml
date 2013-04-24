@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Other | Ocean's Blog]]></title>
   <link href="http://0cean.github.com/blog/categories/other/atom.xml" rel="self"/>
   <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T14:12:10+08:00</updated>
+  <updated>2013-04-24T19:48:12+08:00</updated>
   <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
@@ -43,7 +43,10 @@
     <link href="http://0cean.github.com/blog/2011/09/07/the-future-of-mobile-phones-should-be-like/"/>
     <updated>2011-09-07T00:00:00+08:00</updated>
     <id>http://0cean.github.com/blog/2011/09/07/the-future-of-mobile-phones-should-be-like</id>
-    <content type="html"><![CDATA[<p><embed src="http://player.youku.com/player.php/sid/XMTkyNDg3Nzgw/v.swf" allowfullscreen="true" quality="high" width="540" height="420" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"></embed></p>
+    <content type="html"><![CDATA[<div class="video-container">
+    <embed src="http://player.youku.com/player.php/sid/XMTkyNDg3Nzgw/v.swf" allowfullscreen="true" quality="high" width="540" height="420" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"></embed>       
+</div>
+
 ]]></content>
   </entry>
   
@@ -52,7 +55,7 @@
     <link href="http://0cean.github.com/blog/2011/07/24/programmers-technical-leveling-guide/"/>
     <updated>2011-07-24T00:00:00+08:00</updated>
     <id>http://0cean.github.com/blog/2011/07/24/programmers-technical-leveling-guide</id>
-    <content type="html"><![CDATA[<p>文章作者： <a title="由 陈皓 发布" href="http://coolshell.cn/articles/author/haoel" rel="author">陈皓</a> Other出处：<a href="http://coolshell.cn/articles/4990.html">http://coolshell.cn/articles/4990.html</a></p>
+    <content type="html"><![CDATA[<p>文章作者： <a title="由 陈皓 发布" href="http://coolshell.cn/articles/author/haoel" rel="author">陈皓</a> 转载出处：<a href="http://coolshell.cn/articles/4990.html">http://coolshell.cn/articles/4990.html</a></p>
 
 <p>月光博客6月12日发表了《<a href="http://www.williamlong.info/archives/2700.html" target="_blank">写给新手程序员的一封信</a>》，翻译自《<a href="http://blog.akash.im/an-open-letter-to-those-who-want-to-start" target="_blank">An open letter to those who want to start programming</a>》，我的朋友（他在本站的id是<a href="http://coolshell.cn/?author=3" target="_blank">Mailper</a>）告诉我，他希望在酷壳上看到一篇更具操作性的文章。因为他也是喜欢编程和技术的家伙，于是，我让他把他的一些学习Python和Web编程的一些点滴总结一下。于是他给我发来了一些他的心得和经历，我在把他的心得做了不多的增改，并根据我的经历增加了“进阶”一节。<strong>这是一篇由新手和我这个老家伙根据我们的经历完成的文章</strong>。</p>
 
@@ -349,7 +352,7 @@
 <li>负载均衡。HASH式的，纯动态式的。（可以到Google学术里搜一些<a href="http://scholar.google.com.hk/scholar?q=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1&hl=zh-CN&as_sdt=0&as_vis=1&oi=scholart" target="_blank">关于负载均衡的文章</a>读读）</li>
     <li>多层分布式系统 – 客户端服务结点层、计算结点层、数据cache层，数据层。J2EE是经典的多层结构。</li>
     <li>
-<a href="http://en.wikipedia.org/wiki/Content_delivery_network" target="_blank">CDN系统</a> – 就近访问，内容边缘化。</li>
+<a href="http://en.wikipedia.org/wiki/Content_delivery_Network" target="_blank">CDN系统</a> – 就近访问，内容边缘化。</li>
     <li>
 <a href="http://en.wikipedia.org/wiki/Peer-to-peer" target="_blank">P2P式系统</a>，研究一下BT和电驴的算法。比如：<a href="http://en.wikipedia.org/wiki/Distributed_hash_table" target="_blank">DHT算法</a>。</li>
     <li>服务器备份，双机备份系统（Live-Standby和Live-Live系统），两台机器如何通过心跳监测对方？集群主结点备份。</li>
@@ -383,22 +386,25 @@
     <updated>2011-06-01T00:00:00+08:00</updated>
     <id>http://0cean.github.com/blog/2011/06/01/the-love-story-of-a-programmer</id>
     <content type="html"><![CDATA[<p>作者：http://topic.csdn.net/u/20110517/12/0ab11541-6206-40c9-a8b1-5439d642ab49.html
-注释：http://www.cnblogs.com/zhuqil/archive/2011/05/19/2051373.html
-今天在csdn上看了一篇帖子：《这段代码描述我最近的心情》。 才发现原来用代码可以书写人生，对代码的作者十分钦佩。</p>
+注释：http://www.cnblogs.com/zhuqil/archive/2011/05/19/2051373.html</p>
 
-<div>
-<pre>
-<div>     //一个程序员的爱情故事
-    public class MyLoveStory
+<p>今天在csdn上看了一篇帖子：《这段代码描述我最近的心情》。 才发现原来用代码可以书写人生，对代码的作者十分钦佩。</p>
+
+<p>{% codeblock lang:C++ %}</p>
+
+<pre><code> //一个程序员的爱情故事
+public class MyLoveStory
+{
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            //The ForeStory
-            int result = 1;
-            bool love = false;//以前有个小男孩，没有爱情，孤孤单单一个人。
-            if (love)   //他认为如果是爱情。
-                result = AtOneTime();//那必须是两个人在同一个时间爱上彼此。
-            //But Now...</div>
+        //The ForeStory
+        int result = 1;
+        bool love = false;//以前有个小男孩，没有爱情，孤孤单单一个人。
+        if (love)   //他认为如果是爱情。
+            result = AtOneTime();//那必须是两个人在同一个时间爱上彼此。
+        //But Now...&lt;/div&gt;
+</code></pre>
+
 <div>            //但是现在长大了，有了爱情，却出现了第三者
 
             if (args[0] == "Has" && args[1] == "Third" && args[2] == "One")            {
@@ -443,8 +449,8 @@
             // 2-1=1
             return 2 - 1;
         }
-    }</div></pre>
-</div>
+    }
+{% endcodeblock %}
 
 ]]></content>
   </entry>
@@ -454,10 +460,11 @@
     <link href="http://0cean.github.com/blog/2011/05/31/realm-of-the-programmer-100-species/"/>
     <updated>2011-05-31T00:00:00+08:00</updated>
     <id>http://0cean.github.com/blog/2011/05/31/realm-of-the-programmer-100-species</id>
-    <content type="html"><![CDATA[<p>Other出处：<a href="http://eishn.blog.163.com/blog/static/652318201102831731444/">http://eishn.blog.163.com/blog/static/652318201102831731444/</a> 作者：沈崴</p>
+    <content type="html"><![CDATA[<p>转载出处：<a href="http://eishn.blog.163.com/blog/static/652318201102831731444/">http://eishn.blog.163.com/blog/static/652318201102831731444/</a> 作者：沈崴</p>
 
-<p>境界零：混沌态、浆糊状（小白、新兵）
-<a href="http://nwy.me/wp-content/uploads/2011/05/img200810141202482_s.jpg"><img src="http://nwy.me/wp-content/uploads/2011/05/img200810141202482_s-300x177.jpg" alt="" title="img200810141202482_s" width="300" height="177" class="alignnone size-medium wp-image-62904"></a></p>
+<p>境界零：混沌态、浆糊状（小白、新兵）</p>
+
+<p><img src="http://nwy.me/wp-content/uploads/2011/05/img200810141202482_s.jpg" alt="" /></p>
 
 <p>刚刚毕业、初出茅庐，有丰富把妹经验，无任何项目经验。</p>
 
@@ -509,8 +516,7 @@
 
 <p>高手很快从他们这些代码中闻到了坏味道，至于是 “不够面向” 或者 “不够工程” 导致的， 还是他们根本就没空清理代码，这是一个迷。</p>
 
-<pre><code>             &lt;a href="http://nwy.me/wp-content/uploads/2011/05/T1B4lEXXVtXXblE7.V_021449.jpg_310x310.jpg"&gt;&lt;img src="http://nwy.me/wp-content/uploads/2011/05/T1B4lEXXVtXXblE7.V_021449.jpg_310x310-300x274.jpg" alt="" title="T1B4lEXXVtXXblE7.V_021449.jpg_310x310" width="300" height="274" class="alignnone size-medium wp-image-62905"&gt;&lt;/a&gt;
-</code></pre>
+<p><img src="http://nwy.me/wp-content/uploads/2011/05/T1B4lEXXVtXXblE7.V_021449.jpg_310x310.jpg" alt="" /></p>
 
 <p>当然说句公道话，我们知道程序上线后能死撑多久，是和味道无关的。</p>
 
@@ -557,8 +563,7 @@
 
 <p>然而在一个阴暗的角落，是主程冷峻的目光，注视着高手们的代码。</p>
 
-<pre><code>        &lt;a href="http://nwy.me/wp-content/uploads/2011/05/4396016v0_350x350_Back.jpg"&gt;&lt;img src="http://nwy.me/wp-content/uploads/2011/05/4396016v0_350x350_Back-300x300.jpg" alt="" title="4396016v0_350x350_Back" width="300" height="300" class="alignnone size-medium wp-image-62906"&gt;&lt;/a&gt;     
-</code></pre>
+<p><img src="http://nwy.me/wp-content/uploads/2011/05/4396016v0_350x350_Back.jpg" alt="" /></p>
 
 <p>“SUCKS！” 从他的牙缝中迸出几个字，轻蔑在他的嘴角蔓延。</p>
 
@@ -580,8 +585,7 @@
 
 <p>公司冷酷的答复是，不行。这是公司宝贵的精神财富，是照耀所有员工不断前进的动力。 况且这些代码还 HARDCODE 了各种 8086 指令，来加速最新的 ARM，这让我们的竞争对手不寒而栗。</p>
 
-<pre><code>             &lt;a href="http://nwy.me/wp-content/uploads/2011/05/zrtn_001n49526640_tn.jpg"&gt;&lt;img src="http://nwy.me/wp-content/uploads/2011/05/zrtn_001n49526640_tn-300x207.jpg" alt="" title="zrtn_001n49526640_tn" width="300" height="207" class="alignnone size-medium wp-image-62907"&gt;&lt;/a&gt;
-</code></pre>
+<p><img src="http://nwy.me/wp-content/uploads/2011/05/zrtn_001n49526640_tn.jpg" alt="" /></p>
 
 <p>心灰意冷的你于是决定看破红尘，但是无名禅师的一番话让你幡然醒悟。于是你回到公司按主程的程序原样抄写了一遍</p>
 

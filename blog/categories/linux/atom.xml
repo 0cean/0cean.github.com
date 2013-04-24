@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Ocean's Blog]]></title>
   <link href="http://0cean.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T14:12:10+08:00</updated>
+  <updated>2013-04-24T19:48:12+08:00</updated>
   <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
@@ -18,32 +18,48 @@
     <link href="http://0cean.github.com/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2/"/>
     <updated>2012-06-07T00:00:00+08:00</updated>
     <id>http://0cean.github.com/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2</id>
-    <content type="html"><![CDATA[<p>RAM Host的VPS由于站长也是Linux技术大牛，做过优化，即使低端配置性能也不错，所以销量一直很好，加上站长不超售的原则，往往一放出就告罄，上周末终于抢到一个。购买的时候因为开着代理，被Ram Host的订单系统检测到当作风险订单处理了，最后发ticket和站长解释了一番天朝的网络环境才订单才得以通过。
-这次买的是RAM Host的Premium West Coast Los Angeles Virtual Dedicated Server的Standard VPS，512MB内存，这个机房的VPS都是KVM的，没有部署站长优化过得系统，需要先在VPS管理面板里选择引导安装系统的镜像ISO。
-<a href="http://nwy.me/wp-content/uploads/2012/06/%E9%80%89%E5%8C%BA_002.png"><img src="http://nwy.me/wp-content/uploads/2012/06/%E9%80%89%E5%8C%BA_002-300x228.png" alt="" title="系统选择" width="300" height="228" class="aligncenter size-medium wp-image-63200"></a>
-VNC连接主机后进Console，需要注意的是VPS管理面板里VM Console页面给的连接端口是随机的。
-<a href="http://nwy.me/wp-content/uploads/2012/06/QEMU-oceannan-%E5%9C%A8-2012-06-07-003459-%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png"><img src="http://nwy.me/wp-content/uploads/2012/06/QEMU-oceannan-%E5%9C%A8-2012-06-07-003459-%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE-300x166.png" alt="" title="QEMU (oceannan) 在 2012-06-07 00:34:59 的屏幕截图" width="300" height="166" class="aligncenter size-medium wp-image-63201"></a>
-这部分就不一一截图了，一路空格加回车，然后重启。
-登录系统后需要先配置ip，修改对应网卡的网关的配置文件，
-<code>vi /etc/sysconfig/network </code>
-设置本机连接的网关的IP地址,在VPS管理面板里有给出，加入一行：
-<code>GATEWAY=10.0.0.1</code>
-修改对应网卡的IP地址的配置文件：
-<code>vi /etc/sysconfig/network-scripts/ifcfg-eth0</code>
-修改以下内容
+    <content type="html"><![CDATA[<p>RAM Host的VPS由于站长也是Linux技术大牛，做过优化，即使低端配置性能也不错，所以销量一直很好，加上站长不超售的原则，往往一放出就告罄，上周末终于抢到一个。购买的时候因为开着代理，被Ram Host的订单系统检测到当作风险订单处理了，最后发ticket和站长解释了一番天朝的网络环境才订单才得以通过。</p>
+
+<p>这次买的是RAM Host的Premium West Coast Los Angeles Virtual Dedicated Server的Standard VPS，512MB内存，这个机房的VPS都是KVM的，没有部署站长优化过得系统，需要先在VPS管理面板里选择引导安装系统的镜像ISO。</p>
+
+<p><img src="http://nwy.me/wp-content/uploads/2012/06/%E9%80%89%E5%8C%BA_002.png" alt="系统选择" /></p>
+
+<p>VNC连接主机后进Console，需要注意的是VPS管理面板里VM Console页面给的连接端口是随机的。</p>
+
+<p><img src="http://nwy.me/wp-content/uploads/2012/06/QEMU-oceannan-%E5%9C%A8-2012-06-07-003459-%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="QEMU (oceannan) 在 2012-06-07 00:34:59 的屏幕截图" /></p>
+
+<p>这部分就不一一截图了，一路空格加回车，然后重启。</p>
+
+<p>登录系统后需要先配置ip，修改对应网卡的网关的配置文件，</p>
+
+<p><code>vi /etc/sysconfig/Network </code></p>
+
+<p>设置本机连接的网关的IP地址,在VPS管理面板里有给出，加入一行：</p>
+
+<p><code>GATEWAY=10.0.0.1</code></p>
+
+<p>修改对应网卡的IP地址的配置文件：</p>
+
+<p><code>vi /etc/sysconfig/Network-scripts/ifcfg-eth0</code></p>
+
+<p>修改以下内容:
+{% codeblock lang:bash %}
 DEVICE=eth0 #描述网卡对应的设备别名，例如ifcfg-eth0的文件中它为eth0
 BOOTPROTO=static #设置网卡获得ip地址的方式，可能的选项为static，dhcp或bootp，分别对应静态指定的 ip地址，通过dhcp协议获得的ip地址，通过bootp协议获得的ip地址
 BROADCAST=192.168.0.255 #对应的子网广播地址
 HWADDR=00:03:E8:04:D8:B3 #对应的网卡物理地址
 IPADDR=192.168.1.2 #如果设置网卡获得 ip地址的方式为静态指定，此字段就指定了网卡对应的ip地址
 NETMASK=255.255.255.0 #网卡对应的网络掩码
-NETWORK=192.168.1.0 #网卡对应的网络地址
+Network=192.168.1.0 #网卡对应的网络地址
 IPV6INIT=no
 IPV6_AUTOCONF=no
 ONBOOT=yes #系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备
-重启网络，使刚才的设置生效。
-<code>service network restart</code>
-至此Centos6.2就安装完成了。</p>
+{% endcodeblock %}
+重启网络，使刚才的设置生效。</p>
+
+<p><code>service Network restart</code></p>
+
+<p>至此Centos6.2就安装完成了。</p>
 ]]></content>
   </entry>
   
@@ -52,10 +68,13 @@ ONBOOT=yes #系统启动时是否设置此网络接口，设置为yes时，系�
     <link href="http://0cean.github.com/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/"/>
     <updated>2011-11-27T00:00:00+08:00</updated>
     <id>http://0cean.github.com/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files</id>
-    <content type="html"><![CDATA[<p>作为键盘党，下午在用键盘选择文件夹的时候，没有盯对文件夹就shift+delete删除了一个重要文件夹，之前就发生过丢失数据的悲剧，于是给笔记本增加了一块硬盘，重要数据定时同步到光驱位硬盘，不过今天误删除的文件夹还没同步到光驱位硬盘。在ext2分区格式下有许多文件恢复软件，但是这些软件都不支持ext4，或兼容的不太好，如testdisk，虽然可以看到误删的文件但是恢复出来的文件是损坏的。最后通过一番搜索找到了一款支持ext4的的恢复软件extundelete。
-  安装extundelete，可以去软件主页http://extundelete.sourceforge.net下载编译，或者从服务器获取，不同的发行版的安装方法不同，这里不再详述。
-extundelete --help 查看软件帮助
-<code>
+    <content type="html"><![CDATA[<p>作为键盘党，下午在用键盘选择文件夹的时候，没有盯对文件夹就shift+delete删除了一个重要文件夹，之前就发生过丢失数据的悲剧，于是给笔记本增加了一块硬盘，重要数据定时同步到光驱位硬盘，不过今天误删除的文件夹还没同步到光驱位硬盘。在ext2分区格式下有许多文件恢复软件，但是这些软件都不支持ext4，或兼容的不太好，如testdisk，虽然可以看到误删的文件但是恢复出来的文件是损坏的。最后通过一番搜索找到了一款支持ext4的的恢复软件extundelete。</p>
+
+<p>安装extundelete，可以去软件主页http://extundelete.sourceforge.net下载编译，或者从服务器获取，不同的发行版的安装方法不同，这里不再详述。</p>
+
+<p>extundelete --help 查看软件帮助</p>
+
+<p>{% codeblock lang:bash %}
 Usage: extundelete [options] [--] device-file
 Options:
   --version, -[vV]       Print version and exit successfully.
@@ -104,24 +123,31 @@ Actions:
 <pre><code>                     system.  The number should be the number of bytes.
 </code></pre>
 
-<p></code></p>
+<p>{% endcodeblock %}</p>
 
-<p>软件支持根据时间，文件路径，inode恢复删除的文件，这里指定文件路径恢复误删文件
-根据文件路径恢复也有多种方式，如下：
-恢复/dev/sda3里一个被误删除的文件</p>
+<p>软件支持根据时间，文件路径，inode恢复删除的文件，这里指定文件路径恢复误删文件</p>
+
+<p>根据文件路径恢复也有多种方式，如下：</p>
+
+<p>恢复/dev/sda3里一个被误删除的文件</p>
 
 <p><code>
 extundelete /dev/sda3 --restore-file /an/important/file
-</code>
-恢复/dev/sda3里一个被误删除的文件夹
-<code>
+</code></p>
+
+<p>恢复/dev/sda3里一个被误删除的文件夹</p>
+
+<p><code>
 extundelete /dev/sda3 --restore-directory /an/important
-</code>
-恢复/dev/sda3里所有被删除的东西
-<code>
+</code></p>
+
+<p>恢复/dev/sda3里所有被删除的东西</p>
+
+<p><code>
 extundelete /dev/sda3 --restore-all
-</code>
-extundelete恢复误删除的文件不需要进入live环境，也不需要umount误删文件所在分区，运行命令后会在你运行命令的目录下产生一个RECOVERED_FILES/的目录，恢复的文件会按照原来的路径创建在该路径下面，所以做恢复操作的时候一定要把终端路径切换到其他分区下，不能在当前误删文件所在分区操作，否则恢复出来的文件会覆盖误删除的文件，导致恢复出来的部分或全部文件损坏。</p>
+</code></p>
+
+<p>extundelete恢复误删除的文件不需要进入live环境，也不需要umount误删文件所在分区，运行命令后会在你运行命令的目录下产生一个RECOVERED_FILES/的目录，恢复的文件会按照原来的路径创建在该路径下面，所以做恢复操作的时候一定要把终端路径切换到其他分区下，不能在当前误删文件所在分区操作，否则恢复出来的文件会覆盖误删除的文件，导致恢复出来的部分或全部文件损坏。</p>
 ]]></content>
   </entry>
   
@@ -132,8 +158,9 @@ extundelete恢复误删除的文件不需要进入live环境，也不需要umoun
     <id>http://0cean.github.com/blog/2011/09/19/archlinux-development-platform-to-build-next-webos</id>
     <content type="html"><![CDATA[<p>作为一个02年开始使用palm的资深palm用户，对palm有着根深蒂固的感情。在palm的陪伴下，经历了高中大学的学生时代，步入社会，开始工作。palm曾经的辉煌也一去不复返，在这个物质，浮躁，快速化的世界，palm系统的单线程，简洁的特性在全球网络化的时代逐渐淡出人们的视线，随后palm公司发布了webOS，被惠普公司收购。发现跑题已经是我写技术文章的特色之一了，言归正传。</p>
 
-<p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下
-<code lang="bash"></p>
+<p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下</p>
+
+<p>{% codeblock lang:bash %}</p>
 
 <h1>!/bin/sh</h1>
 
@@ -168,26 +195,23 @@ fi
 cp -a  /opt/Palm/novacom/scripts/novacomd-conf    /etc/init/palm-novacomd.conf
 elif [ -e /etc/event.d ] ; then
 ln -fs /opt/Palm/novacom/scripts/novacomd-upstart /etc/event.d/palm-novacomd
-fi</p>
-
-<p>#</p>
+fi
+#</p>
 
 <h1>(re)start novacomd</h1>
 
 <p>#
 stop palm-novacomd || true
-killall -v -q novacomd</p>
-
-<p>start palm-novacomd || true</p>
-
-<p></code></p>
+killall -v -q novacomd
+start palm-novacomd || true
+{% endcodeblock %}</p>
 
 <p>直接运行脚本显然是不行的，archlinux没有/etc/init/和/etc/event.d/目录，/etc/init/实际是指向/etc/rc.d/int.d/的一个符号链接文件，/etc/event.d/是ubuntu特有的upstart机制的核心目录，archlinux的服务可以通过特有的rc.conf启动，也可以通过/etc/init.d/或者/etc/rc.d/下建立脚本创建服务。了解脚本后将novacomd复制到/etc/rc.d/,novacomd.conf复制到/etc/conf.d/做完archlinux下的改动后，在终端里输入
-<code lang="bash"></p>
+{% codeblock lang:bash %}</p>
 
 <p>/etc/rc.d/novacom start</p>
 
-<p></code></p>
+<p>{% endcodeblock %}</p>
 
 <p>提示未找的设备，谷歌一番后在http://www.webos-internals.org/wiki/Accessing_Linux_archlinux 上发现解决方法:"novacomd doesn't work under archlinux , so we have to use ubuntu's libusb. "意想不到的是wiki中给出了一条简便方法，从aur下载网友打包好的novacom驱动，汗，之前怎么没有想到在aur里搜索一下。</p>
 
@@ -196,24 +220,28 @@ killall -v -q novacomd</p>
 
 <p>一番折腾后palm pre在archlinux下的驱动搞定了，解压deb驱动包的时候看到过novaterm的文件，运行后登录到手机shell，webOS是linux核心，busybox中带有linux常用命令，于是可以在电脑上查看手机的运行状态了。</p>
 
-<p><a href="http://nwy.me/wp-content/uploads/2011/09/Screenshot-ocean@ocean-laptop.png"><img class="alignnone size-medium wp-image-63017" title="Screenshot-ocean@ocean-laptop:~" src="http://nwy.me/wp-content/uploads/2011/09/Screenshot-ocean@ocean-laptop-300x211.png" alt="" width="300" height="211"></a></p>
+<p><img src="http://nwy.me/wp-content/uploads/2011/09/Screenshot-ocean@ocean-laptop.png" alt="Screenshot-ocean@ocean-laptop:~" /></p>
 
 <p>显摆几张手机桌面</p>
 
-<p><a href="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040802.png"><img class="alignnone size-medium wp-image-63018" title="Unknown_2011-19-09_040802" src="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040802-200x300.png" alt="" width="200" height="300"></a><a href="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040751.png"><img class="alignnone size-medium wp-image-63019" title="Unknown_2011-19-09_040751" src="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040751-200x300.png" alt="" width="200" height="300"></a><a href="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040742.png"><img class="alignnone size-medium wp-image-63020" title="Unknown_2011-19-09_040742" src="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040742-200x300.png" alt="" width="200" height="300"></a></p>
+<p><img src="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040802.png" alt="Unknown_2011-19-09_040802" />
+<img src="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040751.png" alt="Unknown_2011-19-09_040751" />
+<img src="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040742.png" alt="Unknown_2011-19-09_040742" /></p>
 
 <p> </p>
 
 <p> </p>
 
-<p>接下来安装webOS的SDK，有了之前的经验，直接从aur搜索网友打包好的sdk，下载安装。
-手机平台webOS1.45 SDK截图</p>
+<p>接下来安装webOS的SDK，有了之前的经验，直接从aur搜索网友打包好的sdk，下载安装。</p>
 
-<p><a href="http://nwy.me/wp-content/uploads/2011/09/Screenshot-SDK-1.4.5.465-320x480-Running-Oracle-VM-VirtualBox.png"><img class="alignnone size-medium wp-image-63021" title="Screenshot-SDK 1.4.5.465 (320x480) [Running] - Oracle VM VirtualBox" src="http://nwy.me/wp-content/uploads/2011/09/Screenshot-SDK-1.4.5.465-320x480-Running-Oracle-VM-VirtualBox-173x300.png" alt="" width="173" height="300"></a></p>
+<p>手机平台webOS1.45 SDK截图</p>
+
+<p><img src="http://nwy.me/wp-content/uploads/2011/09/Screenshot-SDK-1.4.5.465-320x480-Running-Oracle-VM-VirtualBox.png" alt="Screenshot-SDK 1.4.5.465 (320x480) [Running] - Oracle VM VirtualBox" /></p>
 
 <p>TouchPad平板 webOS3.0.2 SDk截图</p>
 
-<p><a href="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_001.png"><img class="alignnone size-medium wp-image-63033" title="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_001" src="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_001-300x247.png" alt="" width="300" height="247"></a><a href="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003.png"><img class="alignnone size-medium wp-image-63034" title="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_003" src="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003-300x247.png" alt="" width="300" height="247"></a></p>
+<p><img src="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_001.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_001" />
+<img src="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_003" /></p>
 
 <p>至此，archlinux下webOS的开发环境搭建完成。</p>
 ]]></content>
@@ -291,108 +319,107 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 
 <p> </p>
 
-<div>
+<p>在执行某个命令的时候，有时需要依赖于前一个命令是否执行成功。例如，假设你希望将一个目录中的文件全部拷贝到另外一个目录中后，然后删除源目录中的全部文件。在删除之前，你希望能够确信拷贝成功，否则就有可能丢失所有的文件。</p>
 
-在执行某个命令的时候，有时需要依赖于前一个命令是否执行成功。例如，假设你希望将一个目录中的文件全部拷贝到另外一个目录中后，然后删除源目录中的全部文件。在删除之前，你希望能够确信拷贝成功，否则就有可能丢失所有的文件。
+<p>在本章中，我们将讨论：</p>
 
-在本章中，我们将讨论：
-<strong>命令执行控制。
+<h1>命令执行控制。</h1>
 
-命令组合。
+<h1>命令组合。</h1>
 
-</strong>
+<p>如果希望在成功地执行一个命令之后再执行另一个命令，或者在一个命令失败后再执行另一个命令，&amp;&amp;和||可以完成这样的功能。相应的命令可以是系统命令或shell脚本。</p>
 
-如果希望在成功地执行一个命令之后再执行另一个命令，或者在一个命令失败后再执行另一个命令，&&和||可以完成这样的功能。相应的命令可以是系统命令或shell脚本。
+<p>Shell还提供了在当前shell或子shell中执行一组命令的方法，即使用（）和{}。</p>
 
-Shell还提供了在当前shell或子shell中执行一组命令的方法，即使用（）和{}。
-<strong>6.1 </strong><strong>使用&&</strong>
-使用&&的一般形式为：
+<h1>6.1 使用&amp;&amp;</h1>
 
-命令1 && 命令2
+<p>使用&amp;&amp;的一般形式为：</p>
 
-这种命令执行方式相当地直接。&&左边的命令（命令1）返回真(即返回0，成功被执行）后，&&右边的命令（命令2）才能够被执行；换句话说，“如果这个命令执行成功&&那么执行这个命令”。
+<p>命令1 &amp;&amp; 命令2</p>
 
-这里有一个使用&&的简单例子：
+<p>这种命令执行方式相当地直接。&amp;&amp;左边的命令（命令1）返回真(即返回0，成功被执行）后，&amp;&amp;右边的命令（命令2）才能够被执行；换句话说，“如果这个命令执行成功&amp;&amp;那么执行这个命令”。</p>
 
-<strong>$ cp justing.doc justing.bak && echo “if you are seeing this then cp was OK”</strong>
+<p>这里有一个使用&amp;&amp;的简单例子：</p>
 
-<strong>if you are seeing this then cp was OK</strong>
+<p>｛% codeblock lang:bash %} $ cp justing.doc justing.bak &amp;&amp; echo “if you are seeing this then cp was OK” {% endcodeblock %}</p>
 
-在上面的例子中，&&前面的拷贝命令执行成功，所以&&后面的命令（echo命令）被执行。
+<h1>if you are seeing this then cp was OK</h1>
 
-再看一个更为实用的例子：
+<p>在上面的例子中，&amp;&amp;前面的拷贝命令执行成功，所以&amp;&amp;后面的命令（echo命令）被执行。</p>
 
-<strong>$ mv /apps/bin /apps/dev/bin && rm -r /apps/bin</strong>
+<p>再看一个更为实用的例子：</p>
 
-在上面的例子中，/apps/bin目录将会被移到/apps/dev/bin目录下，如果它没有被成功执行，就不会删除/apps/bin目录。
+<p>{% codeblock lang:bash %}$ mv /apps/bin /apps/dev/bin &amp;&amp; rm -r /apps/bin　{% endcodeblock %}</p>
 
-在下面的例子中，文件quarter_end.txt首先将被排序并输出到文件quarter.sorted中，只有这一命令执行成功之后，文件quarter.sorted才会被打印出来：
+<p>在上面的例子中，/apps/bin目录将会被移到/apps/dev/bin目录下，如果它没有被成功执行，就不会删除/apps/bin目录。</p>
 
-<strong>$ sort quarter_end.txt > quarter.sorted && lp quarter.sorted</strong>
+<p>在下面的例子中，文件quarter_end.txt首先将被排序并输出到文件quarter.sorted中，只有这一命令执行成功之后，文件quarter.sorted才会被打印出来：</p>
 
-<strong><!--more-->
+<p>{% codeblock lang:bash %}$ sort quarter_end.txt > quarter.sorted &amp;&amp; lp quarter.sorted{% endcodeblock %}</p>
 
-6.2 </strong><strong>使用||</strong>
-使用||的一般形式为：
+<p>{% codeblock lang:bash %}<!--more--></p>
 
-命令1 || 命令2
+<h1>6.2 使用||</h1>
 
-||的作用有一些不同。如果||左边的命令（命令1）未执行成功，那么就执行||右边的命令（命令2）；或者换句话说，“如果这个命令执行失败了|| 那么就执行这个命令”。
+<p>使用||的一般形式为：</p>
 
-这里有一个使用||的简单例子：
+<p>命令1 || 命令2</p>
 
-<strong>$ cp wopper.txt wopper.bak || echo “if you are seeing this cp failed”</strong>
-<strong>cp: wopper.txt: No such file or directory</strong>
+<p>||的作用有一些不同。如果||左边的命令（命令1）未执行成功，那么就执行||右边的命令（命令2）；或者换句话说，“如果这个命令执行失败了|| 那么就执行这个命令”。</p>
 
-<strong>if you are seeing this cp failed</strong>
+<p>这里有一个使用||的简单例子：</p>
 
-在上面的例子中，拷贝命令没有能够被成功执行，因此||后面的命令被执行。
+<p>{% codeblock lang:bash %}$ cp wopper.txt wopper.bak || echo “if you are seeing this cp failed”{% endcodeblock %}</p>
 
-这里有一个更为实用的例子。我希望从一个审计文件中抽取第1个和第5个域，并将其输出到一个临时文件中，如果这一操作未成功，我希望能够收到一个相应邮件：
+<p>{% codeblock lang:bash %}cp: wopper.txt: No such file or directory{% endcodeblock %}</p>
 
-<strong>$ awk ‘{print $5}’ acc.qtr > qtr.tmp || echo “Sorry the payroll extraction didn’t work” | mail dave</strong>
+<p>{% codeblock lang:bash %}if you are seeing this cp failed{% endcodeblock %}</p>
 
-在这里不只可以使用系统命令；这里我们首先对month_end.txt文件执行了一个名为comet的shell脚本，如果该脚本未执行成功，该shell将结束。
+<p>在上面的例子中，拷贝命令没有能够被成功执行，因此||后面的命令被执行。</p>
 
-<strong>$ comet month_end.txt || exit</strong>
-<strong>6.3 用（）和{}将命令结合在一起</strong><strong> </strong>
-如果希望把几个命令合在一起执行， shell提供了两种方法。既可以在当前shell也可以在子shell中执行一组命令。
+<p>这里有一个更为实用的例子。我希望从一个审计文件中抽取第1个和第5个域，并将其输出到一个临时文件中，如果这一操作未成功，我希望能够收到一个相应邮件：</p>
 
-为了在当前shell中执行一组命令，可以用命令分隔符隔开每一个命令，并把所有的命令用圆括号（）括起来。
+<p>{% codeblock lang:bash %}$ awk ‘{print $5}’ acc.qtr > qtr.tmp || echo “Sorry the payroll extraction didn’t work” | mail dave{% endcodeblock %}</p>
 
-它的一般形式为：
+<p>在这里不只可以使用系统命令；这里我们首先对month_end.txt文件执行了一个名为comet的shell脚本，如果该脚本未执行成功，该shell将结束。</p>
 
-（命令1;命令2;. . .）
+<p>{% codeblock lang:bash %}$ comet month_end.txt || exit{% endcodeblock %}</p>
 
-如果使用{ }来代替（），那么相应的命令将在子shell而不是当前shell中作为一个整体被执行，只有在{ }中所有命令的输出作为一个整体被重定向时，其中的命令才被放到子shell中执行，否则在当前shell执行。它的一般形式为：
+<h1>6.3 用（）和{}将命令结合在一起</h1>
 
-{命令1;命令2;. . . }
+<p>如果希望把几个命令合在一起执行， shell提供了两种方法。既可以在当前shell也可以在子shell中执行一组命令。</p>
 
-我很少单独使用这两种方法。我一般只和&&或||一起使用这两种方法。
+<p>为了在当前shell中执行一组命令，可以用命令分隔符隔开每一个命令，并把所有的命令用圆括号（）括起来。</p>
 
-再回到前面那个comet脚本的例子，如果这个脚本执行失败了，我很可能会希望执行两个以上的命令，而不只是一个命令。我可以使用这两种方法。这是原先那个例子：
+<p>它的一般形式为：</p>
 
-<strong>$ comet month_end.txt || exit</strong>
+<p>（命令1;命令2;. . .）</p>
 
-现在如果该脚本执行失败了，我希望先给自己发个邮件，然后再退出，可以用下面的方法来实现：
+<p>如果使用{ }来代替（），那么相应的命令将在子shell而不是当前shell中作为一个整体被执行，只有在{ }中所有命令的输出作为一个整体被重定向时，其中的命令才被放到子shell中执行，否则在当前shell执行。它的一般形式为：</p>
 
-<strong>$ comet month_end || (echo “Hello, guess what! Comet did not work”|mail dave;exit)</strong>
+<p>{命令1;命令2;. . . }</p>
 
-在上面的例子中，如果只使用了命令分隔符而没有把它们组合在一起，shell将直接执行最后一个命令（exit）。
+<p>我很少单独使用这两种方法。我一般只和&amp;&amp;或||一起使用这两种方法。</p>
 
-我们再回头来看看前面那个使用&&排序的例子，下面是原来的那个例子：
+<p>再回到前面那个comet脚本的例子，如果这个脚本执行失败了，我很可能会希望执行两个以上的命令，而不只是一个命令。我可以使用这两种方法。这是原先那个例子：</p>
 
-<strong>$ sort quarter_end.txt > quarter.sorted && lp quarter.sorted</strong>
+<p>{% codeblock lang:bash %}$ comet month_end.txt || exit{% endcodeblock %}</p>
 
-使用命令组合的方法，如果sort命令执行成功了，可以先将输出文件拷贝到一个日志区，然后再打印。
+<p>现在如果该脚本执行失败了，我希望先给自己发个邮件，然后再退出，可以用下面的方法来实现：</p>
 
-<strong>
+<p>{% codeblock lang:bash %}$ comet month_end || (echo “Hello, guess what! Comet did not work”|mail dave;exit){% endcodeblock %}</p>
 
-6.4 小结</strong>
-在编写shell脚本时，使用&&和||对构造判断语句非常有用。如果希望在前一个命令执行失败的情况不执行后面的命令，那么本章所讲述的方法非常简单有效。使用这样的方法，可以根据&&或||前面命令的返回值来控制其后面命令的执行。
+<p>在上面的例子中，如果只使用了命令分隔符而没有把它们组合在一起，shell将直接执行最后一个命令（exit）。</p>
 
-</div>
+<p>我们再回头来看看前面那个使用&amp;&amp;排序的例子，下面是原来的那个例子：</p>
 
+<p>{% codeblock lang:bash %}$ sort quarter_end.txt > quarter.sorted &amp;&amp; lp quarter.sorted{% endcodeblock %}</p>
+
+<p>使用命令组合的方法，如果sort命令执行成功了，可以先将输出文件拷贝到一个日志区，然后再打印。</p>
+
+<h1>6.4 小结</h1>
+
+<p>在编写shell脚本时，使用&amp;&amp;和||对构造判断语句非常有用。如果希望在前一个命令执行失败的情况不执行后面的命令，那么本章所讲述的方法非常简单有效。使用这样的方法，可以根据&amp;&amp;或||前面命令的返回值来控制其后面命令的执行。</p>
 ]]></content>
   </entry>
   
