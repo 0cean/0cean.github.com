@@ -1,0 +1,170 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>一个光纤收发器引发的故障 | Ocean's Blog</title>
+	<meta name="author" content="Ocean">
+
+	
+	<meta name="description" content="一个光纤收发器引发的故障 5Nov 最近楼里网络故障频繁发生，严重影响各部门的正常工作，作为网管，能快速的解决问题，众望所归，自然压力很大。 故障症状： 两个楼层所有办公室都不能上网，ping不通网关，重启后暂时能上网，时间不等，又会出现网内集体无法上网现象。 网络拓扑结构： &hellip;">
+	
+
+	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
+
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><nav><ul>
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章存档</a></li>
+  <li><a href="/blog/categories">文章分类</a></li>
+  <li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+</header>
+	<div id="content" class="inner"><article class="post"><header>
+  
+  <h1 class="title">一个光纤收发器引发的故障</h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2012-11-05T00:00:00+08:00">
+			<span class="day"> 5</span><span class="month">Nov</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>最近楼里网络故障频繁发生，严重影响各部门的正常工作，作为网管，能快速的解决问题，众望所归，自然压力很大。</p>
+
+<h1>故障症状：</h1>
+
+<p>两个楼层所有办公室都不能上网，ping不通网关，重启后暂时能上网，时间不等，又会出现网内集体无法上网现象。</p>
+
+<h1>网络拓扑结构：</h1>
+
+<p>三四楼的网络接入点在三楼，一条100M光纤线路通过光纤收发器接到一个二层交换机，三楼所有办公室的网络都接在这个交换机上，四楼一个二层交换机，线路级联在三楼的二层交换机上。三楼接入点的网关是机房核心交换机的划分的VLan。</p>
+
+<h1>初步判断：</h1>
+
+<ol>
+<li>ARP攻击导致，泛洪攻击。</li>
+<li>网络环路产生的广播风暴，导致交换机被堵死。</li>
+<li>交换机硬件故障。</li>
+</ol>
+
+
+<h1>解决过程：</h1>
+
+<p>先用ARP软件检测是否有攻击，笔记本单独在交换机上接一个端口开着检测软件，查看网络故障后笔记本本地缓存的网关MAC地址，和VLan网关的MAC地址一致，没有被伪造，没有发现有ARP攻击，排除ARP攻击的可能性。
+拔掉设备箱里所有网线，交换机上只接笔记本一台设备，故障仍然存在。把笔记本通过网线直接接到光纤收发器，故障仍然存在。而且发现网络故障的时候光纤收发器的TX和RX指示灯长亮不闪烁，可以判断问题出在光纤收发器上，也排除了交换机硬件故障的可能，剩下了就是联系信息中心，更换光纤收发器后，至此故障解决。</p>
+
+    
+      <div class="sharing">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+</div>
+    
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/network/'>Network</a></div>
+
+    
+      
+      
+      <a class="comment" href="/blog/2012/11/05/a-media-converter-fault-caused-by/#disqus_thread">Comments</a>
+      
+    
+  </footer>
+  
+</div>
+
+<section id="comment">
+	<div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+  </div>
+</section>
+</article></div>
+	<footer id="footer" class="inner"><div class="social alignright">
+	
+	
+	
+	
+	
+	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>&copy; 2013 Ocean</p>
+<div class="clearfix"></div></footer>
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('.entry-content').each(function(i){
+			var _i = i;
+			$(this).find('img').each(function(){
+				var alt = $(this).attr('alt');
+
+				if (alt == '' || typeof alt == 'undefined'){
+					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
+				} else {
+					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
+				}
+			});
+		});
+		$('.fancybox').fancybox();
+	})(jQuery);
+</script>
+<div id="phasebeam">
+	<canvas></canvas>
+	<canvas></canvas>
+	<canvas></canvas>
+</div>
+<script src="/javascripts/phasebeam.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://0cean.github.com/blog/2012/11/05/a-media-converter-fault-caused-by/';
+        var disqus_url = 'http://0cean.github.com/blog/2012/11/05/a-media-converter-fault-caused-by/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+</html>

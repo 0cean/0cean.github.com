@@ -1,0 +1,150 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>一个艰难的决定 | Ocean's Blog</title>
+	<meta name="author" content="Ocean">
+
+	
+	<meta name="description" content="一个艰难的决定 7Dec 当您看到这篇文章的时候，我刚刚作出了一个非常艰难的决定,在腾讯没有开放Qzone的API的情况下,再次开通QQ空间,同步自己WordPress博客上的文章到Qzone,因为腾讯没有开放Qzone的API, &hellip;">
+	
+
+	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
+
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><nav><ul>
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章存档</a></li>
+  <li><a href="/blog/categories">文章分类</a></li>
+  <li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+</header>
+	<div id="content" class="inner"><article class="post"><header>
+  
+  <h1 class="title">一个艰难的决定</h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2010-12-07T00:00:00+08:00">
+			<span class="day"> 7</span><span class="month">Dec</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>当您看到这篇文章的时候，我刚刚作出了一个非常艰难的决定,在腾讯没有开放Qzone的API的情况下,再次开通QQ空间,同步自己WordPress博客上的文章到Qzone,因为腾讯没有开放Qzone的API,想从自己的WordPress博客上自动同步文章到QQ空间只能另辟蹊径,好在腾讯提供了QQ邮件发布的方式,而QQ邮箱支持SMTP协议, WordPress 所包含的 PHPMailer 类可以使用 SMTP 发邮件，所以可以通过使用 PHPMailer 同步 WordPress 博客文章到 Qzone。总之由于腾讯的不开放这个过程曲折坎坷,感谢SMTP协议,感谢腾讯没有对QQ邮箱的SMTP登录做基于IP的验证,否则我的WordPress主机就不能通过PHPMailer类远程登录发送邮件到Qzone.</p>
+
+<p>下一步增加同步WordPress文章的时候把文章的分类也同步到Qzone,目前自动同步过来的文章都会归类在个人日记分类下,等以后同步过来的文章增多的时候,浏览起来会很乱.这个问题比较好解决,看腾讯的帮助文档,邮件发布日志的分类可以在邮件的标题里加上,格式为&#8221;[某分类]文章标题&#8221;,如果所属分类不存在，会自动创建新的分类.回头把WordPress上的PHP博客同步代码修改一下就可以实现.</p>
+
+    
+      <div class="sharing">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+</div>
+    
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
+
+    
+      
+      
+      <a class="comment" href="/blog/2010/12/07/a-difficult-decision/#disqus_thread">Comments</a>
+      
+    
+  </footer>
+  
+</div>
+
+<section id="comment">
+	<div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+  </div>
+</section>
+</article></div>
+	<footer id="footer" class="inner"><div class="social alignright">
+	
+	
+	
+	
+	
+	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>&copy; 2013 Ocean</p>
+<div class="clearfix"></div></footer>
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('.entry-content').each(function(i){
+			var _i = i;
+			$(this).find('img').each(function(){
+				var alt = $(this).attr('alt');
+
+				if (alt == '' || typeof alt == 'undefined'){
+					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
+				} else {
+					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
+				}
+			});
+		});
+		$('.fancybox').fancybox();
+	})(jQuery);
+</script>
+<div id="phasebeam">
+	<canvas></canvas>
+	<canvas></canvas>
+	<canvas></canvas>
+</div>
+<script src="/javascripts/phasebeam.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://0cean.github.com/blog/2010/12/07/a-difficult-decision/';
+        var disqus_url = 'http://0cean.github.com/blog/2010/12/07/a-difficult-decision/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+</html>

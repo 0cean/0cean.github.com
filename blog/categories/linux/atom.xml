@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Ocean's Blog]]></title>
   <link href="http://0cean.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T20:20:41+08:00</updated>
+  <updated>2013-04-24T20:21:41+08:00</updated>
   <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
@@ -43,18 +43,27 @@
 <p><code>vi /etc/sysconfig/Network-scripts/ifcfg-eth0</code></p>
 
 <p>修改以下内容:
-{% codeblock lang:bash %}
-DEVICE=eth0 #描述网卡对应的设备别名，例如ifcfg-eth0的文件中它为eth0
-BOOTPROTO=static #设置网卡获得ip地址的方式，可能的选项为static，dhcp或bootp，分别对应静态指定的 ip地址，通过dhcp协议获得的ip地址，通过bootp协议获得的ip地址
-BROADCAST=192.168.0.255 #对应的子网广播地址
-HWADDR=00:03:E8:04:D8:B3 #对应的网卡物理地址
-IPADDR=192.168.1.2 #如果设置网卡获得 ip地址的方式为静态指定，此字段就指定了网卡对应的ip地址
-NETMASK=255.255.255.0 #网卡对应的网络掩码
-Network=192.168.1.0 #网卡对应的网络地址
-IPV6INIT=no
-IPV6_AUTOCONF=no
-ONBOOT=yes #系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">DEVICE</span><span class="o">=</span>eth0 <span class="c">#描述网卡对应的设备别名，例如ifcfg-eth0的文件中它为eth0</span>
+</span><span class='line'><span class="nv">BOOTPROTO</span><span class="o">=</span>static <span class="c">#设置网卡获得ip地址的方式，可能的选项为static，dhcp或bootp，分别对应静态指定的 ip地址，通过dhcp协议获得的ip地址，通过bootp协议获得的ip地址</span>
+</span><span class='line'><span class="nv">BROADCAST</span><span class="o">=</span>192.168.0.255 <span class="c">#对应的子网广播地址</span>
+</span><span class='line'><span class="nv">HWADDR</span><span class="o">=</span>00:03:E8:04:D8:B3 <span class="c">#对应的网卡物理地址</span>
+</span><span class='line'><span class="nv">IPADDR</span><span class="o">=</span>192.168.1.2 <span class="c">#如果设置网卡获得 ip地址的方式为静态指定，此字段就指定了网卡对应的ip地址</span>
+</span><span class='line'><span class="nv">NETMASK</span><span class="o">=</span>255.255.255.0 <span class="c">#网卡对应的网络掩码</span>
+</span><span class='line'><span class="nv">Network</span><span class="o">=</span>192.168.1.0 <span class="c">#网卡对应的网络地址</span>
+</span><span class='line'><span class="nv">IPV6INIT</span><span class="o">=</span>no
+</span><span class='line'><span class="nv">IPV6_AUTOCONF</span><span class="o">=</span>no
+</span><span class='line'><span class="nv">ONBOOT</span><span class="o">=</span>yes <span class="c">#系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 重启网络，使刚才的设置生效。</p>
 
 <p><code>service Network restart</code></p>
@@ -74,56 +83,105 @@ ONBOOT=yes #系统启动时是否设置此网络接口，设置为yes时，系�
 
 <p>extundelete --help 查看软件帮助</p>
 
-<p>{% codeblock lang:bash %}
-Usage: extundelete [options] [--] device-file
-Options:
-  --version, -[vV]       Print version and exit successfully.
-  --help,                Print this help and exit successfully.
-  --superblock           Print contents of superblock in addition to the rest.</p>
-
-<pre><code>                     If no action is specified then this option is implied.
-</code></pre>
-
-<p>  --journal              Show content of journal.
-  --after dtime          Only process entries deleted on or after 'dtime'.
-  --before dtime         Only process entries deleted before 'dtime'.
-Actions:
-  --inode ino            Show info on inode 'ino'.
-  --block blk            Show info on block 'blk'.
-  --restore-inode ino[,ino,...]</p>
-
-<pre><code>                     Restore the file(s) with known inode number 'ino'.
-                     The restored files are created in ./RESTORED_FILES
-                     with their inode number as extension (ie, file.12345).
-</code></pre>
-
-<p>  --restore-file 'path'  Will restore file 'path'. 'path' is relative to root</p>
-
-<pre><code>                     of the partition and does not start with a '/' (it
-                     must be one of the paths returned by --dump-names).
-                     The restored file is created in the current
-                     directory as 'RECOVERED_FILES/path'.
-</code></pre>
-
-<p>  --restore-files 'path' Will restore files which are listed in the file 'path'.</p>
-
-<pre><code>                     Each filename should be in the same format as an option
-                     to --restore-file, and there should be one per line.
-</code></pre>
-
-<p>  --restore-all          Attempts to restore everything.
-  -j journal             Reads an external journal from the named file.
-  -b blocknumber         Uses the backup superblock at blocknumber when opening</p>
-
-<pre><code>                     the file system.
-</code></pre>
-
-<p>  -B blocksize           Uses blocksize as the block size when opening the file</p>
-
-<pre><code>                     system.  The number should be the number of bytes.
-</code></pre>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Usage: extundelete <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>--<span class="o">]</span> device-file
+</span><span class='line'>Options:
+</span><span class='line'>  --version, -<span class="o">[</span>vV<span class="o">]</span>       Print version and <span class="nb">exit </span>successfully.
+</span><span class='line'>  --help,                Print this <span class="nb">help </span>and <span class="nb">exit </span>successfully.
+</span><span class='line'>  --superblock           Print contents of superblock in addition to the rest.&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     If no action is specified <span class="k">then </span>this option is implied.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  --journal              Show content of journal.
+</span><span class='line'>  --after dtime          Only process entries deleted on or after <span class="s1">&#39;dtime&#39;</span>.
+</span><span class='line'>  --before dtime         Only process entries deleted before <span class="s1">&#39;dtime&#39;</span>.
+</span><span class='line'>Actions:
+</span><span class='line'>  --inode ino            Show info on inode <span class="s1">&#39;ino&#39;</span>.
+</span><span class='line'>  --block blk            Show info on block <span class="s1">&#39;blk&#39;</span>.
+</span><span class='line'>  --restore-inode ino<span class="o">[</span>,ino,...<span class="o">]</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     Restore the file<span class="o">(</span>s<span class="o">)</span> with known inode number <span class="s1">&#39;ino&#39;</span>.
+</span><span class='line'>                     The restored files are created in ./RESTORED_FILES
+</span><span class='line'>                     with their inode number as extension <span class="o">(</span>ie, file.12345<span class="o">)</span>.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  --restore-file <span class="s1">&#39;path&#39;</span>  Will restore file <span class="s1">&#39;path&#39;</span>. <span class="s1">&#39;path&#39;</span> is relative to root&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     of the partition and does not start with a <span class="s1">&#39;/&#39;</span> <span class="o">(</span>it
+</span><span class='line'>                     must be one of the paths returned by --dump-names<span class="o">)</span>.
+</span><span class='line'>                     The restored file is created in the current
+</span><span class='line'>                     directory as <span class="s1">&#39;RECOVERED_FILES/path&#39;</span>.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  --restore-files <span class="s1">&#39;path&#39;</span> Will restore files which are listed in the file <span class="s1">&#39;path&#39;</span>.&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     Each filename should be in the same format as an option
+</span><span class='line'>                     to --restore-file, and there should be one per line.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  --restore-all          Attempts to restore everything.
+</span><span class='line'>  -j journal             Reads an external journal from the named file.
+</span><span class='line'>  -b blocknumber         Uses the backup superblock at blocknumber when opening&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     the file system.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  -B blocksize           Uses blocksize as the block size when opening the file&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     system.  The number should be the number of bytes.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>软件支持根据时间，文件路径，inode恢复删除的文件，这里指定文件路径恢复误删文件</p>
 
@@ -160,58 +218,108 @@ extundelete /dev/sda3 --restore-all
 
 <p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下</p>
 
-<p>{% codeblock lang:bash %}</p>
-
-<h1>!/bin/sh</h1>
-
-<p>#</p>
-
-<h1>kill and remove OLD novacomd upstart</h1>
-
-<p>#
-if [ -e /etc/event.d/novacomd ] ; then
-stop novacomd
-rm -f /etc/event.d/novacomd
-fi</p>
-
-<p>#</p>
-
-<h1>remove novacomd from /usr/local/bin</h1>
-
-<p>#
-if [ -e /usr/local/bin/novacomd ] ; then
-rm -f /usr/local/bin/novacomd
-fi</p>
-
-<p>#</p>
-
-<h1>check for new upstart</h1>
-
-<p>#
-if [ -e /etc/init/rc.conf ] ; then
-if [ -e /etc/init/palm-novacomd.conf ] ; then
-rm -f /etc/init/palm-novacomd.conf
-fi
-cp -a  /opt/Palm/novacom/scripts/novacomd-conf    /etc/init/palm-novacomd.conf
-elif [ -e /etc/event.d ] ; then
-ln -fs /opt/Palm/novacom/scripts/novacomd-upstart /etc/event.d/palm-novacomd
-fi
-#</p>
-
-<h1>(re)start novacomd</h1>
-
-<p>#
-stop palm-novacomd || true
-killall -v -q novacomd
-start palm-novacomd || true
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;!/bin/sh&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;kill and remove OLD novacomd upstart&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/event.d/novacomd <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>stop novacomd
+</span><span class='line'>rm -f /etc/event.d/novacomd
+</span><span class='line'><span class="k">fi</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;remove novacomd from /usr/local/bin&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /usr/local/bin/novacomd <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>rm -f /usr/local/bin/novacomd
+</span><span class='line'><span class="k">fi</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;check <span class="k">for </span>new upstart&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/init/rc.conf <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/init/palm-novacomd.conf <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>rm -f /etc/init/palm-novacomd.conf
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>cp -a  /opt/Palm/novacom/scripts/novacomd-conf    /etc/init/palm-novacomd.conf
+</span><span class='line'><span class="k">elif</span> <span class="o">[</span> -e /etc/event.d <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>ln -fs /opt/Palm/novacom/scripts/novacomd-upstart /etc/event.d/palm-novacomd
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'><span class="c">#&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;<span class="o">(</span>re<span class="o">)</span>start novacomd&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'>stop palm-novacomd <span class="o">||</span> <span class="nb">true</span>
+</span><span class='line'>killall -v -q novacomd
+</span><span class='line'>start palm-novacomd <span class="o">||</span> <span class="nb">true</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>直接运行脚本显然是不行的，archlinux没有/etc/init/和/etc/event.d/目录，/etc/init/实际是指向/etc/rc.d/int.d/的一个符号链接文件，/etc/event.d/是ubuntu特有的upstart机制的核心目录，archlinux的服务可以通过特有的rc.conf启动，也可以通过/etc/init.d/或者/etc/rc.d/下建立脚本创建服务。了解脚本后将novacomd复制到/etc/rc.d/,novacomd.conf复制到/etc/conf.d/做完archlinux下的改动后，在终端里输入
-{% codeblock lang:bash %}</p>
-
-<p>/etc/rc.d/novacom start</p>
-
-<p>{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;/etc/rc.d/novacom start&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>提示未找的设备，谷歌一番后在http://www.webos-internals.org/wiki/Accessing_Linux_archlinux 上发现解决方法:"novacomd doesn't work under archlinux , so we have to use ubuntu's libusb. "意想不到的是wiki中给出了一条简便方法，从aur下载网友打包好的novacom驱动，汗，之前怎么没有想到在aur里搜索一下。</p>
 
@@ -341,9 +449,9 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 
 <p>这里有一个使用&amp;&amp;的简单例子：</p>
 
-<p>{% codeblock lang:bash %}
-$ cp justing.doc justing.bak &amp;&amp; echo “if you are seeing this then cp was OK”
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>cp justing.doc justing.bak &amp;amp;&amp;amp; <span class="nb">echo</span> “if you are seeing this <span class="k">then </span>cp was OK”
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h1>if you are seeing this then cp was OK</h1>
 
@@ -351,19 +459,20 @@ $ cp justing.doc justing.bak &amp;&amp; echo “if you are seeing this then cp w
 
 <p>再看一个更为实用的例子：</p>
 
-<p>{% codeblock lang:bash %}
-$ mv /apps/bin /apps/dev/bin &amp;&amp; rm -r /apps/bin　
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>mv /apps/bin /apps/dev/bin &amp;amp;&amp;amp; rm -r /apps/bin　
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>在上面的例子中，/apps/bin目录将会被移到/apps/dev/bin目录下，如果它没有被成功执行，就不会删除/apps/bin目录。</p>
 
 <p>在下面的例子中，文件quarter_end.txt首先将被排序并输出到文件quarter.sorted中，只有这一命令执行成功之后，文件quarter.sorted才会被打印出来：</p>
 
-<p>{% codeblock lang:bash %}
-$ sort quarter_end.txt > quarter.sorted &amp;&amp; lp quarter.sorted
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sort quarter_end.txt &gt; quarter.sorted &amp;amp;&amp;amp; lp quarter.sorted
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>{% codeblock lang:bash %}<!--more--></p>
+<!--more-->
+
 
 <h1>6.2 使用||</h1>
 
@@ -375,31 +484,31 @@ $ sort quarter_end.txt > quarter.sorted &amp;&amp; lp quarter.sorted
 
 <p>这里有一个使用||的简单例子：</p>
 
-<p>{% codeblock lang:bash %}
-$ cp wopper.txt wopper.bak || echo “if you are seeing this cp failed”
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>cp wopper.txt wopper.bak <span class="o">||</span> <span class="nb">echo</span> “if you are seeing this cp failed”
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>{% codeblock lang:bash %}
-cp: wopper.txt: No such file or directory
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>cp: wopper.txt: No such file or directory
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>{% codeblock lang:bash %}
-if you are seeing this cp failed
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="k">if </span>you are seeing this cp failed
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>在上面的例子中，拷贝命令没有能够被成功执行，因此||后面的命令被执行。</p>
 
 <p>这里有一个更为实用的例子。我希望从一个审计文件中抽取第1个和第5个域，并将其输出到一个临时文件中，如果这一操作未成功，我希望能够收到一个相应邮件：</p>
 
-<p>{% codeblock lang:bash %}
-$ awk ‘{print $5}’ acc.qtr > qtr.tmp || echo “Sorry the payroll extraction didn’t work” | mail dave
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>awk ‘<span class="o">{</span>print <span class="nv">$5</span><span class="o">}</span>’ acc.qtr &gt; qtr.tmp <span class="o">||</span> <span class="nb">echo</span> “Sorry the payroll extraction didn’t work” | mail dave
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>在这里不只可以使用系统命令；这里我们首先对month_end.txt文件执行了一个名为comet的shell脚本，如果该脚本未执行成功，该shell将结束。</p>
 
-<p>{% codeblock lang:bash %}
-$ comet month_end.txt || exit
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>comet month_end.txt <span class="o">||</span> <span class="nb">exit</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h1>6.3 用（）和{}将命令结合在一起</h1>
 
@@ -419,23 +528,23 @@ $ comet month_end.txt || exit
 
 <p>再回到前面那个comet脚本的例子，如果这个脚本执行失败了，我很可能会希望执行两个以上的命令，而不只是一个命令。我可以使用这两种方法。这是原先那个例子：</p>
 
-<p>{% codeblock lang:bash %}
-$ comet month_end.txt || exit
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>comet month_end.txt <span class="o">||</span> <span class="nb">exit</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>现在如果该脚本执行失败了，我希望先给自己发个邮件，然后再退出，可以用下面的方法来实现：</p>
 
-<p>{% codeblock lang:bash %}
-$ comet month_end || (echo “Hello, guess what! Comet did not work”|mail dave;exit)
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>comet month_end <span class="o">||</span> <span class="o">(</span><span class="nb">echo</span> “Hello, guess what! Comet did not work”|mail dave;exit<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>在上面的例子中，如果只使用了命令分隔符而没有把它们组合在一起，shell将直接执行最后一个命令（exit）。</p>
 
 <p>我们再回头来看看前面那个使用&amp;&amp;排序的例子，下面是原来的那个例子：</p>
 
-<p>{% codeblock lang:bash %}
-$ sort quarter_end.txt > quarter.sorted &amp;&amp; lp quarter.sorted
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sort quarter_end.txt &gt; quarter.sorted &amp;amp;&amp;amp; lp quarter.sorted
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>使用命令组合的方法，如果sort命令执行成功了，可以先将输出文件拷贝到一个日志区，然后再打印。</p>
 

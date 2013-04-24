@@ -1,0 +1,158 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ubuntu安装分区建议方案 | Ocean's Blog</title>
+	<meta name="author" content="Ocean">
+
+	
+	<meta name="description" content="Ubuntu安装分区建议方案 19Nov 单linux系统的分区方案
+这种情况下无需建立扩展分区，一块硬盘可以全部分成四个主分区，MBR和所有分区信息全部保存在第一个512B的扇区里；查找分区信息最快。
+本人笔记本硬盘160G，具体分区方案如下：
+sda1&#8212;20G,ext4，挂载至／ &hellip;">
+	
+
+	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
+
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><nav><ul>
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章存档</a></li>
+  <li><a href="/blog/categories">文章分类</a></li>
+  <li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+</header>
+	<div id="content" class="inner"><article class="post"><header>
+  
+  <h1 class="title">Ubuntu安装分区建议方案</h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2010-11-19T00:00:00+08:00">
+			<span class="day">19</span><span class="month">Nov</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>单linux系统的分区方案
+这种情况下无需建立扩展分区，一块硬盘可以全部分成四个主分区，MBR和所有分区信息全部保存在第一个512B的扇区里；查找分区信息最快。
+本人笔记本硬盘160G，具体分区方案如下：
+sda1&#8212;20G,ext4，挂载至／目录；如果所用硬盘较小，／分区可以小到7G，不建议这样做，如果硬盘够大，就没必要省这几个G了，大点以后装大软件有余地；
+sda2&#8212;256MB-512MB-1024MB-2048MB(请根据内存大小选择，为物理内存大小的1-2倍，但一般不要超过2048MB)，swap格式，无需挂载点；
+sda3&#8212;1G-5G-8G（如果硬盘不够大，又不需刻录DVD，选1G，否则用5G为佳）,ext4，挂载至／tmp目录，硬盘大的可多分几个G，备份时方便点,本人分了了18G，考虑经常备份系统你，多分点一以后不够用分就比较复杂；
+sda4&#8212;120G所有剩余磁盘空间,ext4，挂载至／home目录；
+请注意分区的顺序、设备符和各目录挂载的次序，依次是/，swap，/tmp，/home；平均磁头移臂次数较少，读写综合性能较优。</p>
+
+    
+      <div class="sharing">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+</div>
+    
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
+
+    
+      
+      
+      <a class="comment" href="/blog/2010/11/19/ubuntu-installation-partition-proposal/#disqus_thread">Comments</a>
+      
+    
+  </footer>
+  
+</div>
+
+<section id="comment">
+	<div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+  </div>
+</section>
+</article></div>
+	<footer id="footer" class="inner"><div class="social alignright">
+	
+	
+	
+	
+	
+	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>&copy; 2013 Ocean</p>
+<div class="clearfix"></div></footer>
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('.entry-content').each(function(i){
+			var _i = i;
+			$(this).find('img').each(function(){
+				var alt = $(this).attr('alt');
+
+				if (alt == '' || typeof alt == 'undefined'){
+					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
+				} else {
+					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
+				}
+			});
+		});
+		$('.fancybox').fancybox();
+	})(jQuery);
+</script>
+<div id="phasebeam">
+	<canvas></canvas>
+	<canvas></canvas>
+	<canvas></canvas>
+</div>
+<script src="/javascripts/phasebeam.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://0cean.github.com/blog/2010/11/19/ubuntu-installation-partition-proposal/';
+        var disqus_url = 'http://0cean.github.com/blog/2010/11/19/ubuntu-installation-partition-proposal/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+</html>

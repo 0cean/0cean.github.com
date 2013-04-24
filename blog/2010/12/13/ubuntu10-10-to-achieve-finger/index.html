@@ -1,0 +1,169 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ubuntu10.10下实现指纹登录 | Ocean's Blog</title>
+	<meta name="author" content="Ocean">
+
+	
+	<meta name="description" content="Ubuntu10.10下实现指纹登录 13Dec 1、安装thinkfinger软件 ocean@ocean-laptop:~$ sudo apt-get install thinkfinger-tools libpam-thinkfinger 2、采集指纹并校验： ocean@ocean- &hellip;">
+	
+
+	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
+
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><nav><ul>
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章存档</a></li>
+  <li><a href="/blog/categories">文章分类</a></li>
+  <li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+</header>
+	<div id="content" class="inner"><article class="post"><header>
+  
+  <h1 class="title">Ubuntu10.10下实现指纹登录</h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2010-12-13T00:00:00+08:00">
+			<span class="day">13</span><span class="month">Dec</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>1、安装thinkfinger软件</p>
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo apt-get install thinkfinger-tools libpam-thinkfinger</span></div>
+
+
+<p>2、采集指纹并校验：</p>
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo tf-tool &#8211;acquire //采集指纹,连续扫描三次指纹</span></div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo tf-tool &#8211;verify //校验指纹</span></div>
+
+
+<h1>第二步需要超级用户权限,否则不能驱动指纹传感器,,如果提示Initializing&#8230;USB device not found,建议重启一下系统,然后再进行这一步操作,由于博客主题代码问题&#8221;- -acquire&#8221;会显示为&#8221;&#8211;acquire&#8221;,操作的时候请注意</h1>
+
+<p>3、启用指纹功能</p>
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo /usr/lib/pam-thinkfinger/pam-thinkfinger-enable</span></div>
+
+
+<p>4、在debian最新的thinkfinger包中已经放弃原用的 &#8211;add-user参数,而是在第二次运行程序时仍然使用&#8211;acquire参数,自动生成后缀为bir的指纹文件存放在家目录下.
+如果希望在su,sudo时也使用指纹识别(gksu,gksudo包括emacs的tramp也已经可以使用了)就以root用户身份登录后生成指纹文 件.然后重启,登录时先输入用户名,然后原来password处应该已经变成password or swipe finger了.之后就可以用刷指纹代替输入密码了.</p>
+
+    
+      <div class="sharing">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+</div>
+    
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
+
+    
+      
+      
+      <a class="comment" href="/blog/2010/12/13/ubuntu10-10-to-achieve-finger/#disqus_thread">Comments</a>
+      
+    
+  </footer>
+  
+</div>
+
+<section id="comment">
+	<div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+  </div>
+</section>
+</article></div>
+	<footer id="footer" class="inner"><div class="social alignright">
+	
+	
+	
+	
+	
+	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>&copy; 2013 Ocean</p>
+<div class="clearfix"></div></footer>
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('.entry-content').each(function(i){
+			var _i = i;
+			$(this).find('img').each(function(){
+				var alt = $(this).attr('alt');
+
+				if (alt == '' || typeof alt == 'undefined'){
+					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
+				} else {
+					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
+				}
+			});
+		});
+		$('.fancybox').fancybox();
+	})(jQuery);
+</script>
+<div id="phasebeam">
+	<canvas></canvas>
+	<canvas></canvas>
+	<canvas></canvas>
+</div>
+<script src="/javascripts/phasebeam.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://0cean.github.com/blog/2010/12/13/ubuntu10-10-to-achieve-finger/';
+        var disqus_url = 'http://0cean.github.com/blog/2010/12/13/ubuntu10-10-to-achieve-finger/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+</html>

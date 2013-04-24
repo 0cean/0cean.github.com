@@ -1,0 +1,909 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ocean's Blog</title>
+	<meta name="author" content="Ocean">
+
+	
+	<meta name="description" content="原文出处：http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/ 1  curl是什么？
+curl 是一款命令行多协议支持的服务器访问工具,可以用它来访问HTTP服务器，就像浏览器一样。当然了， &hellip;">
+	
+
+	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
+
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><nav><ul>
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章存档</a></li>
+  <li><a href="/blog/categories">文章分类</a></li>
+  <li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+</header>
+	<div id="content" class="inner">
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/06/22/simple-cheat-curl-bar/">Curl 简单作弊条</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-06-22T00:00:00+08:00">
+			<span class="day">22</span><span class="month">Jun</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <div id="content">
+<div class="entry">
+<h5>原文出处：<a href="http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/">http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/</a>
+</h5>
+<h5>1  curl是什么？</h5>
+curl 是一款命令行多协议支持的服务器访问工具,可以用它来访问HTTP服务器，就像浏览器一样。当然了，它也是可以通过FTP下载或上传文件，下次再说这块。
+<h5>2 基本应用</h5>
+<blockquote>curl http://www.douban.com</blockquote>
+上面的命令会在屏幕上输出服务器的响应信息，需要headers信息加 -i/&#8211;include 参数，只需要headers信息可以使用 -I/&#8211;head。
+
+重定向输出：
+<blockquote>curl http://www.douban.com > response.html
+curl http://www.douban.com | grep &#8216;douban.com&#8217;</blockquote>
+如果使用管道，默认会有一个进程信息显示出来，可以使用 -s/&#8211;silent 来不显示它们：
+<blockquote>curl -s http://www.douban.com | grep &#8216;douban.com&#8217;</blockquote>
+如果想保存服务器返回的内容的话，除了使用 > 重定向到一个文件外，还可以使用 -o/&#8211;output 参数指定需要保存到的文件：
+<blockquote>curl http://www.douban.com -o response.html</blockquote>
+非文本文件也能这样保存：
+<blockquote>curl http://img3.douban.com/pics/nav/lg_main_a7.png -o logo.png</blockquote>
+原名保存使用 -O/&#8211;remote-name 选项：
+<blockquote>curl http://img3.douban.com/pics/nav/lg_main_a7.png -O</blockquote>
+不过豆瓣的图片有简单的防盗链，所以可能下载不成功 : ( 继续往下看
+<h5>
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/06/22/simple-cheat-curl-bar/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/06/22/linux-command-execution-order/">Linux下命令执行顺序</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-06-22T00:00:00+08:00">
+			<span class="day">22</span><span class="month">Jun</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <div><a href="http://doc.linuxpk.com/52705.html">本文来自：Linux宝库 &#8211; http://doc.linuxpk.com/52705.html</a></div>
+
+
+<p> </p>
+
+<p>在执行某个命令的时候，有时需要依赖于前一个命令是否执行成功。例如，假设你希望将一个目录中的文件全部拷贝到另外一个目录中后，然后删除源目录中的全部文件。在删除之前，你希望能够确信拷贝成功，否则就有可能丢失所有的文件。</p>
+
+<p>在本章中，我们将讨论：</p>
+
+<h1>命令执行控制。</h1>
+
+<h1>命令组合。</h1>
+
+<p>如果希望在成功地执行一个命令之后再执行另一个命令，或者在一个命令失败后再执行另一个命令，&amp;&amp;和||可以完成这样的功能。相应的命令可以是系统命令或shell脚本。</p>
+
+<p>Shell还提供了在当前shell或子shell中执行一组命令的方法，即使用（）和{}。</p>
+
+<h1>6.1 使用&amp;&amp;</h1>
+
+<p>使用&amp;&amp;的一般形式为：</p>
+
+<p>命令1 &amp;&amp; 命令2</p>
+
+<p>这种命令执行方式相当地直接。&amp;&amp;左边的命令（命令1）返回真(即返回0，成功被执行）后，&amp;&amp;右边的命令（命令2）才能够被执行；换句话说，“如果这个命令执行成功&amp;&amp;那么执行这个命令”。</p>
+
+<p>这里有一个使用&amp;&amp;的简单例子：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>
+</span><span class='line'><span class="nv">$ </span>cp justing.doc justing.bak <span class="o">&amp;&amp;</span> <span class="nb">echo</span> “if you are seeing this <span class="k">then </span>cp was OK”
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>if you are seeing this then cp was OK</h1>
+
+<p>在上面的例子中，&amp;&amp;前面的拷贝命令执行成功，所以&amp;&amp;后面的命令（echo命令）被执行。</p>
+
+<p>再看一个更为实用的例子：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>mv /apps/bin /apps/dev/bin <span class="o">&amp;&amp;</span> rm -r /apps/bin　
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在上面的例子中，/apps/bin目录将会被移到/apps/dev/bin目录下，如果它没有被成功执行，就不会删除/apps/bin目录。</p>
+
+<p>在下面的例子中，文件quarter_end.txt首先将被排序并输出到文件quarter.sorted中，只有这一命令执行成功之后，文件quarter.sorted才会被打印出来：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sort quarter_end.txt &gt; quarter.sorted <span class="o">&amp;&amp;</span> lp quarter.sorted
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/06/22/linux-command-execution-order/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/06/20/some-of-my-subscription/">我的一些订阅</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-06-20T00:00:00+08:00">
+			<span class="day">20</span><span class="month">Jun</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>虽然平时订阅网站或网友的博客使用的是谷歌阅读器，但是由于在墙内，谷歌的许多服务由于种种原因无法正常访问，在电脑上或手机上都是通过某种类似跨栏运动的方法访问谷歌的服务，于是搭建了一个人的RSS阅读器，将自己谷歌阅读器的订阅复制到上面，这样就可以无障碍阅读自己订阅的一些网站博客。</p>
+
+<p>访问地址：<a href="http://reader.nwy.me">http://reader.nwy.me</a> 或 <a href="http://nwy.me/reader">http://nwy.me/reader</a></p>
+
+<p>第一个地址还在解析中，可能需要做跨栏运动才能访问，怕闪到腰的用后面的网址访问。</p>
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/06/20/some-of-my-subscription/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended/">Palm Pre上的推荐补丁列表</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-06-08T00:00:00+08:00">
+			<span class="day"> 8</span><span class="month">Jun</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p><img src="http://nwy.me/wp-content/uploads/2011/06/Palm-Pre-Slide.png" alt="Palm-Pre-Slide" /></p>
+
+<p>ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-orientation-manager-145</p>
+
+<p>ca.canucksoftware.patches.prevent-log-uploads-to-palm - 1.4.5-1 - Prevent Log Uploads to Palm</p>
+
+<p>ca.canucksoftware.patches.prevent-metrix-log-uploads - 1.4.5-1 - Prevent Metrix Log Uploads</p>
+
+<p>com.treo8.patches.device-menu-mods-v1-mod-treo8 - 1.4.5.33.4 - Device menu mods v1 mod treo8</p>
+
+<p>org.webosinternals.patches.app-catalog-show-app-details - 1.4.5-139 - Show App Details</p>
+
+<p>org.webosinternals.patches.app-catalog-show-download-count - 1.4.5-139 - Show Download Count</p>
+
+<p>org.webosinternals.patches.app-launcher-advanced-configuration-for-app-launcher - 1.4.5-73 - Advanced Configuration for App Launcher</p>
+
+<p>org.webosinternals.patches.app-launcher-glass-effect - 1.4.5-1 - Glass Effect</p>
+
+<p>org.webosinternals.patches.browser-hold-tap-context-menu - 1.4.5-131 - Hold Tap Context Menu</p>
+
+<p>org.webosinternals.patches.browser-multi-mod - 1.4.5-36 - Multi Mod</p>
+
+<p>org.webosinternals.patches.browser-send-to-relego - 1.4.5-35 - Send to Relego</p>
+
+<p>org.webosinternals.patches.browser-url-shorten-in-browser - 1.4.5-97 - URL Shorten in Browser</p>
+
+<p>org.webosinternals.patches.browser-view-source-of-webpage - 1.4.5-0 - View Source of Webpage</p>
+
+<p>org.webosinternals.patches.camera-capture-with-volume-keys - 1.4.5-131 - Capture with Volume Keys</p>
+
+<p>org.webosinternals.patches.camera-improved-photo-naming-pre - 1.4.5-1 - Improved Photo Naming PRE</p>
+
+<p>org.webosinternals.patches.camera-simple-shutter-sound-off - 1.4.5-1 - Simple Shutter Sound Off</p>
+
+<p>org.webosinternals.patches.clock-alarm-daily-options - 1.4.5-1 - Alarm Daily Options</p>
+
+<p>org.webosinternals.patches.clock-more-default-snooze-times - 1.4.5-1 - More Default Snooze Times</p>
+
+<p>org.webosinternals.patches.contacts-add-sync-now - 1.4.5-1 - Add Sync Now</p>
+
+<p>org.webosinternals.patches.contacts-swipe-to-delete - 1.4.5-1 - Swipe to Delete</p>
+
+<p>org.webosinternals.patches.email-email-mega-mix - 1.4.5-100 - Email Mega Mix</p>
+
+<p>org.webosinternals.patches.email-save-attachments-to-downloads-folder - 1.4.5-142 - Save Attachments To Downloads Folder</p>
+
+<p>org.webosinternals.patches.messaging-enter-key-for-new-line - 1.4.5-143 - Enter Key for New Line</p>
+
+<p>org.webosinternals.patches.messaging-timestamps-builtin - 1.4.5-1 - Timestamps Builtin</p>
+
+<p>org.webosinternals.patches.misc-unthrottle-download-manager - 1.4.5-137 - Unthrottle Download Manager</p>
+
+<p>org.webosinternals.patches.mojo-smooth-scrolling - 1.4.5-118 - Smooth Scrolling</p>
+
+<p>org.webosinternals.patches.music-player-banshee-linux-compat - 1.4.5-1 - Banshee Linux Compat</p>
+
+<p>org.webosinternals.patches.notifications-just-charge-by-default - 1.4.5-1 - Just Charge By Default</p>
+
+<p>org.webosinternals.patches.pdf-viewer-pdf-redux - 1.4.5-131 - PDF Redux</p>
+
+<p>org.webosinternals.patches.screen-lock-standby-times-deluxe - 1.4.5-10 - Standby Times Deluxe</p>
+
+<p>org.webosinternals.patches.sounds-and-alerts-really-silent-ringer-switch-mute - 1.4.5-28 - Really Silent Ringer Switch Mute</p>
+
+<p>org.webosinternals.patches.top-bar-gps-icon-on-top-bar - 1.4.5-1 - GPS Icon On Top Bar</p>
+
+<p>org.webosinternals.patches.top-bar-ringer-switch-icon - 1.4.5-112 - Ringer Switch Icon</p>
+
+<p>org.webosinternals.patches.top-bar-rotated-270deg-battery-icon-and-percent - 1.4.5-133 - Rotated 270deg Battery Icon And Percent</p>
+
+<p>org.webosinternals.patches.top-bar-system-menu-initial-framework - 1.4.5-33 - System Menu Initial Framework</p>
+
+<p>org.webosinternals.patches.top-bar-system-menu-mods-v1 - 1.4.5-33 - System Menu Mods v1</p>
+
+<p>org.webosinternals.patches.top-bar-system-menu-today-menu - 1.4.5-33 - System Menu Today Menu</p>
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/06/01/the-love-story-of-a-programmer/">一个程序员的爱情故事</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-06-01T00:00:00+08:00">
+			<span class="day"> 1</span><span class="month">Jun</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>作者：http://topic.csdn.net/u/20110517/12/0ab11541-6206-40c9-a8b1-5439d642ab49.html
+注释：http://www.cnblogs.com/zhuqil/archive/2011/05/19/2051373.html</p>
+
+<p>今天在csdn上看了一篇帖子：《这段代码描述我最近的心情》。 才发现原来用代码可以书写人生，对代码的作者十分钦佩。</p>
+
+<p><code></p>
+
+<pre><code> //一个程序员的爱情故事
+public class MyLoveStory
+{
+    public static void Main(string[] args)
+    {
+        //The ForeStory
+        int result = 1;
+        bool love = false;//以前有个小男孩，没有爱情，孤孤单单一个人。
+        if (love)   //他认为如果是爱情。
+            result = AtOneTime();//那必须是两个人在同一个时间爱上彼此。
+        //But Now...&lt;/div&gt;
+</code></pre>
+
+<div>            //但是现在长大了，有了爱情，却出现了第三者
+
+            if (args[0] == &#8220;Has&#8221; && args[1] == &#8220;Third&#8221; && args[2] == &#8220;One&#8221;)            {
+              love = false;//爱情没了
+                result = DoPart();//分手，独自一个人。
+                //现在这个男孩的心情是：如果女生生活的很悲惨，自己会伤心。
+                //如果看到女生活的很幸福，自己更伤心，因为幸福不是自己给的。
+                Console.WriteLine(GetNowHeartState.ToString());
+            }
+        }
+        //男生的心情
+        internal enum HeartState
+        {
+            Sad,
+            MoreSad
+        }
+        //女生的生活状态
+        internal enum LifeState
+        {
+            Nice,
+            Poor,
+        }
+        //男生现在的心情
+        internal HeartState GetNowHeartState(LifeState girlLife)
+        {
+            //现在这个小男孩的心情是：如果生活的很悲惨，自己会伤心。
+            //如果看到女生活的很幸福，自己更伤心，因为幸福不是自己给的。
+            if (gilrLife == LifeState.Poor)
+                return HeartState.Sad;
+            else
+                return HeartState.MoreSad;
+        }
+        //爱情是在同一时间爱上彼此
+        internal static int AtOneTime()
+        {
+            //1+1=2
+            return 1 + 1;
+        }
+        //分手
+        internal static int DoPart()
+        {
+            // 2-1=1
+            return 2 - 1;
+        }
+    }
+<code>
+
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/other/'>Other</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/06/01/the-love-story-of-a-programmer/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/06/01/after-the-blog-was-written-in-the-wall/">写在博客被墙之后</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-06-01T00:00:00+08:00">
+			<span class="day"> 1</span><span class="month">Jun</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>墙</p>
+
+<p>作者：舒婷 </p>
+
+<p>我无法反抗墙，</p>
+
+<p>只有反抗的愿望。</p>
+
+<p>我是什么？</p>
+
+<p>它是什么？很可能</p>
+
+<p>它是我的渐渐老化的皮肤，</p>
+
+<p>既感觉不到雨寒的风霜，</p>
+
+<p>也接受不了米兰的芬芳。</p>
+
+<p>还有可能</p>
+
+<p>我只是株车前草，</p>
+
+<p>装饰性地寄生在它的泥缝里，</p>
+
+<p>我偶然，它必然。</p>
+
+<p>夜晚，墙活动起来，</p>
+
+<p>伸出柔软的伪足，</p>
+
+<p>挤压我，勒索我，</p>
+
+<p>要我适应各种各样的形状。</p>
+
+<p>我惊恐地逃到大街上，</p>
+
+<p>发现相同的噩梦，</p>
+
+<p>挂在每一个人的脚跟后。</p>
+
+<p>一道道畏缩的目光</p>
+
+<p>一堵堵冰冷的墙。</p>
+
+<p>呵，我明白了，</p>
+
+<p>我首先必须反抗的是：</p>
+
+<p>我对墙的妥协，</p>
+
+<p>和对这个世界的不安全感。</p>
+
+<p></div>
+六一儿童节的前一天下午，我的博客不能访问了，ping域名提示解析错误，开了代理后可以访问，用justping显示在国内不能ping通，结论是博客被墙了，那简直是一定的。这让我这个超龄儿童过六一的心情都没有了。推测博客被墙的可能原因是之前写过一片关于ssh转发的文章，有幸被研究对抗墙的网友Other过去，当时为了避免出现敏感词导致博客被墙，还关闭了来自网友博客的引用通知，很显然即使这样做也没有逃脱墙的魔爪。</p>
+
+<p>什么叫做体制（institutionalized）？《肖申克的救赎》中的安迪说：“这种东西，起初，你讨厌它，然后你逐渐地习惯它，足够的时间后你开始依赖它。这就是体制。”
+画外音：博主，你不是说博客被墙了，为什么我还能访问？呃，博主对域名做了CDN。</p>
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/06/01/after-the-blog-was-written-in-the-wall/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/05/31/realm-of-the-programmer-100-species/">程序员的 100 种境界</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-05-31T00:00:00+08:00">
+			<span class="day">31</span><span class="month">May</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>转载出处：<a href="http://eishn.blog.163.com/blog/static/652318201102831731444/">http://eishn.blog.163.com/blog/static/652318201102831731444/</a> 作者：沈崴</p>
+
+<p>境界零：混沌态、浆糊状（小白、新兵）</p>
+
+<p><img src="http://nwy.me/wp-content/uploads/2011/05/img200810141202482_s.jpg" alt="" /></p>
+
+<p>刚刚毕业、初出茅庐，有丰富把妹经验，无任何项目经验。</p>
+
+<p>典型台词：“哇塞，薯熟你居然能写出这样这样酷的程序啊”。</p>
+
+<p>此时身为薯熟的你切不可信以为真，因为任何简单的程序对他们来说 ……</p>
+
+<pre><code>             其实都是写不出来的。
+</code></pre>
+
+<p>技能：hello world!</p>
+
+<p>经验：0 年</p>
+
+<p>角色：新手村游荡者（虽然 ID 很酷，但改变不了时常被怪虐的事实）</p>
+
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/other/'>Other</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/05/31/realm-of-the-programmer-100-species/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/05/16/notebook-bios-upgrade/">升级笔记本BIOS</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-05-16T00:00:00+08:00">
+			<span class="day">16</span><span class="month">May</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>前几天看到论坛网友讨论联想官方放出T61新的BIOS，看了更新说明:，由于没有做多大的变动，就没有更新。今天看到有国外网友发布了基于这次更新BIOS的版本，做了以下修改：</p>
+
+<ol>
+<li>SATA-II 3Gb/s</li>
+<li>SLIC2.1</li>
+<li>whitelist removed</li>
+<li>Dual-IDA support</li>
+</ol>
+
+
+<p>这次升级BIOS的主要原因是：破解了联想的SATA限制，SATA从1.5Gb/s上升到3Gb/s，硬盘读写速度可以从130MB/s达到260MB/s。本次升级是刻盘刷的BIOS，整个过程有惊无险。</p>
+
+<p>虽然之前在Windows XP和Windows PE下刷过BIOS，不过随着年龄的增长，做事有些畏首畏尾了，觉得没必要为了节省一张刻录光盘冒风险，反正手头有一桶莱德的DVD-RW盘。整个过程有些惊险，进入BIOS关闭power on password的时候才发现自己忘记了power on password，平时用的是指纹和super password，于是拆机CMOS放电，中间不小心还把主板上CMOS电池的插座一起拔下来了，好在没有拔断针脚，又小心的插回去了。清除了power on password后，开机放入光盘后，从光盘启动，报错，提示flash over lan没有开启，又重启进BIOS设置，之后等待检测正常后开始升级BIOS，30s左右，伴随长鸣升级完成，笔记本重新启动，正常进入系统。</p>
+
+<p>测试了一下硬盘的读取速度，附图</p>
+
+<p>![Screenshot-500 GB 硬盘 (ATA Hitachi HTS725050A9A364) – 性能测试](http://nwy.me/wp-content/uploads/2011/05/Screenshot-500-GB-%E7%A1%AC%E7%9B%98-ATA-Hitachi-HTS725050A9A364-%E2%80%93-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.png
+附下载链接:
+<a href="http://forum.notebookreview.com/lenovo-ibm/459591-t61-x61-sata-ii-1-5-gb-s-cap-willing-pay-solution-8.html">http://forum.notebookreview.com/lenovo-ibm/459591-t61-x61-sata-ii-1-5-gb-s-cap-willing-pay-solution-8.html</a></p>
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/05/16/notebook-bios-upgrade/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/05/04/blog-matters-to-be-improved/">博客待完善事宜</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-05-04T00:00:00+08:00">
+			<span class="day"> 4</span><span class="month">May</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <h1>已知本博客存在的问题</h1>
+
+<p>一、 谷歌爬虫抓取错误。
+二、 wordpress文件存放路径不合理。
+三、 尚未通过w3c验证。
+四、 文章链接格式混乱。
+五、 数据库是否冗余没有做过检查。</p>
+
+<p>问题一：已修复，通过查看谷歌网站管理工具里的记录，发现是之前迁移博客更换域名后为了不降低谷歌收录做301重定向的时候，未针对url访问做判断，旧的博客路径里包含archives/，迁移到新博客后改变了博客的url格式，造成从旧博客301重定向的访问也带有archives/，于是出现404错误。
+解决方法：仍然是使用重定向的方法在archives/目录下新建.htaccess文件把访问重定向到首页，代码如下：
+<code>Redirect /archives http://nwy.me</code></p>
+
+<p>问题二：尚未修复，目前的wordpress文件扔在网站空间的根目录下，维护的时候很混乱不说，还存在安全问题。暂时不敢贸然对整个博客做重定向，如果被谷歌认为是重复内容做出惩罚就杯具了。要提一下的是估计许多网友会和我一样安装wordpress后不会删除readme.html文件，这样一来别人就可以通过访问这个文件知道wordpress的版本号，通过版本号可以判断时候有无漏洞可以利用。总之建议安装完wordpress后删除空间里的readme.html文件.</p>
+
+<p>问题三：这也是是博客已知问题里的重点，通过w3c验证发现博客有22 Errors, 2 warning(s) ，看来这个问题不能再拖了。</p>
+
+<p>问题四：博客为了提高网站收录做了页面静态化，静态化用过多个url格式，导致新旧日志url风格不统一，目前的url格式是通过插件实现url中包含用谷歌自动翻译过的日志标题，看资料，谷歌可以收录中文url，理论上url中包含关键字，有利于seo优化，但是有中文的原因，就必须要对url做编码，从后台的访问日志来看会出现莫名其妙的缺失字符问题。</p>
+
+<p>问题五：迁移博客导入备份数据库后未做过优化，数据库存在许多无用的字段，这个需要花时间确认无误后再删除。</p>
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/05/04/blog-matters-to-be-improved/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/">SSH自动运行以及端口释放</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-05-02T00:00:00+08:00">
+			<span class="day"> 2</span><span class="month">May</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
+ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGLEVEL</span><span class="o">=</span>7
+</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_DEBUG</span><span class="o">=</span>DEBUG
+</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGFILE</span><span class="o">=</span>~/.autossh.log
+</span><span class='line'>autossh -M 2000 -N -f -q -D 127.0.0.1:7070 user@hostname
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>autossh支持环境变量，具体参考 http://www.harding.motd.ca/autossh/README ，上面的脚本里指定了debug级别以及debug log存放路径。
+但是每次系统挂起或休眠后再唤醒ssh代理就失效了，查看autossh.log发现是端口占用问题,直接结束占用端口的ssh，重新运行脚本。此处因为
+知道是什么进程占用哪个端口，所以可以直接结束。如果遇到未知的程序占用问题，可以用下列方法查看</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>lsof -i :port
+</span><span class='line'>netstat -an |grep port
+</span><span class='line'>fuser -n tcp/udp port
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>查到后kill掉就可以释放端口，如果是释放mysq的端口则建议使用kill结束指定占用端口的进程而不要killall mysql程序，否则可能会产生数据库碎片。</p>
+
+<p>后续:我写的ssh自动运行脚本是通过系统的启动运行程序来是实现开机自动运行，所以会导致挂起或休眠后再次唤醒ssh隧道无法使用提示端口占用
+Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
+upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+<nav id="pagenavi">
+	<a href="/" class="prev alignleft">Prev</a>
+	<a href="/blog/page/3/" class="next alignright">Next</a>
+ <div class="clearfix"></div>
+</nav>
+</div>
+	<footer id="footer" class="inner"><div class="social alignright">
+	
+	
+	
+	
+	
+	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>&copy; 2013 Ocean</p>
+<div class="clearfix"></div></footer>
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('.entry-content').each(function(i){
+			var _i = i;
+			$(this).find('img').each(function(){
+				var alt = $(this).attr('alt');
+
+				if (alt == '' || typeof alt == 'undefined'){
+					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
+				} else {
+					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
+				}
+			});
+		});
+		$('.fancybox').fancybox();
+	})(jQuery);
+</script>
+<div id="phasebeam">
+	<canvas></canvas>
+	<canvas></canvas>
+	<canvas></canvas>
+</div>
+<script src="/javascripts/phasebeam.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+</html>

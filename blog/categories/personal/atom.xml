@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Personal | Ocean's Blog]]></title>
   <link href="http://0cean.github.com/blog/categories/personal/atom.xml" rel="self"/>
   <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T20:20:41+08:00</updated>
+  <updated>2013-04-24T20:21:41+08:00</updated>
   <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
@@ -22,58 +22,108 @@
 
 <p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下</p>
 
-<p>{% codeblock lang:bash %}</p>
-
-<h1>!/bin/sh</h1>
-
-<p>#</p>
-
-<h1>kill and remove OLD novacomd upstart</h1>
-
-<p>#
-if [ -e /etc/event.d/novacomd ] ; then
-stop novacomd
-rm -f /etc/event.d/novacomd
-fi</p>
-
-<p>#</p>
-
-<h1>remove novacomd from /usr/local/bin</h1>
-
-<p>#
-if [ -e /usr/local/bin/novacomd ] ; then
-rm -f /usr/local/bin/novacomd
-fi</p>
-
-<p>#</p>
-
-<h1>check for new upstart</h1>
-
-<p>#
-if [ -e /etc/init/rc.conf ] ; then
-if [ -e /etc/init/palm-novacomd.conf ] ; then
-rm -f /etc/init/palm-novacomd.conf
-fi
-cp -a  /opt/Palm/novacom/scripts/novacomd-conf    /etc/init/palm-novacomd.conf
-elif [ -e /etc/event.d ] ; then
-ln -fs /opt/Palm/novacom/scripts/novacomd-upstart /etc/event.d/palm-novacomd
-fi
-#</p>
-
-<h1>(re)start novacomd</h1>
-
-<p>#
-stop palm-novacomd || true
-killall -v -q novacomd
-start palm-novacomd || true
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;!/bin/sh&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;kill and remove OLD novacomd upstart&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/event.d/novacomd <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>stop novacomd
+</span><span class='line'>rm -f /etc/event.d/novacomd
+</span><span class='line'><span class="k">fi</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;remove novacomd from /usr/local/bin&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /usr/local/bin/novacomd <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>rm -f /usr/local/bin/novacomd
+</span><span class='line'><span class="k">fi</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;check <span class="k">for </span>new upstart&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/init/rc.conf <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/init/palm-novacomd.conf <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>rm -f /etc/init/palm-novacomd.conf
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>cp -a  /opt/Palm/novacom/scripts/novacomd-conf    /etc/init/palm-novacomd.conf
+</span><span class='line'><span class="k">elif</span> <span class="o">[</span> -e /etc/event.d <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>ln -fs /opt/Palm/novacom/scripts/novacomd-upstart /etc/event.d/palm-novacomd
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'><span class="c">#&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;<span class="o">(</span>re<span class="o">)</span>start novacomd&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'>stop palm-novacomd <span class="o">||</span> <span class="nb">true</span>
+</span><span class='line'>killall -v -q novacomd
+</span><span class='line'>start palm-novacomd <span class="o">||</span> <span class="nb">true</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>直接运行脚本显然是不行的，archlinux没有/etc/init/和/etc/event.d/目录，/etc/init/实际是指向/etc/rc.d/int.d/的一个符号链接文件，/etc/event.d/是ubuntu特有的upstart机制的核心目录，archlinux的服务可以通过特有的rc.conf启动，也可以通过/etc/init.d/或者/etc/rc.d/下建立脚本创建服务。了解脚本后将novacomd复制到/etc/rc.d/,novacomd.conf复制到/etc/conf.d/做完archlinux下的改动后，在终端里输入
-{% codeblock lang:bash %}</p>
-
-<p>/etc/rc.d/novacom start</p>
-
-<p>{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;/etc/rc.d/novacom start&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>提示未找的设备，谷歌一番后在http://www.webos-internals.org/wiki/Accessing_Linux_archlinux 上发现解决方法:"novacomd doesn't work under archlinux , so we have to use ubuntu's libusb. "意想不到的是wiki中给出了一条简便方法，从aur下载网友打包好的novacom驱动，汗，之前怎么没有想到在aur里搜索一下。</p>
 
