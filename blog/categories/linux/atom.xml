@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Ocean's Blog]]></title>
   <link href="http://0cean.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T20:15:31+08:00</updated>
+  <updated>2013-04-24T20:20:41+08:00</updated>
   <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
@@ -341,7 +341,9 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 
 <p>这里有一个使用&amp;&amp;的简单例子：</p>
 
-<p>｛% codeblock lang:bash %} $ cp justing.doc justing.bak &amp;&amp; echo “if you are seeing this then cp was OK” {% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+$ cp justing.doc justing.bak &amp;&amp; echo “if you are seeing this then cp was OK”
+{% endcodeblock %}</p>
 
 <h1>if you are seeing this then cp was OK</h1>
 
@@ -349,13 +351,17 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 
 <p>再看一个更为实用的例子：</p>
 
-<p>{% codeblock lang:bash %}$ mv /apps/bin /apps/dev/bin &amp;&amp; rm -r /apps/bin　{% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+$ mv /apps/bin /apps/dev/bin &amp;&amp; rm -r /apps/bin　
+{% endcodeblock %}</p>
 
 <p>在上面的例子中，/apps/bin目录将会被移到/apps/dev/bin目录下，如果它没有被成功执行，就不会删除/apps/bin目录。</p>
 
 <p>在下面的例子中，文件quarter_end.txt首先将被排序并输出到文件quarter.sorted中，只有这一命令执行成功之后，文件quarter.sorted才会被打印出来：</p>
 
-<p>{% codeblock lang:bash %}$ sort quarter_end.txt > quarter.sorted &amp;&amp; lp quarter.sorted{% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+$ sort quarter_end.txt > quarter.sorted &amp;&amp; lp quarter.sorted
+{% endcodeblock %}</p>
 
 <p>{% codeblock lang:bash %}<!--more--></p>
 
@@ -369,21 +375,31 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 
 <p>这里有一个使用||的简单例子：</p>
 
-<p>{% codeblock lang:bash %}$ cp wopper.txt wopper.bak || echo “if you are seeing this cp failed”{% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+$ cp wopper.txt wopper.bak || echo “if you are seeing this cp failed”
+{% endcodeblock %}</p>
 
-<p>{% codeblock lang:bash %}cp: wopper.txt: No such file or directory{% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+cp: wopper.txt: No such file or directory
+{% endcodeblock %}</p>
 
-<p>{% codeblock lang:bash %}if you are seeing this cp failed{% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+if you are seeing this cp failed
+{% endcodeblock %}</p>
 
 <p>在上面的例子中，拷贝命令没有能够被成功执行，因此||后面的命令被执行。</p>
 
 <p>这里有一个更为实用的例子。我希望从一个审计文件中抽取第1个和第5个域，并将其输出到一个临时文件中，如果这一操作未成功，我希望能够收到一个相应邮件：</p>
 
-<p>{% codeblock lang:bash %}$ awk ‘{print $5}’ acc.qtr > qtr.tmp || echo “Sorry the payroll extraction didn’t work” | mail dave{% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+$ awk ‘{print $5}’ acc.qtr > qtr.tmp || echo “Sorry the payroll extraction didn’t work” | mail dave
+{% endcodeblock %}</p>
 
 <p>在这里不只可以使用系统命令；这里我们首先对month_end.txt文件执行了一个名为comet的shell脚本，如果该脚本未执行成功，该shell将结束。</p>
 
-<p>{% codeblock lang:bash %}$ comet month_end.txt || exit{% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+$ comet month_end.txt || exit
+{% endcodeblock %}</p>
 
 <h1>6.3 用（）和{}将命令结合在一起</h1>
 
@@ -403,17 +419,23 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 
 <p>再回到前面那个comet脚本的例子，如果这个脚本执行失败了，我很可能会希望执行两个以上的命令，而不只是一个命令。我可以使用这两种方法。这是原先那个例子：</p>
 
-<p>{% codeblock lang:bash %}$ comet month_end.txt || exit{% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+$ comet month_end.txt || exit
+{% endcodeblock %}</p>
 
 <p>现在如果该脚本执行失败了，我希望先给自己发个邮件，然后再退出，可以用下面的方法来实现：</p>
 
-<p>{% codeblock lang:bash %}$ comet month_end || (echo “Hello, guess what! Comet did not work”|mail dave;exit){% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+$ comet month_end || (echo “Hello, guess what! Comet did not work”|mail dave;exit)
+{% endcodeblock %}</p>
 
 <p>在上面的例子中，如果只使用了命令分隔符而没有把它们组合在一起，shell将直接执行最后一个命令（exit）。</p>
 
 <p>我们再回头来看看前面那个使用&amp;&amp;排序的例子，下面是原来的那个例子：</p>
 
-<p>{% codeblock lang:bash %}$ sort quarter_end.txt > quarter.sorted &amp;&amp; lp quarter.sorted{% endcodeblock %}</p>
+<p>{% codeblock lang:bash %}
+$ sort quarter_end.txt > quarter.sorted &amp;&amp; lp quarter.sorted
+{% endcodeblock %}</p>
 
 <p>使用命令组合的方法，如果sort命令执行成功了，可以先将输出文件拷贝到一个日志区，然后再打印。</p>
 
