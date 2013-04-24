@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Shell | Ocean's Blog]]></title>
+  <link href="http://blog.nwy.me/blog/categories/shell/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-04-24T14:07:57+08:00</updated>
+  <id>http://blog.nwy.me/</id>
+  <author>
+    <name><![CDATA[Ocean]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[用SED删除程序代码里的行号以及空格]]></title>
+    <link href="http://blog.nwy.me/blog/2011/03/31/remove-with-a-sed-program-code-line-numbers-and-spaces-where/"/>
+    <updated>2011-03-31T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2011/03/31/remove-with-a-sed-program-code-line-numbers-and-spaces-where</id>
+    <content type="html"><![CDATA[<p>有时候在网上搜索到的程序代码复制下来后会有行号，在代码行数较少的情况下可以手动删除，遇到上百行代码的时候要是手动删除就是对体力加毅力的考验，而且不符合电工风格，于是想到使用正则表达式来实现自动删除。
+分别使用VIM和SED实现删除代码里的行号以及空格，最近才开始学正则表达式，语法参数还不是很熟悉，反复调试了几次后才成功的。
+1.使用VIM
+vim finlname,在command模式, :%s/<sup>[0-9][</sup> ]*//
+2.使用SED
+sed -r 's/<sup>\s*[0-9]+[</sup> ]+//' filename >filename1
+sed加-i参数可以直接修改文件，-i 后面指定扩展名则会生成备份文件，就可以不用管道命令。
+AWK还不会用，学会了在补上</p>
+]]></content>
+  </entry>
+  
+</feed>

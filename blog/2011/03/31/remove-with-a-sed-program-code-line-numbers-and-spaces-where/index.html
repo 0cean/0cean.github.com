@@ -1,0 +1,155 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>用SED删除程序代码里的行号以及空格 | Ocean's Blog</title>
+	<meta name="author" content="Ocean">
+
+	
+	<meta name="description" content="用SED删除程序代码里的行号以及空格 31Mar 有时候在网上搜索到的程序代码复制下来后会有行号，在代码行数较少的情况下可以手动删除，遇到上百行代码的时候要是手动删除就是对体力加毅力的考验，而且不符合电工风格，于是想到使用正则表达式来实现自动删除。 &hellip;">
+	
+
+	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
+
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><nav><ul>
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章存档</a></li>
+  <li><a href="/blog/categories">文章分类</a></li>
+  <li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+</header>
+	<div id="content" class="inner"><article class="post"><header>
+  
+  <h1 class="title">用SED删除程序代码里的行号以及空格</h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-03-31T00:00:00+08:00">
+			<span class="day">31</span><span class="month">Mar</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>有时候在网上搜索到的程序代码复制下来后会有行号，在代码行数较少的情况下可以手动删除，遇到上百行代码的时候要是手动删除就是对体力加毅力的考验，而且不符合电工风格，于是想到使用正则表达式来实现自动删除。
+分别使用VIM和SED实现删除代码里的行号以及空格，最近才开始学正则表达式，语法参数还不是很熟悉，反复调试了几次后才成功的。
+1.使用VIM
+vim finlname,在command模式, :%s/<sup>[0-9][</sup> ]*//
+2.使用SED
+sed -r &#8216;s/<sup>\s*[0-9]+[</sup> ]+//&#8217; filename >filename1
+sed加-i参数可以直接修改文件，-i 后面指定扩展名则会生成备份文件，就可以不用管道命令。
+AWK还不会用，学会了在补上</p>
+
+    
+      <div class="sharing">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+</div>
+    
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/shell/'>Shell</a></div>
+
+    
+      
+      
+      <a class="comment" href="/blog/2011/03/31/remove-with-a-sed-program-code-line-numbers-and-spaces-where/#disqus_thread">Comments</a>
+      
+    
+  </footer>
+  
+</div>
+
+<section id="comment">
+	<div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+  </div>
+</section>
+</article></div>
+	<footer id="footer" class="inner"><div class="social alignright">
+	
+	
+	
+	
+	
+	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>&copy; 2013 Ocean</p>
+<div class="clearfix"></div></footer>
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('.entry-content').each(function(i){
+			var _i = i;
+			$(this).find('img').each(function(){
+				var alt = $(this).attr('alt');
+
+				if (alt == '' || typeof alt == 'undefined'){
+					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
+				} else {
+					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
+				}
+			});
+		});
+		$('.fancybox').fancybox();
+	})(jQuery);
+</script>
+<div id="phasebeam">
+	<canvas></canvas>
+	<canvas></canvas>
+	<canvas></canvas>
+</div>
+<script src="/javascripts/phasebeam.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.nwy.me/blog/2011/03/31/remove-with-a-sed-program-code-line-numbers-and-spaces-where/';
+        var disqus_url = 'http://blog.nwy.me/blog/2011/03/31/remove-with-a-sed-program-code-line-numbers-and-spaces-where/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+</html>

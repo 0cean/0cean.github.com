@@ -1,0 +1,217 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Linux下ext4分区格式恢复删除文件 | Ocean's Blog</title>
+	<meta name="author" content="Ocean">
+
+	
+	<meta name="description" content="Linux下ext4分区格式恢复删除文件 27Nov 作为键盘党，下午在用键盘选择文件夹的时候，没有盯对文件夹就shift+delete删除了一个重要文件夹，之前就发生过丢失数据的悲剧，于是给笔记本增加了一块硬盘，重要数据定时同步到光驱位硬盘，不过今天误删除的文件夹还没同步到光驱位硬盘。 &hellip;">
+	
+
+	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
+
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><nav><ul>
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章存档</a></li>
+  <li><a href="/blog/categories">文章分类</a></li>
+  <li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+</header>
+	<div id="content" class="inner"><article class="post"><header>
+  
+  <h1 class="title">Linux下ext4分区格式恢复删除文件</h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-11-27T00:00:00+08:00">
+			<span class="day">27</span><span class="month">Nov</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>作为键盘党，下午在用键盘选择文件夹的时候，没有盯对文件夹就shift+delete删除了一个重要文件夹，之前就发生过丢失数据的悲剧，于是给笔记本增加了一块硬盘，重要数据定时同步到光驱位硬盘，不过今天误删除的文件夹还没同步到光驱位硬盘。在ext2分区格式下有许多文件恢复软件，但是这些软件都不支持ext4，或兼容的不太好，如testdisk，虽然可以看到误删的文件但是恢复出来的文件是损坏的。最后通过一番搜索找到了一款支持ext4的的恢复软件extundelete。
+  安装extundelete，可以去软件主页http://extundelete.sourceforge.net下载编译，或者从服务器获取，不同的发行版的安装方法不同，这里不再详述。
+extundelete &#8211;help 查看软件帮助
+<code>
+Usage: extundelete [options] [--] device-file
+Options:
+  --version, -[vV]       Print version and exit successfully.
+  --help,                Print this help and exit successfully.
+  --superblock           Print contents of superblock in addition to the rest.</p>
+
+<pre><code>                     If no action is specified then this option is implied.
+</code></pre>
+
+<p>  &#8211;journal              Show content of journal.
+  &#8211;after dtime          Only process entries deleted on or after &#8216;dtime&#8217;.
+  &#8211;before dtime         Only process entries deleted before &#8216;dtime&#8217;.
+Actions:
+  &#8211;inode ino            Show info on inode &#8216;ino&#8217;.
+  &#8211;block blk            Show info on block &#8216;blk&#8217;.
+  &#8211;restore-inode ino[,ino,&#8230;]</p>
+
+<pre><code>                     Restore the file(s) with known inode number 'ino'.
+                     The restored files are created in ./RESTORED_FILES
+                     with their inode number as extension (ie, file.12345).
+</code></pre>
+
+<p>  &#8211;restore-file &#8216;path&#8217;  Will restore file &#8216;path&#8217;. &#8216;path&#8217; is relative to root</p>
+
+<pre><code>                     of the partition and does not start with a '/' (it
+                     must be one of the paths returned by --dump-names).
+                     The restored file is created in the current
+                     directory as 'RECOVERED_FILES/path'.
+</code></pre>
+
+<p>  &#8211;restore-files &#8216;path&#8217; Will restore files which are listed in the file &#8216;path&#8217;.</p>
+
+<pre><code>                     Each filename should be in the same format as an option
+                     to --restore-file, and there should be one per line.
+</code></pre>
+
+<p>  &#8211;restore-all          Attempts to restore everything.
+  -j journal             Reads an external journal from the named file.
+  -b blocknumber         Uses the backup superblock at blocknumber when opening</p>
+
+<pre><code>                     the file system.
+</code></pre>
+
+<p>  -B blocksize           Uses blocksize as the block size when opening the file</p>
+
+<pre><code>                     system.  The number should be the number of bytes.
+</code></pre>
+
+<p></code></p>
+
+<p>软件支持根据时间，文件路径，inode恢复删除的文件，这里指定文件路径恢复误删文件
+根据文件路径恢复也有多种方式，如下：
+恢复/dev/sda3里一个被误删除的文件</p>
+
+<p><code>
+extundelete /dev/sda3 --restore-file /an/important/file
+</code>
+恢复/dev/sda3里一个被误删除的文件夹
+<code>
+extundelete /dev/sda3 --restore-directory /an/important
+</code>
+恢复/dev/sda3里所有被删除的东西
+<code>
+extundelete /dev/sda3 --restore-all
+</code>
+extundelete恢复误删除的文件不需要进入live环境，也不需要umount误删文件所在分区，运行命令后会在你运行命令的目录下产生一个RECOVERED_FILES/的目录，恢复的文件会按照原来的路径创建在该路径下面，所以做恢复操作的时候一定要把终端路径切换到其他分区下，不能在当前误删文件所在分区操作，否则恢复出来的文件会覆盖误删除的文件，导致恢复出来的部分或全部文件损坏。</p>
+
+    
+      <div class="sharing">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+</div>
+    
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
+
+    
+      
+      
+      <a class="comment" href="/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/#disqus_thread">Comments</a>
+      
+    
+  </footer>
+  
+</div>
+
+<section id="comment">
+	<div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+  </div>
+</section>
+</article></div>
+	<footer id="footer" class="inner"><div class="social alignright">
+	
+	
+	
+	
+	
+	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>&copy; 2013 Ocean</p>
+<div class="clearfix"></div></footer>
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('.entry-content').each(function(i){
+			var _i = i;
+			$(this).find('img').each(function(){
+				var alt = $(this).attr('alt');
+
+				if (alt == '' || typeof alt == 'undefined'){
+					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
+				} else {
+					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
+				}
+			});
+		});
+		$('.fancybox').fancybox();
+	})(jQuery);
+</script>
+<div id="phasebeam">
+	<canvas></canvas>
+	<canvas></canvas>
+	<canvas></canvas>
+</div>
+<script src="/javascripts/phasebeam.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/';
+        var disqus_url = 'http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+</html>

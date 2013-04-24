@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: PHP | Ocean's Blog]]></title>
+  <link href="http://blog.nwy.me/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-04-24T14:07:57+08:00</updated>
+  <id>http://blog.nwy.me/</id>
+  <author>
+    <name><![CDATA[Ocean]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gregarius 5.5 feed更新日期乱码问题]]></title>
+    <link href="http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date/"/>
+    <updated>2011-08-26T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date</id>
+    <content type="html"><![CDATA[<p>之前安装Gregarius的时候就注意到页面footer部分显示的feed更新时间会乱码，Gregarius对中文的支持很差，后台问题更多。</p>
+
+<p>解决方法：找到util.php文件，做如下改动：
+<code lang="php">function rss_locale_date ($fmt, $ts, $addTZOffset = true) {</p>
+
+<pre><code>if (isset($_SERVER["WINDIR"])) {
+        //%e doesnt’ exists under windows!
+        $fmt=str_replace("%e","%#d",$fmt);
+    }
+
+if ($addTZOffset) {
+        return iconv("UTF-8", "utf-8", strftime($fmt, $ts +3600 * getConfig 
+(‘rss.config.tzoffset’)));
+    }   
+    return iconv("UTF-8", "utf-8", strftime($fmt, $ts));
+    //return utf8_encode(strftime($fmt, $ts));
+</code></pre>
+
+<p>}</code></p>
+]]></content>
+  </entry>
+  
+</feed>

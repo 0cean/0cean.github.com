@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: personal | Ocean's Blog]]></title>
+  <link href="http://blog.nwy.me/blog/categories/personal/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-04-24T14:07:57+08:00</updated>
+  <id>http://blog.nwy.me/</id>
+  <author>
+    <name><![CDATA[Ocean]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Arch Linux下webOS开发平台的搭建]]></title>
+    <link href="http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos/"/>
+    <updated>2011-09-19T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos</id>
+    <content type="html"><![CDATA[<p>作为一个02年开始使用palm的资深palm用户，对palm有着根深蒂固的感情。在palm的陪伴下，经历了高中大学的学生时代，步入社会，开始工作。palm曾经的辉煌也一去不复返，在这个物质，浮躁，快速化的世界，palm系统的单线程，简洁的特性在全球网络化的时代逐渐淡出人们的视线，随后palm公司发布了webOS，被惠普公司收购。发现跑题已经是我写技术文章的特色之一了，言归正传。</p>
+
+<p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下
+<code lang="bash"></p>
+
+<h1>!/bin/sh</h1>
+
+<p>#</p>
+
+<h1>kill and remove OLD novacomd upstart</h1>
+
+<p>#
+if [ -e /etc/event.d/novacomd ] ; then
+stop novacomd
+rm -f /etc/event.d/novacomd
+fi</p>
+
+<p>#</p>
+
+<h1>remove novacomd from /usr/local/bin</h1>
+
+<p>#
+if [ -e /usr/local/bin/novacomd ] ; then
+rm -f /usr/local/bin/novacomd
+fi</p>
+
+<p>#</p>
+
+<h1>check for new upstart</h1>
+
+<p>#
+if [ -e /etc/init/rc.conf ] ; then
+if [ -e /etc/init/palm-novacomd.conf ] ; then
+rm -f /etc/init/palm-novacomd.conf
+fi
+cp -a  /opt/Palm/novacom/scripts/novacomd-conf    /etc/init/palm-novacomd.conf
+elif [ -e /etc/event.d ] ; then
+ln -fs /opt/Palm/novacom/scripts/novacomd-upstart /etc/event.d/palm-novacomd
+fi</p>
+
+<p>#</p>
+
+<h1>(re)start novacomd</h1>
+
+<p>#
+stop palm-novacomd || true
+killall -v -q novacomd</p>
+
+<p>start palm-novacomd || true</p>
+
+<p></code></p>
+
+<p>直接运行脚本显然是不行的，archlinux没有/etc/init/和/etc/event.d/目录，/etc/init/实际是指向/etc/rc.d/int.d/的一个符号链接文件，/etc/event.d/是ubuntu特有的upstart机制的核心目录，archlinux的服务可以通过特有的rc.conf启动，也可以通过/etc/init.d/或者/etc/rc.d/下建立脚本创建服务。了解脚本后将novacomd复制到/etc/rc.d/,novacomd.conf复制到/etc/conf.d/做完archlinux下的改动后，在终端里输入
+<code lang="bash"></p>
+
+<p>/etc/rc.d/novacom start</p>
+
+<p></code></p>
+
+<p>提示未找的设备，谷歌一番后在http://www.webos-internals.org/wiki/Accessing_Linux_archlinux 上发现解决方法:"novacomd doesn't work under archlinux , so we have to use ubuntu's libusb. "意想不到的是wiki中给出了一条简便方法，从aur下载网友打包好的novacom驱动，汗，之前怎么没有想到在aur里搜索一下。</p>
+
+<!--more-->
+
+
+<p>一番折腾后palm pre在archlinux下的驱动搞定了，解压deb驱动包的时候看到过novaterm的文件，运行后登录到手机shell，webOS是linux核心，busybox中带有linux常用命令，于是可以在电脑上查看手机的运行状态了。</p>
+
+<p><a href="http://nwy.me/wp-content/uploads/2011/09/Screenshot-ocean@ocean-laptop.png"><img class="alignnone size-medium wp-image-63017" title="Screenshot-ocean@ocean-laptop:~" src="http://nwy.me/wp-content/uploads/2011/09/Screenshot-ocean@ocean-laptop-300x211.png" alt="" width="300" height="211"></a></p>
+
+<p>显摆几张手机桌面</p>
+
+<p><a href="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040802.png"><img class="alignnone size-medium wp-image-63018" title="Unknown_2011-19-09_040802" src="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040802-200x300.png" alt="" width="200" height="300"></a><a href="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040751.png"><img class="alignnone size-medium wp-image-63019" title="Unknown_2011-19-09_040751" src="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040751-200x300.png" alt="" width="200" height="300"></a><a href="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040742.png"><img class="alignnone size-medium wp-image-63020" title="Unknown_2011-19-09_040742" src="http://nwy.me/wp-content/uploads/2011/09/Unknown_2011-19-09_040742-200x300.png" alt="" width="200" height="300"></a></p>
+
+<p> </p>
+
+<p> </p>
+
+<p>接下来安装webOS的SDK，有了之前的经验，直接从aur搜索网友打包好的sdk，下载安装。
+手机平台webOS1.45 SDK截图</p>
+
+<p><a href="http://nwy.me/wp-content/uploads/2011/09/Screenshot-SDK-1.4.5.465-320x480-Running-Oracle-VM-VirtualBox.png"><img class="alignnone size-medium wp-image-63021" title="Screenshot-SDK 1.4.5.465 (320x480) [Running] - Oracle VM VirtualBox" src="http://nwy.me/wp-content/uploads/2011/09/Screenshot-SDK-1.4.5.465-320x480-Running-Oracle-VM-VirtualBox-173x300.png" alt="" width="173" height="300"></a></p>
+
+<p>TouchPad平板 webOS3.0.2 SDk截图</p>
+
+<p><a href="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_001.png"><img class="alignnone size-medium wp-image-63033" title="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_001" src="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_001-300x247.png" alt="" width="300" height="247"></a><a href="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003.png"><img class="alignnone size-medium wp-image-63034" title="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_003" src="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003-300x247.png" alt="" width="300" height="247"></a></p>
+
+<p>至此，archlinux下webOS的开发环境搭建完成。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[无题]]></title>
+    <link href="http://blog.nwy.me/blog/2011/08/18/untitled/"/>
+    <updated>2011-08-18T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2011/08/18/untitled</id>
+    <content type="html"><![CDATA[<p>预感有悲剧要发生了，网站本月的15G带宽流量截止今天已经用掉了11.5G，今天才十八号，距月底还有十二天。看了下了访问统计，似乎是CDN服务器消耗掉的，奇怪的是消耗掉的流量主要集中在一个页面。先观察，等月底流量不够再移除这个页面。
+<a href="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_001.png"><img class="size-medium wp-image-62964 aligncenter" title="traffic_001" src="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_001-300x230.png" alt="" width="300" height="230"></a></p>
+
+<!--more-->
+
+
+<p><a href="http://blog.nwy.me/wp-content/uploads/2011/08/traffic.png"><img class="size-medium wp-image-62965 aligncenter" title="traffic" src="http://blog.nwy.me/wp-content/uploads/2011/08/traffic-241x300.png" alt="" width="241" height="300"></a>
+<a href="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_003.png"><img class="size-medium wp-image-62966 aligncenter" title="traffic_003" src="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_003-300x255.png" alt="" width="300" height="255"></a>
+<a href="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_004.png"><img class="size-medium wp-image-62967 aligncenter" title="traffic_004" src="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_004-300x79.png" alt="" width="300" height="79"></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[青年领袖灵魂大师王大锤对青年人的教诲]]></title>
+    <link href="http://blog.nwy.me/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people/"/>
+    <updated>2011-08-07T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people</id>
+    <content type="html"><![CDATA[<p>1，他们只会否定。低头看书，抬头看世界，看到不爽就唧唧歪歪。但他们没有社会经验，所以唧唧歪歪起来很烦人，因为那点阅读量的加持，得比德比的，还头头是道，要是有个人帮我cei死丫就太好了。</p>
+
+<p>2，看问题基本上都是消极的。说好听是怀疑精神，说难听点就是啥都不会做。还给人添堵。</p>
+
+<p>3，什么都看不惯，什么都看不上眼。情商不高，耍小聪明。</p>
+
+<p>标题有些无厘头，王大锤是论坛里一网友的马甲，大师级别的人物，马甲的名字都起的这么德味<sup>_<sup>,据称做过季羡林的编辑，"青年领袖""灵魂大师"也是论坛里的网友给他的称谓。</sup></sup></p>
+
+<p>发现自己三条毛病都有，特转发此文，告诫自己。</p>
+
+<p>PS:上个月换了网络环境，发现被ISP劫持，因为用Fx+Autoproxy，所以就没有注意，后来发现网络中断后再连接的时候会推送广告，无法忍受，果断登录路由指定DNS为Google的DNS，于是世界清静了。需要指出的是用Google的DNS是不能翻墙的，DNS的UDP包也是会被墙劫持篡改的。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[我的一些订阅]]></title>
+    <link href="http://blog.nwy.me/blog/2011/06/20/some-of-my-subscription/"/>
+    <updated>2011-06-20T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2011/06/20/some-of-my-subscription</id>
+    <content type="html"><![CDATA[<p>虽然平时订阅网站或网友的博客使用的是谷歌阅读器，但是由于在墙内，谷歌的许多服务由于种种原因无法正常访问，在电脑上或手机上都是通过某种类似跨栏运动的方法访问谷歌的服务，于是搭建了一个人的RSS阅读器，将自己谷歌阅读器的订阅复制到上面，这样就可以无障碍阅读自己订阅的一些网站博客。</p>
+
+<p>访问地址：<a href="http://reader.nwy.me">http://reader.nwy.me</a> 或 <a href="http://nwy.me/reader">http://nwy.me/reader</a></p>
+
+<p>第一个地址还在解析中，可能需要做跨栏运动才能访问，怕闪到腰的用后面的网址访问。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[palm pre上的推荐补丁列表]]></title>
+    <link href="http://blog.nwy.me/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended/"/>
+    <updated>2011-06-08T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended</id>
+    <content type="html"><![CDATA[<p><a href="http://nwy.me/wp-content/uploads/2011/06/Palm-Pre-Slide.png"><img class="size-medium wp-image-62934 aligncenter" title="Palm-Pre-Slide" src="http://nwy.me/wp-content/uploads/2011/06/Palm-Pre-Slide-300x250.png" alt="" width="300" height="250"></a>
+ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-orientation-manager-145 ca.canucksoftware.patches.prevent-log-uploads-to-palm - 1.4.5-1 - Prevent Log Uploads to Palm ca.canucksoftware.patches.prevent-metrix-log-uploads - 1.4.5-1 - Prevent Metrix Log Uploads com.treo8.patches.device-menu-mods-v1-mod-treo8 - 1.4.5.33.4 - Device menu mods v1 mod treo8 org.webosinternals.patches.app-catalog-show-app-details - 1.4.5-139 - Show App Details org.webosinternals.patches.app-catalog-show-download-count - 1.4.5-139 - Show Download Count org.webosinternals.patches.app-launcher-advanced-configuration-for-app-launcher - 1.4.5-73 - Advanced Configuration for App Launcher org.webosinternals.patches.app-launcher-glass-effect - 1.4.5-1 - Glass Effect org.webosinternals.patches.browser-hold-tap-context-menu - 1.4.5-131 - Hold Tap Context Menu org.webosinternals.patches.browser-multi-mod - 1.4.5-36 - Multi Mod org.webosinternals.patches.browser-send-to-relego - 1.4.5-35 - Send to Relego org.webosinternals.patches.browser-url-shorten-in-browser - 1.4.5-97 - URL Shorten in Browser org.webosinternals.patches.browser-view-source-of-webpage - 1.4.5-0 - View Source of Webpage org.webosinternals.patches.camera-capture-with-volume-keys - 1.4.5-131 - Capture with Volume Keys org.webosinternals.patches.camera-improved-photo-naming-pre - 1.4.5-1 - Improved Photo Naming PRE org.webosinternals.patches.camera-simple-shutter-sound-off - 1.4.5-1 - Simple Shutter Sound Off org.webosinternals.patches.clock-alarm-daily-options - 1.4.5-1 - Alarm Daily Options org.webosinternals.patches.clock-more-default-snooze-times - 1.4.5-1 - More Default Snooze Times org.webosinternals.patches.contacts-add-sync-now - 1.4.5-1 - Add Sync Now org.webosinternals.patches.contacts-swipe-to-delete - 1.4.5-1 - Swipe to Delete org.webosinternals.patches.email-email-mega-mix - 1.4.5-100 - Email Mega Mix org.webosinternals.patches.email-save-attachments-to-downloads-folder - 1.4.5-142 - Save Attachments To Downloads Folder org.webosinternals.patches.messaging-enter-key-for-new-line - 1.4.5-143 - Enter Key for New Line org.webosinternals.patches.messaging-timestamps-builtin - 1.4.5-1 - Timestamps Builtin org.webosinternals.patches.misc-unthrottle-download-manager - 1.4.5-137 - Unthrottle Download Manager org.webosinternals.patches.mojo-smooth-scrolling - 1.4.5-118 - Smooth Scrolling org.webosinternals.patches.music-player-banshee-linux-compat - 1.4.5-1 - Banshee Linux Compat org.webosinternals.patches.notifications-just-charge-by-default - 1.4.5-1 - Just Charge By Default org.webosinternals.patches.pdf-viewer-pdf-redux - 1.4.5-131 - PDF Redux org.webosinternals.patches.screen-lock-standby-times-deluxe - 1.4.5-10 - Standby Times Deluxe org.webosinternals.patches.sounds-and-alerts-really-silent-ringer-switch-mute - 1.4.5-28 - Really Silent Ringer Switch Mute org.webosinternals.patches.top-bar-gps-icon-on-top-bar - 1.4.5-1 - GPS Icon On Top Bar org.webosinternals.patches.top-bar-ringer-switch-icon - 1.4.5-112 - Ringer Switch Icon org.webosinternals.patches.top-bar-rotated-270deg-battery-icon-and-percent - 1.4.5-133 - Rotated 270deg Battery Icon And Percent org.webosinternals.patches.top-bar-system-menu-initial-framework - 1.4.5-33 - System Menu Initial Framework org.webosinternals.patches.top-bar-system-menu-mods-v1 - 1.4.5-33 - System Menu Mods v1 org.webosinternals.patches.top-bar-system-menu-today-menu - 1.4.5-33 - System Menu Today Menu</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CSS | Ocean's Blog]]></title>
+  <link href="http://blog.nwy.me/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-04-24T14:07:57+08:00</updated>
+  <id>http://blog.nwy.me/</id>
+  <author>
+    <name><![CDATA[Ocean]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[14个可以节省你时间的CSS工具]]></title>
+    <link href="http://blog.nwy.me/blog/2010/10/27/csstools/"/>
+    <updated>2010-10-27T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2010/10/27/csstools</id>
+    <content type="html"><![CDATA[<p> 
+作为一个网站设计/开发人员，你必须不断寻找方法来减少设计/开发过程中所花费的时间。这对于提高你的工作效率并最大化你的利润是非常重要的。下面介绍的按功能分类的css工具可以有效地节省你设计网站的时间。
+<strong> 优化/格式化类</strong></p>
+
+<ol style="margin-top: 5px; margin-right: 2px; margin-bottom: 5px; margin-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; list-style-type: decimal; padding: 0px;">
+<li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://csstidy.sourceforge.net/" target="_blank">CSSTidy</a></strong> – css Tidy是一个开源的css分析和优化工具；</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" title="Clean Css" href="http://www.cleancss.com/index.php" target="_blank">CleanCSS</a> </strong>- CleanCSS是一个基于CSS Tidy的强大的CSS优化和格式化工具。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://www.cssoptimiser.com/" target="_blank"><strong>CSS Optimizer</strong> </a>- CSS Optimizer可以通过优化压缩CSS样式文件大小。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://juicystudio.com/services/csstest.php" target="_blank">CSS Analyzer</a></strong> – CSS Analyzer可以帮助你检查你的CSS样式是否符合W3C的认证。</li>
+</ol>
+
+
+<p><strong> 字体类</strong></p>
+
+<ol style="margin-top: 5px; margin-right: 2px; margin-bottom: 5px; margin-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; list-style-type: decimal; padding: 0px;">
+<li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://riddle.pl/emcalc/" target="_blank">Em Calculator</a></strong> – EM Calculator可以帮助你计算px与em之间的转换。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="margin: 0px; padding: 0px; font-family: Verdana,Arial,Helvetica,sans-serif; color: #005fa9; font-size: 14px; text-decoration: none;" href="http://www.somacon.com/p334.php" target="_blank">CSS Font and Text Style Wizard</a></strong> –这个小工具可以很方便地将你的<a class="st_tag internal_tag" style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" title="Posts tagged with CSS" href="http://www.iwanna.cn/tags/css/" rel="tag nofollow">CSS</a>样式呈现出来。</li>
+</ol>
+
+
+<p><strong> 表格类</strong></p>
+
+<ol style="margin-top: 5px; margin-right: 2px; margin-bottom: 5px; margin-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; list-style-type: decimal; padding: 0px;">
+<li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://www.maketemplate.com/form/" target="_blank">CSS Form Code Maker</a></strong> –很方便地生成“五颜六色的BOX布局”的表格。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://www.jotform.com/" target="_blank">JotForm</a></strong> – JotForm是一个“所见即所得”的表格生成器。</li>
+</ol>
+
+
+<p><strong> 导航/按钮类</strong></p>
+
+<ol style="margin-top: 5px; margin-right: 2px; margin-bottom: 5px; margin-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; list-style-type: decimal; padding: 0px;">
+<li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://www.devdude.com/tools/tool.pl?TID=11" target="_blank">CSS Buttons</a></strong> – CSS按钮和文本在线生成工具。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://www.webmaster-toolkit.com/css-menu-generator.shtml" target="_blank">CSS Menu Generator</a></strong> – CSS Menu Generator可以同时生成基于CSS和html代码的漂亮的按钮。</li>
+</ol>
+
+
+<p><strong> 生成器</strong></p>
+
+<ol style="margin-top: 5px; margin-right: 2px; margin-bottom: 5px; margin-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; list-style-type: decimal; padding: 0px;">
+<li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://www.csscreator.com/version2/pagelayout.php" target="_blank">CSS Creator</a></strong> – Css Creator是一个可以创建自适应宽度或者是固定宽度的浮动布局生成器，可以生成带有Header和Footer的三栏布局。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="margin: 0px; padding: 0px; font-family: Verdana,Arial,Helvetica,sans-serif; color: #005fa9; font-size: 14px; text-decoration: none;" href="http://www.qrone.org/cssdesigner.html" target="_blank">QrONE CSS Designer</a></strong> – QrONE是一个CSS在线生成与编辑器。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://www.web20generator.com/" target="_blank">Web 2.0 Generator</a></strong> – Web 2.0 Generator可以利用html和CSS生成一个完整的网站布局。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://cssmate.com/csseditor.htm" target="_blank">CSS Mate</a></strong> – CSS Mate是一个在线CSS编辑器。</li>
+</ol>
+
+
+<p>除了上面译文中的14个小工具外，还有如下几款小工具，它们也是非常棒的，你可以打开下面的文章看它们的详细介绍：</p>
+
+<!--more-->
+
+
+
+
+<ol style="margin-top: 5px; margin-right: 2px; margin-bottom: 5px; margin-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; list-style-type: decimal; padding: 0px;">
+<li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://genmicha.cn/cssmenumakercom-choose-your-menu.htm" target="_blank">CSS Menu Maker </a></strong>-在线生成丰富多样的CSS导航按钮。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://genmicha.cn/web20-css-style-online.htm" target="_blank">CSS Type Set</a></strong> –在线轻松调试CSS文本样式。</li>
+    <li style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #494949; font-size: 14px; line-height: 1.5em; padding: 0px; margin: 0px;">
+<strong><a style="font-family: Verdana, Arial, Helvetica, sans-serif; color: #005fa9; font-size: 14px; line-height: 1.5em; text-decoration: none; padding: 0px; margin: 0px;" href="http://genmicha.cn/web20-css-structure.htm" target="_blank">CSS Frame Generator</a></strong> –写好DIV架构之后，使用这个在线工具可以很快生成CSS样式结构表。</li>
+</ol>
+
+
+<div>
+<div id="come_from" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 15px; font-family: Verdana, Arial, Helvetica, sans-serif; color: gray; font-size: 12px; line-height: 1.5em; text-align: left; float: left; padding: 0px;">来自: 我想网</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[20个学习CSS的绝佳网站-让你从入门到精通]]></title>
+    <link href="http://blog.nwy.me/blog/2010/09/30/cssweb/"/>
+    <updated>2010-09-30T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2010/09/30/cssweb</id>
+    <content type="html"><![CDATA[<p>CSS（层叠样式表）是一种简单的设计语言，能够将页面变漂亮这回事儿变的简单化。在HTML和XHTML中设定页面的样式，这是最常用的应用。但也可以应用于 XML类的文档，包括SVG和XUL。他负责管理网页的设计和外观。使用CSS，你可以控制文字的颜色、字体、段落间距、分栏的数目大小布局、背景图片颜 色，以及其他很多种的效果。接下来才是要说的是学习并掌握CSS的20个绝佳站点。这里收集到的CSS站点能使你从初学者到高级人员。这些能协助你开发和改进网站。恩，随便看看吧。</p>
+
+<p>Csstutorial
+<a href="http://www.csstutorial.net/"><img src="http://blueblots.com/wp-content/uploads/2010/09/1-csstutorial.jpg" alt="Csstutorial" width="450" height="350"></a>
+这个站点全部是关于CSS的。万一你不熟悉CSS：CSS是HTML的一种姐妹技术，可以设计你的页面。这些细节都在教程里面，不过现在我就可以说Css可以让你页面看起来更好！
+<a href="http://www.csstutorial.net/">Visit Site</a>
+cssbasics
+<a href="http://www.cssbasics.com/"><img src="http://blueblots.com/wp-content/uploads/2010/09//2-cssbasics.jpg" alt="cssbasics" width="450" height="350"></a>
+这个网站中，你可以从每段内容里学到单独的样式，覆盖了Css所有的基础知识。
+<a href="http://www.cssbasics.com/">Visit Site</a></p>
+
+<!--more-->
+
+
+<p>w3schools
+<a href="http://www.w3schools.com/css/"><img src="http://blueblots.com/wp-content/uploads/2010/09//3-cssw3schools.jpg" alt="w3schools" width="450" height="350"></a></p>
+
+<p>在这个站点里，你会学到如何使用Css来控制多种页面的样式和布局。
+<a href="http://www.w3schools.com/css/">Visit Site</a>
+htmlgoodies
+<a href="http://www.htmlgoodies.com/beyond/css/index.php"><img src="http://blueblots.com/wp-content/uploads/2010/09//4-cssgoodies.jpg" alt="htmlgoodies" width="450" height="350"></a></p>
+
+<p>用网站里面的这些超多的效果来设置你的页面效果吧。
+<a href="http://www.htmlgoodies.com/beyond/css/index.php">Visit Site</a>
+cssdog
+<a href="http://cssdog.com/index.html"><img src="http://blueblots.com/wp-content/uploads/2010/09/5-cssindex.jpg" alt="cssdog" width="450" height="350"></a></p>
+
+<p>Css很容易理解和学习，还为HTML的外观提供强大的控制力。多数情况下，Css和HTML和XHTML捆绑在一起使用。
+<a href="http://cssdog.com/index.html">Visit Site</a>
+htmldog
+<a href="http://www.htmldog.com/guides/cssbeginner/"><img src="http://blueblots.com/wp-content/uploads/2010/09/6-cssbeginner.jpg" alt="htmldog" width="450" height="350"></a></p>
+
+<p>这个手册的目的是看到本质---已经足够开始了。The CSS Intermediate Tutorial and CSS Advanced Tutoria这两个教程有很多关于CSS的深度信息。
+<a href="http://www.htmldog.com/guides/cssbeginner/">Visit Site</a>
+lesliefranke
+<a href="http://lesliefranke.com/files/reference/csscheatsheet.html"><img src="http://blueblots.com/wp-content/uploads/2010/09/7-csscheatsheets.jpg" alt="lesliefranke" width="450" height="350"></a>
+这个网站里面有很多 CSS cheats可以帮助你写Css。
+<a href="http://lesliefranke.com/files/reference/csscheatsheet.html">Visit Site</a>
+richinstyle
+<a href="http://www.richinstyle.com/guides/introduction1.html"><img src="http://blueblots.com/wp-content/uploads/2010/09/8-cssguides.jpg" alt="richinstyle" width="450" height="350"></a>
+学习Css、样式等信息，以及如何应用他，都可以在这里找到。
+<a href="http://www.richinstyle.com/guides/introduction1.html">Visit Site</a>
+csseasy
+<a href="http://www.csseasy.com/"><img src="http://blueblots.com/wp-content/uploads/2010/09/9-csseasy.jpg" alt="csseasy" width="450" height="350"></a></p>
+
+<p>不用在整本书书里找到复杂的步骤，在这个网站里面可以学到很多现代的CSS的方式
+<a href="http://www.csseasy.com/">Visit Site</a>
+blooberry
+<a href="http://www.blooberry.com/indexdot/css/propindex/all.htm"><img src="http://blueblots.com/wp-content/uploads/2010/09/10-csspropindex.jpg" alt="blooberry" width="450" height="350"></a>
+这个网站用字母序提供了Css所有的属性可供检索。
+<a href="http://www.blooberry.com/indexdot/css/propindex/all.htm">Visit Site</a>
+css-tricks
+<a href="http://css-tricks.com/"><img src="http://blueblots.com/wp-content/uploads/2010/09/11-csstricks.jpg" alt="css-tricks" width="450" height="350"></a>
+这个网站学到更多CSS tricks ，可能会对你的网站有用哦。
+<a href="http://css-tricks.com/">Visit Site</a>
+www.css3.com
+<a href="http://www.css3.com/"><img src="http://blueblots.com/wp-content/uploads/2010/09/12-css3.jpg" alt="www.css3.com" width="450" height="350"></a>
+一个常用的CSS3的指南、教程、blog网站。
+<a href="http://www.css3.com/">Visit Site</a>
+alistapart
+<a href="http://www.alistapart.com/topics/code/css/"><img src="http://blueblots.com/wp-content/uploads/2010/09/13-csstopics.jpg" alt="alistapart" width="450" height="350"></a></p>
+
+<p>这个网站教给你一些关于CSS的技术、技巧等更多关于CSS的知识。
+<a href="http://www.alistapart.com/topics/code/css/">Visit Site</a>
+456bereastreet
+<a href="http://www.456bereastreet.com/archive/categories/css/"><img src="http://blueblots.com/wp-content/uploads/2010/09/14-cssarchive.jpg" alt="456bereastreet" width="450" height="350"></a></p>
+
+<p>CSS用来定义网站的外观布局。Css是怎么工作的问题一直不太明了，这个网站里面很多文章解释了关于CSS的方方面面。
+<a href="http://www.456bereastreet.com/archive/categories/css/">Visit Site</a>
+echoecho
+<a href="http://www.echoecho.com/css.htm"><img src="http://blueblots.com/wp-content/uploads/2010/09/15-cssecho.jpg" alt="echoecho" width="450" height="350"></a>
+CSS对HTML来说是一个很好的补充。
+<a href="http://www.echoecho.com/css.htm">Visit Site</a>
+css-discuss.incutio
+<a href="http://css-discuss.incutio.com/wiki/Main_Page"><img src="http://blueblots.com/wp-content/uploads/2010/09/16-csswiki.jpg" alt="css-discuss.incutio" width="450" height="350"></a></p>
+
+<p>这个维基百科致力于Css应用的实际情况（理想状态和浏览器效果）
+<a href="http://css-discuss.incutio.com/wiki/Main_Page">Visit Site</a>
+tizag
+<a href="http://www.tizag.com/cssT/"><img src="http://blueblots.com/wp-content/uploads/2010/09/17-csstizag.jpg" alt="tizag" width="450" height="350"></a></p>
+
+<p>是时候让你的CSS页面设计技能提高一个层次了。有很多方法让你的HTML在一个有效的管理之下，观感得到更有效的控制。
+<a href="http://www.tizag.com/cssT/">Visit Site</a>
+barelyfitz
+<a href="http://www.barelyfitz.com/screencast/html-training/css/positioning/"><img src="http://blueblots.com/wp-content/uploads/2010/09/18-cssscreencast.jpg" alt="barelyfitz" width="450" height="350"></a></p>
+
+<p>这个教程可以检查CSS中不同的布局属性： position:static, position:relative, position:absolute, and float.
+<a href="http://www.barelyfitz.com/screencast/html-training/css/positioning/">Visit Site</a>
+meyerweb
+<a href="http://meyerweb.com/eric/css/"><img src="http://blueblots.com/wp-content/uploads/2010/09/19-cssmeyerweb.jpg" alt="meyerweb" width="450" height="350"></a></p>
+
+<p>这里收集了很多先进的Css驱动的设计Demo，是作者自己写的，仅作为一个展示跟你说明在某个浏览器内你可以用CSS来实现他。
+<a href="http://meyerweb.com/eric/css/">Visit Site</a>
+cssdocs
+<a href="http://cssdocs.org/"><img src="http://blueblots.com/wp-content/uploads/2010/09/20-cssdocs.jpg" alt="cssdocs" width="450" height="350"></a>
+通过这</p>
+]]></content>
+  </entry>
+  
+</feed>

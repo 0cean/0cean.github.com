@@ -1,0 +1,336 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTTP Packet Capturing to debug Apache | Ocean's Blog</title>
+	<meta name="author" content="Ocean">
+
+	
+	<meta name="description" content="HTTP Packet Capturing to Debug Apache 18Dec 原文Other,放在这以后复习用. 顺便把使用web.config文件来配置IIS，让IIS显示出详细的错误信息也贴上来. This article is a quick and easy HowTo &hellip;">
+	
+
+	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	
+
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><nav><ul>
+  <li><a href="/">主页</a></li>
+  <li><a href="/blog/archives">文章存档</a></li>
+  <li><a href="/blog/categories">文章分类</a></li>
+  <li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+</header>
+	<div id="content" class="inner"><article class="post"><header>
+  
+  <h1 class="title">HTTP Packet Capturing to Debug Apache</h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2010-12-18T00:00:00+08:00">
+			<span class="day">18</span><span class="month">Dec</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>原文<a href="http://www.askapache.com/tools/sniff-http-to-debug-apache-htaccess-and-httpdconf.html">Other</a>,放在这以后复习用. 顺便把使用<strong>web.config</strong>文件来配置IIS，让IIS显示出详细的错误信息也贴上来.</p>
+
+<dl><dd>
+<blockquote><?xml version="1.0"?>
+
+<configuration>
+
+<system.webServer>
+
+<httpErrors errorMode="Detailed" />
+
+<asp scriptErrorSentToBrowser="true" />
+
+</system.webServer>
+
+</configuration></blockquote>
+</dd></dl>
+
+
+<p><strong>This article is a quick and easy HowTo detailing the use of <a href="http://wireshark.askapache.com/">Wireshark</a></strong> or another network sniffing program to debug your Apache .htaccess or httpd.conf files.</p>
+
+<p>First some shell based tools.</p>
+
+<blockquote>
+<code>wget -S --spider URL</code> <code>lynx -head -dump URL</code> <code>curl -I URL</code> <code>HEAD URL</code> <code>GET -de URL</code> <code>w3m -dump_head URL</code> <code>siege -g URL</code>
+</blockquote>
+
+
+<hr>
+
+
+<blockquote>Set Your Capture-filter to <code>tcp port 80</code> and then start capturing.   Use any of the following display filters to view the data you want.
+
+<!--more-->
+</blockquote>
+
+
+<div>
+<h3>Some handy in-page links to help you navigate:</h3>
+<ul>
+<li><a href="http://www.askapache.com/tools/sniff-http-to-debug-apache-htaccess-and-httpdconf.html#m0-askapache0">≈ <em>Display Filters</em></a></li>
+    <li><a href="http://www.askapache.com/tools/sniff-http-to-debug-apache-htaccess-and-httpdconf.html#m0-askapache1">≈ <em>Setting HTTP Preferences</em></a></li>
+</ul>
+</div>
+
+
+<h2 id="m0-askapache0">Display Filters</h2>
+
+
+<h3>HTTP Display Filter Options</h3>
+
+
+<ul>
+<li>http.accept     String      Accept</li>
+    <li>http.accept_encoding    String  Accept Encoding</li>
+    <li>http.accept_language    String  Accept-Language</li>
+    <li>http.authbasic  String  Credentials</li>
+    <li>http.authorization  String  Authorization</li>
+    <li>http.cache_control  String  Cache-Control</li>
+    <li>http.connection     String  Connection</li>
+    <li>http.content_encoding   String  Content-Encoding</li>
+    <li>http.content_length     Unsigned 32-bit integer     Content-Length</li>
+    <li>http.content_type   String  Content-Type</li>
+    <li>http.cookie     String  Cookie</li>
+    <li>http.date   String  Date</li>
+    <li>http.host   String  Host</li>
+    <li>http.last_modified  String  Last-Modified</li>
+    <li>http.location   String  Location</li>
+    <li>http.notification   Boolean     Notification</li>
+    <li>http.proxy_authenticate     String  Proxy-Authenticate</li>
+    <li>http.proxy_authorization    String  Proxy-Authorization</li>
+    <li>http.referer    String  Referer</li>
+    <li>http.request    Boolean     Request</li>
+    <li>http.request.method     String  Request Method</li>
+    <li>http.request.uri    String  Request URI</li>
+    <li>http.request.version    String  Request Version</li>
+    <li>http.response   Boolean     Response</li>
+    <li>http.response.code  Unsigned 16-bit integer     Response Code</li>
+    <li>http.server     String  Server</li>
+    <li>http.set_cookie     String  Set-Cookie</li>
+    <li>http.transfer_encoding  String  Transfer-Encoding</li>
+    <li>http.user_agent     String  User-Agent</li>
+    <li>http.www_authenticate   String  WWW-Authenticate</li>
+    <li>http.x_forwarded_for    String  X-Forwarded-For</li>
+</ul>
+
+
+<h3>View All HTTP trafic</h3>
+
+
+<pre>http
+</pre>
+
+
+<h3>View all flash video stuff</h3>
+
+
+<pre>http.request.uri contains "flv" or http.request.uri contains "swf" or http.content_type contains "flash" or http.content_type contains "video"
+</pre>
+
+
+<h3>Show non-google cache-control</h3>
+
+
+<pre>http.cache_control != "private, x-gzip-ok=\"\""
+</pre>
+
+
+<p>or</p>
+
+<pre>(((((http.cache_control != "private, x-gzip-ok=\"\"") && !(http.cache_control == "no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform, private")) && !(http.cache_control == "max-age=0, no-store")) && !(http.cache_control == "private")) && !(http.cache_control == "no-cache")) && !(http.cache_control == "no-transform")
+</pre>
+
+
+<h3>Show only certain responses</h3>
+
+
+<pre>#404: page not found
+http.response.code == 404
+ 
+#200: OK
+http.response.code == 200
+</pre>
+
+
+<h3>Show only certain HTTP methods</h3>
+
+
+<pre>http.request.method == "POST" || http.request.method == "PUT"
+</pre>
+
+
+<h3>Show only filetypes that begin with &#8220;text&#8221;</h3>
+
+
+<pre>http.content_type[0:4] == "text"
+</pre>
+
+
+<h3>Show only javascript</h3>
+
+
+<pre>http.content_type contains "javascript"
+</pre>
+
+
+<h3>Show all http with content-type=&#8221;image/(gif|jpeg|png|etc)&#8221;</h3>
+
+
+<pre>http.content_type[0:5] == "image"
+</pre>
+
+
+<h3>Show all http with content-type=&#8221;image/gif&#8221;</h3>
+
+
+<pre>http.content_type == "image/gif"
+</pre>
+
+
+<h3>Do not show content http, only headers</h3>
+
+
+<pre>http.response !=0 || http.request.method != "TRACE"
+</pre>
+
+
+<h2 id="m0-askapache1">Setting HTTP Preferences</h2>
+
+
+<h3>Reassemble HTTP headers spanning multiple TCP segments:</h3>
+
+
+<p>When this preference is enabled, then the HTTP dissector will  reassemble the HTTP header if it has been transmitted over more than one  TCP segment. Although it is unusual for headers span multiple segments,  it&#8217;s not impossible, and this should be checked if you expect to view  the contents of the HTTP conversation.</p>
+
+<h3>Reassemble HTTP bodies spanning multiple TCP segments:</h3>
+
+
+<p>When this preference is enabled, then the HTTP dissector will  reassemble the HTTP body if it has been transmitted over more than one  TCP segment. All but the smallest of responses will span multiple  segments, so this preference should be checked if you expect to view the  contents of the HTTP conversation. See TCP Reassembly for an example on how to use this to extract JPEG  images from a capture.</p>
+
+<h3>Reassemble chunked transfer-coded bodies:</h3>
+
+
+<p>When this preference is enabled, any chunked transfer-coding response  spanning multiple segments will be decoded and the payload (the body of  the response) will be added to the protocol tree. This happens  automatically for one segment responses.</p>
+
+<h3>Uncompress entity bodies:</h3>
+
+
+<p>Enable this preference if gzip or deflate encoded (compressed) HTTP  entities should be decoded. This allows the visualisation of the  compressed data, and possibly the dissection of it.</p>
+
+    
+      <div class="sharing">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4daee9911f9dfcb4"></script>
+</div>
+    
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/network/'>network</a></div>
+
+    
+      
+      
+      <a class="comment" href="/blog/2010/12/18/http/#disqus_thread">Comments</a>
+      
+    
+  </footer>
+  
+</div>
+
+<section id="comment">
+	<div id="disqus_thread" aria-live="polite">
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+  </div>
+</section>
+</article></div>
+	<footer id="footer" class="inner"><div class="social alignright">
+	
+	
+	
+	
+	
+	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>&copy; 2013 Ocean</p>
+<div class="clearfix"></div></footer>
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('.entry-content').each(function(i){
+			var _i = i;
+			$(this).find('img').each(function(){
+				var alt = $(this).attr('alt');
+
+				if (alt == '' || typeof alt == 'undefined'){
+					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
+				} else {
+					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
+				}
+			});
+		});
+		$('.fancybox').fancybox();
+	})(jQuery);
+</script>
+<div id="phasebeam">
+	<canvas></canvas>
+	<canvas></canvas>
+	<canvas></canvas>
+</div>
+<script src="/javascripts/phasebeam.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.nwy.me/blog/2010/12/18/http/';
+        var disqus_url = 'http://blog.nwy.me/blog/2010/12/18/http/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+</html>
