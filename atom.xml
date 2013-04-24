@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Ocean's Blog]]></title>
-  <link href="http://blog.nwy.me/atom.xml" rel="self"/>
-  <link href="http://blog.nwy.me/"/>
-  <updated>2013-04-24T14:07:57+08:00</updated>
-  <id>http://blog.nwy.me/</id>
+  <link href="http://0cean.github.com/atom.xml" rel="self"/>
+  <link href="http://0cean.github.com/"/>
+  <updated>2013-04-24T14:12:10+08:00</updated>
+  <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[一个光纤收发器引发的故障]]></title>
-    <link href="http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by/"/>
+    <link href="http://0cean.github.com/blog/2012/11/05/a-media-converter-fault-caused-by/"/>
     <updated>2012-11-05T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by</id>
+    <id>http://0cean.github.com/blog/2012/11/05/a-media-converter-fault-caused-by</id>
     <content type="html"><![CDATA[<p>最近楼里网络故障频繁发生，严重影响各部门的正常工作，作为网管，能快速的解决问题，众望所归，自然压力很大。
 故障症状：两个楼层所有办公室都不能上网，ping不通网关，重启后暂时能上网，时间不等，又会出现网内集体无法上网现象。
 网络拓扑结构：三四楼的网络接入点在三楼，一条100M光纤线路通过光纤收发器接到一个二层交换机，三楼所有办公室的网络都接在这个交换机上，四楼一个二层交换机，线路级联在三楼的二层交换机上。三楼接入点的网关是机房核心交换机的划分的VLan。
@@ -31,9 +31,9 @@
   
   <entry>
     <title type="html"><![CDATA[RAM Host的KVM VPS安装CentOS6.2]]></title>
-    <link href="http://blog.nwy.me/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2/"/>
+    <link href="http://0cean.github.com/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2/"/>
     <updated>2012-06-07T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2</id>
+    <id>http://0cean.github.com/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2</id>
     <content type="html"><![CDATA[<p>RAM Host的VPS由于站长也是Linux技术大牛，做过优化，即使低端配置性能也不错，所以销量一直很好，加上站长不超售的原则，往往一放出就告罄，上周末终于抢到一个。购买的时候因为开着代理，被Ram Host的订单系统检测到当作风险订单处理了，最后发ticket和站长解释了一番天朝的网络环境才订单才得以通过。
 这次买的是RAM Host的Premium West Coast Los Angeles Virtual Dedicated Server的Standard VPS，512MB内存，这个机房的VPS都是KVM的，没有部署站长优化过得系统，需要先在VPS管理面板里选择引导安装系统的镜像ISO。
 <a href="http://nwy.me/wp-content/uploads/2012/06/%E9%80%89%E5%8C%BA_002.png"><img src="http://nwy.me/wp-content/uploads/2012/06/%E9%80%89%E5%8C%BA_002-300x228.png" alt="" title="系统选择" width="300" height="228" class="aligncenter size-medium wp-image-63200"></a>
@@ -65,9 +65,9 @@ ONBOOT=yes #系统启动时是否设置此网络接口，设置为yes时，系�
   
   <entry>
     <title type="html"><![CDATA[韩寒：写给每一个自己]]></title>
-    <link href="http://blog.nwy.me/blog/2012/04/05/han-han-addressed-to-each/"/>
+    <link href="http://0cean.github.com/blog/2012/04/05/han-han-addressed-to-each/"/>
     <updated>2012-04-05T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2012/04/05/han-han-addressed-to-each</id>
+    <id>http://0cean.github.com/blog/2012/04/05/han-han-addressed-to-each</id>
     <content type="html"><![CDATA[<p>　　最近三个月，看世间百态，人情冷暖，失落与收获都颇多。失落在我出生是纯正的上海郊区农村屌丝，无权无势，白手起家，本以为自己是一个很励志的“屌丝的逆袭”的故事，却硬要被说成一个经过多方神秘势力包装的惊天大阴谋，失落在北京有一个几面之交的“名流友人”，莫名编造了一个内幕，四处传播，让我心寒，我愿怀着善意，相信他是无心的吹水；失落在我自己，太过在意，害怕深文周纳，行文变得谨慎。收获在很多谋面和未曾谋面的朋友仗义执言：虽然都被打成利益集团；收获在十几年前的同学为我说话，虽然因为回忆太远往事，细节互相有偏差被打成诈骗团伙；收获在我看到太多人心和各种面目，以后写小说刻画人物会更加精彩。</p>
 
 <p>　　人的处事风格和性格不是一成不变的，尤其是16岁到30岁之间。我写过一些不错的文字，也写了不少烂文章，无论状态起伏，无论风格转变，都是一个人的成长历程，谁人能在十四年的青春里保持纹丝不动。我二十岁出头的时候主张抵制日货，是个民族主义者，08年的时候开始反对抵制家乐福，我小时候主张打仗收复台湾，现在都不好意思承认自己这么说过，十七八岁时，我居然说，活着的作家中，写文章论排名老子天下第二，现在想起来都脸红，更让我脸红的是当年我心中那个第一居然是李敖。我少年时装酷，追求语出惊人，这些话现在看来，很多都惹人厌恶，甚至还惹我自己厌恶，把各种傻话挖出来，总会击中不同的人。谁没有年少过，你在宿舍里说过的那些蠢话，你在树林里幼稚的表白，现在翻出来可不都得笑死，没有人永远和过去的自己一致，除非你不再成长。</p>
@@ -90,9 +90,9 @@ ONBOOT=yes #系统启动时是否设置此网络接口，设置为yes时，系�
   
   <entry>
     <title type="html"><![CDATA[Linux下ext4分区格式恢复删除文件]]></title>
-    <link href="http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/"/>
+    <link href="http://0cean.github.com/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/"/>
     <updated>2011-11-27T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files</id>
+    <id>http://0cean.github.com/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files</id>
     <content type="html"><![CDATA[<p>作为键盘党，下午在用键盘选择文件夹的时候，没有盯对文件夹就shift+delete删除了一个重要文件夹，之前就发生过丢失数据的悲剧，于是给笔记本增加了一块硬盘，重要数据定时同步到光驱位硬盘，不过今天误删除的文件夹还没同步到光驱位硬盘。在ext2分区格式下有许多文件恢复软件，但是这些软件都不支持ext4，或兼容的不太好，如testdisk，虽然可以看到误删的文件但是恢复出来的文件是损坏的。最后通过一番搜索找到了一款支持ext4的的恢复软件extundelete。
   安装extundelete，可以去软件主页http://extundelete.sourceforge.net下载编译，或者从服务器获取，不同的发行版的安装方法不同，这里不再详述。
 extundelete &#8211;help 查看软件帮助
@@ -168,9 +168,9 @@ extundelete恢复误删除的文件不需要进入live环境，也不需要umoun
   
   <entry>
     <title type="html"><![CDATA[Arch Linux下webOS开发平台的搭建]]></title>
-    <link href="http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos/"/>
+    <link href="http://0cean.github.com/blog/2011/09/19/archlinux-development-platform-to-build-next-webos/"/>
     <updated>2011-09-19T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos</id>
+    <id>http://0cean.github.com/blog/2011/09/19/archlinux-development-platform-to-build-next-webos</id>
     <content type="html"><![CDATA[<p>作为一个02年开始使用palm的资深palm用户，对palm有着根深蒂固的感情。在palm的陪伴下，经历了高中大学的学生时代，步入社会，开始工作。palm曾经的辉煌也一去不复返，在这个物质，浮躁，快速化的世界，palm系统的单线程，简洁的特性在全球网络化的时代逐渐淡出人们的视线，随后palm公司发布了webOS，被惠普公司收购。发现跑题已经是我写技术文章的特色之一了，言归正传。</p>
 
 <p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下
@@ -262,18 +262,18 @@ killall -v -q novacomd</p>
   
   <entry>
     <title type="html"><![CDATA[未来的手机应该是这样的]]></title>
-    <link href="http://blog.nwy.me/blog/2011/09/07/the-future-of-mobile-phones-should-be-like/"/>
+    <link href="http://0cean.github.com/blog/2011/09/07/the-future-of-mobile-phones-should-be-like/"/>
     <updated>2011-09-07T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/09/07/the-future-of-mobile-phones-should-be-like</id>
+    <id>http://0cean.github.com/blog/2011/09/07/the-future-of-mobile-phones-should-be-like</id>
     <content type="html"><![CDATA[<p><embed src="http://player.youku.com/player.php/sid/XMTkyNDg3Nzgw/v.swf" allowfullscreen="true" quality="high" width="540" height="420" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"></embed></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Gregarius 5.5 feed更新日期乱码问题]]></title>
-    <link href="http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date/"/>
+    <link href="http://0cean.github.com/blog/2011/08/26/gregarius-5-5-feed-garbled-date/"/>
     <updated>2011-08-26T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date</id>
+    <id>http://0cean.github.com/blog/2011/08/26/gregarius-5-5-feed-garbled-date</id>
     <content type="html"><![CDATA[<p>之前安装Gregarius的时候就注意到页面footer部分显示的feed更新时间会乱码，Gregarius对中文的支持很差，后台问题更多。</p>
 
 <p>解决方法：找到util.php文件，做如下改动：
@@ -298,26 +298,26 @@ if ($addTZOffset) {
   
   <entry>
     <title type="html"><![CDATA[无题]]></title>
-    <link href="http://blog.nwy.me/blog/2011/08/18/untitled/"/>
+    <link href="http://0cean.github.com/blog/2011/08/18/untitled/"/>
     <updated>2011-08-18T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/08/18/untitled</id>
+    <id>http://0cean.github.com/blog/2011/08/18/untitled</id>
     <content type="html"><![CDATA[<p>预感有悲剧要发生了，网站本月的15G带宽流量截止今天已经用掉了11.5G，今天才十八号，距月底还有十二天。看了下了访问统计，似乎是CDN服务器消耗掉的，奇怪的是消耗掉的流量主要集中在一个页面。先观察，等月底流量不够再移除这个页面。
-<a href="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_001.png"><img class="size-medium wp-image-62964 aligncenter" title="traffic_001" src="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_001-300x230.png" alt="" width="300" height="230"></a></p>
+<a href="http://0cean.github.com/wp-content/uploads/2011/08/traffic_001.png"><img class="size-medium wp-image-62964 aligncenter" title="traffic_001" src="http://0cean.github.com/wp-content/uploads/2011/08/traffic_001-300x230.png" alt="" width="300" height="230"></a></p>
 
 <!--more-->
 
 
-<p><a href="http://blog.nwy.me/wp-content/uploads/2011/08/traffic.png"><img class="size-medium wp-image-62965 aligncenter" title="traffic" src="http://blog.nwy.me/wp-content/uploads/2011/08/traffic-241x300.png" alt="" width="241" height="300"></a>
-<a href="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_003.png"><img class="size-medium wp-image-62966 aligncenter" title="traffic_003" src="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_003-300x255.png" alt="" width="300" height="255"></a>
-<a href="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_004.png"><img class="size-medium wp-image-62967 aligncenter" title="traffic_004" src="http://blog.nwy.me/wp-content/uploads/2011/08/traffic_004-300x79.png" alt="" width="300" height="79"></a></p>
+<p><a href="http://0cean.github.com/wp-content/uploads/2011/08/traffic.png"><img class="size-medium wp-image-62965 aligncenter" title="traffic" src="http://0cean.github.com/wp-content/uploads/2011/08/traffic-241x300.png" alt="" width="241" height="300"></a>
+<a href="http://0cean.github.com/wp-content/uploads/2011/08/traffic_003.png"><img class="size-medium wp-image-62966 aligncenter" title="traffic_003" src="http://0cean.github.com/wp-content/uploads/2011/08/traffic_003-300x255.png" alt="" width="300" height="255"></a>
+<a href="http://0cean.github.com/wp-content/uploads/2011/08/traffic_004.png"><img class="size-medium wp-image-62967 aligncenter" title="traffic_004" src="http://0cean.github.com/wp-content/uploads/2011/08/traffic_004-300x79.png" alt="" width="300" height="79"></a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[青年领袖灵魂大师王大锤对青年人的教诲]]></title>
-    <link href="http://blog.nwy.me/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people/"/>
+    <link href="http://0cean.github.com/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people/"/>
     <updated>2011-08-07T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people</id>
+    <id>http://0cean.github.com/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people</id>
     <content type="html"><![CDATA[<p>1，他们只会否定。低头看书，抬头看世界，看到不爽就唧唧歪歪。但他们没有社会经验，所以唧唧歪歪起来很烦人，因为那点阅读量的加持，得比德比的，还头头是道，要是有个人帮我cei死丫就太好了。</p>
 
 <p>2，看问题基本上都是消极的。说好听是怀疑精神，说难听点就是啥都不会做。还给人添堵。</p>
@@ -334,9 +334,9 @@ if ($addTZOffset) {
   
   <entry>
     <title type="html"><![CDATA[程序员技术练级攻略]]></title>
-    <link href="http://blog.nwy.me/blog/2011/07/24/programmers-technical-leveling-guide/"/>
+    <link href="http://0cean.github.com/blog/2011/07/24/programmers-technical-leveling-guide/"/>
     <updated>2011-07-24T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/07/24/programmers-technical-leveling-guide</id>
+    <id>http://0cean.github.com/blog/2011/07/24/programmers-technical-leveling-guide</id>
     <content type="html"><![CDATA[<p>文章作者： <a title="由 陈皓 发布" href="http://coolshell.cn/articles/author/haoel" rel="author">陈皓</a> Other出处：<a href="http://coolshell.cn/articles/4990.html">http://coolshell.cn/articles/4990.html</a></p>
 
 <p>月光博客6月12日发表了《<a href="http://www.williamlong.info/archives/2700.html" target="_blank">写给新手程序员的一封信</a>》，翻译自《<a href="http://blog.akash.im/an-open-letter-to-those-who-want-to-start" target="_blank">An open letter to those who want to start programming</a>》，我的朋友（他在本站的id是<a href="http://coolshell.cn/?author=3" target="_blank">Mailper</a>）告诉我，他希望在酷壳上看到一篇更具操作性的文章。因为他也是喜欢编程和技术的家伙，于是，我让他把他的一些学习Python和Web编程的一些点滴总结一下。于是他给我发来了一些他的心得和经历，我在把他的心得做了不多的增改，并根据我的经历增加了“进阶”一节。<strong>这是一篇由新手和我这个老家伙根据我们的经历完成的文章</strong>。</p>
@@ -664,9 +664,9 @@ if ($addTZOffset) {
   
   <entry>
     <title type="html"><![CDATA[curl 简单作弊条]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar/"/>
+    <link href="http://0cean.github.com/blog/2011/06/22/simple-cheat-curl-bar/"/>
     <updated>2011-06-22T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar</id>
+    <id>http://0cean.github.com/blog/2011/06/22/simple-cheat-curl-bar</id>
     <content type="html"><![CDATA[<div id="content">
 <div class="entry">
 <h5>原文出处：<a href="http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/">http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/</a>
@@ -726,9 +726,9 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
   
   <entry>
     <title type="html"><![CDATA[Linux下命令执行顺序]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order/"/>
+    <link href="http://0cean.github.com/blog/2011/06/22/linux-command-execution-order/"/>
     <updated>2011-06-22T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order</id>
+    <id>http://0cean.github.com/blog/2011/06/22/linux-command-execution-order</id>
     <content type="html"><![CDATA[<div><a href="http://doc.linuxpk.com/52705.html">本文来自：Linux宝库 &#8211; http://doc.linuxpk.com/52705.html</a></div>
 
 
@@ -841,9 +841,9 @@ Shell还提供了在当前shell或子shell中执行一组命令的方法，即�
   
   <entry>
     <title type="html"><![CDATA[我的一些订阅]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/20/some-of-my-subscription/"/>
+    <link href="http://0cean.github.com/blog/2011/06/20/some-of-my-subscription/"/>
     <updated>2011-06-20T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/20/some-of-my-subscription</id>
+    <id>http://0cean.github.com/blog/2011/06/20/some-of-my-subscription</id>
     <content type="html"><![CDATA[<p>虽然平时订阅网站或网友的博客使用的是谷歌阅读器，但是由于在墙内，谷歌的许多服务由于种种原因无法正常访问，在电脑上或手机上都是通过某种类似跨栏运动的方法访问谷歌的服务，于是搭建了一个人的RSS阅读器，将自己谷歌阅读器的订阅复制到上面，这样就可以无障碍阅读自己订阅的一些网站博客。</p>
 
 <p>访问地址：<a href="http://reader.nwy.me">http://reader.nwy.me</a> 或 <a href="http://nwy.me/reader">http://nwy.me/reader</a></p>
@@ -854,9 +854,9 @@ Shell还提供了在当前shell或子shell中执行一组命令的方法，即�
   
   <entry>
     <title type="html"><![CDATA[palm pre上的推荐补丁列表]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended/"/>
+    <link href="http://0cean.github.com/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended/"/>
     <updated>2011-06-08T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended</id>
+    <id>http://0cean.github.com/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended</id>
     <content type="html"><![CDATA[<p><a href="http://nwy.me/wp-content/uploads/2011/06/Palm-Pre-Slide.png"><img class="size-medium wp-image-62934 aligncenter" title="Palm-Pre-Slide" src="http://nwy.me/wp-content/uploads/2011/06/Palm-Pre-Slide-300x250.png" alt="" width="300" height="250"></a>
 ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-orientation-manager-145 ca.canucksoftware.patches.prevent-log-uploads-to-palm - 1.4.5-1 - Prevent Log Uploads to Palm ca.canucksoftware.patches.prevent-metrix-log-uploads - 1.4.5-1 - Prevent Metrix Log Uploads com.treo8.patches.device-menu-mods-v1-mod-treo8 - 1.4.5.33.4 - Device menu mods v1 mod treo8 org.webosinternals.patches.app-catalog-show-app-details - 1.4.5-139 - Show App Details org.webosinternals.patches.app-catalog-show-download-count - 1.4.5-139 - Show Download Count org.webosinternals.patches.app-launcher-advanced-configuration-for-app-launcher - 1.4.5-73 - Advanced Configuration for App Launcher org.webosinternals.patches.app-launcher-glass-effect - 1.4.5-1 - Glass Effect org.webosinternals.patches.browser-hold-tap-context-menu - 1.4.5-131 - Hold Tap Context Menu org.webosinternals.patches.browser-multi-mod - 1.4.5-36 - Multi Mod org.webosinternals.patches.browser-send-to-relego - 1.4.5-35 - Send to Relego org.webosinternals.patches.browser-url-shorten-in-browser - 1.4.5-97 - URL Shorten in Browser org.webosinternals.patches.browser-view-source-of-webpage - 1.4.5-0 - View Source of Webpage org.webosinternals.patches.camera-capture-with-volume-keys - 1.4.5-131 - Capture with Volume Keys org.webosinternals.patches.camera-improved-photo-naming-pre - 1.4.5-1 - Improved Photo Naming PRE org.webosinternals.patches.camera-simple-shutter-sound-off - 1.4.5-1 - Simple Shutter Sound Off org.webosinternals.patches.clock-alarm-daily-options - 1.4.5-1 - Alarm Daily Options org.webosinternals.patches.clock-more-default-snooze-times - 1.4.5-1 - More Default Snooze Times org.webosinternals.patches.contacts-add-sync-now - 1.4.5-1 - Add Sync Now org.webosinternals.patches.contacts-swipe-to-delete - 1.4.5-1 - Swipe to Delete org.webosinternals.patches.email-email-mega-mix - 1.4.5-100 - Email Mega Mix org.webosinternals.patches.email-save-attachments-to-downloads-folder - 1.4.5-142 - Save Attachments To Downloads Folder org.webosinternals.patches.messaging-enter-key-for-new-line - 1.4.5-143 - Enter Key for New Line org.webosinternals.patches.messaging-timestamps-builtin - 1.4.5-1 - Timestamps Builtin org.webosinternals.patches.misc-unthrottle-download-manager - 1.4.5-137 - Unthrottle Download Manager org.webosinternals.patches.mojo-smooth-scrolling - 1.4.5-118 - Smooth Scrolling org.webosinternals.patches.music-player-banshee-linux-compat - 1.4.5-1 - Banshee Linux Compat org.webosinternals.patches.notifications-just-charge-by-default - 1.4.5-1 - Just Charge By Default org.webosinternals.patches.pdf-viewer-pdf-redux - 1.4.5-131 - PDF Redux org.webosinternals.patches.screen-lock-standby-times-deluxe - 1.4.5-10 - Standby Times Deluxe org.webosinternals.patches.sounds-and-alerts-really-silent-ringer-switch-mute - 1.4.5-28 - Really Silent Ringer Switch Mute org.webosinternals.patches.top-bar-gps-icon-on-top-bar - 1.4.5-1 - GPS Icon On Top Bar org.webosinternals.patches.top-bar-ringer-switch-icon - 1.4.5-112 - Ringer Switch Icon org.webosinternals.patches.top-bar-rotated-270deg-battery-icon-and-percent - 1.4.5-133 - Rotated 270deg Battery Icon And Percent org.webosinternals.patches.top-bar-system-menu-initial-framework - 1.4.5-33 - System Menu Initial Framework org.webosinternals.patches.top-bar-system-menu-mods-v1 - 1.4.5-33 - System Menu Mods v1 org.webosinternals.patches.top-bar-system-menu-today-menu - 1.4.5-33 - System Menu Today Menu</p>
 ]]></content>
@@ -864,9 +864,9 @@ ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-or
   
   <entry>
     <title type="html"><![CDATA[一个程序员的爱情故事]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/01/the-love-story-of-a-programmer/"/>
+    <link href="http://0cean.github.com/blog/2011/06/01/the-love-story-of-a-programmer/"/>
     <updated>2011-06-01T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/01/the-love-story-of-a-programmer</id>
+    <id>http://0cean.github.com/blog/2011/06/01/the-love-story-of-a-programmer</id>
     <content type="html"><![CDATA[<p>作者：http://topic.csdn.net/u/20110517/12/0ab11541-6206-40c9-a8b1-5439d642ab49.html
 注释：http://www.cnblogs.com/zhuqil/archive/2011/05/19/2051373.html
 今天在csdn上看了一篇帖子：《这段代码描述我最近的心情》。 才发现原来用代码可以书写人生，对代码的作者十分钦佩。</p>
@@ -936,9 +936,9 @@ ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-or
   
   <entry>
     <title type="html"><![CDATA[写在博客被墙之后]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/01/after-the-blog-was-written-in-the-wall/"/>
+    <link href="http://0cean.github.com/blog/2011/06/01/after-the-blog-was-written-in-the-wall/"/>
     <updated>2011-06-01T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/01/after-the-blog-was-written-in-the-wall</id>
+    <id>http://0cean.github.com/blog/2011/06/01/after-the-blog-was-written-in-the-wall</id>
     <content type="html"><![CDATA[<div align="center">墙
 作者：舒婷 
 
@@ -981,9 +981,9 @@ ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-or
   
   <entry>
     <title type="html"><![CDATA[程序员的 100 种境界]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/31/realm-of-the-programmer-100-species/"/>
+    <link href="http://0cean.github.com/blog/2011/05/31/realm-of-the-programmer-100-species/"/>
     <updated>2011-05-31T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/31/realm-of-the-programmer-100-species</id>
+    <id>http://0cean.github.com/blog/2011/05/31/realm-of-the-programmer-100-species</id>
     <content type="html"><![CDATA[<p>Other出处：<a href="http://eishn.blog.163.com/blog/static/652318201102831731444/">http://eishn.blog.163.com/blog/static/652318201102831731444/</a> 作者：沈崴</p>
 
 <p>境界零：混沌态、浆糊状（小白、新兵）
@@ -1132,9 +1132,9 @@ ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-or
   
   <entry>
     <title type="html"><![CDATA[升级笔记本BIOS]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/16/notebook-bios-upgrade/"/>
+    <link href="http://0cean.github.com/blog/2011/05/16/notebook-bios-upgrade/"/>
     <updated>2011-05-16T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/16/notebook-bios-upgrade</id>
+    <id>http://0cean.github.com/blog/2011/05/16/notebook-bios-upgrade</id>
     <content type="html"><![CDATA[<p>前几天看到论坛网友讨论联想官方放出T61新的BIOS，看了更新说明:，由于没有做多大的变动，就没有更新。今天看到有国外网友发布了基于这次更新BIOS的版本，做了以下修改：
 1.SATA-II 3Gb/s
 2.SLIC2.1
@@ -1143,16 +1143,16 @@ ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-or
 这次升级BIOS的主要原因是：破解了联想的SATA限制，SATA从1.5Gb/s上升到3Gb/s，硬盘读写速度可以从130MB/s达到260MB/s。本次升级是刻盘刷的BIOS，整个过程有惊无险。
 虽然之前在Windows XP和Windows PE下刷过BIOS，不过随着年龄的增长，做事有些畏首畏尾了，觉得没必要为了节省一张刻录光盘冒风险，反正手头有一桶莱德的DVD-RW盘。整个过程有些惊险，进入BIOS关闭power on password的时候才发现自己忘记了power on password，平时用的是指纹和super password，于是拆机CMOS放电，中间不小心还把主板上CMOS电池的插座一起拔下来了，好在没有拔断针脚，又小心的插回去了。清除了power on password后，开机放入光盘后，从光盘启动，报错，提示flash over lan没有开启，又重启进BIOS设置，之后等待检测正常后开始升级BIOS，30s左右，伴随长鸣升级完成，笔记本重新启动，正常进入系统。
 测试了一下硬盘的读取速度，附图
-<a href="http://blog.nwy.me/wp-content/uploads/2011/05/Screenshot-500-GB-%E7%A1%AC%E7%9B%98-ATA-Hitachi-HTS725050A9A364-%E2%80%93-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.png"><img src="http://blog.nwy.me/wp-content/uploads/2011/05/Screenshot-500-GB-%E7%A1%AC%E7%9B%98-ATA-Hitachi-HTS725050A9A364-%E2%80%93-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-300x217.png" alt="" title="Screenshot-500 GB 硬盘 (ATA Hitachi HTS725050A9A364) – 性能测试" width="300" height="217" class="alignnone size-medium wp-image-62837"></a>
+<a href="http://0cean.github.com/wp-content/uploads/2011/05/Screenshot-500-GB-%E7%A1%AC%E7%9B%98-ATA-Hitachi-HTS725050A9A364-%E2%80%93-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.png"><img src="http://0cean.github.com/wp-content/uploads/2011/05/Screenshot-500-GB-%E7%A1%AC%E7%9B%98-ATA-Hitachi-HTS725050A9A364-%E2%80%93-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-300x217.png" alt="" title="Screenshot-500 GB 硬盘 (ATA Hitachi HTS725050A9A364) – 性能测试" width="300" height="217" class="alignnone size-medium wp-image-62837"></a>
 附下载链接:<br><a href="http://forum.notebookreview.com/lenovo-ibm/459591-t61-x61-sata-ii-1-5-gb-s-cap-willing-pay-solution-8.html">http://forum.notebookreview.com/lenovo-ibm/459591-t61-x61-sata-ii-1-5-gb-s-cap-willing-pay-solution-8.html</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[博客待完善事宜]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/04/blog-matters-to-be-improved/"/>
+    <link href="http://0cean.github.com/blog/2011/05/04/blog-matters-to-be-improved/"/>
     <updated>2011-05-04T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/04/blog-matters-to-be-improved</id>
+    <id>http://0cean.github.com/blog/2011/05/04/blog-matters-to-be-improved</id>
     <content type="html"><![CDATA[<p>已知本博客存在的问题
 一、谷歌爬虫抓取错误。
 二、wordpress文件存放路径不合理。
@@ -1171,9 +1171,9 @@ ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-or
   
   <entry>
     <title type="html"><![CDATA[SSH自动运行以及端口释放]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/"/>
+    <link href="http://0cean.github.com/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/"/>
     <updated>2011-05-02T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port</id>
+    <id>http://0cean.github.com/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port</id>
     <content type="html"><![CDATA[<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
 ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：
 <code>export AUTOSSH_LOGLEVEL=7

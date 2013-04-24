@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: PHP | Ocean's Blog]]></title>
-  <link href="http://blog.nwy.me/blog/categories/php/atom.xml" rel="self"/>
-  <link href="http://blog.nwy.me/"/>
-  <updated>2013-04-24T14:07:57+08:00</updated>
-  <id>http://blog.nwy.me/</id>
+  <link href="http://0cean.github.com/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://0cean.github.com/"/>
+  <updated>2013-04-24T14:12:10+08:00</updated>
+  <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Gregarius 5.5 feed更新日期乱码问题]]></title>
-    <link href="http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date/"/>
+    <link href="http://0cean.github.com/blog/2011/08/26/gregarius-5-5-feed-garbled-date/"/>
     <updated>2011-08-26T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date</id>
+    <id>http://0cean.github.com/blog/2011/08/26/gregarius-5-5-feed-garbled-date</id>
     <content type="html"><![CDATA[<p>之前安装Gregarius的时候就注意到页面footer部分显示的feed更新时间会乱码，Gregarius对中文的支持很差，后台问题更多。</p>
 
 <p>解决方法：找到util.php文件，做如下改动：

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://blog.nwy.me/sitemap.xml 
+Sitemap: http://0cean.github.com/sitemap.xml 

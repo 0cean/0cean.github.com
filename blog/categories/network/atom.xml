@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: network | Ocean's Blog]]></title>
-  <link href="http://blog.nwy.me/blog/categories/network/atom.xml" rel="self"/>
-  <link href="http://blog.nwy.me/"/>
-  <updated>2013-04-24T14:07:57+08:00</updated>
-  <id>http://blog.nwy.me/</id>
+  <link href="http://0cean.github.com/blog/categories/network/atom.xml" rel="self"/>
+  <link href="http://0cean.github.com/"/>
+  <updated>2013-04-24T14:12:10+08:00</updated>
+  <id>http://0cean.github.com/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[一个光纤收发器引发的故障]]></title>
-    <link href="http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by/"/>
+    <link href="http://0cean.github.com/blog/2012/11/05/a-media-converter-fault-caused-by/"/>
     <updated>2012-11-05T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by</id>
+    <id>http://0cean.github.com/blog/2012/11/05/a-media-converter-fault-caused-by</id>
     <content type="html"><![CDATA[<p>最近楼里网络故障频繁发生，严重影响各部门的正常工作，作为网管，能快速的解决问题，众望所归，自然压力很大。
 故障症状：两个楼层所有办公室都不能上网，ping不通网关，重启后暂时能上网，时间不等，又会出现网内集体无法上网现象。
 网络拓扑结构：三四楼的网络接入点在三楼，一条100M光纤线路通过光纤收发器接到一个二层交换机，三楼所有办公室的网络都接在这个交换机上，四楼一个二层交换机，线路级联在三楼的二层交换机上。三楼接入点的网关是机房核心交换机的划分的VLan。
@@ -31,9 +31,9 @@
   
   <entry>
     <title type="html"><![CDATA[HTTP Packet Capturing to debug Apache]]></title>
-    <link href="http://blog.nwy.me/blog/2010/12/18/http/"/>
+    <link href="http://0cean.github.com/blog/2010/12/18/http/"/>
     <updated>2010-12-18T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2010/12/18/http</id>
+    <id>http://0cean.github.com/blog/2010/12/18/http</id>
     <content type="html"><![CDATA[<p>原文<a href="http://www.askapache.com/tools/sniff-http-to-debug-apache-htaccess-and-httpdconf.html">Other</a>,放在这以后复习用. 顺便把使用<strong>web.config</strong>文件来配置IIS，让IIS显示出详细的错误信息也贴上来.</p>
 
 <dl><dd>
