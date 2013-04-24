@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Webdesign | Ocean's Blog]]></title>
-  <link href="http://0cean.github.com/blog/categories/webdesign/atom.xml" rel="self"/>
-  <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T21:18:15+08:00</updated>
-  <id>http://0cean.github.com/</id>
+  <link href="http://blog.nwy.me/blog/categories/webdesign/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-04-24T21:41:26+08:00</updated>
+  <id>http://blog.nwy.me/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
     
@@ -15,13 +15,13 @@
   
   <entry>
     <title type="html"><![CDATA[每位Webdesign师新手都应知道的10件事]]></title>
-    <link href="http://0cean.github.com/blog/2010/12/19/every-web-designer-should-know-the-10-things-novice/"/>
+    <link href="http://blog.nwy.me/blog/2010/12/19/every-web-designer-should-know-the-10-things-novice/"/>
     <updated>2010-12-19T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2010/12/19/every-web-designer-should-know-the-10-things-novice</id>
+    <id>http://blog.nwy.me/blog/2010/12/19/every-web-designer-should-know-the-10-things-novice</id>
     <content type="html"><![CDATA[<p>在做网站时会遇到很多的问题，所以Webdesign师通常要扮演多种角色，并且要掌握如何构建一个有效实用的网站布局知识。
 你在Webdesign所学到的大多数教训都来自工作经验。学习是一个反复持续的过程，并且没有比犯错更好的方式来获得知识（从错误中学习）。在本文中，我们将讨论10个重要并常规的技巧，这是每位Webdesign师新手都应该知道。</p>
 
-<div><a href="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign1.jpg"><img class="aligncenter size-full wp-image-62468" title="Webdesign1" src="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign1.jpg" alt="" width="550" height="250"></a></div>
+<div><a href="http://blog.nwy.me/wp-content/uploads/2010/12/Webdesign1.jpg"><img class="aligncenter size-full wp-image-62468" title="Webdesign1" src="http://blog.nwy.me/wp-content/uploads/2010/12/Webdesign1.jpg" alt="" width="550" height="250"></a></div>
 
 
 <p>在做网站时会遇到很多的问题，所以Webdesign师通常要扮演多种角色，并且要掌握如何构建一个有效实用的网站布局知识。</p>
@@ -38,7 +38,7 @@
 <p>这里有个选择适合的文件格式的技巧：如果图片是单色，那最好保存成PNG或者GIF格式；如果是连续性的色调（如照片）则最好保存成 JPG格式。</p>
 
 <div>
-<a href="http://www.jobbole.com/attachment.php?attachmentid=2117&amp;amp;d=1292589636"> </a><a href="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign2.jpg"><img class="aligncenter size-full wp-image-62469" title="Webdesign2" src="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign2.jpg" alt="" width="500" height="227"></a>
+<a href="http://www.jobbole.com/attachment.php?attachmentid=2117&amp;amp;d=1292589636"> </a><a href="http://blog.nwy.me/wp-content/uploads/2010/12/Webdesign2.jpg"><img class="aligncenter size-full wp-image-62469" title="Webdesign2" src="http://blog.nwy.me/wp-content/uploads/2010/12/Webdesign2.jpg" alt="" width="500" height="227"></a>
 </div>
 
 
@@ -90,14 +90,14 @@
 
 <p>说完字体后，我们还需要指出使用正确颜色的重要性。例如，黑色文字在白色背景，如果使用高对比度，橙色背景上的红色文字会令你的眼睛感到紧张。</p>
 
-<div><a href="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign3.png"><img class="aligncenter size-full wp-image-62470" title="Webdesign3" src="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign3.png" alt="" width="500" height="227"></a></div>
+<div><a href="http://blog.nwy.me/wp-content/uploads/2010/12/Webdesign3.png"><img class="aligncenter size-full wp-image-62470" title="Webdesign3" src="http://blog.nwy.me/wp-content/uploads/2010/12/Webdesign3.png" alt="" width="500" height="227"></a></div>
 
 
 <p>此外，使用一些对特殊形式色盲的用户友好的颜色（检查工具名为Vischeck，可以测试某些类型的色盲）。</p>
 
 <p>有些色彩组合只适合运用在前景色的部分，而不适合做背景色。举个例子来说，深蓝色的文字搭配粉红色的背景与粉红色的文字搭配深蓝色的背景，都是使用两  种一样的颜色，但用在不同的部分则影响了它的可读性和阅读的舒适度。重要的是，不仅要使用良好的色彩组合，而且要把它用在页面中的合适元素上。</p>
 
-<div><a href="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign4.png"><img class="aligncenter size-full wp-image-62471" title="Webdesign4" src="http://0cean.github.com/wp-content/uploads/2010/12/Webdesign4.png" alt="" width="500" height="227"></a></div>
+<div><a href="http://blog.nwy.me/wp-content/uploads/2010/12/Webdesign4.png"><img class="aligncenter size-full wp-image-62471" title="Webdesign4" src="http://blog.nwy.me/wp-content/uploads/2010/12/Webdesign4.png" alt="" width="500" height="227"></a></div>
 
 
 <p><strong>6. 知道如何编写代码</strong></p>
@@ -138,9 +138,9 @@
   
   <entry>
     <title type="html"><![CDATA[2008年国外最佳Web设计/开发技巧、脚本及资源总结]]></title>
-    <link href="http://0cean.github.com/blog/2010/09/22/devweb008/"/>
+    <link href="http://blog.nwy.me/blog/2010/09/22/devweb008/"/>
     <updated>2010-09-22T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2010/09/22/devweb008</id>
+    <id>http://blog.nwy.me/blog/2010/09/22/devweb008</id>
     <content type="html"><![CDATA[<p> </p>
 
 <h2 class="title" style="font-size: 20px; color: #098cd9; margin: 5px 0px 3px;"></h2>

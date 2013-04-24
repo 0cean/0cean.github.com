@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Linux | Ocean's Blog]]></title>
-  <link href="http://0cean.github.com/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T21:18:15+08:00</updated>
-  <id>http://0cean.github.com/</id>
+  <link href="http://blog.nwy.me/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-04-24T21:41:26+08:00</updated>
+  <id>http://blog.nwy.me/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[RAM Host的KVM VPS安装CentOS6.2]]></title>
-    <link href="http://0cean.github.com/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2/"/>
+    <link href="http://blog.nwy.me/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2/"/>
     <updated>2012-06-07T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2</id>
+    <id>http://blog.nwy.me/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2</id>
     <content type="html"><![CDATA[<p>RAM Host的VPS由于站长也是Linux技术大牛，做过优化，即使低端配置性能也不错，所以销量一直很好，加上站长不超售的原则，往往一放出就告罄，上周末终于抢到一个。购买的时候因为开着代理，被Ram Host的订单系统检测到当作风险订单处理了，最后发ticket和站长解释了一番天朝的网络环境才订单才得以通过。</p>
 
 <p>这次买的是RAM Host的Premium West Coast Los Angeles Virtual Dedicated Server的Standard VPS，512MB内存，这个机房的VPS都是KVM的，没有部署站长优化过得系统，需要先在VPS管理面板里选择引导安装系统的镜像ISO。</p>
@@ -74,9 +74,9 @@
   
   <entry>
     <title type="html"><![CDATA[Linux下ext4分区格式恢复删除文件]]></title>
-    <link href="http://0cean.github.com/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/"/>
+    <link href="http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/"/>
     <updated>2011-11-27T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files</id>
+    <id>http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files</id>
     <content type="html"><![CDATA[<p>作为键盘党，下午在用键盘选择文件夹的时候，没有盯对文件夹就shift+delete删除了一个重要文件夹，之前就发生过丢失数据的悲剧，于是给笔记本增加了一块硬盘，重要数据定时同步到光驱位硬盘，不过今天误删除的文件夹还没同步到光驱位硬盘。在ext2分区格式下有许多文件恢复软件，但是这些软件都不支持ext4，或兼容的不太好，如testdisk，虽然可以看到误删的文件但是恢复出来的文件是损坏的。最后通过一番搜索找到了一款支持ext4的的恢复软件extundelete。</p>
 
 <p>安装extundelete，可以去软件主页http://extundelete.sourceforge.net下载编译，或者从服务器获取，不同的发行版的安装方法不同，这里不再详述。</p>
@@ -211,9 +211,9 @@ extundelete /dev/sda3 --restore-all
   
   <entry>
     <title type="html"><![CDATA[Arch Linux下webOS开发平台的搭建]]></title>
-    <link href="http://0cean.github.com/blog/2011/09/19/archlinux-development-platform-to-build-next-webos/"/>
+    <link href="http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos/"/>
     <updated>2011-09-19T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2011/09/19/archlinux-development-platform-to-build-next-webos</id>
+    <id>http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos</id>
     <content type="html"><![CDATA[<p>作为一个02年开始使用palm的资深palm用户，对palm有着根深蒂固的感情。在palm的陪伴下，经历了高中大学的学生时代，步入社会，开始工作。palm曾经的辉煌也一去不复返，在这个物质，浮躁，快速化的世界，palm系统的单线程，简洁的特性在全球网络化的时代逐渐淡出人们的视线，随后palm公司发布了webOS，被惠普公司收购。发现跑题已经是我写技术文章的特色之一了，言归正传。</p>
 
 <p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下</p>
@@ -357,9 +357,9 @@ extundelete /dev/sda3 --restore-all
   
   <entry>
     <title type="html"><![CDATA[curl 简单作弊条]]></title>
-    <link href="http://0cean.github.com/blog/2011/06/22/simple-cheat-curl-bar/"/>
+    <link href="http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar/"/>
     <updated>2011-06-22T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2011/06/22/simple-cheat-curl-bar</id>
+    <id>http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar</id>
     <content type="html"><![CDATA[<div id="content">
 <div class="entry">
 <h5>原文出处：<a href="http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/">http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/</a>
@@ -419,9 +419,9 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
   
   <entry>
     <title type="html"><![CDATA[Linux下命令执行顺序]]></title>
-    <link href="http://0cean.github.com/blog/2011/06/22/linux-command-execution-order/"/>
+    <link href="http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order/"/>
     <updated>2011-06-22T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2011/06/22/linux-command-execution-order</id>
+    <id>http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order</id>
     <content type="html"><![CDATA[<div><a href="http://doc.linuxpk.com/52705.html">本文来自：Linux宝库 -- http://doc.linuxpk.com/52705.html</a></div>
 
 

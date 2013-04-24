@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Network | Ocean's Blog]]></title>
-  <link href="http://0cean.github.com/blog/categories/network/atom.xml" rel="self"/>
-  <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T21:18:15+08:00</updated>
-  <id>http://0cean.github.com/</id>
+  <link href="http://blog.nwy.me/blog/categories/network/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-04-24T21:41:26+08:00</updated>
+  <id>http://blog.nwy.me/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[一个光纤收发器引发的故障]]></title>
-    <link href="http://0cean.github.com/blog/2012/11/05/a-media-converter-fault-caused-by/"/>
+    <link href="http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by/"/>
     <updated>2012-11-05T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2012/11/05/a-media-converter-fault-caused-by</id>
+    <id>http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by</id>
     <content type="html"><![CDATA[<p>最近楼里网络故障频繁发生，严重影响各部门的正常工作，作为网管，能快速的解决问题，众望所归，自然压力很大。</p>
 
 <h1>故障症状：</h1>
@@ -46,9 +46,9 @@
   
   <entry>
     <title type="html"><![CDATA[HTTP Packet Capturing to debug Apache]]></title>
-    <link href="http://0cean.github.com/blog/2010/12/18/http/"/>
+    <link href="http://blog.nwy.me/blog/2010/12/18/http/"/>
     <updated>2010-12-18T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2010/12/18/http</id>
+    <id>http://blog.nwy.me/blog/2010/12/18/http</id>
     <content type="html"><![CDATA[<p>原文<a href="http://www.askapache.com/tools/sniff-http-to-debug-apache-htaccess-and-httpdconf.html">Other</a>,放在这以后复习用. 顺便把使用<strong>web.config</strong>文件来配置IIS，让IIS显示出详细的错误信息也贴上来.</p>
 
 <dl><dd>

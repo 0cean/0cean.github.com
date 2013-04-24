@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: CSS | Ocean's Blog]]></title>
-  <link href="http://0cean.github.com/blog/categories/css/atom.xml" rel="self"/>
-  <link href="http://0cean.github.com/"/>
-  <updated>2013-04-24T21:18:15+08:00</updated>
-  <id>http://0cean.github.com/</id>
+  <link href="http://blog.nwy.me/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-04-24T21:41:26+08:00</updated>
+  <id>http://blog.nwy.me/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[14个可以节省你时间的CSS工具]]></title>
-    <link href="http://0cean.github.com/blog/2010/10/27/csstools/"/>
+    <link href="http://blog.nwy.me/blog/2010/10/27/csstools/"/>
     <updated>2010-10-27T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2010/10/27/csstools</id>
+    <id>http://blog.nwy.me/blog/2010/10/27/csstools</id>
     <content type="html"><![CDATA[<p> 
 作为一个网站设计/开发人员，你必须不断寻找方法来减少设计/开发过程中所花费的时间。这对于提高你的工作效率并最大化你的利润是非常重要的。下面介绍的按功能分类的css工具可以有效地节省你设计网站的时间。
 <strong> 优化/格式化类</strong></p>
@@ -104,9 +104,9 @@
   
   <entry>
     <title type="html"><![CDATA[20个学习CSS的绝佳网站-让你从入门到精通]]></title>
-    <link href="http://0cean.github.com/blog/2010/09/30/cssweb/"/>
+    <link href="http://blog.nwy.me/blog/2010/09/30/cssweb/"/>
     <updated>2010-09-30T00:00:00+08:00</updated>
-    <id>http://0cean.github.com/blog/2010/09/30/cssweb</id>
+    <id>http://blog.nwy.me/blog/2010/09/30/cssweb</id>
     <content type="html"><![CDATA[<p>CSS（层叠样式表）是一种简单的设计语言，能够将页面变漂亮这回事儿变的简单化。在HTML和XHTML中设定页面的样式，这是最常用的应用。但也可以应用于 XML类的文档，包括SVG和XUL。他负责管理网页的设计和外观。使用CSS，你可以控制文字的颜色、字体、段落间距、分栏的数目大小布局、背景图片颜 色，以及其他很多种的效果。接下来才是要说的是学习并掌握CSS的20个绝佳站点。这里收集到的CSS站点能使你从初学者到高级人员。这些能协助你开发和改进网站。恩，随便看看吧。</p>
 
 <p>Csstutorial
