@@ -1,24 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
-  <title><![CDATA[Ocean's Blog]]></title>
-  <link href="http://blog.nwy.me/atom.xml" rel="self"/>
-  <link href="http://blog.nwy.me/"/>
-  <updated>2013-04-26T10:35:43+08:00</updated>
-  <id>http://blog.nwy.me/</id>
-  <author>
-    <name><![CDATA[Ocean]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
-
-  
-  <entry>
-    <title type="html"><![CDATA[一个光纤收发器引发的故障]]></title>
-    <link href="http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by/"/>
-    <updated>2012-11-05T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by</id>
-    <content type="html"><![CDATA[<p>最近楼里网络故障频繁发生，严重影响各部门的正常工作，作为网管，能快速的解决问题，众望所归，自然压力很大。</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+	<channel>
+		<description><![CDATA[Ocean's Blog]]></description>
+		<title><![CDATA[Ocean's Blog]]></title>
+		<link>http://blog.nwy.me/</link>
+		<pubDate>2013-04-26T10:35:43+08:00</pubDate>
+ 
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>最近楼里网络故障频繁发生，严重影响各部门的正常工作，作为网管，能快速的解决问题，众望所归，自然压力很大。</p>
 
 <h1>故障症状：</h1>
 
@@ -41,15 +33,22 @@
 
 <p>先用ARP软件检测是否有攻击，笔记本单独在交换机上接一个端口开着检测软件，查看网络故障后笔记本本地缓存的网关MAC地址，和VLan网关的MAC地址一致，没有被伪造，没有发现有ARP攻击，排除ARP攻击的可能性。
 拔掉设备箱里所有网线，交换机上只接笔记本一台设备，故障仍然存在。把笔记本通过网线直接接到光纤收发器，故障仍然存在。而且发现网络故障的时候光纤收发器的TX和RX指示灯长亮不闪烁，可以判断问题出在光纤收发器上，也排除了交换机硬件故障的可能，剩下了就是联系信息中心，更换光纤收发器后，至此故障解决。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[RAM Host的KVM VPS安装CentOS6.2]]></title>
-    <link href="http://blog.nwy.me/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2/"/>
-    <updated>2012-06-07T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2</id>
-    <content type="html"><![CDATA[<p>RAM Host的VPS由于站长也是Linux技术大牛，做过优化，即使低端配置性能也不错，所以销量一直很好，加上站长不超售的原则，往往一放出就告罄，上周末终于抢到一个。购买的时候因为开着代理，被Ram Host的订单系统检测到当作风险订单处理了，最后发ticket和站长解释了一番天朝的网络环境才订单才得以通过。</p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[一个光纤收发器引发的故障]]></title>
+			<link>http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by/</link>
+			<pubDate>2012-11-05T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>RAM Host的VPS由于站长也是Linux技术大牛，做过优化，即使低端配置性能也不错，所以销量一直很好，加上站长不超售的原则，往往一放出就告罄，上周末终于抢到一个。购买的时候因为开着代理，被Ram Host的订单系统检测到当作风险订单处理了，最后发ticket和站长解释了一番天朝的网络环境才订单才得以通过。</p>
 
 <p>这次买的是RAM Host的Premium West Coast Los Angeles Virtual Dedicated Server的Standard VPS，512MB内存，这个机房的VPS都是KVM的，没有部署站长优化过得系统，需要先在VPS管理面板里选择引导安装系统的镜像ISO。</p>
 
@@ -103,15 +102,22 @@
 <p><code>service Network restart</code></p>
 
 <p>至此Centos6.2就安装完成了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[韩寒：写给每一个自己]]></title>
-    <link href="http://blog.nwy.me/blog/2012/04/05/han-han-addressed-to-each/"/>
-    <updated>2012-04-05T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2012/04/05/han-han-addressed-to-each</id>
-    <content type="html"><![CDATA[<p>　　最近三个月，看世间百态，人情冷暖，失落与收获都颇多。失落在我出生是纯正的上海郊区农村屌丝，无权无势，白手起家，本以为自己是一个很励志的“屌丝的逆袭”的故事，却硬要被说成一个经过多方神秘势力包装的惊天大阴谋，失落在北京有一个几面之交的“名流友人”，莫名编造了一个内幕，四处传播，让我心寒，我愿怀着善意，相信他是无心的吹水；失落在我自己，太过在意，害怕深文周纳，行文变得谨慎。收获在很多谋面和未曾谋面的朋友仗义执言：虽然都被打成利益集团；收获在十几年前的同学为我说话，虽然因为回忆太远往事，细节互相有偏差被打成诈骗团伙；收获在我看到太多人心和各种面目，以后写小说刻画人物会更加精彩。</p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[RAM Host的KVM VPS安装CentOS6.2]]></title>
+			<link>http://blog.nwy.me/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2/</link>
+			<pubDate>2012-06-07T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>　　最近三个月，看世间百态，人情冷暖，失落与收获都颇多。失落在我出生是纯正的上海郊区农村屌丝，无权无势，白手起家，本以为自己是一个很励志的“屌丝的逆袭”的故事，却硬要被说成一个经过多方神秘势力包装的惊天大阴谋，失落在北京有一个几面之交的“名流友人”，莫名编造了一个内幕，四处传播，让我心寒，我愿怀着善意，相信他是无心的吹水；失落在我自己，太过在意，害怕深文周纳，行文变得谨慎。收获在很多谋面和未曾谋面的朋友仗义执言：虽然都被打成利益集团；收获在十几年前的同学为我说话，虽然因为回忆太远往事，细节互相有偏差被打成诈骗团伙；收获在我看到太多人心和各种面目，以后写小说刻画人物会更加精彩。</p>
 
 <p>　　人的处事风格和性格不是一成不变的，尤其是16岁到30岁之间。我写过一些不错的文字，也写了不少烂文章，无论状态起伏，无论风格转变，都是一个人的成长历程，谁人能在十四年的青春里保持纹丝不动。我二十岁出头的时候主张抵制日货，是个民族主义者，08年的时候开始反对抵制家乐福，我小时候主张打仗收复台湾，现在都不好意思承认自己这么说过，十七八岁时，我居然说，活着的作家中，写文章论排名老子天下第二，现在想起来都脸红，更让我脸红的是当年我心中那个第一居然是李敖。我少年时装酷，追求语出惊人，这些话现在看来，很多都惹人厌恶，甚至还惹我自己厌恶，把各种傻话挖出来，总会击中不同的人。谁没有年少过，你在宿舍里说过的那些蠢话，你在树林里幼稚的表白，现在翻出来可不都得笑死，没有人永远和过去的自己一致，除非你不再成长。</p>
 
@@ -128,15 +134,22 @@
 <p>　　最后我想到一部电影的结尾。朋友们，愿你带走我身上你们中意的那一部分，踩两脚讨厌的那部分。当你站在城墙上，拥抱着你所喜爱的那部分，回头看到人群里背身远去那个叫韩寒的家伙，不妨说一句，那个人样子好怪，他好像一条狗诶。</p>
 
 <p>来源: 作者博客 | 来源日期：2012-4-5</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linux下ext4分区格式恢复删除文件]]></title>
-    <link href="http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/"/>
-    <updated>2011-11-27T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files</id>
-    <content type="html"><![CDATA[<p>作为键盘党，下午在用键盘选择文件夹的时候，没有盯对文件夹就shift+delete删除了一个重要文件夹，之前就发生过丢失数据的悲剧，于是给笔记本增加了一块硬盘，重要数据定时同步到光驱位硬盘，不过今天误删除的文件夹还没同步到光驱位硬盘。在ext2分区格式下有许多文件恢复软件，但是这些软件都不支持ext4，或兼容的不太好，如testdisk，虽然可以看到误删的文件但是恢复出来的文件是损坏的。最后通过一番搜索找到了一款支持ext4的的恢复软件extundelete。</p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[韩寒：写给每一个自己]]></title>
+			<link>http://blog.nwy.me/blog/2012/04/05/han-han-addressed-to-each/</link>
+			<pubDate>2012-04-05T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2012/04/05/han-han-addressed-to-each</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>作为键盘党，下午在用键盘选择文件夹的时候，没有盯对文件夹就shift+delete删除了一个重要文件夹，之前就发生过丢失数据的悲剧，于是给笔记本增加了一块硬盘，重要数据定时同步到光驱位硬盘，不过今天误删除的文件夹还没同步到光驱位硬盘。在ext2分区格式下有许多文件恢复软件，但是这些软件都不支持ext4，或兼容的不太好，如testdisk，虽然可以看到误删的文件但是恢复出来的文件是损坏的。最后通过一番搜索找到了一款支持ext4的的恢复软件extundelete。</p>
 
 <p>安装extundelete，可以去软件主页http://extundelete.sourceforge.net下载编译，或者从服务器获取，不同的发行版的安装方法不同，这里不再详述。</p>
 
@@ -228,15 +241,22 @@ extundelete /dev/sda3 --restore-all
 </code></p>
 
 <p>extundelete恢复误删除的文件不需要进入live环境，也不需要umount误删文件所在分区，运行命令后会在你运行命令的目录下产生一个RECOVERED_FILES/的目录，恢复的文件会按照原来的路径创建在该路径下面，所以做恢复操作的时候一定要把终端路径切换到其他分区下，不能在当前误删文件所在分区操作，否则恢复出来的文件会覆盖误删除的文件，导致恢复出来的部分或全部文件损坏。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Arch Linux下webOS开发平台的搭建]]></title>
-    <link href="http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos/"/>
-    <updated>2011-09-19T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos</id>
-    <content type="html"><![CDATA[<p>作为一个02年开始使用palm的资深palm用户，对palm有着根深蒂固的感情。在palm的陪伴下，经历了高中大学的学生时代，步入社会，开始工作。palm曾经的辉煌也一去不复返，在这个物质，浮躁，快速化的世界，palm系统的单线程，简洁的特性在全球网络化的时代逐渐淡出人们的视线，随后palm公司发布了webOS，被惠普公司收购。发现跑题已经是我写技术文章的特色之一了，言归正传。</p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[Linux下ext4分区格式恢复删除文件]]></title>
+			<link>http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/</link>
+			<pubDate>2011-11-27T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>作为一个02年开始使用palm的资深palm用户，对palm有着根深蒂固的感情。在palm的陪伴下，经历了高中大学的学生时代，步入社会，开始工作。palm曾经的辉煌也一去不复返，在这个物质，浮躁，快速化的世界，palm系统的单线程，简洁的特性在全球网络化的时代逐渐淡出人们的视线，随后palm公司发布了webOS，被惠普公司收购。发现跑题已经是我写技术文章的特色之一了，言归正传。</p>
 
 <p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下</p>
 
@@ -347,27 +367,41 @@ extundelete /dev/sda3 --restore-all
 <img src="http://nwy.me/wp-content/uploads/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_003" /></p>
 
 <p>至此，archlinux下webOS的开发环境搭建完成。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[未来的手机应该是这样的]]></title>
-    <link href="http://blog.nwy.me/blog/2011/09/07/the-future-of-mobile-phones-should-be-like/"/>
-    <updated>2011-09-07T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/09/07/the-future-of-mobile-phones-should-be-like</id>
-    <content type="html"><![CDATA[<div class="video-container">
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[Arch Linux下webOS开发平台的搭建]]></title>
+			<link>http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos/</link>
+			<pubDate>2011-09-19T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<div class="video-container">
     <embed src="http://player.youku.com/player.php/sid/XMTkyNDg3Nzgw/v.swf" allowfullscreen="true" quality="high" width="540" height="420" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash"></embed>       
 </div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Gregarius 5.5 feed更新日期乱码问题]]></title>
-    <link href="http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date/"/>
-    <updated>2011-08-26T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date</id>
-    <content type="html"><![CDATA[<p>之前安装Gregarius的时候就注意到页面footer部分显示的feed更新时间会乱码，Gregarius对中文的支持很差，后台问题更多。</p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[未来的手机应该是这样的]]></title>
+			<link>http://blog.nwy.me/blog/2011/09/07/the-future-of-mobile-phones-should-be-like/</link>
+			<pubDate>2011-09-07T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/09/07/the-future-of-mobile-phones-should-be-like</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>之前安装Gregarius的时候就注意到页面footer部分显示的feed更新时间会乱码，Gregarius对中文的支持很差，后台问题更多。</p>
 
 <p>解决方法：找到util.php文件，做如下改动：</p>
 
@@ -401,15 +435,22 @@ extundelete /dev/sda3 --restore-all
 
 
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[无题]]></title>
-    <link href="http://blog.nwy.me/blog/2011/08/18/untitled/"/>
-    <updated>2011-08-18T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/08/18/untitled</id>
-    <content type="html"><![CDATA[<p>预感有悲剧要发生了，网站本月的15G带宽流量截止今天已经用掉了11.5G，今天才十八号，距月底还有十二天。看了下了访问统计，似乎是CDN服务器消耗掉的，奇怪的是消耗掉的流量主要集中在一个页面。先观察，等月底流量不够再移除这个页面。</p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[Gregarius 5.5 feed更新日期乱码问题]]></title>
+			<link>http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date/</link>
+			<pubDate>2011-08-26T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>预感有悲剧要发生了，网站本月的15G带宽流量截止今天已经用掉了11.5G，今天才十八号，距月底还有十二天。看了下了访问统计，似乎是CDN服务器消耗掉的，奇怪的是消耗掉的流量主要集中在一个页面。先观察，等月底流量不够再移除这个页面。</p>
 
 <p><img src="http://nwy.me/wp-content/uploads/2011/08/traffic_001.png" alt="traffic_001" /></p>
 
@@ -419,15 +460,22 @@ extundelete /dev/sda3 --restore-all
 <p><img src="http://nwy.me/wp-content/uploads/2011/08/traffic.png" alt="traffic" />
 <img src="http://nwy.me/wp-content/uploads/2011/08/traffic_003.png" alt="traffic_003" />
 <img src="http://nwy.me/wp-content/uploads/2011/08/traffic_004.png" alt="traffic_004" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[青年领袖灵魂大师王大锤对青年人的教诲]]></title>
-    <link href="http://blog.nwy.me/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people/"/>
-    <updated>2011-08-07T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people</id>
-    <content type="html"><![CDATA[<ol>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[无题]]></title>
+			<link>http://blog.nwy.me/blog/2011/08/18/untitled/</link>
+			<pubDate>2011-08-18T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/08/18/untitled</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<ol>
 <li><p>他们只会否定。低头看书，抬头看世界，看到不爽就唧唧歪歪。但他们没有社会经验，所以唧唧歪歪起来很烦人，因为那点阅读量的加持，得比德比的，还头头是道，要是有个人帮我cei死丫就太好了。</p></li>
 <li><p>看问题基本上都是消极的。说好听是怀疑精神，说难听点就是啥都不会做。还给人添堵。</p></li>
 <li><p>什么都看不惯，什么都看不上眼。情商不高，耍小聪明。</p></li>
@@ -439,15 +487,22 @@ extundelete /dev/sda3 --restore-all
 <p>发现自己三条毛病都有，特转发此文，告诫自己。</p>
 
 <p>PS:上个月换了网络环境，发现被ISP劫持，因为用Fx+Autoproxy，所以就没有注意，后来发现网络中断后再连接的时候会推送广告，无法忍受，果断登录路由指定DNS为Google的DNS，于是世界清静了。需要指出的是用Google的DNS是不能翻墙的，DNS的UDP包也是会被墙劫持篡改的。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[程序员技术练级攻略]]></title>
-    <link href="http://blog.nwy.me/blog/2011/07/24/programmers-technical-leveling-guide/"/>
-    <updated>2011-07-24T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/07/24/programmers-technical-leveling-guide</id>
-    <content type="html"><![CDATA[<p>文章作者： <a title="由 陈皓 发布" href="http://coolshell.cn/articles/author/haoel" rel="author">陈皓</a> 转载出处：<a href="http://coolshell.cn/articles/4990.html">http://coolshell.cn/articles/4990.html</a></p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[青年领袖灵魂大师王大锤对青年人的教诲]]></title>
+			<link>http://blog.nwy.me/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people/</link>
+			<pubDate>2011-08-07T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>文章作者： <a title="由 陈皓 发布" href="http://coolshell.cn/articles/author/haoel" rel="author">陈皓</a> 转载出处：<a href="http://coolshell.cn/articles/4990.html">http://coolshell.cn/articles/4990.html</a></p>
 
 <p>月光博客6月12日发表了《<a href="http://www.williamlong.info/archives/2700.html" target="_blank">写给新手程序员的一封信</a>》，翻译自《<a href="http://blog.akash.im/an-open-letter-to-those-who-want-to-start" target="_blank">An open letter to those who want to start programming</a>》，我的朋友（他在本站的id是<a href="http://coolshell.cn/?author=3" target="_blank">Mailper</a>）告诉我，他希望在酷壳上看到一篇更具操作性的文章。因为他也是喜欢编程和技术的家伙，于是，我让他把他的一些学习Python和Web编程的一些点滴总结一下。于是他给我发来了一些他的心得和经历，我在把他的心得做了不多的增改，并根据我的经历增加了“进阶”一节。<strong>这是一篇由新手和我这个老家伙根据我们的经历完成的文章</strong>。</p>
 
@@ -769,15 +824,22 @@ extundelete /dev/sda3 --restore-all
 <p>4）有朋友说技术都是工具，不应该如此痴迷这句话没有错，有时候我们需要更多的是抬起头来看看技术以外的事情，或者是说我们在作技术的时候不去思考为什么会有这个技术，为什么不是别的，问题不在于技术，问题在于我们死读书，读死书，成了技术的书呆子。</p>
 
 <p>5） 对于NoSQL，最近比较火，但我对其有点保守，所以，我只是说了解就可以。对于Hadoop，我觉得其在分布式系统上有巨大的潜力，所以需要学习。 对于关系型数据库，的确是很重要的东西，这点是我的疏忽，在原文里补充。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[curl 简单作弊条]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar/"/>
-    <updated>2011-06-22T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar</id>
-    <content type="html"><![CDATA[<div id="content">
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[程序员技术练级攻略]]></title>
+			<link>http://blog.nwy.me/blog/2011/07/24/programmers-technical-leveling-guide/</link>
+			<pubDate>2011-07-24T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/07/24/programmers-technical-leveling-guide</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<div id="content">
 <div class="entry">
 <h5>原文出处：<a href="http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/">http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/</a>
 </h5>
@@ -831,15 +893,22 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 </div>
 </div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linux下命令执行顺序]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order/"/>
-    <updated>2011-06-22T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order</id>
-    <content type="html"><![CDATA[<div><a href="http://doc.linuxpk.com/52705.html">本文来自：Linux宝库 &#8211; http://doc.linuxpk.com/52705.html</a></div>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[curl 简单作弊条]]></title>
+			<link>http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar/</link>
+			<pubDate>2011-06-22T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<div><a href="http://doc.linuxpk.com/52705.html">本文来自：Linux宝库 &#8211; http://doc.linuxpk.com/52705.html</a></div>
 
 
 <p> </p>
@@ -987,28 +1056,42 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 <h1>6.4 小结</h1>
 
 <p>在编写shell脚本时，使用&amp;&amp;和||对构造判断语句非常有用。如果希望在前一个命令执行失败的情况不执行后面的命令，那么本章所讲述的方法非常简单有效。使用这样的方法，可以根据&amp;&amp;或||前面命令的返回值来控制其后面命令的执行。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[我的一些订阅]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/20/some-of-my-subscription/"/>
-    <updated>2011-06-20T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/20/some-of-my-subscription</id>
-    <content type="html"><![CDATA[<p>虽然平时订阅网站或网友的博客使用的是谷歌阅读器，但是由于在墙内，谷歌的许多服务由于种种原因无法正常访问，在电脑上或手机上都是通过某种类似跨栏运动的方法访问谷歌的服务，于是搭建了一个人的RSS阅读器，将自己谷歌阅读器的订阅复制到上面，这样就可以无障碍阅读自己订阅的一些网站博客。</p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[Linux下命令执行顺序]]></title>
+			<link>http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order/</link>
+			<pubDate>2011-06-22T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>虽然平时订阅网站或网友的博客使用的是谷歌阅读器，但是由于在墙内，谷歌的许多服务由于种种原因无法正常访问，在电脑上或手机上都是通过某种类似跨栏运动的方法访问谷歌的服务，于是搭建了一个人的RSS阅读器，将自己谷歌阅读器的订阅复制到上面，这样就可以无障碍阅读自己订阅的一些网站博客。</p>
 
 <p>访问地址：<a href="http://reader.nwy.me">http://reader.nwy.me</a> 或 <a href="http://nwy.me/reader">http://nwy.me/reader</a></p>
 
 <p>第一个地址还在解析中，可能需要做跨栏运动才能访问，怕闪到腰的用后面的网址访问。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[palm pre上的推荐补丁列表]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended/"/>
-    <updated>2011-06-08T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended</id>
-    <content type="html"><![CDATA[<p><img src="http://nwy.me/wp-content/uploads/2011/06/Palm-Pre-Slide.png" alt="Palm-Pre-Slide" /></p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[我的一些订阅]]></title>
+			<link>http://blog.nwy.me/blog/2011/06/20/some-of-my-subscription/</link>
+			<pubDate>2011-06-20T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/20/some-of-my-subscription</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p><img src="http://nwy.me/wp-content/uploads/2011/06/Palm-Pre-Slide.png" alt="Palm-Pre-Slide" /></p>
 
 <p>ca.canucksoftware.patches.keytoss-orientation-manager-145 - 1.4.5-1 - keytoss-orientation-manager-145</p>
 
@@ -1083,15 +1166,22 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 <p>org.webosinternals.patches.top-bar-system-menu-mods-v1 - 1.4.5-33 - System Menu Mods v1</p>
 
 <p>org.webosinternals.patches.top-bar-system-menu-today-menu - 1.4.5-33 - System Menu Today Menu</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[一个程序员的爱情故事]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/01/the-love-story-of-a-programmer/"/>
-    <updated>2011-06-01T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/01/the-love-story-of-a-programmer</id>
-    <content type="html"><![CDATA[<p>作者：http://topic.csdn.net/u/20110517/12/0ab11541-6206-40c9-a8b1-5439d642ab49.html
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[palm pre上的推荐补丁列表]]></title>
+			<link>http://blog.nwy.me/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended/</link>
+			<pubDate>2011-06-08T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>作者：http://topic.csdn.net/u/20110517/12/0ab11541-6206-40c9-a8b1-5439d642ab49.html
 注释：http://www.cnblogs.com/zhuqil/archive/2011/05/19/2051373.html</p>
 
 <p>今天在csdn上看了一篇帖子：《这段代码描述我最近的心情》。 才发现原来用代码可以书写人生，对代码的作者十分钦佩。</p>
@@ -1158,15 +1248,22 @@ public class MyLoveStory
     }
 <code>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[写在博客被墙之后]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/01/after-the-blog-was-written-in-the-wall/"/>
-    <updated>2011-06-01T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/01/after-the-blog-was-written-in-the-wall</id>
-    <content type="html"><![CDATA[<p>墙</p>
+
+				Included file 'post/copyright.html' not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[一个程序员的爱情故事]]></title>
+			<link>http://blog.nwy.me/blog/2011/06/01/the-love-story-of-a-programmer/</link>
+			<pubDate>2011-06-01T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/01/the-love-story-of-a-programmer</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>墙</p>
 
 <p>作者：舒婷 </p>
 
@@ -1223,15 +1320,22 @@ public class MyLoveStory
 
 <p>什么叫做体制（institutionalized）？《肖申克的救赎》中的安迪说：“这种东西，起初，你讨厌它，然后你逐渐地习惯它，足够的时间后你开始依赖它。这就是体制。”
 画外音：博主，你不是说博客被墙了，为什么我还能访问？呃，博主对域名做了CDN。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[程序员的 100 种境界]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/31/realm-of-the-programmer-100-species/"/>
-    <updated>2011-05-31T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/31/realm-of-the-programmer-100-species</id>
-    <content type="html"><![CDATA[<p>转载出处：<a href="http://eishn.blog.163.com/blog/static/652318201102831731444/">http://eishn.blog.163.com/blog/static/652318201102831731444/</a> 作者：沈崴</p>
+
+				Included file 'post/copyright.html' not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[写在博客被墙之后]]></title>
+			<link>http://blog.nwy.me/blog/2011/06/01/after-the-blog-was-written-in-the-wall/</link>
+			<pubDate>2011-06-01T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/01/after-the-blog-was-written-in-the-wall</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>转载出处：<a href="http://eishn.blog.163.com/blog/static/652318201102831731444/">http://eishn.blog.163.com/blog/static/652318201102831731444/</a> 作者：沈崴</p>
 
 <p>境界零：混沌态、浆糊状（小白、新兵）</p>
 
@@ -1372,15 +1476,22 @@ public class MyLoveStory
 <p>角色：UNKNOW</p>
 
 <p>传说在每一个挨踢公司里都有一个扫地大妈，会在某天经过你的身边，扫一眼代码淡淡地说 “小心，栈溢出了”……</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[升级笔记本BIOS]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/16/notebook-bios-upgrade/"/>
-    <updated>2011-05-16T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/16/notebook-bios-upgrade</id>
-    <content type="html"><![CDATA[<p>前几天看到论坛网友讨论联想官方放出T61新的BIOS，看了更新说明:，由于没有做多大的变动，就没有更新。今天看到有国外网友发布了基于这次更新BIOS的版本，做了以下修改：</p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[程序员的 100 种境界]]></title>
+			<link>http://blog.nwy.me/blog/2011/05/31/realm-of-the-programmer-100-species/</link>
+			<pubDate>2011-05-31T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/05/31/realm-of-the-programmer-100-species</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>前几天看到论坛网友讨论联想官方放出T61新的BIOS，看了更新说明:，由于没有做多大的变动，就没有更新。今天看到有国外网友发布了基于这次更新BIOS的版本，做了以下修改：</p>
 
 <ol>
 <li>SATA-II 3Gb/s</li>
@@ -1399,15 +1510,22 @@ public class MyLoveStory
 <p><img src="http://nwy.me/wp-content/uploads/2011/05/Screenshot-500-GB-%E7%A1%AC%E7%9B%98-ATA-Hitachi-HTS725050A9A364-%E2%80%93-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.png" alt="Screenshot-500 GB 硬盘 (ATA Hitachi HTS725050A9A364) – 性能测试" />
 附下载链接:
 <a href="http://forum.notebookreview.com/lenovo-ibm/459591-t61-x61-sata-ii-1-5-gb-s-cap-willing-pay-solution-8.html">http://forum.notebookreview.com/lenovo-ibm/459591-t61-x61-sata-ii-1-5-gb-s-cap-willing-pay-solution-8.html</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[博客待完善事宜]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/04/blog-matters-to-be-improved/"/>
-    <updated>2011-05-04T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/04/blog-matters-to-be-improved</id>
-    <content type="html"><![CDATA[<p>已知本博客存在的问题</p>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[升级笔记本BIOS]]></title>
+			<link>http://blog.nwy.me/blog/2011/05/16/notebook-bios-upgrade/</link>
+			<pubDate>2011-05-16T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/05/16/notebook-bios-upgrade</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>已知本博客存在的问题</p>
 
 <ul>
 <li>一、 谷歌爬虫抓取错误。</li>
@@ -1430,15 +1548,22 @@ public class MyLoveStory
 <p>问题四：博客为了提高网站收录做了页面静态化，静态化用过多个url格式，导致新旧日志url风格不统一，目前的url格式是通过插件实现url中包含用谷歌自动翻译过的日志标题，看资料，谷歌可以收录中文url，理论上url中包含关键字，有利于seo优化，但是有中文的原因，就必须要对url做编码，从后台的访问日志来看会出现莫名其妙的缺失字符问题。</p>
 
 <p>问题五：迁移博客导入备份数据库后未做过优化，数据库存在许多无用的字段，这个需要花时间确认无误后再删除。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SSH自动运行以及端口释放]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/"/>
-    <updated>2011-05-02T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port</id>
-    <content type="html"><![CDATA[<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[博客待完善事宜]]></title>
+			<link>http://blog.nwy.me/blog/2011/05/04/blog-matters-to-be-improved/</link>
+			<pubDate>2011-05-04T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/05/04/blog-matters-to-be-improved</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+		<item>
+			<description>
+				<![CDATA[
+				<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
 ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1470,7 +1595,17 @@ ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将�
 <p>后续:我写的ssh自动运行脚本是通过系统的启动运行程序来是实现开机自动运行，所以会导致挂起或休眠后再次唤醒ssh隧道无法使用提示端口占用
 Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
 upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
-]]></content>
-  </entry>
-  
-</feed>
+
+				Included file &#8216;post/copyright.html&#8217; not found in _includes directory
+				]]>
+			</description>
+			<title><![CDATA[SSH自动运行以及端口释放]]></title>
+			<link>http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/</link>
+			<pubDate>2011-05-02T00:00:00+08:00</pubDate>
+			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port</guid>
+ 
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+		</item>
+		
+	</channel>
+</rss>
