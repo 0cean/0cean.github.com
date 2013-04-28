@@ -4,7 +4,7 @@
   <title><![CDATA[Ocean's Blog]]></title>
   <link href="http://blog.nwy.me/atom.xml" rel="self"/>
   <link href="http://blog.nwy.me/"/>
-  <updated>2013-04-26T11:34:01+08:00</updated>
+  <updated>2013-04-28T22:05:01+08:00</updated>
   <id>http://blog.nwy.me/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://blog.nwy.me/">Ocean</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[iphone-5s-release]]></title>
+    <link href="http://blog.nwy.me/blog/2013/04/28/iphone-5s-release/"/>
+    <updated>2013-04-28T21:55:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2013/04/28/iphone-5s-release</id>
+    <content type="html"><![CDATA[<p>网友爆料，AU（日本KDDI旗下的电信品牌）的新海报这次亮点很大。在海报的下方竟出现了iPhone5S的发布时间！与之前的传闻相同，iPhone5S将于6月20日正式发布，7月份将会上市。</p>
+
+<p><img src="http://oceanblog.b0.upaiyun.com/iphone5s.jpg" alt="iPhone5S" /></p>
+
+<p>同时海报上还介绍了iPhone5S的一些新功能：</p>
+
+<ul>
+<li>将拥有指纹识别功能；</li>
+<li>配1300万像素摄像头；</li>
+<li>运行最新的iOS7操作系统。</li>
+</ul>
+
+
+<p>苹果的保密工作做的再好也不行啊，碰上猪一般的队友，谁也伤不起啊&#8230;</p>
+
+<p>苹果iPhone5S就这样被彻彻底底的曝光了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[一个光纤收发器引发的故障]]></title>
@@ -1430,46 +1454,6 @@ public class MyLoveStory
 <p>问题四：博客为了提高网站收录做了页面静态化，静态化用过多个url格式，导致新旧日志url风格不统一，目前的url格式是通过插件实现url中包含用谷歌自动翻译过的日志标题，看资料，谷歌可以收录中文url，理论上url中包含关键字，有利于seo优化，但是有中文的原因，就必须要对url做编码，从后台的访问日志来看会出现莫名其妙的缺失字符问题。</p>
 
 <p>问题五：迁移博客导入备份数据库后未做过优化，数据库存在许多无用的字段，这个需要花时间确认无误后再删除。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SSH自动运行以及端口释放]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/"/>
-    <updated>2011-05-02T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port</id>
-    <content type="html"><![CDATA[<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
-ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGLEVEL</span><span class="o">=</span>7
-</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_DEBUG</span><span class="o">=</span>DEBUG
-</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGFILE</span><span class="o">=</span>~/.autossh.log
-</span><span class='line'>autossh -M 2000 -N -f -q -D 127.0.0.1:7070 user@hostname
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>autossh支持环境变量，具体参考 http://www.harding.motd.ca/autossh/README ，上面的脚本里指定了debug级别以及debug log存放路径。
-但是每次系统挂起或休眠后再唤醒ssh代理就失效了，查看autossh.log发现是端口占用问题,直接结束占用端口的ssh，重新运行脚本。此处因为
-知道是什么进程占用哪个端口，所以可以直接结束。如果遇到未知的程序占用问题，可以用下列方法查看</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>lsof -i :port
-</span><span class='line'>netstat -an |grep port
-</span><span class='line'>fuser -n tcp/udp port
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>查到后kill掉就可以释放端口，如果是释放mysq的端口则建议使用kill结束指定占用端口的进程而不要killall mysql程序，否则可能会产生数据库碎片。</p>
-
-<p>后续:我写的ssh自动运行脚本是通过系统的启动运行程序来是实现开机自动运行，所以会导致挂起或休眠后再次唤醒ssh隧道无法使用提示端口占用
-Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
-upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
 ]]></content>
   </entry>
   
