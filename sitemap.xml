@@ -367,35 +367,31 @@
         <lastmod>2013-04-24T17:07:19+08:00</lastmod>
     </url>
     <url>
-        <loc>http://blog.nwy.me/blog/2013/04/28/iphone-5s-release/</loc>
-        <lastmod>2013-04-28T22:07:37+08:00</lastmod>
-    </url>
-    <url>
         <loc>http://blog.nwy.me/404.html</loc>
         <lastmod>2013-04-24T23:12:32+08:00</lastmod>
     </url>
     <url>
-        <loc>http://blog.nwy.me/rss.xml</loc>
-        <lastmod>2013-04-26T10:35:15+08:00</lastmod>
+        <loc>http://blog.nwy.me/blog/about/</loc>
+        <lastmod>2013-04-24T21:18:06+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.nwy.me/blog/archives/</loc>
+        <lastmod>2013-04-24T20:35:32+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.nwy.me/blog/categories/</loc>
+        <lastmod>2013-04-24T20:35:32+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.nwy.me/</loc>
+        <lastmod>2013-04-24T20:35:32+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.nwy.me/robots.txt</loc>
         <lastmod>2013-04-20T17:02:23+08:00</lastmod>
     </url>
     <url>
-        <loc>http://blog.nwy.me/</loc>
-        <lastmod>2013-04-28T22:07:37+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://blog.nwy.me/blog/archives/</loc>
-        <lastmod>2013-04-28T22:07:37+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://blog.nwy.me/blog/categories/</loc>
-        <lastmod>2013-04-28T22:07:37+08:00</lastmod>
-    </url>
-    <url>
-        <loc>http://blog.nwy.me/blog/about/</loc>
-        <lastmod>2013-04-24T21:18:06+08:00</lastmod>
+        <loc>http://blog.nwy.me/rss.xml</loc>
+        <lastmod>2013-04-26T10:35:15+08:00</lastmod>
     </url>
 </urlset>

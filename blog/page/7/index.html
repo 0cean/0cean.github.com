@@ -7,10 +7,7 @@
 	<meta name="author" content="Ocean">
 
 	
-	<meta name="description" content="单linux系统的分区方案
-这种情况下无需建立扩展分区，一块硬盘可以全部分成四个主分区，MBR和所有分区信息全部保存在第一个512B的扇区里；查找分区信息最快。
-本人笔记本硬盘160G，具体分区方案如下：
-sda1&#8212;20G,ext4，挂载至／目录；如果所用硬盘较小，／分区可以小到7G &hellip;">
+	<meta name="description" content="Conky是一种自由软件，用于X视窗系统的系统监视，可以在FreeBSD、OpenBSD和各种Linux发布上使用的自由软件。Conky具有很高的可配置性，可以监视许多系统参数，如：CPU、内存、交换内存、硬盘使用情况等状态；各种硬件的温度；系统的进程（top）；网络状态；电池电量； &hellip;">
 	
 
 	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
@@ -34,58 +31,6 @@ sda1&#8212;20G,ext4，挂载至／目录；如果所用硬盘较小，／分区�
 </nav>
 </header>
 	<div id="content" class="inner">
-
-
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/19/ubuntu-installation-partition-proposal/">Ubuntu安装分区建议方案</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-19T00:00:00+08:00">
-			<span class="day">19</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>单linux系统的分区方案
-这种情况下无需建立扩展分区，一块硬盘可以全部分成四个主分区，MBR和所有分区信息全部保存在第一个512B的扇区里；查找分区信息最快。
-本人笔记本硬盘160G，具体分区方案如下：
-sda1&#8212;20G,ext4，挂载至／目录；如果所用硬盘较小，／分区可以小到7G，不建议这样做，如果硬盘够大，就没必要省这几个G了，大点以后装大软件有余地；
-sda2&#8212;256MB-512MB-1024MB-2048MB(请根据内存大小选择，为物理内存大小的1-2倍，但一般不要超过2048MB)，swap格式，无需挂载点；
-sda3&#8212;1G-5G-8G（如果硬盘不够大，又不需刻录DVD，选1G，否则用5G为佳）,ext4，挂载至／tmp目录，硬盘大的可多分几个G，备份时方便点,本人分了了18G，考虑经常备份系统你，多分点一以后不够用分就比较复杂；
-sda4&#8212;120G所有剩余磁盘空间,ext4，挂载至／home目录；
-请注意分区的顺序、设备符和各目录挂载的次序，依次是/，swap，/tmp，/home；平均磁头移臂次数较少，读写综合性能较优。</p>
-
-  
-  
-  <footer class="meta">
-    
-
-
-
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
-
-    
-      
-      <a class="comment" href="/blog/2010/11/19/ubuntu-installation-partition-proposal/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
-</div>
-</article>
 
 
 	<article class="post"><header>
@@ -1326,6 +1271,87 @@ rename在不同的发行版是不同，此处的是perl-rename，还有c语言�
     
       
       <a class="comment" href="/blog/2010/11/07/batch-change-the-extension-for-linux/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2010/11/05/linuxsuspend/">Linux休眠问题</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2010-11-05T00:00:00+08:00">
+			<span class="day"> 5</span><span class="month">Nov</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p><span style="font-size: small;">最近经历了种种事情，索性脱离Windows平台，彻底扎根在linux平台，原来的双系统共存变成了Linux独占天下。格式化了硬盘的几个Windows分区重新安装Linux，分区的时候，单独把tmp和home挂载到了两个格式化的独立分区上，usr有没有挂载到独立分区竟然没有印象了，看来睡眠不足会影响记忆力。这几天安装好后常用的软件，做了相应的配置后发现不能休眠了，Linux真不给力。</span></p>
+
+<p><span style="font-size: small;">技术水平有限，</span>没有找到有原因，不过意外的注意到uswsusp， 这是利用了 2.6.17-rc2 以来的 kernel 新特性所开发的 userland 的挂起系统的工具。uswsusp 利用了系统提供的一个设备文件，通过操作文件，可以 freeze 系统中的进程、读取/恢复内存的镜像、挂起等。这个工具需要 initramfs 支持，需要 2.6.17-rc2 以上内核。参考文档：http://suspend.sourceforge.net/</p>
+
+<p>安装uswsusp：</p>
+
+<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo apt-get install uswsusp</span></div>
+
+
+<p>安装后开机会显示过程中会显示：resume: libgcrypt version: 1.4.4</p>
+
+<p><span style="font-size: small;">在终端里通过s2ram命令休眠会有如下提示：</span></p>
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">
+<span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo s2ram</span>
+<span style="color: #dcdccc;">[sudo] password for ocean:</span>
+<span style="color: #dcdccc;">Machine is unknown.</span>
+<span style="color: #dcdccc;">This machine can be identified by:</span>
+<span style="color: #dcdccc;">sys_vendor   = &#8220;LENOVO&#8221;</span>
+<span style="color: #dcdccc;">sys_product  = &#8220;7661WH2&#8221;</span>
+<span style="color: #dcdccc;">sys_version  = &#8220;ThinkPad T61&#8221;</span>
+<span style="color: #dcdccc;">bios_version = &#8220;7LETC6WW (2.26 )&#8221;</span>
+<span style="color: #dcdccc;">See http://suspend.sf.net/s2ram-support.html for details.</span>
+<span style="color: #dcdccc;">If you report a problem, please include the complete output above.</span>
+</div>
+
+
+<p>不过加了&#8211;force参数倒是可以休眠了，暂时就这样，明天起来了去看看上面代码里给出的链接里有没有解决方法可参考。</p>
+
+<p>使 Gnome(或者说Hal)改用uswsusp方法休眠
+代码:</p>
+
+<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo su</span></div>
+
+
+<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">root@ocean-ThinkPad-T61# echo &#8220;SLEEP_MODULE=uswsusp&#8221;>/etc/pm/config.d/module</div>
+
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2010/11/05/linuxsuspend/#disqus_thread">Comments</a>
       
       
     

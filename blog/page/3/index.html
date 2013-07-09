@@ -7,7 +7,7 @@
 	<meta name="author" content="Ocean">
 
 	
-	<meta name="description" content="由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理， &hellip;">
+	<meta name="description" content="安装virtualbox后运行虚拟机后发现usb不能识别，提示： Could not load the Host USB Proxy Service (VERR_FILE_NOT_FOUND). The service might be not installed on the host &hellip;">
 	
 
 	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
@@ -31,82 +31,6 @@
 </nav>
 </header>
 	<div id="content" class="inner">
-
-
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/">SSH自动运行以及端口释放</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-05-02T00:00:00+08:00">
-			<span class="day"> 2</span><span class="month">May</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
-ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGLEVEL</span><span class="o">=</span>7
-</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_DEBUG</span><span class="o">=</span>DEBUG
-</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGFILE</span><span class="o">=</span>~/.autossh.log
-</span><span class='line'>autossh -M 2000 -N -f -q -D 127.0.0.1:7070 user@hostname
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>autossh支持环境变量，具体参考 http://www.harding.motd.ca/autossh/README ，上面的脚本里指定了debug级别以及debug log存放路径。
-但是每次系统挂起或休眠后再唤醒ssh代理就失效了，查看autossh.log发现是端口占用问题,直接结束占用端口的ssh，重新运行脚本。此处因为
-知道是什么进程占用哪个端口，所以可以直接结束。如果遇到未知的程序占用问题，可以用下列方法查看</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>lsof -i :port
-</span><span class='line'>netstat -an |grep port
-</span><span class='line'>fuser -n tcp/udp port
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>查到后kill掉就可以释放端口，如果是释放mysq的端口则建议使用kill结束指定占用端口的进程而不要killall mysql程序，否则可能会产生数据库碎片。</p>
-
-<p>后续:我写的ssh自动运行脚本是通过系统的启动运行程序来是实现开机自动运行，所以会导致挂起或休眠后再次唤醒ssh隧道无法使用提示端口占用
-Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
-upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
-
-  
-  
-  <footer class="meta">
-    
-
-
-
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
-
-    
-      
-      <a class="comment" href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
-</div>
-</article>
 
 
 	<article class="post"><header>
@@ -736,6 +660,69 @@ You got in. That&#8217;s right, man. I got in.</blockquote>
     
       
       <a class="comment" href="/blog/2011/03/14/how-to-practice-ten-thousand-hours/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2011/03/12/self-training-self-study-guide-programmers/">程序员自我学习自我培训指南</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2011-03-12T00:00:00+08:00">
+			<span class="day">12</span><span class="month">Mar</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p>Other自 http://sunxiunan.com/?p=1799</p>
+
+<blockquote>   你是一个程序员初哥，刚从大学迈进公司却没有人指导，要么公司给你指定了导师，却不好意思大事小情都问他。你想提高自己的编程水平，却不知该如何下手。如果你想提升自己，成为一个合格的天天向上的程序员，这篇文章就是为你准备的。</blockquote>
+
+
+<p>学什么？</p>
+
+<p>有些人对什么都感兴趣，硬盘上存着几百G的教学视频电子书破解软件，却只是仅仅保存着，没有转化成知识。有些人只知道自己刚进公司的那点东西，JDK一定要1.4.2，VC++一定要6.0，系统一定要WindowsXP，否则就是大逆不道。前一种是不知道自己想要什么，后一种是固步自封眼界短浅，都不是一个程序员应该有的学习态度。</p>
+
+<p>常见的程序员有Windows桌面开发，Linux服务器开发，Web前端开发，DB数据库相关，游戏服务器端开发，游戏客户端开发，RIA开发（如flash、silverlight），移动开发（这个现在最火了尤其是Android和iOS），嵌入式开发，行业软件开发等等，基本上我列举的这些已经涵盖了大部分程序员类型，每个类型都有不同的基础知识以及扩展内容需要学习。另外有一些共通的内容如数据结构、基本算法、操作系统是都应该学习了解的。</p>
+
+<p>另外一种分法是按照编程语言区分，但是这个比较有局限性，比如C程序员，一般是Linux服务器开发或者嵌入式，单纯懂C语言是没前途的。再比如PHP，就要对Web前端开发和服务器都有所涉及才能称得上称职。</p>
+
+<p>在这里还要多废话一句，程序员相比其他行业是一个需要不停学习的行当，固步自封立刻就落后，经验值的累积速度会随着年龄的增长而降低，这也是为什么在国内很少看到50岁以上的程序员。至于架构师这个很多程序员期望的职业，我的看法是：如果架构师不写代码只会用PPT，只不过是一个大忽悠罢了。</p>
+
+<p>我这篇文章只是介绍了一个方法，希望能帮助刚入门的朋友答疑解惑。根据这篇文章http://www.geekonomics10000.com/519 如果你想得到一个比较不错的职业发展，长期不间断的练习是绝对必须的。</p>
+
+<p>如果你的情商高于智商，非常擅长与人交往，那么程序员不是合适你的职业，做其它任何行业都会得到比程序员更好的结果。这也许有些偏激，但对于国内现状就是这样。十年以后，如果你还是在做编程，比较一下你的同学朋友就会知道我说的正不正确。</p>
+
+<p> 
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/other/'>Other</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2011/03/12/self-training-self-study-guide-programmers/#disqus_thread">Comments</a>
       
       
     

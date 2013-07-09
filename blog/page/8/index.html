@@ -7,7 +7,8 @@
 	<meta name="author" content="Ocean">
 
 	
-	<meta name="description" content="最近经历了种种事情，索性脱离Windows平台，彻底扎根在linux平台，原来的双系统共存变成了Linux独占天下。格式化了硬盘的几个Windows分区重新安装Linux，分区的时候，单独把tmp和home挂载到了两个格式化的独立分区上，usr有没有挂载到独立分区竟然没有印象了， &hellip;">
+	<meta name="description" content=" 
+作为一个网站设计/开发人员，你必须不断寻找方法来减少设计/开发过程中所花费的时间。这对于提高你的工作效率并最大化你的利润是非常重要的。下面介绍的按功能分类的css工具可以有效地节省你设计网站的时间。 优化/格式化类 CSSTidy – css Tidy是一个开源的css分析和优化工具； &hellip;">
 	
 
 	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
@@ -31,87 +32,6 @@
 </nav>
 </header>
 	<div id="content" class="inner">
-
-
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/05/linuxsuspend/">Linux休眠问题</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-05T00:00:00+08:00">
-			<span class="day"> 5</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p><span style="font-size: small;">最近经历了种种事情，索性脱离Windows平台，彻底扎根在linux平台，原来的双系统共存变成了Linux独占天下。格式化了硬盘的几个Windows分区重新安装Linux，分区的时候，单独把tmp和home挂载到了两个格式化的独立分区上，usr有没有挂载到独立分区竟然没有印象了，看来睡眠不足会影响记忆力。这几天安装好后常用的软件，做了相应的配置后发现不能休眠了，Linux真不给力。</span></p>
-
-<p><span style="font-size: small;">技术水平有限，</span>没有找到有原因，不过意外的注意到uswsusp， 这是利用了 2.6.17-rc2 以来的 kernel 新特性所开发的 userland 的挂起系统的工具。uswsusp 利用了系统提供的一个设备文件，通过操作文件，可以 freeze 系统中的进程、读取/恢复内存的镜像、挂起等。这个工具需要 initramfs 支持，需要 2.6.17-rc2 以上内核。参考文档：http://suspend.sourceforge.net/</p>
-
-<p>安装uswsusp：</p>
-
-<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo apt-get install uswsusp</span></div>
-
-
-<p>安装后开机会显示过程中会显示：resume: libgcrypt version: 1.4.4</p>
-
-<p><span style="font-size: small;">在终端里通过s2ram命令休眠会有如下提示：</span></p>
-
-<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">
-<span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo s2ram</span>
-<span style="color: #dcdccc;">[sudo] password for ocean:</span>
-<span style="color: #dcdccc;">Machine is unknown.</span>
-<span style="color: #dcdccc;">This machine can be identified by:</span>
-<span style="color: #dcdccc;">sys_vendor   = &#8220;LENOVO&#8221;</span>
-<span style="color: #dcdccc;">sys_product  = &#8220;7661WH2&#8221;</span>
-<span style="color: #dcdccc;">sys_version  = &#8220;ThinkPad T61&#8221;</span>
-<span style="color: #dcdccc;">bios_version = &#8220;7LETC6WW (2.26 )&#8221;</span>
-<span style="color: #dcdccc;">See http://suspend.sf.net/s2ram-support.html for details.</span>
-<span style="color: #dcdccc;">If you report a problem, please include the complete output above.</span>
-</div>
-
-
-<p>不过加了&#8211;force参数倒是可以休眠了，暂时就这样，明天起来了去看看上面代码里给出的链接里有没有解决方法可参考。</p>
-
-<p>使 Gnome(或者说Hal)改用uswsusp方法休眠
-代码:</p>
-
-<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo su</span></div>
-
-
-<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">root@ocean-ThinkPad-T61# echo &#8220;SLEEP_MODULE=uswsusp&#8221;>/etc/pm/config.d/module</div>
-
-
-  
-  
-  <footer class="meta">
-    
-
-
-
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
-
-    
-      
-      <a class="comment" href="/blog/2010/11/05/linuxsuspend/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
-</div>
-</article>
 
 
 	<article class="post"><header>
@@ -682,6 +602,61 @@ cssbasics
     
       
       <a class="comment" href="/blog/2010/09/23/inception/#disqus_thread">Comments</a>
+      
+      
+    
+  </footer>
+  
+</div>
+</article>
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2010/09/22/devweb008/">2008年国外最佳Web设计/开发技巧、脚本及资源总结</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2010-09-22T00:00:00+08:00">
+			<span class="day">22</span><span class="month">Sep</span>
+		</time>
+	
+
+</header>
+<div class="entry-content">
+  
+    <p> </p>
+
+<h2 class="title" style="font-size: 20px; color: #098cd9; margin: 5px 0px 3px;"></h2>
+
+
+<p><a href="http://nwy.me/wp-content/uploads/2010/09/best-of-2008-for-developers-3.jpg"><img class="aligncenter size-medium wp-image-63407" alt="best-of-2008-for-developers-3" src="http://nwy.me/wp-content/uploads/2010/09/best-of-2008-for-developers-3-300x90.jpg" width="300" height="90"></a></p>
+
+<div class="entry">
+
+今天是2008年的最后一天，彬Go为大家奉上今年的最后大餐，这篇文章将为大家总结08年国外一些比较不错的<em>前端开发</em>相关的教程、技巧、脚本、实 例及工具资源等，有一些是曾经彬Go发表过的翻译文章。实在是丰盛的需要消化很久…无论您是刚入门的前端开发菜鸟，还是有多年前端开发经验的高手，我相信 下面的这些日志总会有您需要的！
+<h3 style="font-size: 16px; margin: 0px 0px 5px; color: #000000;">工具&Web应用</h3>
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/webdesign/'>Webdesign</a></div>
+
+    
+      
+      <a class="comment" href="/blog/2010/09/22/devweb008/#disqus_thread">Comments</a>
       
       
     
