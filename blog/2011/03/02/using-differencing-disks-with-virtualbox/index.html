@@ -66,7 +66,7 @@ When evaluating new software, you often need to setup an isolated environment us
 After installing the operating system, apply all necessary update and install the VirtualBox additions.</li>
 <li>Release the base disk
 Since the base disk will become ‘read-only’, it must be detached form all virtual machines.
-<a href="http://nwy.me/wp-content/uploads/2011/03/ReleaseDisc_thumb7.jpg"><img src="http://nwy.me/wp-content/uploads/2011/03/ReleaseDisc_thumb7-300x236.jpg" alt="" title="ReleaseDisc_thumb[7]" width="300" height="236" class="alignnone size-medium wp-image-62616"></a>
+<a href="http://nwy.me/img/2011/03/ReleaseDisc_thumb7.jpg"><img src="http://nwy.me/img/2011/03/ReleaseDisc_thumb7-300x236.jpg" alt="" title="ReleaseDisc_thumb[7]" width="300" height="236" class="alignnone size-medium wp-image-62616"></a>
 3 Make the base disk immutable
 Use the following command:
 VBoxManage modifyhd <disk file>  &#8211;type immutable</li>
@@ -76,8 +76,8 @@ VBoxManage modifyhd <disk file>  &#8211;type immutable</li>
 <p><del datetime="2011-03-02T11:00:22+00:00">把文件权限设为400</del>
 4 Create a new system from the base disk
 When creating the new system attach the immutable base disk. A new differencing disk will be created.
-<a href="http://nwy.me/wp-content/uploads/2011/03/NewSystem_thumb1.jpg"><img src="http://nwy.me/wp-content/uploads/2011/03/NewSystem_thumb1-300x225.jpg" alt="" title="NewSystem_thumb[1]" width="300" height="225" class="alignnone size-medium wp-image-62617"></a>
-<a href="http://nwy.me/wp-content/uploads/2011/03/NewDisc_thumb1.jpg"><img src="http://nwy.me/wp-content/uploads/2011/03/NewDisc_thumb1-300x150.jpg" alt="" title="NewDisc_thumb[1]" width="300" height="150" class="alignnone size-medium wp-image-62618"></a>
+<a href="http://nwy.me/img/2011/03/NewSystem_thumb1.jpg"><img src="http://nwy.me/img/2011/03/NewSystem_thumb1-300x225.jpg" alt="" title="NewSystem_thumb[1]" width="300" height="225" class="alignnone size-medium wp-image-62617"></a>
+<a href="http://nwy.me/img/2011/03/NewDisc_thumb1.jpg"><img src="http://nwy.me/img/2011/03/NewDisc_thumb1-300x150.jpg" alt="" title="NewDisc_thumb[1]" width="300" height="150" class="alignnone size-medium wp-image-62618"></a>
 5   5. Turn off the autoreset feature of the differencing disk</p>
 
 <pre><code>  This is necessary since the content of a differencing disk will be destroyed when the virtual machine is started.
@@ -87,7 +87,7 @@ When creating the new system attach the immutable base disk. A new differencing 
 
 <p>If you want to start a new hierarchy from a differencing disk, you can use the ‘VBoxManage clonehd’ command to build the new base disk. Following figure shows an example:</p>
 
-<p><a href="http://nwy.me/wp-content/uploads/2011/03/diskgen_thumb1.jpg"><img src="http://nwy.me/wp-content/uploads/2011/03/diskgen_thumb1-300x260.jpg" alt="" title="diskgen_thumb[1]" width="300" height="260" class="alignnone size-medium wp-image-62619"></a></p>
+<p><a href="http://nwy.me/img/2011/03/diskgen_thumb1.jpg"><img src="http://nwy.me/img/2011/03/diskgen_thumb1-300x260.jpg" alt="" title="diskgen_thumb[1]" width="300" height="260" class="alignnone size-medium wp-image-62619"></a></p>
 
 <p>转移user目录</p>
 
