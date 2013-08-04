@@ -4,7 +4,7 @@
   <title><![CDATA[Ocean's Blog]]></title>
   <link href="http://blog.nwy.me/atom.xml" rel="self"/>
   <link href="http://blog.nwy.me/"/>
-  <updated>2013-07-09T14:29:28+08:00</updated>
+  <updated>2013-08-04T17:33:37+08:00</updated>
   <id>http://blog.nwy.me/</id>
   <author>
     <name><![CDATA[Ocean]]></name>
@@ -12,6 +12,85 @@
   </author>
   <generator uri="http://blog.nwy.me/">Ocean</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[2013年下半年读书计划]]></title>
+    <link href="http://blog.nwy.me/blog/2013/08/04/2013nian-xia-ban-nian-du-shu-ji-hua/"/>
+    <updated>2013-08-04T15:23:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2013/08/04/2013nian-xia-ban-nian-du-shu-ji-hua</id>
+    <content type="html"><![CDATA[<p>冯仑在《开讲了》上说，梦想是什么，梦想就是人生的gps，它能够为人生指明一个方向，人最恐惧的不是没有钱，不是失败，而是没有方向。一旦迷失了方向，人就会焦虑，然后随时时间的流逝变成了绝望。我一直在焦虑、晚睡，晚睡内心中没有勇气结束这一天，因为又虚度一天，第二天睡起来镜子里看到是一无所成自己。</p>
+
+<p>人最大的惰性在于学会“习惯”，当习惯了上班睡觉再上班再睡觉的重复生活后，似乎一切都是那么地理所当然，可内心深处总是会有一丝不安，生活似乎不应该如此，如果你半夜醒来发现自己已经好长时间没读书，而且没有任何负罪感的时候，你就必须知道，你已经堕落了。不是说书本本身特了不起，而是读书这个行为意味着你没有完全认同于这个现世和现实，你还有追求，还在奋斗，你还有不满，你还在寻找另一种可能性，另一种生活方式。</p>
+
+<p>当我们步入中年，有了孩子，父母老去，第一次真正承担家庭的责任时，我们就很容易陷入迷惘，不知道何去何从。这时的我们，就像是生活在漆黑的隧道里，而梦想就是隧道远处的一线光亮，会给我们无限的勇气，同时也会让我们立刻开始行动，放下许多的累赘往前走。</p>
+
+<p>梦想，从来不是现实，而是对现实的不满，追逐梦想实际上是解决自己对现实不满的过程。</p>
+
+<p>2013年已经过去了215天，剩下的150天内将读完一下三十一本书，IT专业技术书籍不适合速读，加上属于职业规划，单独再整理一个书单。</p>
+
+<p>快速阅读</p>
+
+<p>杠杆阅读术</p>
+
+<p>别告诉我你会记笔记</p>
+
+<p>开放社会及其敌人</p>
+
+<p>男人来自火星，女人来自金星</p>
+
+<p>如何阅读一本书</p>
+
+<p>少有人走的路</p>
+
+<p>少有人走的路Ⅱ</p>
+
+<p>少有人走的路III</p>
+
+<p>数学之美</p>
+
+<p>从一到无穷大.one,two,three.infinity</p>
+
+<p>吾国与吾民</p>
+
+<p>别闹了，费曼先生</p>
+
+<p>浪潮之巅</p>
+
+<p>拖延心理学</p>
+
+<p>黑客与画家</p>
+
+<p>代码之美</p>
+
+<p>中国近代史</p>
+
+<p>把时间当朋友</p>
+
+<p>学会提问-批判性指南</p>
+
+<p>学习之道</p>
+
+<p>专业主义-大前研一</p>
+
+<p>逻辑思维-夹缝中的80后</p>
+
+<p>心理学与生活</p>
+
+<p>冥想5分钟，等于熟睡一小时</p>
+
+<p>自控力</p>
+
+<p>意志力</p>
+
+<p>此生为何而来</p>
+
+<p>不要等到毕业以后</p>
+
+<p>害羞心理学</p>
+
+<p>大数据</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[一个光纤收发器引发的故障]]></title>
@@ -1430,46 +1509,6 @@ public class MyLoveStory
 <p>问题四：博客为了提高网站收录做了页面静态化，静态化用过多个url格式，导致新旧日志url风格不统一，目前的url格式是通过插件实现url中包含用谷歌自动翻译过的日志标题，看资料，谷歌可以收录中文url，理论上url中包含关键字，有利于seo优化，但是有中文的原因，就必须要对url做编码，从后台的访问日志来看会出现莫名其妙的缺失字符问题。</p>
 
 <p>问题五：迁移博客导入备份数据库后未做过优化，数据库存在许多无用的字段，这个需要花时间确认无误后再删除。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SSH自动运行以及端口释放]]></title>
-    <link href="http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/"/>
-    <updated>2011-05-02T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port</id>
-    <content type="html"><![CDATA[<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
-ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGLEVEL</span><span class="o">=</span>7
-</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_DEBUG</span><span class="o">=</span>DEBUG
-</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGFILE</span><span class="o">=</span>~/.autossh.log
-</span><span class='line'>autossh -M 2000 -N -f -q -D 127.0.0.1:7070 user@hostname
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>autossh支持环境变量，具体参考 http://www.harding.motd.ca/autossh/README ，上面的脚本里指定了debug级别以及debug log存放路径。
-但是每次系统挂起或休眠后再唤醒ssh代理就失效了，查看autossh.log发现是端口占用问题,直接结束占用端口的ssh，重新运行脚本。此处因为
-知道是什么进程占用哪个端口，所以可以直接结束。如果遇到未知的程序占用问题，可以用下列方法查看</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>lsof -i :port
-</span><span class='line'>netstat -an |grep port
-</span><span class='line'>fuser -n tcp/udp port
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>查到后kill掉就可以释放端口，如果是释放mysq的端口则建议使用kill结束指定占用端口的进程而不要killall mysql程序，否则可能会产生数据库碎片。</p>
-
-<p>后续:我写的ssh自动运行脚本是通过系统的启动运行程序来是实现开机自动运行，所以会导致挂起或休眠后再次唤醒ssh隧道无法使用提示端口占用
-Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
-upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
 ]]></content>
   </entry>
   
