@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Webdesign | Ocean's Blog]]></title>
+  <title><![CDATA[Category: Webdesign | 0cean's Blog|0cean的个人博客]]></title>
   <link href="http://blog.nwy.me/blog/categories/webdesign/atom.xml" rel="self"/>
   <link href="http://blog.nwy.me/"/>
-  <updated>2013-09-27T19:56:47+08:00</updated>
+  <updated>2013-09-27T20:05:34+08:00</updated>
   <id>http://blog.nwy.me/</id>
   <author>
-    <name><![CDATA[Ocean]]></name>
+    <name><![CDATA[0cean]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
 	<channel>
-		<description><![CDATA[Ocean's Blog]]></description>
-		<title><![CDATA[Ocean's Blog]]></title>
+		<description><![CDATA[0cean's Blog|0cean的个人博客]]></description>
+		<title><![CDATA[0cean's Blog|0cean的个人博客]]></title>
 		<link>http://blog.nwy.me/</link>
-		<pubDate>2013-09-27T19:56:47+08:00</pubDate>
+		<pubDate>2013-09-27T20:05:34+08:00</pubDate>
  
 		
 		<item>
@@ -90,7 +90,7 @@
 			<pubDate>2013-08-04T15:23:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2013/08/04/2013nian-xia-ban-nian-du-shu-ji-hua</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -128,7 +128,7 @@
 			<pubDate>2012-11-05T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2012/11/05/a-media-converter-fault-caused-by</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -197,7 +197,7 @@
 			<pubDate>2012-06-07T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -229,7 +229,7 @@
 			<pubDate>2012-04-05T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2012/04/05/han-han-addressed-to-each</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -336,7 +336,7 @@ extundelete /dev/sda3 --restore-all
 			<pubDate>2011-11-27T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -462,7 +462,7 @@ extundelete /dev/sda3 --restore-all
 			<pubDate>2011-09-19T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/09/19/archlinux-development-platform-to-build-next-webos</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -481,7 +481,7 @@ extundelete /dev/sda3 --restore-all
 			<pubDate>2011-09-07T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/09/07/the-future-of-mobile-phones-should-be-like</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -530,7 +530,7 @@ extundelete /dev/sda3 --restore-all
 			<pubDate>2011-08-26T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/08/26/gregarius-5-5-feed-garbled-date</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -555,7 +555,7 @@ extundelete /dev/sda3 --restore-all
 			<pubDate>2011-08-18T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/08/18/untitled</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -582,7 +582,7 @@ extundelete /dev/sda3 --restore-all
 			<pubDate>2011-08-07T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -919,7 +919,7 @@ extundelete /dev/sda3 --restore-all
 			<pubDate>2011-07-24T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/07/24/programmers-technical-leveling-guide</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -988,7 +988,7 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 			<pubDate>2011-06-22T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -1151,7 +1151,7 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 			<pubDate>2011-06-22T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -1171,7 +1171,7 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 			<pubDate>2011-06-20T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/20/some-of-my-subscription</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -1261,7 +1261,7 @@ curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
 			<pubDate>2011-06-08T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/08/palm-pre-patch-on-the-list-of-recommended</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -1337,7 +1337,7 @@ public class MyLoveStory
 			<pubDate>2011-06-01T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/01/the-love-story-of-a-programmer</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -1417,7 +1417,7 @@ public class MyLoveStory
 			<pubDate>2011-06-01T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/06/01/after-the-blog-was-written-in-the-wall</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -1573,7 +1573,7 @@ public class MyLoveStory
 			<pubDate>2011-05-31T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/05/31/realm-of-the-programmer-100-species</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -1607,7 +1607,7 @@ public class MyLoveStory
 			<pubDate>2011-05-16T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/05/16/notebook-bios-upgrade</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 		<item>
@@ -1645,7 +1645,7 @@ public class MyLoveStory
 			<pubDate>2011-05-04T00:00:00+08:00</pubDate>
 			<guid isPermaLink="false">http://blog.nwy.me/blog/2011/05/04/blog-matters-to-be-improved</guid>
  
-			<source url="http://blog.nwy.me/rss.xml"><![CDATA[Ocean's Blog]]></source>
+			<source url="http://blog.nwy.me/rss.xml"><![CDATA[0cean's Blog|0cean的个人博客]]></source>
 		</item>
 		
 	</channel>
