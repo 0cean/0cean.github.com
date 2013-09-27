@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | 0cean's Blog|0cean的个人博客]]></title>
+  <title><![CDATA[Category: Linux | 0cean的个人博客]]></title>
   <link href="http://blog.nwy.me/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.nwy.me/"/>
-  <updated>2013-09-27T20:07:12+08:00</updated>
+  <updated>2013-09-27T22:41:19+08:00</updated>
   <id>http://blog.nwy.me/</id>
   <author>
     <name><![CDATA[0cean]]></name>
@@ -356,201 +356,62 @@ extundelete /dev/sda3 --restore-all
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[curl 简单作弊条]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar/"/>
-    <updated>2011-06-22T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/22/simple-cheat-curl-bar</id>
-    <content type="html"><![CDATA[<div id="content">
-<div class="entry">
-<h5>原文出处：<a href="http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/">http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/</a>
-</h5>
-<h5>1  curl是什么？</h5>
-curl 是一款命令行多协议支持的服务器访问工具,可以用它来访问HTTP服务器，就像浏览器一样。当然了，它也是可以通过FTP下载或上传文件，下次再说这块。
-<h5>2 基本应用</h5>
-<blockquote>curl http://www.douban.com</blockquote>
-上面的命令会在屏幕上输出服务器的响应信息，需要headers信息加 -i/--include 参数，只需要headers信息可以使用 -I/--head。
+    <title type="html"><![CDATA[SSH自动运行以及端口释放]]></title>
+    <link href="http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/"/>
+    <updated>2011-05-02T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port</id>
+    <content type="html"><![CDATA[<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
+ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGLEVEL</span><span class="o">=</span>7
+</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_DEBUG</span><span class="o">=</span>DEBUG
+</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGFILE</span><span class="o">=</span>~/.autossh.log
+</span><span class='line'>autossh -M 2000 -N -f -q -D 127.0.0.1:7070 user@hostname
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+autossh支持环境变量，具体参考 http://www.harding.motd.ca/autossh/README ，上面的脚本里指定了debug级别以及debug log存放路径。
+但是每次系统挂起或休眠后再唤醒ssh代理就失效了，查看autossh.log发现是端口占用问题,直接结束占用端口的ssh，重新运行脚本。此处因为
+知道是什么进程占用哪个端口，所以可以直接结束。如果遇到未知的程序占用问题，可以用下列方法查看
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>lsof -i :port
+</span><span class='line'>netstat -an |grep port
+</span><span class='line'>fuser -n tcp/udp port
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+查到后kill掉就可以释放端口，如果是释放mysq的端口则建议使用kill结束指定占用端口的进程而不要killall mysql程序，否则可能会产生数据库碎片。</p>
 
-重定向输出：
-<blockquote>curl http://www.douban.com > response.html
-curl http://www.douban.com | grep 'douban.com'</blockquote>
-如果使用管道，默认会有一个进程信息显示出来，可以使用 -s/--silent 来不显示它们：
-<blockquote>curl -s http://www.douban.com | grep 'douban.com'</blockquote>
-如果想保存服务器返回的内容的话，除了使用 > 重定向到一个文件外，还可以使用 -o/--output 参数指定需要保存到的文件：
-<blockquote>curl http://www.douban.com -o response.html</blockquote>
-非文本文件也能这样保存：
-<blockquote>curl http://img3.douban.com/pics/nav/lg_main_a7.png -o logo.png</blockquote>
-原名保存使用 -O/--remote-name 选项：
-<blockquote>curl http://img3.douban.com/pics/nav/lg_main_a7.png -O</blockquote>
-不过豆瓣的图片有简单的防盗链，所以可能下载不成功 : ( 继续往下看
-<h5>
-<!--more-->3   发送数据</h5>
-GET 方法的请求没什么特殊的，直接在 url 中放上数据就可以了：
-<blockquote>curl http://www.douban.com/?name=luo
-curl http://www.douban.com/?name=小落</blockquote>
-POST 方法的话就需要使用 -d/--data 参数，只要有这个参数，即使值是空字符串，那么出去的就是 POST 方法的访问：
-<blockquote>curl -d 'name=luoluo&passwd=*****' http://www.douban.com</blockquote>
-<h5>4   头部信息</h5>
-先说最常构造的两个 User-Agent 和 Referer ，这两个分别使用 -A/--user-agent 和 -e/--referer 来指定：
-<blockquote>curl -A Chrome http://www.douban.com
-curl -e http://liluo.org http://www.douban.com</blockquote>
-包含这两个头部信息，所有的头部信息参数都可以使用 -H/--header 来设置：
-<blockquote>curl -H Referer:http://liluo.org http://www.douban.com
-curl -H User-Agent:Chrome -H Accept-Language:zh-cn http://www.douban.com</blockquote>
-<h5>5   COOKIE控制</h5>
-curl 是可以支持带 cookie 的交互行为的。使用方式是 -D/--dump-header 用于指定一个文件保存获取到的 cookie 信息（实际上包含了整个头部信息）， 然后用 -b/--cookie 指定一文件用于读取保存的 cookie 。
-<blockquote>curl http://www.douban.com -D cookie.txt
-curl http://www.douban.com -b cookie.txx</blockquote>
--D 保存出来的头部信息就是以纯文本形式存放的，所以，你可以方便地随便修改。
-<h5>6   代理和通配符</h5>
-6.1   代理设置
-
-使用 -x/--proxy 参数：
-<blockquote>curl -x http://web.proxy.url http://www.douban.com</blockquote>
-6.2   通配符
-<blockquote>curl -O http://www.douban.com/~liluo/screen[1-10].jpg
-curl -O http://www.douban.com/~{liluo,luoluo}/[001-201].jpg</blockquote>
-反向引用分组：
-<blockquote>curl -o #2_#1.jpg http://www.douban.com/~{liluo,luo}/[001-201].jpg</blockquote>
-</div>
-</div>
-
+<p>后续:我写的ssh自动运行脚本是通过系统的启动运行程序来是实现开机自动运行，所以会导致挂起或休眠后再次唤醒ssh隧道无法使用提示端口占用
+Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
+upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Linux下命令执行顺序]]></title>
-    <link href="http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order/"/>
-    <updated>2011-06-22T00:00:00+08:00</updated>
-    <id>http://blog.nwy.me/blog/2011/06/22/linux-command-execution-order</id>
-    <content type="html"><![CDATA[<div><a href="http://doc.linuxpk.com/52705.html">本文来自：Linux宝库 -- http://doc.linuxpk.com/52705.html</a></div>
+    <title type="html"><![CDATA[解决virtualbox访问usb子系统失败问题的方法]]></title>
+    <link href="http://blog.nwy.me/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/"/>
+    <updated>2011-04-29T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems</id>
+    <content type="html"><![CDATA[<p>安装virtualbox后运行虚拟机后发现usb不能识别，提示：
+<code>
+Could not load the Host USB Proxy Service (VERR_FILE_NOT_FOUND). The service might be not installed on the host computer.</p>
 
-
-<p> </p>
-
-<p>在执行某个命令的时候，有时需要依赖于前一个命令是否执行成功。例如，假设你希望将一个目录中的文件全部拷贝到另外一个目录中后，然后删除源目录中的全部文件。在删除之前，你希望能够确信拷贝成功，否则就有可能丢失所有的文件。</p>
-
-<p>在本章中，我们将讨论：</p>
-
-<h1>命令执行控制。</h1>
-
-<h1>命令组合。</h1>
-
-<p>如果希望在成功地执行一个命令之后再执行另一个命令，或者在一个命令失败后再执行另一个命令，&amp;&amp;和||可以完成这样的功能。相应的命令可以是系统命令或shell脚本。</p>
-
-<p>Shell还提供了在当前shell或子shell中执行一组命令的方法，即使用（）和{}。</p>
-
-<h1>6.1 使用&amp;&amp;</h1>
-
-<p>使用&amp;&amp;的一般形式为：</p>
-
-<p>命令1 &amp;&amp; 命令2</p>
-
-<p>这种命令执行方式相当地直接。&amp;&amp;左边的命令（命令1）返回真(即返回0，成功被执行）后，&amp;&amp;右边的命令（命令2）才能够被执行；换句话说，“如果这个命令执行成功&amp;&amp;那么执行这个命令”。</p>
-
-<p>这里有一个使用&amp;&amp;的简单例子：</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>cp justing.doc justing.bak &amp;amp;&amp;amp; <span class="nb">echo</span> “if you are seeing this <span class="k">then </span>cp was OK”
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h1>if you are seeing this then cp was OK</h1>
-
-<p>在上面的例子中，&amp;&amp;前面的拷贝命令执行成功，所以&amp;&amp;后面的命令（echo命令）被执行。</p>
-
-<p>再看一个更为实用的例子：</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>mv /apps/bin /apps/dev/bin &amp;amp;&amp;amp; rm -r /apps/bin　
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>在上面的例子中，/apps/bin目录将会被移到/apps/dev/bin目录下，如果它没有被成功执行，就不会删除/apps/bin目录。</p>
-
-<p>在下面的例子中，文件quarter_end.txt首先将被排序并输出到文件quarter.sorted中，只有这一命令执行成功之后，文件quarter.sorted才会被打印出来：</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sort quarter_end.txt &gt; quarter.sorted &amp;amp;&amp;amp; lp quarter.sorted
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<!--more-->
-
-
-<h1>6.2 使用||</h1>
-
-<p>使用||的一般形式为：</p>
-
-<p>命令1 || 命令2</p>
-
-<p>||的作用有一些不同。如果||左边的命令（命令1）未执行成功，那么就执行||右边的命令（命令2）；或者换句话说，“如果这个命令执行失败了|| 那么就执行这个命令”。</p>
-
-<p>这里有一个使用||的简单例子：</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>cp wopper.txt wopper.bak <span class="o">||</span> <span class="nb">echo</span> “if you are seeing this cp failed”
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>cp: wopper.txt: No such file or directory
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="k">if </span>you are seeing this cp failed
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>在上面的例子中，拷贝命令没有能够被成功执行，因此||后面的命令被执行。</p>
-
-<p>这里有一个更为实用的例子。我希望从一个审计文件中抽取第1个和第5个域，并将其输出到一个临时文件中，如果这一操作未成功，我希望能够收到一个相应邮件：</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>awk ‘<span class="o">{</span>print <span class="nv">$5</span><span class="o">}</span>’ acc.qtr &gt; qtr.tmp <span class="o">||</span> <span class="nb">echo</span> “Sorry the payroll extraction didn’t work” | mail dave
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>在这里不只可以使用系统命令；这里我们首先对month_end.txt文件执行了一个名为comet的shell脚本，如果该脚本未执行成功，该shell将结束。</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>comet month_end.txt <span class="o">||</span> <span class="nb">exit</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h1>6.3 用（）和{}将命令结合在一起</h1>
-
-<p>如果希望把几个命令合在一起执行， shell提供了两种方法。既可以在当前shell也可以在子shell中执行一组命令。</p>
-
-<p>为了在当前shell中执行一组命令，可以用命令分隔符隔开每一个命令，并把所有的命令用圆括号（）括起来。</p>
-
-<p>它的一般形式为：</p>
-
-<p>（命令1;命令2;. . .）</p>
-
-<p>如果使用{ }来代替（），那么相应的命令将在子shell而不是当前shell中作为一个整体被执行，只有在{ }中所有命令的输出作为一个整体被重定向时，其中的命令才被放到子shell中执行，否则在当前shell执行。它的一般形式为：</p>
-
-<p>{命令1;命令2;. . . }</p>
-
-<p>我很少单独使用这两种方法。我一般只和&amp;&amp;或||一起使用这两种方法。</p>
-
-<p>再回到前面那个comet脚本的例子，如果这个脚本执行失败了，我很可能会希望执行两个以上的命令，而不只是一个命令。我可以使用这两种方法。这是原先那个例子：</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>comet month_end.txt <span class="o">||</span> <span class="nb">exit</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>现在如果该脚本执行失败了，我希望先给自己发个邮件，然后再退出，可以用下面的方法来实现：</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>comet month_end <span class="o">||</span> <span class="o">(</span><span class="nb">echo</span> “Hello, guess what! Comet did not work”|mail dave;exit<span class="o">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>在上面的例子中，如果只使用了命令分隔符而没有把它们组合在一起，shell将直接执行最后一个命令（exit）。</p>
-
-<p>我们再回头来看看前面那个使用&amp;&amp;排序的例子，下面是原来的那个例子：</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sort quarter_end.txt &gt; quarter.sorted &amp;amp;&amp;amp; lp quarter.sorted
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>使用命令组合的方法，如果sort命令执行成功了，可以先将输出文件拷贝到一个日志区，然后再打印。</p>
-
-<h1>6.4 小结</h1>
-
-<p>在编写shell脚本时，使用&amp;&amp;和||对构造判断语句非常有用。如果希望在前一个命令执行失败的情况不执行后面的命令，那么本章所讲述的方法非常简单有效。使用这样的方法，可以根据&amp;&amp;或||前面命令的返回值来控制其后面命令的执行。</p>
+<p>Result Code:
+0x80004005
+Component:
+Host
+Interface:
+IHost {81729c26-1aec-46f5-b7c0-cc7364738fdb}
+Callee:
+IMachine {31f7169f-14da-4c55-8cb6-a3665186e35e}
+</code>
+在网上看到许多方法，都需要修改 /etc/fstab ，实际上最新版的virtualbox已经解决了这些问题，只需要将当前用户添加到vboxusers组：
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo  useradd -g  用户名 vboxusers
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+然后重启电脑，就可以在虚拟机里使用usb</p>
 ]]></content>
   </entry>
   

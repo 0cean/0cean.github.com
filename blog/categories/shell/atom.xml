@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Shell | 0cean's Blog|0cean的个人博客]]></title>
+  <title><![CDATA[Category: Shell | 0cean的个人博客]]></title>
   <link href="http://blog.nwy.me/blog/categories/shell/atom.xml" rel="self"/>
   <link href="http://blog.nwy.me/"/>
-  <updated>2013-09-27T20:07:12+08:00</updated>
+  <updated>2013-09-27T22:41:19+08:00</updated>
   <id>http://blog.nwy.me/</id>
   <author>
     <name><![CDATA[0cean]]></name>

@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>0cean's Blog|0cean的个人博客</title>
+	<title>0cean的个人博客</title>
 	<meta name="author" content="0cean">
 
 	
@@ -11,7 +11,7 @@
 	<meta name="keywords" content="学习,技术,生活,工作,网络,随笔,个人博客">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="0cean's Blog|0cean的个人博客" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="0cean的个人博客" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">0cean's Blog|0cean的个人博客</a></h1>
+	<header id="header" class="inner"><h1><a href="/">0cean的个人博客</a></h1>
 <nav id="main-nav"><ul class="main">
 	<li><a href="/">主页</a></li>
 	<li><a href="/blog/archives">存档</a></li>
@@ -78,314 +78,6 @@
 		
 	
 	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/07/24/programmers-technical-leveling-guide/">
-		
-			程序员技术练级攻略</a>
-	</h2>
-	<div class="entry-content">
-		<p>文章作者： <a title="由 陈皓 发布" href="http://coolshell.cn/articles/author/haoel" rel="author">陈皓</a> 转载出处：<a href="http://coolshell.cn/articles/4990.html">http://coolshell.cn/articles/4990.html</a></p>
-
-<p>月光博客6月12日发表了《<a href="http://www.williamlong.info/archives/2700.html" target="_blank">写给新手程序员的一封信</a>》，翻译自《<a href="http://blog.akash.im/an-open-letter-to-those-who-want-to-start" target="_blank">An open letter to those who want to start programming</a>》，我的朋友（他在本站的id是<a href="http://coolshell.cn/?author=3" target="_blank">Mailper</a>）告诉我，他希望在酷壳上看到一篇更具操作性的文章。因为他也是喜欢编程和技术的家伙，于是，我让他把他的一些学习Python和Web编程的一些点滴总结一下。于是他给我发来了一些他的心得和经历，我在把他的心得做了不多的增改，并根据我的经历增加了“进阶”一节。<strong>这是一篇由新手和我这个老家伙根据我们的经历完成的文章</strong>。</p>
-
-<p>我的这个朋友把这篇文章取名叫Build Your Programming Technical Skills，我实在不知道用中文怎么翻译，但我在写的过程中，<strong>我觉得这很像一个打网游做任务升级的一个过程，所以取名叫“技术练级攻略”，题目有点大，呵呵，这个标题纯粹是为了好玩</strong>。<strong>这里仅仅是在分享Mailper和我个人的学习经历。</strong>（注：省去了我作为一个初学者曾经学习过的一些技术(今天明显过时了)，如：Delphi/Power builder，也省去了我学过的一些我觉得没意思的技术Lotus Notes/ActiveX/COM/ADO/ATL/.NET ……）</p>
-
-<h4>前言</h4>
-
-
-<p>你是否觉得自己从学校毕业的时候只做过小玩具一样的程序？<wbr>走入职场后哪怕没有什么经验也可以把以下这些课外练习走一遍（朋友的抱怨：学校课程总是从理论出发，</wbr><wbr>作业项目都看不出有什么实际作用，不如从工作中的需求出发）</wbr></p>
-
-<p>建议：</p>
-
-<ul>
-<li>不要乱买书，不要乱追新技术新名词，<wbr>基础的东西经过很长时间积累而且还会在未来至少10年通用。</wbr>
-</li>
-    <li>回顾一下历史，看看历史上时间线上技术的发展，你才能明白明天会是什么样。</li>
-    <li>一定要动手，例子不管多么简单，<wbr>建议至少自己手敲一遍看看是否理解了里头的细枝末节。</wbr>
-</li>
-    <li>一定要学会思考，思考为什么要这样，而不是那样。还要举一反三地思考。</li>
-</ul>
-
-
-<p><strong>注</strong>：你也许会很奇怪为什么下面的东西很偏Unix/Linux，这是因为我觉得Windows下的编程可能会在未来很没有前途，原因如下：</p>
-
-<p> </p>
-
-<ul>
-<li>现在的用户界面几乎被两个东西主宰了，1）Web，2）移动设备iOS或Android。Windows的图形界面不吃香了。</li>
-    <li>越来越多的企业在用成本低性能高的Linux和各种开源技术来构架其系统，Windows的成本太高了。</li>
-    <li>微软的东西变得太快了，很不持久，他们完全是在玩弄程序员。详情参见《<a title="Windows编程革命简史" href="http://coolshell.cn/articles/3008.html" target="_blank">Windows编程革命史</a>》</li>
-</ul>
-
-
-<p>所以，我个人认为以后的趋势是前端是Web+移动，后端是Linux+开源。开发这边基本上没Windows什么事。</p>
-
-<h4>启蒙入门</h4>
-
-
-<p><strong>1、 学习一门脚本语言，例如Python/Ruby</strong></p>
-
-<p>可以让你摆脱对底层语言的恐惧感，脚本语言可以让你很快开发出能用得上的小程序。实践项目:</p>
-
-<ul>
-<li>处理文本文件，或者csv (关键词 python csv, python open, python sys) 读一个本地文件，逐行处理（例如 word count，或者处理log）</li>
-    <li>遍历本地文件系统 (sys, os, path)，例如写一个程序统计一个目录下所有文件大小并按各种条件排序并保存结果</li>
-    <li>跟数据库打交道 (python sqlite)，写一个小脚本统计数据库里条目数量</li>
-    <li>学会用各种print之类简单粗暴的方式进行调试</li>
-    <li>学会用Google (phrase, domain, use reader to follow tech blogs)</li>
-</ul>
-
-
-<p>为什么要学脚本语言，因为他们实在是太方便了，很多时候我们需要写点小工具或是脚本来帮我们解决问题，你就会发现正规的编程语言太难用了。</p>
-
-<p><strong>2、 用熟一种程序员的编辑器(不是IDE) 和一些基本工具</strong></p>
-
-<ul>
-<li>Vim / Emacs / Notepad++，学会如何配置代码补全，外观，外部命令等。</li>
-    <li>Source Insight (或 ctag)</li>
-</ul>
-
-
-<p>使用这些东西不是为了Cool，而是这些编辑器在查看、修改代码/配置文章/日志会更快更有效率。</p>
-
-<p><strong>3、 熟悉Unix/Linux Shell和常见的命令行</strong></p>
-
-<ul>
-<li>如果你用windows，至少学会用虚拟机里的linux， vmware player是免费的，装个Ubuntu吧</li>
-    <li>一定要少用少用图形界面。</li>
-    <li>学会使用man来查看帮助</li>
-    <li>文件系统结构和基本操作 ls/chmod/chown/rm/find/ln/cat/mount/mkdir/tar/gzip …</li>
-    <li>学会使用一些文本操作命令 sed/awk/grep/tail/less/more …</li>
-    <li>学会使用一些管理命令 ps/top/lsof/netstat/kill/tcpdump/iptables/dd…</li>
-    <li>了解/etc目录下的各种配置文章，学会查看/var/log下的系统日志，以及/proc下的系统运行信息</li>
-    <li>了解正则表达式，使用正则表达式来查找文件。</li>
-</ul>
-
-
-<p>对于程序员来说Unix/Linux比Windows简单多了。（参看我四年前CSDN的博文《<a href="http://blog.csdn.net/haoel/article/details/1533720" target="_blank">其实Unix很简单</a>》）学会使用Unix/Linux你会发现图形界面在某些时候实在是太难用了，相当地相当地降低工作效率。</p>
-
-<p><strong>4、 学习Web基础（HTML/CSS/JS) + 服务器端技术 (LAMP)</strong></p>
-
-<p>未来必然是Web的世界，学习WEB基础的最佳网站是<a href="http://www.w3school.com.cn/" target="_blank">W3School</a>。</p>
-
-<ul>
-<li>学习HTML基本语法</li>
-    <li>学习CSS如何选中HTML元素并应用一些基本样式（关键词：box model）</li>
-    <li>学会用  Firefox + Firebug 或 chrome 查看你觉得很炫的网页结构，并动态修改。</li>
-    <li>学习使用Javascript操纵HTML元件。理解DOM和动态网页（<a href="http://oreilly.com/catalog/9780596527402" target="_blank">http://oreilly.com/catalog/9780596527402</a>) 网上有免费的章节，足够用了。或参看 <a href="http://www.w3school.com.cn/htmldom/index.asp" target="_blank">DOM</a> 。</li>
-    <li>学会用  Firefox + Firebug 或 chrome 调试Javascript代码（设置断点，查看变量，性能，控制台等）</li>
-    <li>在一台机器上配置<a href="http://coolshell.cn/articles/www.apache.org" target="_blank">Apache </a>或 <a href="http://coolshell.cn/articles/nginx.net" target="_blank">Nginx</a>
-</li>
-    <li>学习<a href="http://coolshell.cn/articles/www.php.net" target="_blank">PHP</a>，让后台PHP和前台HTML进行数据交互，对服务器相应浏览器请求形成初步认识。实现一个表单提交和反显的功能。</li>
-    <li>把PHP连接本地或者远程数据库 MySQL（MySQL 和 SQL现学现用够了）</li>
-    <li>跟完一个名校的网络编程课程（例如：<a href="http://www.stanford.edu/%7Eouster/cgi-bin/cs142-fall10/index.php" target="_blank">http://www.stanford.edu/~ouster/cgi-bin/cs142-fall10/index.php</a> ) 不要觉得需要多于一学期时间，大学生是全职一学期选3-5门课，你业余时间一定可以跟上</li>
-    <li>学习一个javascript库（例如jQuery 或 ExtJS）+  Ajax (异步读入一个服务器端图片或者数据库内容）+JSON数据格式。</li>
-    <li>HTTP: The Definitive Guide 读完前4章你就明白你每天上网用浏览器的时候发生的事情了(proxy, gateway, browsers)</li>
-    <li>做个小网站（例如：一个小的留言板，支持用户登录，Cookie/Session，增、删、改、查，上传图片附件，分页显示）</li>
-    <li>买个域名，租个空间，做个自己的网站。</li>
-</ul>
-
-
-<h4>
-
-		
-		<a href="/blog/2011/07/24/programmers-technical-leveling-guide/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-24T00:00:00+08:00" pubdate data-updated="true">Jul 24<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/07/24/programmers-technical-leveling-guide/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/06/22/simple-cheat-curl-bar/">
-		
-			Curl 简单作弊条</a>
-	</h2>
-	<div class="entry-content">
-		<div id="content">
-<div class="entry">
-<h5>原文出处：<a href="http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/">http://liluo.org/2011/05/curl-%E7%AE%80%E5%8D%95%E4%BD%9C%E5%BC%8A%E6%9D%A1/</a>
-</h5>
-<h5>1  curl是什么？</h5>
-curl 是一款命令行多协议支持的服务器访问工具,可以用它来访问HTTP服务器，就像浏览器一样。当然了，它也是可以通过FTP下载或上传文件，下次再说这块。
-<h5>2 基本应用</h5>
-<blockquote>curl http://www.douban.com</blockquote>
-上面的命令会在屏幕上输出服务器的响应信息，需要headers信息加 -i/&#8211;include 参数，只需要headers信息可以使用 -I/&#8211;head。
-
-重定向输出：
-<blockquote>curl http://www.douban.com > response.html
-curl http://www.douban.com | grep &#8216;douban.com&#8217;</blockquote>
-如果使用管道，默认会有一个进程信息显示出来，可以使用 -s/&#8211;silent 来不显示它们：
-<blockquote>curl -s http://www.douban.com | grep &#8216;douban.com&#8217;</blockquote>
-如果想保存服务器返回的内容的话，除了使用 > 重定向到一个文件外，还可以使用 -o/&#8211;output 参数指定需要保存到的文件：
-<blockquote>curl http://www.douban.com -o response.html</blockquote>
-非文本文件也能这样保存：
-<blockquote>curl http://img3.douban.com/pics/nav/lg_main_a7.png -o logo.png</blockquote>
-原名保存使用 -O/&#8211;remote-name 选项：
-<blockquote>curl http://img3.douban.com/pics/nav/lg_main_a7.png -O</blockquote>
-不过豆瓣的图片有简单的防盗链，所以可能下载不成功 : ( 继续往下看
-<h5>
-
-		
-		<a href="/blog/2011/06/22/simple-cheat-curl-bar/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-22T00:00:00+08:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux/'>Linux</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/06/22/simple-cheat-curl-bar/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/06/22/linux-command-execution-order/">
-		
-			Linux下命令执行顺序</a>
-	</h2>
-	<div class="entry-content">
-		<div><a href="http://doc.linuxpk.com/52705.html">本文来自：Linux宝库 &#8211; http://doc.linuxpk.com/52705.html</a></div>
-
-
-<p> </p>
-
-<p>在执行某个命令的时候，有时需要依赖于前一个命令是否执行成功。例如，假设你希望将一个目录中的文件全部拷贝到另外一个目录中后，然后删除源目录中的全部文件。在删除之前，你希望能够确信拷贝成功，否则就有可能丢失所有的文件。</p>
-
-<p>在本章中，我们将讨论：</p>
-
-<h1>命令执行控制。</h1>
-
-<h1>命令组合。</h1>
-
-<p>如果希望在成功地执行一个命令之后再执行另一个命令，或者在一个命令失败后再执行另一个命令，&amp;&amp;和||可以完成这样的功能。相应的命令可以是系统命令或shell脚本。</p>
-
-<p>Shell还提供了在当前shell或子shell中执行一组命令的方法，即使用（）和{}。</p>
-
-<h1>6.1 使用&amp;&amp;</h1>
-
-<p>使用&amp;&amp;的一般形式为：</p>
-
-<p>命令1 &amp;&amp; 命令2</p>
-
-<p>这种命令执行方式相当地直接。&amp;&amp;左边的命令（命令1）返回真(即返回0，成功被执行）后，&amp;&amp;右边的命令（命令2）才能够被执行；换句话说，“如果这个命令执行成功&amp;&amp;那么执行这个命令”。</p>
-
-<p>这里有一个使用&amp;&amp;的简单例子：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>
-</span><span class='line'><span class="nv">$ </span>cp justing.doc justing.bak <span class="o">&amp;&amp;</span> <span class="nb">echo</span> “if you are seeing this <span class="k">then </span>cp was OK”
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>if you are seeing this then cp was OK</h1>
-
-<p>在上面的例子中，&amp;&amp;前面的拷贝命令执行成功，所以&amp;&amp;后面的命令（echo命令）被执行。</p>
-
-<p>再看一个更为实用的例子：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>mv /apps/bin /apps/dev/bin <span class="o">&amp;&amp;</span> rm -r /apps/bin　
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在上面的例子中，/apps/bin目录将会被移到/apps/dev/bin目录下，如果它没有被成功执行，就不会删除/apps/bin目录。</p>
-
-<p>在下面的例子中，文件quarter_end.txt首先将被排序并输出到文件quarter.sorted中，只有这一命令执行成功之后，文件quarter.sorted才会被打印出来：</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sort quarter_end.txt &gt; quarter.sorted <span class="o">&amp;&amp;</span> lp quarter.sorted
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-
-		
-		<a href="/blog/2011/06/22/linux-command-execution-order/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-22T00:00:00+08:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux/'>Linux</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/06/22/linux-command-execution-order/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
 
 
     <article class="post">
@@ -555,109 +247,6 @@ curl http://www.douban.com | grep &#8216;douban.com&#8217;</blockquote>
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2011/06/01/the-love-story-of-a-programmer/">
-		
-			一个程序员的爱情故事</a>
-	</h2>
-	<div class="entry-content">
-		<p>作者：http://topic.csdn.net/u/20110517/12/0ab11541-6206-40c9-a8b1-5439d642ab49.html</p>
-
-<p>注释：http://www.cnblogs.com/zhuqil/archive/2011/05/19/2051373.html</p>
-
-<pre><code> //一个程序员的爱情故事
-public class MyLoveStory
-{
-    public static void Main(string[] args)
-    {
-        //The ForeStory
-        int result = 1;
-        bool love = false;//以前有个小男孩，没有爱情，孤孤单单一个人。
-        if (love)   //他认为如果是爱情。
-            result = AtOneTime();//那必须是两个人在同一个时间爱上彼此。
-        //But Now...
-        //但是现在长大了，有了爱情，却出现了第三者
-
-        if (args[0] == "Has" &amp;&amp; args[1] == "Third" &amp;&amp; args[2] == "One")            {
-          love = false;//爱情没了
-            result = DoPart();//分手，独自一个人。
-            //现在这个男孩的心情是：如果女生生活的很悲惨，自己会伤心。
-            //如果看到女生活的很幸福，自己更伤心，因为幸福不是自己给的。
-            Console.WriteLine(GetNowHeartState.ToString());
-        }
-    }
-    //男生的心情
-    internal enum HeartState
-    {
-        Sad,
-        MoreSad
-    }
-    //女生的生活状态
-    internal enum LifeState
-    {
-        Nice,
-        Poor,
-    }
-    //男生现在的心情
-    internal HeartState GetNowHeartState(LifeState girlLife)
-    {
-        //现在这个小男孩的心情是：如果生活的很悲惨，自己会伤心。
-        //如果看到女生活的很幸福，自己更伤心，因为幸福不是自己给的。
-        if (gilrLife == LifeState.Poor)
-            return HeartState.Sad;
-        else
-            return HeartState.MoreSad;
-    }
-    //爱情是在同一时间爱上彼此
-    internal static int AtOneTime()
-    {
-        //1+1=2
-        return 1 + 1;
-    }
-    //分手
-    internal static int DoPart()
-    {
-        // 2-1=1
-        return 2 - 1;
-    }
-}
-</code></pre>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-01T00:00:00+08:00" pubdate data-updated="true">Jun 1<span>st</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/06/01/the-love-story-of-a-programmer/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
 		<a href="/blog/2011/06/01/after-the-blog-was-written-in-the-wall/">
 		
 			写在博客被墙之后</a>
@@ -757,69 +346,6 @@ public class MyLoveStory
 </div>
 	
 	<div class="comments"><a href="/blog/2011/06/01/after-the-blog-was-written-in-the-wall/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/05/31/realm-of-the-programmer-100-species/">
-		
-			程序员的 100 种境界</a>
-	</h2>
-	<div class="entry-content">
-		<p>转载出处：<a href="http://eishn.blog.163.com/blog/static/652318201102831731444/">http://eishn.blog.163.com/blog/static/652318201102831731444/</a> 作者：沈崴</p>
-
-<p>境界零：混沌态、浆糊状（小白、新兵）</p>
-
-<p><img src="http://nwy.me/wp-content/uploads/2011/05/img200810141202482_s.jpg" alt="" /></p>
-
-<p>刚刚毕业、初出茅庐，有丰富把妹经验，无任何项目经验。</p>
-
-<p>典型台词：“哇塞，薯熟你居然能写出这样这样酷的程序啊”。</p>
-
-<p>此时身为薯熟的你切不可信以为真，因为任何简单的程序对他们来说 ……</p>
-
-<pre><code>             其实都是写不出来的。
-</code></pre>
-
-<p>技能：hello world!</p>
-
-<p>经验：0 年</p>
-
-<p>角色：新手村游荡者（虽然 ID 很酷，但改变不了时常被怪虐的事实）</p>
-
-
-		
-		<a href="/blog/2011/05/31/realm-of-the-programmer-100-species/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-31T00:00:00+08:00" pubdate data-updated="true">May 31<span>st</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/05/31/realm-of-the-programmer-100-species/#disqus_thread">Comments</a></div>
 	
 </div>
 </article>
@@ -946,6 +472,295 @@ public class MyLoveStory
 </div>
 	
 	<div class="comments"><a href="/blog/2011/05/04/blog-matters-to-be-improved/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/">
+		
+			SSH自动运行以及端口释放</a>
+	</h2>
+	<div class="entry-content">
+		<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
+ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGLEVEL</span><span class="o">=</span>7
+</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_DEBUG</span><span class="o">=</span>DEBUG
+</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGFILE</span><span class="o">=</span>~/.autossh.log
+</span><span class='line'>autossh -M 2000 -N -f -q -D 127.0.0.1:7070 user@hostname
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>autossh支持环境变量，具体参考 http://www.harding.motd.ca/autossh/README ，上面的脚本里指定了debug级别以及debug log存放路径。
+但是每次系统挂起或休眠后再唤醒ssh代理就失效了，查看autossh.log发现是端口占用问题,直接结束占用端口的ssh，重新运行脚本。此处因为
+知道是什么进程占用哪个端口，所以可以直接结束。如果遇到未知的程序占用问题，可以用下列方法查看</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>lsof -i :port
+</span><span class='line'>netstat -an |grep port
+</span><span class='line'>fuser -n tcp/udp port
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>查到后kill掉就可以释放端口，如果是释放mysq的端口则建议使用kill结束指定占用端口的进程而不要killall mysql程序，否则可能会产生数据库碎片。</p>
+
+<p>后续:我写的ssh自动运行脚本是通过系统的启动运行程序来是实现开机自动运行，所以会导致挂起或休眠后再次唤醒ssh隧道无法使用提示端口占用
+Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
+upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-02T00:00:00+08:00" pubdate data-updated="true">May 2<span>nd</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/">
+		
+			解决virtualbox访问usb子系统失败问题的方法</a>
+	</h2>
+	<div class="entry-content">
+		<p>安装virtualbox后运行虚拟机后发现usb不能识别，提示：
+<code>
+Could not load the Host USB Proxy Service (VERR_FILE_NOT_FOUND). The service might be not installed on the host computer.</p>
+
+<p>Result Code:
+0x80004005
+Component:
+Host
+Interface:
+IHost {81729c26-1aec-46f5-b7c0-cc7364738fdb}
+Callee:
+IMachine {31f7169f-14da-4c55-8cb6-a3665186e35e}
+</code>
+在网上看到许多方法，都需要修改 /etc/fstab ，实际上最新版的virtualbox已经解决了这些问题，只需要将当前用户添加到vboxusers组：</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo  useradd -g  用户名 vboxusers
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后重启电脑，就可以在虚拟机里使用usb</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-29T00:00:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/19/interesting-sites-google-shell/">
+		
+			有趣的网站：谷歌 Shell</a>
+	</h2>
+	<div class="entry-content">
+		<p>http://goosh.org 是一个非谷歌官方的基于谷歌服务的web shell，访问者可以通过命令的方式在web shell中使用谷歌的各种服务，甚至可以登录自己的谷歌帐号，但ocean不建议访问者登陆自己的帐号，如本文开始所说，这是一个非谷歌官方的网站，登陆个人谷歌帐号，可能导致用户心信息泄露。
+首先我们查看一下基本的命令：
+<img src="http://nwy.me/img/2011/04/goosh.org-the-unofficial-google-shell._1303186503427.png" alt="谷歌shell" />
+alias是命令的别名，方便记忆以及输入。</p>
+
+<p>输入“s+ocean”就可以搜索“ocean”，很遗憾的是ocean的个人博客还没有在谷歌英文搜索结果页面排名第一。谷歌shell还有诸多的功能，搜索新闻，博客，视频，图片，地图等等，这里就不再做逐一介绍。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-19T00:00:00+08:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/04/19/interesting-sites-google-shell/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/09/notes/">
+		
+			随笔</a>
+	</h2>
+	<div class="entry-content">
+		<p>由于笔记本里逐渐积累的各类资料不断增多，笔记本原来160G的硬盘已经不够用了，购买了一款500G的硬盘，升级后换下来的160G硬盘放在硬盘盒里做移动硬盘。
+ 因为之前系统安装compiz0.93出错，导致回滚版本后进不了compiz的控制面板，一直也没有找出问题以及其他种种待而未决的问题索性趁这次更换硬盘重装了Ubuntu，加之对系统做了许多修改，如果要重装系统就不得不重新修改，所以系统有种种自己不能解决的问题也不愿去重装系统，这也是自己一直不能改掉的惰性，害怕做出改变后失去现在的现状。之所以这次能下定决心要重装系统，其实是新硬盘安装上后从旧的硬盘恢复之前的备份系统的时候，发现备份脚本有问题，导致恢复备份的系统不能正常运行。好吧，没有退路了，重新开始吧。重装系统后用了近一周才把才把系统定制好，之前的配置都迁移过来了，并作了一些完善，唯一的遗留问题就blogilo的日志数据库打不开了，好在最近才开始用blogilo离线写日志，数据库里的文章博客上也有备份。</p>
+
+<p>最近在学习VIM和正则表达式，VIM的学习曲线确实很陡峭，纷繁的命令，按键组合，强大的插件，到现在也只是可以会用VIM而已，不过随着不断的学习已经彻底对VIM程序员御用文本编辑器所臣服。在firefox下安装vimperator插件后firefox整个也VIM化了，所有的动作就可以不用鼠标快速操作，手就不用在键盘于鼠标之间往返了，有网友甚至夸张说firefox只是vimperator的运行环境。新手学习VIM推荐闲耘写的VIM的wiki，上面有整理了许多VIM的资料：<a href="http://wiki.hotoo.me/Vim.html">http://wiki.hotoo.me/Vim.html</a>，初步了解VIM后可以浏览<a href="http://www.vimer.cn/">Vimer的程序世界</a>，这是我见过的最丰富的VIM中文博客。正则表达式学习过程相对比较顺利，目前可以实现一些简单的语句操作。最开始选的教材是余晟大师的《精通正则表达式》，很详尽，系统的教材，也很厚，于是望而退却选择网上网友写的一些学习笔记，却再次看到余晟大师在infoQ写的<a href="http://www.infoq.com/cn/author/%E4%BD%99%E6%99%9F">正则表达式的系列教程</a>，从中获益匪浅。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-09T00:00:00+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/04/09/notes/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/">
+		
+			穿越搜索：21世纪最伟大的时代前沿技术</a>
+	</h2>
+	<div class="entry-content">
+		<h1>什么是穿越搜索？</h1>
+
+<p>穿越搜索就是让谷歌带你穿越时空，抵达你最想抵达的时间、地点，用身临其境的方式感知你想感知的一切。例如：</p>
+
+<p>想知道西施的减肥秘诀？今天地球上任何一个搜索引擎都无法给你准确答案。请使用谷歌穿越搜索！当你亲自穿越到英雄、美人、宝剑、名马的春秋末年，你有机会一睹西施的真容，当面向她请教瘦身秘籍！</p>
+
+<p>想了解“一骑红尘妃子笑”的传说是不是真实可信？请使用谷歌穿越搜索！当你亲自穿越到“宫中圣人奏云门，天下朋友皆胶漆”的大唐盛世，你将有机会夜游大明宫，亲眼目睹传说中的霓裳羽衣舞！</p>
+
+<p>想看看《红楼梦》写的究竟是不是曹雪芹的亲身经历？请使用谷歌穿越搜索！当你亲自坐在“批阅十载，增删五次”的伟大作家面前，与他品茶论道，漫谈人生，你很有可能成为地球上第一个见到林妹妹生活原型的现代人！</p>
+
+<p>想鉴别科幻小说的真伪，看四百年后，是不是真的有半人马座三星的访客来到地球？请使用谷歌穿越搜索！当你亲自体验到宇宙法则在星际交流中的重要作用，你有可能成为改变地球乃至宇宙历史的关键人物！你喜欢穿越吗？你想拥有不同寻常的人生体验吗？你想破解时空另一端的未解之谜吗？请在上面的搜索框中，输入你关心的问题并点击“搜索”按钮——谷歌穿越搜索将为你打开时空之门！<a href="http://www.google.cn/intl/zh-CN/landing/teleport/">请用鼠标猛击这里</a></p>
+
+<p><img src="http://nwy.me/img/2011/04/%E6%88%AA%E5%8F%96%E9%80%89%E5%8C%BA_010.png" alt="" /></p>
+
+<h1>谷歌如何实现穿越搜索？</h1>
+
+
+		
+		<a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-01T00:00:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/#disqus_thread">Comments</a></div>
 	
 </div>
 </article>

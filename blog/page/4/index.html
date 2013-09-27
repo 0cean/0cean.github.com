@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>0cean's Blog|0cean的个人博客</title>
+	<title>0cean的个人博客</title>
 	<meta name="author" content="0cean">
 
 	
@@ -11,7 +11,7 @@
 	<meta name="keywords" content="学习,技术,生活,工作,网络,随笔,个人博客">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="0cean's Blog|0cean的个人博客" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="0cean的个人博客" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -22,7 +22,7 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">0cean's Blog|0cean的个人博客</a></h1>
+	<header id="header" class="inner"><h1><a href="/">0cean的个人博客</a></h1>
 <nav id="main-nav"><ul class="main">
 	<li><a href="/">主页</a></li>
 	<li><a href="/blog/archives">存档</a></li>
@@ -83,322 +83,29 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2011/03/12/self-training-self-study-guide-programmers/">
+		<a href="/blog/2010/12/07/ubuntu-convert-the-chinese-environment-the-user-directory-path-for-the-english-in-chinese/">
 		
-			程序员自我学习自我培训指南</a>
+			Ubuntu中文环境下转换用户目录里的中文路径为英文</a>
 	</h2>
 	<div class="entry-content">
-		<p>Other自 http://sunxiunan.com/?p=1799</p>
+		<p>使用ubuntu中文环境的用户自然会发现home下用户目录的“桌面”、“图片”、“视频”、“音乐”都是中文的。</p>
 
-<blockquote>   你是一个程序员初哥，刚从大学迈进公司却没有人指导，要么公司给你指定了导师，却不好意思大事小情都问他。你想提高自己的编程水平，却不知该如何下手。如果你想提升自己，成为一个合格的天天向上的程序员，这篇文章就是为你准备的。</blockquote>
+<p>很多时候都喜欢在桌面上放一些要操作的文件，linux里命令行操作又多，难免会用命令行操作桌面上的东西，那么就要 “cd  桌面”，打“桌面”的时候要输入法切换，所以就想办法把用户目录下的路径改成英文，而其他的中文不变， 方法如下：
+打开终端，在终端中输入命令:</p>
 
+<blockquote>export LANG=en_US
 
-<p>学什么？</p>
+xdg-user-dirs-gtk-update</blockquote>
 
-<p>有些人对什么都感兴趣，硬盘上存着几百G的教学视频电子书破解软件，却只是仅仅保存着，没有转化成知识。有些人只知道自己刚进公司的那点东西，JDK一定要1.4.2，VC++一定要6.0，系统一定要WindowsXP，否则就是大逆不道。前一种是不知道自己想要什么，后一种是固步自封眼界短浅，都不是一个程序员应该有的学习态度。</p>
 
-<p>常见的程序员有Windows桌面开发，Linux服务器开发，Web前端开发，DB数据库相关，游戏服务器端开发，游戏客户端开发，RIA开发（如flash、silverlight），移动开发（这个现在最火了尤其是Android和iOS），嵌入式开发，行业软件开发等等，基本上我列举的这些已经涵盖了大部分程序员类型，每个类型都有不同的基础知识以及扩展内容需要学习。另外有一些共通的内容如数据结构、基本算法、操作系统是都应该学习了解的。</p>
+<p>跳出对话框询问是否将目录转化为英文路径,同意并关闭.</p>
 
-<p>另外一种分法是按照编程语言区分，但是这个比较有局限性，比如C程序员，一般是Linux服务器开发或者嵌入式，单纯懂C语言是没前途的。再比如PHP，就要对Web前端开发和服务器都有所涉及才能称得上称职。</p>
+<p>在终端中输入命令:</p>
 
-<p>在这里还要多废话一句，程序员相比其他行业是一个需要不停学习的行当，固步自封立刻就落后，经验值的累积速度会随着年龄的增长而降低，这也是为什么在国内很少看到50岁以上的程序员。至于架构师这个很多程序员期望的职业，我的看法是：如果架构师不写代码只会用PPT，只不过是一个大忽悠罢了。</p>
+<blockquote>export LANG=zh_CN</blockquote>
 
-<p>我这篇文章只是介绍了一个方法，希望能帮助刚入门的朋友答疑解惑。根据这篇文章http://www.geekonomics10000.com/519 如果你想得到一个比较不错的职业发展，长期不间断的练习是绝对必须的。</p>
 
-<p>如果你的情商高于智商，非常擅长与人交往，那么程序员不是合适你的职业，做其它任何行业都会得到比程序员更好的结果。这也许有些偏激，但对于国内现状就是这样。十年以后，如果你还是在做编程，比较一下你的同学朋友就会知道我说的正不正确。</p>
-
-<p> 
-		
-		<a href="/blog/2011/03/12/self-training-self-study-guide-programmers/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-12T00:00:00+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/03/12/self-training-self-study-guide-programmers/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/03/02/using-differencing-disks-with-virtualbox/">
-		
-			Using Differencing Disks With VirtualBox /在VirtualBox下使用系统差分</a>
-	</h2>
-	<div class="entry-content">
-		<p>from http://lucvknet.blogspot.com/2010/01/using-differencing-disks-with.html
-When evaluating new software, you often need to setup an isolated environment using virtual machines. This can be a lot of work when you have to install the machines from scratch. To avoid this you can setup a base configuration (for instance a machine which already has SQL server and Visual Studio installed) and copy the hard disk when creating a new instance. The downside of this method is that you waste a lot of disk space. To avoid this most virtualization products such as VmWare, VirtualBox and Virtual PC use differencing disks. These are disks that store only the different sectors in regard to their base or parent disk.</p>
-
-
-		
-		<a href="/blog/2011/03/02/using-differencing-disks-with-virtualbox/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-02T00:00:00+08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/03/02/using-differencing-disks-with-virtualbox/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/02/26/tears-of-the-westward-journey-love-life/">
-		
-			流泪的《大话西游》&一生所爱</a>
-	</h2>
-	<div class="entry-content">
-		<p>重温《大话西游》三遍。大笑，想哭却没流泪，然后沉默。</p>
-
-<p>我面对的，是一部痛彻心肺的喜剧.寓言篇故事已然存在，已然不可避免。</p>
-
-<p>世界是巨大的枷锁，你不得不重复自己或是别人的生活。记得长辈说过：年轻是一种罪过。他们说我们不成熟。真切地为自己的不俗喝彩，在大一的时候。</p>
-
-<p>在深切的郁闷中来到了二十来岁，突然就看懂了《大话西游》的开头：一位才华横溢又无法无天的青年（孙悟空），根本不喜欢世人摊派给他的大事业（西天取经）。他尤其受不了师父（唐僧）的唠唠叨叨，可世俗条规（观音）又不放过他。为让他悔悟，心甘情愿地去取经，唐僧和观音达成妥协：让他五百年后重新做人。这真是一个宿命的开始。</p>
-
-<p>“这时候的孩子都是玻璃罐里养蛤蟆，前途光明出路不大。”而你说，在妈那里自己永远是个孩子。居然再贴切不过。大闹天宫无非是20——22岁的黄金时光罢了，找到工作走上社会任你盖世的才华、浑身的个性也自有翻不出的五指山来压。只有戴上紧箍咒取经去，九九八十一难，做一个奇奇怪怪的佛。</p>
-
-<p>你别无选择。五百年后的悟空叫至尊宝，在五岳山从事一份很有前途的职业——山贼。命运却要他扮演孙悟空，至尊宝只是个过渡罢了。</p>
-
-
-		
-		<a href="/blog/2011/02/26/tears-of-the-westward-journey-love-life/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-26T00:00:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/02/26/tears-of-the-westward-journey-love-life/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/02/25/do-not-trapped-in-their-construction-of-the-box-write-net-programmer/">
-		
-			不要困在自己建造的盒子里——写给.NET程序员</a>
-	</h2>
-	<div class="entry-content">
-		<p>Other自本 张洋 原文出处 http://www.cnblogs.com/leoo2sk/archive/2011/02/24/dotnet-box.html
-此文章的主旨是希望过于专注.NET程序员在做好工作、写好.NET程序的同时，能分拨出一点时间接触一下.NET之外的东西（例如10%-20%的时间），而不是鼓动大家什么都去学最后什么都学不精，更不是说.NET不行或劝大家放弃.NET。恕我愚钝，此主旨在文中表达不够清楚，看评论中很多朋友误解了，特此说明。</p>
-
-<p>另外，本文中的观点并不全部是我个人的想法，相当一部分来自我以前聊过天的某些大牛，他们很多来自微软、百度、腾讯等知名企业，并且很多已经成为技术骨干，我曾经从他们那里受益匪浅，于是我把他们的指教结合自身的经验和理解写成此文。这就是此文的来源。</p>
-
-<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;华丽的分割线&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
-
-
-		
-		<a href="/blog/2011/02/25/do-not-trapped-in-their-construction-of-the-box-write-net-programmer/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-25T00:00:00+08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/02/25/do-not-trapped-in-their-construction-of-the-box-write-net-programmer/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/02/16/prevent-you-from-learning-is-that-you-not-the-world-self-education-in-foreign-universities-open-information-free-of-charge-address-daquan/">
-		
-			阻碍你学习的，是你，不是世界！-国外大学开放式自学教育资料免费地址大全</a>
-	</h2>
-	<div class="entry-content">
-		<p><span style="color: red;"><strong>Other自<a href="http://www.70man.com/">70后男人博客 [ http://www.70man.com/
-</a></strong></span></p>
-
-<p>互联网时代，其实信息开始越来越透明，假如你对中国的大学教育不满意，你可以翻墙看国外大学的课程，我的一个朋友分享我她收集的各个国外大学开放式  教育资料的论坛地址，我觉得很好，我合并一些我的资料，分享给我博客的大学生同学，如果你们有好的学习资料，可以补充，我会合并到这篇文字中。</p>
-
-<p><strong>这个世界阻碍你学习的，是你，不是世界！</strong></p>
-
-<p>————————华丽丽分割线————————</p>
-
-<p>中文不好的朋友学习论坛</p>
-
-<p>果壳时间：<a href="http://www.tins20.com/">http://www.tins20.com/</a> 很多中国专家的高质量科普视频</p>
-
-<p>人人影视：<a href="http://yyets.net/">http://yyets.net/</a> 进入网站后用“大学开放课程”搜索，会有惊喜，或者用你找到的英文课程名去搜索看看，也许更大惊喜，感谢人人字幕组！</p>
-
-<p>cicistudy：一个新建立的SNS社区，专门分享名校课程，链接都来自优酷等网站，带中文字幕，我亲自注册测试，可以访问，内容不错，不过不知道这个网站最后能否长期存活，不过我个人是希望能够存活的。 <a href="http://www.cicistudy.com/index.php">http://www.cicistudy.com/index.php</a></p>
-
-<p>下面是网友推荐的资源地址：</p>
-
-<p>新浪的名校公开课视频汇总：<a href="http://edu.sina.com.cn/video/open/index.shtml">http://edu.sina.com.cn/video/open/index.shtml</a></p>
-
-<p>————————华丽丽分割线————————</p>
-
-<p>一个可以在线观看和下载世界著名大学授课视频的论坛
-如剑桥、耶鲁等等
-<a href="http://galaaa.com/?fromuid=12311">http://galaaa.com/?fromuid=12311</a>
-中国大陆镜像
-<a href="http://www.core.org.cn/cn/">http://www.core.org.cn/cn/</a>
-中国台湾镜像
-<a href="http://www.myoops.org/">http://www.myoops.org/</a></p>
-
-<p>一、伯克利</p>
-
-<p>加州大学伯克利分校 <a href="http://webcast.berkeley.edu/courses.php">http://webcast.berkeley.edu/courses.php</a></p>
-
-<p>作为美国第一的公立大学，伯克利分校提供了许多优秀教授的播客和视频讲座，可以跟踪最新的讲座。想看教授布置的作业和课堂笔记，可以点击该教授的网页，通常，他/她都会第一堂课留下网址。实在不行，用google搜搜吧！</p>
-
-<p>伯克利的视频都是.rm格式，请注意转换</p>
-
-
-		
-		<a href="/blog/2011/02/16/prevent-you-from-learning-is-that-you-not-the-world-self-education-in-foreign-universities-open-information-free-of-charge-address-daquan/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-16T00:00:00+08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/02/16/prevent-you-from-learning-is-that-you-not-the-world-self-education-in-foreign-universities-open-information-free-of-charge-address-daquan/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/02/16/fix-firefox-high-cpu-load-with-plugin-container/">
-		
-			Fix Firefox High CPU Load With Plugin-container</a>
-	</h2>
-	<div class="entry-content">
-		<p>from: http://blog.gnu-designs.com/solved-firefox-high-cpu-load-with-plugin-container</p>
-
-<p>If you’re like me, you use a lot of tabs at once in Firefox… a LOT (50+). Even with a few tabs, the new Firefox with the <a href="http://support.mozilla.com/en-US/kb/What+is+plugin-container">Plugin Container</a> tends to sit there chewing up CPU, grinding core temperature higher and  higher. In my case, it ran my CPU up to over 200F, before I had to kill  it off from the shell.</p>
-
-<p>The idea is sound, but the implementation  is absolutely horrible. If a webpage has flash components (and really,  what webpage doesn’t these days), but isn’t actually <em>playing</em> Flash content, the plugin should be idle. With plugin-container, it sits  there spinning, eating valuable CPU cycles and generating a LOT more  heat than necessary.</p>
-
-<p>So here’s how to stop it:</p>
-
-<p>Under ‘<code>about:config</code>‘, do a search for ‘<code>dom.ipc</code>‘, and you’ll see something like this:</p>
-
-<p><img src="http://blog.gnu-designs.com/images/plugin-container-before.png" alt=""></p>
-
-<p>The values you want to change, are the ones related to the plugin(s) you do <em>not</em> want to run in a separate namespace. In my case, that was the two plugins listed.</p>
-
-<p>Just double-click the key, and change the values from ‘true’ to ‘false’, as shown here:</p>
-
-<p><img src="http://blog.gnu-designs.com/images/plugin-container-after.png" alt=""></p>
-
-<p>That’s  it… just restart Firefox, and now your plugins will run in “legacy”  mode, the same way they did before plugin-container came alone. The only  problem is that you’ll be much more prone to Flash crashes taking out  the browser itself, so save often, or use a <a href="https://addons.mozilla.org/en-US/firefox/search/?q=session">Session Manager</a> to help restore the tabs you had loaded if/when Firefox crashes.</p>
-
-<p>http://kb.mozillazine.org/Plugin-container_and_out-of-process_plugins</p>
+<p>关闭终端,并重起.下次进入系统,系统会提示是否把转化好的目录改回中文.选择不再提示,并取消修改.主目录的中文转英文就完成了.</p>
 
 		
 		
@@ -418,7 +125,7 @@ When evaluating new software, you often need to setup an isolated environment us
   
 
 
-<time datetime="2011-02-16T00:00:00+08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2011</time></div>
+<time datetime="2010-12-07T00:00:00+08:00" pubdate data-updated="true">Dec 7<span>th</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -427,7 +134,7 @@ When evaluating new software, you often need to setup an isolated environment us
 
 </div>
 	
-	<div class="comments"><a href="/blog/2011/02/16/fix-firefox-high-cpu-load-with-plugin-container/#disqus_thread">Comments</a></div>
+	<div class="comments"><a href="/blog/2010/12/07/ubuntu-convert-the-chinese-environment-the-user-directory-path-for-the-english-in-chinese/#disqus_thread">Comments</a></div>
 	
 </div>
 </article>
@@ -436,49 +143,14 @@ When evaluating new software, you often need to setup an isolated environment us
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2011/02/14/install-tpfan-in-ubuntu10-10/">
+		<a href="/blog/2010/12/07/a-difficult-decision/">
 		
-			在ubuntu10.10下安装tpfan</a>
+			一个艰难的决定</a>
 	</h2>
 	<div class="entry-content">
-		<p>tpfan的最后一个版本0.96,只适用于ubuntu9.04，本文是基于T61而写。</p>
+		<p>当您看到这篇文章的时候，我刚刚作出了一个非常艰难的决定,在腾讯没有开放Qzone的API的情况下,再次开通QQ空间,同步自己WordPress博客上的文章到Qzone,因为腾讯没有开放Qzone的API,想从自己的WordPress博客上自动同步文章到QQ空间只能另辟蹊径,好在腾讯提供了QQ邮件发布的方式,而QQ邮箱支持SMTP协议, WordPress 所包含的 PHPMailer 类可以使用 SMTP 发邮件，所以可以通过使用 PHPMailer 同步 WordPress 博客文章到 Qzone。总之由于腾讯的不开放这个过程曲折坎坷,感谢SMTP协议,感谢腾讯没有对QQ邮箱的SMTP登录做基于IP的验证,否则我的WordPress主机就不能通过PHPMailer类远程登录发送邮件到Qzone.</p>
 
-<p>1.下载tpfan的deb文件，http://ppa.launchpad.net/tp-fan/ppa/ubuntu/pool/main/t/tpfan-admin/tpfan-admin_0.96-ubuntu1_all.deb</p>
-
-<p>2.解压后修改debian文件夹中的control文件，将“python-gnome2-desktop”替换为“python-gnome2-desktop-dev”</p>
-
-<p>3.重写打包</p>
-
-<pre>dpkg-deb -D --build tpfan-admin_0.96-ubuntu1_all</pre>
-
-
-<p>4.安转</p>
-
-<p>5.修改/usr/lib/python2.6/dist-packages/tpfand/settings.py7. 替换行 170-174</p>
-
-<pre>self.product_id = None
-self.product_name = None
-self.product_pretty_vendor = None
-self.product_pretty_name = None
-self.product_pretty_id = None</pre>
-
-
-<p>替换为</p>
-
-<pre>self.product_id = ""
-self.product_name = ""
-self.product_pretty_vendor = ""
-self.product_pretty_name = ""
-self.product_pretty_id = ""</pre>
-
-
-<ol>
-<li></li>
-</ol>
-
-
-<pre>sudo /etc/init.d/tpfand restart</pre>
-
+<p>下一步增加同步WordPress文章的时候把文章的分类也同步到Qzone,目前自动同步过来的文章都会归类在个人日记分类下,等以后同步过来的文章增多的时候,浏览起来会很乱.这个问题比较好解决,看腾讯的帮助文档,邮件发布日志的分类可以在邮件的标题里加上,格式为&#8221;[某分类]文章标题&#8221;,如果所属分类不存在，会自动创建新的分类.回头把WordPress上的PHP博客同步代码修改一下就可以实现.</p>
 
 		
 		
@@ -498,7 +170,101 @@ self.product_pretty_id = ""</pre>
   
 
 
-<time datetime="2011-02-14T00:00:00+08:00" pubdate data-updated="true">Feb 14<span>th</span>, 2011</time></div>
+<time datetime="2010-12-07T00:00:00+08:00" pubdate data-updated="true">Dec 7<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/12/07/a-difficult-decision/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/27/garbage-problem-rhythmbox-mp3-player/">
+		
+			Rhythmbox播放mp3乱码问题</a>
+	</h2>
+	<div class="entry-content">
+		<div>rhythmbox在更新了本地的mp3文件后会有许多mp3文件在播放列表里显示乱码，原因是软件对mp3文件的id3等标签里的中文信息不识别导致的。通过如下方法可以解决问题。</div>
+
+
+<div>1:安装mid3iconv，在终端里输入：</div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo apt-get install python-mutagen</span></div>
+
+
+<div>2:将本地音频文件的id3标签全部转换为gbk，在终端里通过cd命令转到你的MP3目录，输入：</div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~/Data/Music$mid3iconv -e GBK *.mp3</span></div>
+
+
+<div>如果本地的mp3目录包含子目录，可需要将第二步里的命令改成如下格式：</div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~/Data/Music$mid3iconv -e GBK */*.mp3</span></div>
+
+
+<div>
+
+3.运行rhythmbox后重新导入本地mp3文件
+<div>方法一的拓展:</div>
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">sudo apt-get install convmv iconv python-mutagen
+#文件名由GBK转换为UTF8
+convmv -r -f cp936 -t utf8 &#8211;notest &#8211;nosmart *
+#文件内容由GBK到UTF8
+iconv -f gbk -t utf8 $i > newfile
+#将 mp3 标签编码 由GBK转换至utf-8
+find . -iname &#8220;*.mp3&#8221; -execdir mid3iconv -e GBK {} \;
+#或 mid3iconv -e GBK ×/*.mp3
+# find . \( -iname &#8220;*.mp3&#8221; -o -iname &#8220;*.wma&#8221; \) -exec mid3iconv -e</div>
+</div>
+
+
+<div>推荐第二种方法:</div>
+
+
+<div>二，修改变量法
+以用gstreamer做后端的播放器Rhythmbox为例，可以在系统环境变量或用户的环境变量中增加如下内容：
+vim .profile</div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">
+<div>export GST_ID3_TAG_ENCODING=GBK:UTF-8:GB18030
+export GST_ID3V2_TAG_ENCODING=GBK:UTF-8:GB18030</div>
+</div>
+
+
+<p>保存修改后注销一次电脑,运行Rhythmbox重新导入音频文件.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-27T00:00:00+08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -507,7 +273,7 @@ self.product_pretty_id = ""</pre>
 
 </div>
 	
-	<div class="comments"><a href="/blog/2011/02/14/install-tpfan-in-ubuntu10-10/#disqus_thread">Comments</a></div>
+	<div class="comments"><a href="/blog/2010/11/27/garbage-problem-rhythmbox-mp3-player/#disqus_thread">Comments</a></div>
 	
 </div>
 </article>
@@ -516,71 +282,22 @@ self.product_pretty_id = ""</pre>
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2011/02/01/ten-tips-to-make-your-powerpoint-reborn-i/">
+		<a href="/blog/2010/11/27/features-plug-in-rhythmbox/">
 		
-			十招让你的Powerpoint脱胎换骨（上）</a>
+			Rhythmbox特色插件</a>
 	</h2>
 	<div class="entry-content">
-		<p>在本文我们将用10个超级技巧来解决糟糕的PowerPoint设计肆虐横行的问题，让你可以设计出更好看、更专业的演示。此间你会看到Note &amp; Point上的一些出色的幻灯片设计，还有一些就是你们自己的作品。让我们开始吧！
-不是设计师？</p>
+		<p>整理了下自己在用的rhythmbox插件，，贴上来和大家分享。</p>
 
-<p>本文是写给做过PPT的人的。 无论你是学生、领导，还是自助团体，或者是薪水达6位数的企业高管，不管你喜欢与否，从你打开Powerpoint或Keynote的那一刻起，你就成为了一名设计师。</p>
+<p>先说以下rhythmbox插件的安装方法：下载的是非deb安装文件则解压复制文件到插件的目录，插件的目录位置有两个， 手动安装请复制到：
+~/.gnome2/rhythmbox/plugins/</p>
 
-<p>你已经选择了一个可视化的沟通工具，因此你应当花点时间了解可视化沟通的一二件事。其主要原因之一，尤其对于那些身处商业世界的人来说，是你的同事会下意识地根据你PPT的视觉吸引力来对你本人做出判断。</p>
-
-<p>如何培养出色的Powerpoint设计技巧？如果你还没得到建议的话，学学下面的十项技巧看看。等着瞧，如果你的同事注意到你的幻灯片开始变好，他们很可能会开始请你帮帮他们改进一下自己的片子！</p>
-
-
-		
-		<a href="/blog/2011/02/01/ten-tips-to-make-your-powerpoint-reborn-i/" class="more-link">Read on &rarr;</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-01T00:00:00+08:00" pubdate data-updated="true">Feb 1<span>st</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/other/'>Other</a>
-
-
-</div>
-	
-	<div class="comments"><a href="/blog/2011/02/01/ten-tips-to-make-your-powerpoint-reborn-i/#disqus_thread">Comments</a></div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2010/12/31/happy-new-year-show-my-ubuntu/">
-		
-			新年快乐！我的Ubuntu秀</a>
-	</h2>
-	<div class="entry-content">
-		<p>在过去的一年经历了种种事情，得到或失去，痛苦或快乐，一切都随着2011年的到来而逝去，谨以此为记。</p>
-
-<p>用一段视频作为自己学习Linux过程的一个标记，距离自己发布的第一部ubuntu视频，时隔两年，第一部视频还是在家里的台式电脑上录制的，由于学习ubuntu认识了许多网友，加入过ubunuucircle杂志翻译小组，在ubuntuchina做过版主，两年间，ubuntu的版本也从当初开始使用的8.04到升级到目前的10.10.脱离windows平台后的自己在下一个两年会有多少进步？以现在为基数，届时再做对比。</p>
-
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="600" height="535" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="align" value="middle">
-<param name="src" value="http://player.youku.com/player.php/sid/XMjMzNjM2MDY0/v.swf">
-<param name="quality" value="high">
-<embed type="application/x-shockwave-flash" width="600" height="535" src="http://player.youku.com/player.php/sid/XMjMzNjM2MDY0/v.swf" quality="high" align="middle"></embed></object>
-
+<p>1.resume on restart 顾名思义就是记录rhythmbox上次退出时的播放曲目，便于下次播放。
+插件下载地址：http://people.ksp.sk/~mic/Projects/RhythmboxROR/
+2.豆瓣电台插件 这个插件能够通过你的豆瓣的帐号，连接到豆瓣电台，在线播放随机的歌曲，并支持“喜欢”，“不喜欢”等操作，同步骤到豆瓣电台。
+插件下载地址：http://code.google.com/p/dbfmplugin/
+3.鲁班歌词 这个插件能够下载Rhythmbox当前播放歌曲的歌词，并使用多种方式显示，强烈推荐。
+下载地址：http://code.google.com/p/sogou-lyrics/</p>
 
 		
 		
@@ -600,16 +317,16 @@ self.product_pretty_id = ""</pre>
   
 
 
-<time datetime="2010-12-31T00:00:00+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2010</time></div>
+<time datetime="2010-11-27T00:00:00+08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2010</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/personal/'>Personal</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
 	
-	<div class="comments"><a href="/blog/2010/12/31/happy-new-year-show-my-ubuntu/#disqus_thread">Comments</a></div>
+	<div class="comments"><a href="/blog/2010/11/27/features-plug-in-rhythmbox/#disqus_thread">Comments</a></div>
 	
 </div>
 </article>
@@ -618,29 +335,27 @@ self.product_pretty_id = ""</pre>
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/12/29/to-choose-or-not-to-choose-that-is-the-question/">
+		<a href="/blog/2010/11/21/another-usage-of-firefox/">
 		
-			To Choose or Not to Choose: That Is the Question</a>
+			Firefox的另一种用法</a>
 	</h2>
 	<div class="entry-content">
-		<p>前言：
-Life is full of choices, from the everyday to the life-altering. They  can be as mundane as, “What should I have for breakfast?” or as  important as, “What do I do with my life?” But rest assured, they’re  everywhere.</p>
+		<p>前言：VIM和Emacs并列成为类Unix系统用户最喜欢的编辑器，不过由于其学习曲线比较陡峭，这意味着开始学习VIM的时候可能会进展缓慢，让许多初学者望而止步，不过在掌握一些基本操作之后，就会发现coding效率有大幅度的提高。之前把学习环境迁移到Linux下，在基本配置好Linux后，熟悉Linux的快捷键的过程中发现了一款很另类的 Firefox插件Vimperator。</p>
 
-<pre>Choose life.
-选择生活。
-Choose a job.
-选择一份工作。
-Choose your friends.
-选择你的朋友。
-Choose a career.
-选择一项事业。
-Choose a family,
-选择你的家庭。
-Choose your future.
-选择你的未来。
+<p>Vimperator是Firefox的一个扩展，它为喜欢使用键盘的用户提供了类似于Vim的用户界面，安装后Firefox之后会变成类似于Vim的用户界面。Vimperator另类之处是可以使Firefox使用者不需要鼠标，通过它的Hint模式、及自动补齐的命令行，使用者可以不依赖鼠标而高效的键盘操作。</p>
+
+<p>整理了一些关于Vimperator的学习资料，便于日后复习。
+<a href="http://xbeta.info/vimperator.htm" target="_blank">Pentadactyl/Vimperator：VIM化的Firefox</a>
+<a href="http://blog.chinaunix.net/u3/100881/showart_2085294.html" target="_blank">FireFox超酷插件之Vimperator</a></p>
+
+<p><a href="http://hi.baidu.com/hplonline/blog/item/add4bb35484ea19ba71e12ca.html" target="_blank">Vimperator（简介、配置、进阶、焦点问题）</a></p>
+
+<p><a href="liberator://help/intro" target="_blank">Vim在线帮助文档</a></p>
+
+<p><span style="color: #ff0000;">这里提供一下Vimperator的卸载方法，因为Firefox安装了Vimperator后Firefox的滚动条、地址栏、菜单栏、书签栏都会消失，更囧的是以前Firefox的热键也无效了，许多初次使用者于是发现卸载插件的插件管理器也不知道从何调出，方法如下：在Firefox界面按ESC后键入如下命令“:addons”或“:dialog adons&#8221;.</span></p>
 
 		
-		<a href="/blog/2010/12/29/to-choose-or-not-to-choose-that-is-the-question/" class="more-link">Read on &rarr;</a>
+		
 	</div>
 
 
@@ -657,16 +372,397 @@ Choose your future.
   
 
 
-<time datetime="2010-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2010</time></div>
+<time datetime="2010-11-21T00:00:00+08:00" pubdate data-updated="true">Nov 21<span>st</span>, 2010</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/personal/'>Personal</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
 	
-	<div class="comments"><a href="/blog/2010/12/29/to-choose-or-not-to-choose-that-is-the-question/#disqus_thread">Comments</a></div>
+	<div class="comments"><a href="/blog/2010/11/21/another-usage-of-firefox/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/20/perfect-to-use-under-ubuntu-tm2009/">
+		
+			Ubuntu下完美使用TM2009</a>
+	</h2>
+	<div class="entry-content">
+		<p>虽然在经历了3Q大战后，许多朋友放弃QQ，只用MSN，如果都用MSN或Gtalk问题就简单了，遗憾的是周边还有不少的朋友还在用QQ，于是我转移到linux下仍然想着如何继续使用QQ。</p>
+
+<p>在Linux下使用QQ常见的方法有四种：</p>
+
+<p>方法一：使用腾讯官方的QQ for linux，这还是beta版，腾讯放出这个版本后可能发现linux用户都不怎么用QQ，下载量没有达到预期的数值，于是搁浅这个项目，用腾讯官方版会产生的后果是QQ好友会抱怨你为什么频繁上线，为什么发的消息不回，原因是你登录QQ上去后还没有看到消息，程序就崩溃消失了，再次登录你会发现之前的聊天记录也没有了，工作中用到QQ或有女朋友的linux用户强烈不建议使用腾讯的QQ for linux。</p>
+
+<p>方法二：使用EVA，这是一个基于GTK的通讯软件，支持QQ登录，不过在ubutun10.10下，从源里安装会经常出现和QQ for linux一样的问题，登录的程序就崩溃了，建议使用网上流传的eva_0.4.921bugfix58_etch_i386，这个版本修复了登录后会崩溃的bug，不过需要注意的是系统更新的时候的时候不要更新EVA否则就会出现之前的问题。</p>
+
+<p>方法三：使用virtualbox虚拟windows系统，在windows系统里使用qq，这个方法是目前最稳定的方法，不过有网友真的这样做的话，我建议这样的网友还是用会windows系统。</p>
+
+<p>方法四：这是本文的重点，通过wine来实现ubuntu下QQ的登录，wine是这个方法网上的许多教程，不过都是安装QQ而不是TM，网友尝试发现通过wine安装TM后，程序无法登录，运行后就会崩溃，不过本人windows平台下一直再用TM，转而用QQ一时无法适应，而且程序在打开群聊天的时候会经常无响应，以及最小化到托盘后无法呼出主界面，总之用的很郁闷，于是决定另辟蹊径尝试安装TM。</p>
+
+<p>在尝试了诸多版本的TM后，发现之前U盘PE里经常用的一款单文件TM，所谓单文件TM其实是将TM程序文件目录里不可取少的文件做成一个exe自释放文件，这个单文件TM在运行的时候不会立刻崩溃，不过因为单文件，做过一些精简，如果不安装必要的运行库是无法运行的，这涉及到wine以及winetricks，这些会单独写一篇博客作为笔记。</p>
+
+<p><a href="http://nwy.me/img/2010/11/Screenshot-4.png"><img class="alignnone size-medium wp-image-62128" title="Screenshot-4" src="http://nwy.me/img/2010/11/Screenshot-4-260x300.png" alt="" width="260" height="300"></a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-20T00:00:00+08:00" pubdate data-updated="true">Nov 20<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/20/perfect-to-use-under-ubuntu-tm2009/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/19/virtual-xp-under-ubuntu-virtualbox-the-network-card-driver-problem/">
+		
+			Ubuntu下VirtualBox虚拟XP之网卡驱动问题</a>
+	</h2>
+	<div class="entry-content">
+		<p>由于一些软件以及网银只能在Windows平台下使用，在Ubuntu下只能通过虚拟windows系统来实现。继之前彻底把windows从硬盘里删除后，昨天重新把硬盘分区，在漫长的复制备份出去的120G数据的过程中，索性配置ubuntu，安装常用的软件，在virtualbox里装好XP后发现网卡驱动没有装好，于是在网上找virtualbox虚拟出来的amd pcnet这款的驱动，耗时半个小时，找到的都是linux下的驱动，期间还被google的搜索结果误导访问了一个国外虚假骗钱的垃圾网站，看资料介绍虚拟机采用这款网卡原因是考虑其良好的兼容性，于是想到windows系统应该会集成了该驱动，虽然之前在安装驱动的时候尝试了系统自动安装驱动的选项，但提示没有找到，于是决定采用半手动的方式安装驱动。具体操作步骤如下：</p>
+
+<p>1.在设备光管理器网卡选项上右键选择从列表指定位置安装，在下一步中选择“不要安装，我要自己选择安装的驱动程序”，如图选择“amd pcnet family pci ethernet adapter&#8221;,单击下一步，问题解决。</p>
+
+<p><a href="http://nwy.me/img/2010/11/Screenshot-1.png"><img class="alignnone size-medium wp-image-62124" title="Screenshot-1" src="http://nwy.me/img/2010/11/Screenshot-1-300x217.png" alt="" width="300" height="217"></a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-19T00:00:00+08:00" pubdate data-updated="true">Nov 19<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/19/virtual-xp-under-ubuntu-virtualbox-the-network-card-driver-problem/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/19/ubuntu-installation-partition-proposal/">
+		
+			Ubuntu安装分区建议方案</a>
+	</h2>
+	<div class="entry-content">
+		<p>单linux系统的分区方案
+这种情况下无需建立扩展分区，一块硬盘可以全部分成四个主分区，MBR和所有分区信息全部保存在第一个512B的扇区里；查找分区信息最快。
+本人笔记本硬盘160G，具体分区方案如下：
+sda1&#8212;20G,ext4，挂载至／目录；如果所用硬盘较小，／分区可以小到7G，不建议这样做，如果硬盘够大，就没必要省这几个G了，大点以后装大软件有余地；
+sda2&#8212;256MB-512MB-1024MB-2048MB(请根据内存大小选择，为物理内存大小的1-2倍，但一般不要超过2048MB)，swap格式，无需挂载点；
+sda3&#8212;1G-5G-8G（如果硬盘不够大，又不需刻录DVD，选1G，否则用5G为佳）,ext4，挂载至／tmp目录，硬盘大的可多分几个G，备份时方便点,本人分了了18G，考虑经常备份系统你，多分点一以后不够用分就比较复杂；
+sda4&#8212;120G所有剩余磁盘空间,ext4，挂载至／home目录；
+请注意分区的顺序、设备符和各目录挂载的次序，依次是/，swap，/tmp，/home；平均磁头移臂次数较少，读写综合性能较优。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-19T00:00:00+08:00" pubdate data-updated="true">Nov 19<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/19/ubuntu-installation-partition-proposal/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/16/conky-configuration-under-ubuntu/">
+		
+			Ubuntu下的conky配置</a>
+	</h2>
+	<div class="entry-content">
+		<p>Conky是一种自由软件，用于X视窗系统的系统监视，可以在FreeBSD、OpenBSD和各种Linux发布上使用的自由软件。Conky具有很高的可配置性，可以监视许多系统参数，如：CPU、内存、交换内存、硬盘使用情况等状态；各种硬件的温度；系统的进程（top）；网络状态；电池电量；系统信息和邮件收发；各种音乐播放器MPD、XMMS2、BMPx、Audacious）的控制。不像其他系统监视器那样需要高级别的部件工具箱（widget toolkits）来渲染他们的信息，Conky可以直接在X视窗下渲染，这意味着在相同配置下Conky可以消耗更少的资源。</p>
+
+<p><span style="color: #ff0000;">本文的最后提供了截图中的conky配置文件以及桌面的下载.</span></p>
+
+<p>安装conky</p>
+
+<p>ocean@ocean-ThinkPad-T61:~$ sudo apt-get install conky</p>
+
+<p>conky默认没有提供配置文件，需要使用者手动创建配置：</p>
+
+<p>ocean@ocean-ThinkPad-T61:~$ gedit<code> ~/.conkyrc</code></p>
+
+<p>复制下面的代码,并保存,在终端运行conky</p>
+
+<blockquote>
+<pre># .conkyrc - Edited from Russian Conky from Gnome-Look.org
+# Edited by Alpha-Thinker
+# Made specifically for the Lenovo T61 with NVIDIA Quadro NVS 140M discrete graphics
+
+# --- Window Layout & Options --- #
+own_window yes
+own_window_colour brown
+own_window_transparent yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+use_spacer right
+use_xft yes
+alignment top_right
+gap_x 20
+gap_y 45
+
+# --- Colours, Sizes, Fonts & Margins --- #
+update_interval 1.0
+maximum_width 250
+stippled_borders 3
+border_margin 9
+border_width 10
+default_color white
+
+# --- Text --- #
+draw_outline no
+draw_borders no
+font Sans:size=8:weight=bold
+uppercase no
+draw_shades yes
+override_utf8_locale yes
+
+TEXT
+${font Sans:size=14:weight=bold}${color red} ${alignc} ${time %r}
+${font Sans:size=11:weight=bold}${color white} ${alignc} ${time %A} ${time %e} ${time %B} ${time %G}
+
+${font Sans:size=9:weight=bold}${color orange}SYSTEM INFO${hr 2}$color${font Sans:size=8:weight=bold}
+${color orange}Machine$color Thinkpad T61 ${alignr}${color orange} Uptime$color $uptime
+${color orange}Kernel$color  $kernel ${alignr}${color orange}Type$color $machine
+
+${font Sans:size=9:weight=bold}${color orange}Processor ${hr 2}$color
+${font Arial:bold:size=8}${color #ff0000}${execi 99999 cat /proc/cpuinfo | grep "model name" -m1 | cut -d":" -f2 | cut -d" " -f2- | sed 's#Processor ##'}$font$color
+${color orange}Speed:$color${execi 20 sensors |grep "Core0 Temp" | cut -d" " -f4}$font$color$alignr${freq_g 2}Ghz         ${color #c0ff3e}${execi 20 sensors |grep "Core1 Temp" | cut -d" " -f4}  $color${alignr}${color orange}Processes:$color $running_processes/ $processes
+
+${font Sans:size=9:weight=bold}${color orange}CPU Usage ${hr 2}$color
+${color white}Core 1   ${color red}${cpu cpu0}%           ${color white}Core 2   ${color red}${cpu cpu1}% $color
+${cpugraph cpu0 25,120 000000 ff6600 }  ${cpugraph cpu1 25,120 000000 ff6600 }
+${font Sans:size=8:weight=bold}${color red}CPU Temp${color white}              ${acpitemp}小$color
+${font Sans:size=8:weight=bold}${color red}NVIDIA GPU Temp ${color white}  ${execi 30 nvidia-settings -q gpucoretemp | grep '):' | awk '{print $4}' | cut -c -2} C$color
+${font Sans:size=8:weight=bold}${color red}FAN SPEED${color white}             ${ibm_fan} rpm$color
+
+${font Sans:size=9:weight=bold}${color orange}TOP 5 CPU Users ${hr 2}$color${font Sans:size=8:weight=bold}${color #ff0000}
+Process                          ${alignr}ID      ${alignr}CPU  $color
+1. ${top name 1}     ${alignr}${top pid 1}   ${alignr}${top cpu 1}
+2. ${top name 2}     ${alignr}${top pid 2}   ${alignr}${top cpu 2}
+3. ${top name 3}     ${alignr}${top pid 3}   ${alignr}${top cpu 3}
+4. ${top name 4}     ${alignr}${top pid 4}   ${alignr}${top cpu 4}
+5. ${top name 5}     ${alignr}${top pid 5}   ${alignr}${top cpu 5}
+
+${font Sans:size=9:weight=bold}${color orange}TOP 5 RAM Users ${hr 2}$color${font Sans:size=8:weight=bold}${color #ff0000}
+Process                             ${alignr}ID      ${alignr}RAM $color
+1. ${top_mem name 1}     ${alignr}${top_mem pid 1}   ${alignr}${top_mem mem 1}
+2. ${top_mem name 2}     ${alignr}${top_mem pid 2}   ${alignr}${top_mem mem 2}
+3. ${top_mem name 3}     ${alignr}${top_mem pid 3}   ${alignr}${top_mem mem 3}
+4. ${top_mem name 4}     ${alignr}${top_mem pid 4}   ${alignr}${top_mem mem 4}
+5. ${top_mem name 5}     ${alignr}${top_mem pid 5}   ${alignr}${top_mem mem 5}
+
+${font Sans:size=9:weight=bold}${color orange}RAM & SWAP ${hr 2}$color${font Sans:size=8:weight=bold}
+${color white}RAM$color  ${memperc}%  ${color #ff6600}${membar 3.180}
+${color white}SWAP$color  ${swapperc}%  ${color #ff6600}${swapbar 3.180}
+
+${font Sans:size=9:weight=bold}${color orange}LAN (IP: ${addr eth0}) ${hr 2}$color${font Sans:size=8:weight=bold}
+${color white}Down$color ${downspeed eth0}/s${alignr}${color white}Up$color${alignr}    ${upspeed eth0}/s
+${downspeedgraph eth0 25,120 000000 00ff00} ${alignr}${upspeedgraph eth0 25,120 000000 ff0000}$color
+${font Sans:size=9:weight=bold}${color orange}Wi-fi (IP: ${addr wlan0}) ${hr 2}$color${font Sans:size=8:weight=bold}
+${color white}Down$color ${downspeed wlan0}/s${alignr}${color white}Up$color${alignr}    ${upspeed wlan0}/s
+${downspeedgraph wlan0 25,120 000000 00ff00} ${alignr}${upspeedgraph wlan0 25,120 000000 ff0000}$color
+${font Sans:size=9:weight=bold}${color orange}GSM/3G (IP: ${addr ppp0}) ${hr 2}$color${font Sans:size=8:weight=bold}
+${color white}Down$color ${downspeed ppp0}/s${alignr}${color white}Up$color${alignr}    ${upspeed ppp0}/s
+${downspeedgraph ppp0 25,120 000000 00ff00} ${alignr}${upspeedgraph ppp0 25,120 000000 ff0000}$color
+</pre>
+</blockquote>
+
+
+<p>本文最后有文章中的截图的conky配置文件的下载，如果想更进一步定制需要使用者自己动手，当然网上论坛也有大量的配置可以参考。</p>
+
+<p>配置的语法定义在软件官方网站有说明，在本地&#8221;/usr/share/doc/conky-all/&#8221;路径下也有帮助文档。</p>
+
+<p>一些网友提供的配置截图以及相应的配置文件，http://conky.sourceforge.net/screenshots.html</p>
+
+<p>附一张自己定制的conky截图</p>
+
+<p><a href="http://nwy.me/img/2010/11/0cean.jpg"><img class="alignnone size-medium wp-image-62054" title="ocean" src="http://nwy.me/img/2010/11/0cean-97x300.jpg" alt="" width="97" height="300"></a><a href="http://nwy.me/img/2010/11/conky.png"><img class="alignnone size-medium wp-image-62058" title="conky" src="http://nwy.me/img/2010/11/conky-300x225.png" alt="" width="300" height="225"></a></p>
+
+<p>右边的截图是网友评论最帅的conky配置，配置文件见 <a rel="nofollow" href="http://blog.brixandersen.dk/?p=67">http://blog.brixandersen.dk/?p=67</a></p>
+
+<p>配置文件下载:<a href="..http://nwy.me/img/2010/11/conkyrc.tar.gz">.conkyrc.tar</a></p>
+
+<p>壁纸下载:<a href="http://nwy.me/img/2010/11/conky.tar.gz">conky.tar</a></p>
+
+<p>conky默认不会开机自动运行可以创建一个文件,复制下面的内容,并保存为myconky.sh,在系统/首选项/启动应用程序里添加这个文件,延迟十五秒是为了避免conky先于Gonme运行,而无法显示.</p>
+
+<blockquote>#!/bin/bash
+sleep 15 && conky</blockquote>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-16T00:00:00+08:00" pubdate data-updated="true">Nov 16<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/16/conky-configuration-under-ubuntu/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/12/linux/">
+		
+			Linux常用信息查看命令</a>
+	</h2>
+	<div class="entry-content">
+		<div>
+
+<strong>系统</strong>
+<pre># uname -a               # 查看内核/操作系统/CPU信息
+# head -n 1 /etc/issue   # 查看操作系统版本
+# cat /proc/cpuinfo      # 查看CPU信息
+# hostname               # 查看计算机名
+# lspci -tv              # 列出所有PCI设备
+# lsusb -tv              # 列出所有USB设备
+# lsmod                  # 列出加载的内核模块
+# env                    # 查看环境变量</pre>
+<strong>资源</strong>
+<pre># free -m                # 查看内存使用量和交换区使用量
+# df -h                  # 查看各分区使用情况
+# du -sh <目录名>        # 查看指定目录的大小
+# grep MemTotal /proc/meminfo   # 查看内存总量
+# grep MemFree /proc/meminfo    # 查看空闲内存量
+# uptime                 # 查看系统运行时间、用户数、负载
+# cat /proc/loadavg      # 查看系统负载</pre>
+<strong>磁盘和分区</strong>
+
+<strong>
+		
+		<a href="/blog/2010/11/12/linux/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-12T00:00:00+08:00" pubdate data-updated="true">Nov 12<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/12/linux/#disqus_thread">Comments</a></div>
 	
 </div>
 </article>
