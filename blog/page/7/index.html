@@ -12,53 +12,86 @@
 本人笔记本硬盘160G，具体分区方案如下：
 sda1&#8212;20G,ext4，挂载至／目录；如果所用硬盘较小，／分区可以小到7G &hellip;">
 	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-	
-
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	
 </head>
 
+
 <body>
-	<header id="header" class="inner"><nav><ul>
-  <li><a href="/">主页</a></li>
-  <li><a href="/blog/archives">文章存档</a></li>
-  <li><a href="/blog/categories">文章分类</a></li>
-  <li><a href="/blog/about">关于</a></li>
+	<header id="header" class="inner"><h1><a href="/">Ocean's Blog</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/about">关于</a></li>
 </ul>
 </nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:blog.nwy.me">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:blog.nwy.me">
+	</form>
+</nav>
+
 </header>
+	
+		
+	
 	<div id="content" class="inner">
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/19/ubuntu-installation-partition-proposal/">Ubuntu安装分区建议方案</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-19T00:00:00+08:00">
-			<span class="day">19</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>单linux系统的分区方案
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/19/ubuntu-installation-partition-proposal/">
+		
+			Ubuntu安装分区建议方案</a>
+	</h2>
+	<div class="entry-content">
+		<p>单linux系统的分区方案
 这种情况下无需建立扩展分区，一块硬盘可以全部分成四个主分区，MBR和所有分区信息全部保存在第一个512B的扇区里；查找分区信息最快。
 本人笔记本硬盘160G，具体分区方案如下：
 sda1&#8212;20G,ext4，挂载至／目录；如果所用硬盘较小，／分区可以小到7G，不建议这样做，如果硬盘够大，就没必要省这几个G了，大点以后装大软件有余地；
@@ -67,50 +100,48 @@ sda3&#8212;1G-5G-8G（如果硬盘不够大，又不需刻录DVD，选1G，否�
 sda4&#8212;120G所有剩余磁盘空间,ext4，挂载至／home目录；
 请注意分区的顺序、设备符和各目录挂载的次序，依次是/，swap，/tmp，/home；平均磁头移臂次数较少，读写综合性能较优。</p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-19T00:00:00+08:00" pubdate data-updated="true">Nov 19<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/19/ubuntu-installation-partition-proposal/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/19/ubuntu-installation-partition-proposal/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/16/conky-configuration-under-ubuntu/">Ubuntu下的conky配置</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-16T00:00:00+08:00">
-			<span class="day">16</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>Conky是一种自由软件，用于X视窗系统的系统监视，可以在FreeBSD、OpenBSD和各种Linux发布上使用的自由软件。Conky具有很高的可配置性，可以监视许多系统参数，如：CPU、内存、交换内存、硬盘使用情况等状态；各种硬件的温度；系统的进程（top）；网络状态；电池电量；系统信息和邮件收发；各种音乐播放器MPD、XMMS2、BMPx、Audacious）的控制。不像其他系统监视器那样需要高级别的部件工具箱（widget toolkits）来渲染他们的信息，Conky可以直接在X视窗下渲染，这意味着在相同配置下Conky可以消耗更少的资源。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/16/conky-configuration-under-ubuntu/">
+		
+			Ubuntu下的conky配置</a>
+	</h2>
+	<div class="entry-content">
+		<p>Conky是一种自由软件，用于X视窗系统的系统监视，可以在FreeBSD、OpenBSD和各种Linux发布上使用的自由软件。Conky具有很高的可配置性，可以监视许多系统参数，如：CPU、内存、交换内存、硬盘使用情况等状态；各种硬件的温度；系统的进程（top）；网络状态；电池电量；系统信息和邮件收发；各种音乐播放器MPD、XMMS2、BMPx、Audacious）的控制。不像其他系统监视器那样需要高级别的部件工具箱（widget toolkits）来渲染他们的信息，Conky可以直接在X视窗下渲染，这意味着在相同配置下Conky可以消耗更少的资源。</p>
 
 <p><span style="color: #ff0000;">本文的最后提供了截图中的conky配置文件以及桌面的下载.</span></p>
 
@@ -233,50 +264,48 @@ ${downspeedgraph ppp0 25,120 000000 00ff00} ${alignr}${upspeedgraph ppp0 25,120 
 sleep 15 && conky</blockquote>
 
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-16T00:00:00+08:00" pubdate data-updated="true">Nov 16<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/16/conky-configuration-under-ubuntu/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/16/conky-configuration-under-ubuntu/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/13/note/">风雨20年：我所积累的20条编程经验</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-13T00:00:00+08:00">
-			<span class="day">13</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>原文作者乔纳森·丹尼可（Jonathan Danylko）是一位自由职业的web架构师和程序员，编程经验已超过20年，涉足领域有电子商务、生物技术、房地产、医疗、保险和公用事业。正如乔纳 森在文中所言，本文适合刚毕业的大学生和刚入门的程序员。如果你已是高级开发人员，或许你在本文中看到自己的身影。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/13/note/">
+		
+			风雨20年：我所积累的20条编程经验</a>
+	</h2>
+	<div class="entry-content">
+		<p>原文作者乔纳森·丹尼可（Jonathan Danylko）是一位自由职业的web架构师和程序员，编程经验已超过20年，涉足领域有电子商务、生物技术、房地产、医疗、保险和公用事业。正如乔纳 森在文中所言，本文适合刚毕业的大学生和刚入门的程序员。如果你已是高级开发人员，或许你在本文中看到自己的身影。</p>
 
 <div>
 <a href="http://img.cnbeta.com/newsimg/101113/1102260779095972.jpg"></a><a href="http://nwy.me/img/2010/11/1102260779095972.jpg"><img class="alignnone size-medium wp-image-62044" title="1102260779095972" src="http://nwy.me/img/2010/11/1102260779095972-300x110.jpg" alt="" width="300" height="110"></a>
@@ -296,50 +325,48 @@ sleep 15 && conky</blockquote>
 <p><strong>4. 经常备份代码。</strong>在我年轻时，我就有过因硬盘故障而丢了大量代码的经历，这经历很恐怖的。只要你一次没有备份，就应当像有着严格的期限，客户明天就需要。此时就该源码/版本控制软件大显身手了。</p>
 
 
+		
+		<a href="/blog/2010/11/13/note/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-13T00:00:00+08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/other/'>Other</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/13/note/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/other/'>Other</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/13/note/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/12/linux/">Linux常用信息查看命令</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-12T00:00:00+08:00">
-			<span class="day">12</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <div>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/12/linux/">
+		
+			Linux常用信息查看命令</a>
+	</h2>
+	<div class="entry-content">
+		<div>
 
 <strong>系统</strong>
 <pre># uname -a               # 查看内核/操作系统/CPU信息
@@ -361,99 +388,95 @@ sleep 15 && conky</blockquote>
 <strong>磁盘和分区</strong>
 
 <strong>
+		
+		<a href="/blog/2010/11/12/linux/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-12T00:00:00+08:00" pubdate data-updated="true">Nov 12<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/12/linux/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/12/linux/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/11/found-an-interesting-site-facial-search-engine/">发现一个有趣的网站：面部搜索引擎</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-11T00:00:00+08:00">
-			<span class="day">11</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p><a href="http://cn.pictriev.com/facedb/fs2.php" target="_blank">Pictriev</a>是一个通过面部辨识，在网上查找任何相似的面部的网站. 网站引擎不仅可以搜索相似的面部，还可以通过其特有的算法判断照片中人脸主人的大约年龄，以及性别，用自己的照片测试了一下，对年龄的判断比较准确，性别也识别出来了，99%male，很好奇1%的到哪去了，贴一张搜索引擎识别出来的和我相似的人的照片，本人对引擎的此搜索结果不做任何评论，保留最终解释权。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/11/found-an-interesting-site-facial-search-engine/">
+		
+			发现一个有趣的网站：面部搜索引擎</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://cn.pictriev.com/facedb/fs2.php" target="_blank">Pictriev</a>是一个通过面部辨识，在网上查找任何相似的面部的网站. 网站引擎不仅可以搜索相似的面部，还可以通过其特有的算法判断照片中人脸主人的大约年龄，以及性别，用自己的照片测试了一下，对年龄的判断比较准确，性别也识别出来了，99%male，很好奇1%的到哪去了，贴一张搜索引擎识别出来的和我相似的人的照片，本人对引擎的此搜索结果不做任何评论，保留最终解释权。</p>
 
 <p><a href="http://nwy.me/img/2010/11/2.jpg"></a><a href="http://nwy.me/img/2010/11/21.jpg"><img class="aligncenter size-thumbnail wp-image-62449" title="2" src="http://nwy.me/img/2010/11/21-150x150.jpg" alt="" width="150" height="150"></a></p>
 
 <p>最后做总结性的陈述：这一网站的发现填补了广大网友在人肉搜索面部智能识别方面的空白，具有里程碑意义，标志着广大网友的人肉搜索技术与国内MOP，天涯等网站网友的一流技术接轨。</p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-11T00:00:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/11/found-an-interesting-site-facial-search-engine/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/11/found-an-interesting-site-facial-search-engine/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/10/100-best-linux-site-recommended/">100个最佳Linux站点(推荐)</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-10T00:00:00+08:00">
-			<span class="day">10</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>这在很早就出现在LinuxByteOther的文章里面,但一直都没有完整版本,今天在非常Linux发现,立即Other给大家!
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/10/100-best-linux-site-recommended/">
+		
+			100个最佳Linux站点(推荐)</a>
+	</h2>
+	<div class="entry-content">
+		<p>这在很早就出现在LinuxByteOther的文章里面,但一直都没有完整版本,今天在非常Linux发现,立即Other给大家!
 （一） 软件下载</p>
 
 <p>(1) Freshmeat站点</p>
@@ -475,50 +498,48 @@ sleep 15 && conky</blockquote>
 <p>评介：Woven Goods for Linux 是一个德语站点，它的特征就在于英文和德文版的Linux程序下载和文档。该站点还有一个很不错的综合列表，几乎列出了你所能想象出的每一个Linux分发。</p>
 
 
+		
+		<a href="/blog/2010/11/10/100-best-linux-site-recommended/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-10T00:00:00+08:00" pubdate data-updated="true">Nov 10<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/other/'>Other</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/10/100-best-linux-site-recommended/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/other/'>Other</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/10/100-best-linux-site-recommended/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/09/wget/">Wget 使用技巧</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-09T00:00:00+08:00">
-			<span class="day"> 9</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p><a href="http://www.gnu.org/software/wget/">wget</a> 是一个命令行的下载工具。对于我们这些 Linux 用户来说，几乎每天都在使用它。下面为大家介绍几个有用的 wget 小技巧，可以让你更加高效而灵活的使用 wget。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/09/wget/">
+		
+			Wget 使用技巧</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://www.gnu.org/software/wget/">wget</a> 是一个命令行的下载工具。对于我们这些 Linux 用户来说，几乎每天都在使用它。下面为大家介绍几个有用的 wget 小技巧，可以让你更加高效而灵活的使用 wget。</p>
 
 <ul>
 <li><code>$ wget -r -np -nd http://example.com/packages/</code></li>
@@ -1138,50 +1159,48 @@ ftp_proxy = http://proxy.yoyodyne.com:&#8230;</p>
 </ul>
 
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-09T00:00:00+08:00" pubdate data-updated="true">Nov 9<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/09/wget/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/09/wget/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/08/social-networking/">社交网络</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-08T00:00:00+08:00">
-			<span class="day"> 8</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>我的名字叫Mark Zuckerberg，我是一典型卷发犹太人，我成绩优秀，高中最爱编程，造了几个有点小用的软件后，我考上了哈佛. 在大学我什么都不缺，社交？那是上等社会有钱小孩的游戏，我羡慕但我不需要，女朋友？有一个我喜欢无比的女生Erica，但她没我聪明，从她去波士顿大学 就知道了. 我不会甜言蜜语，我向来直言直语，这就是为什么我女朋友会叫我*sshole然后和我分手. 我生气我愤怒，于是我在博客里说了她的坏话，我还专门因此建立一个叫走facemash的网站来表达我对所有女生的不屑. 我1小时内编程出来的网站在两小时内因为流量过大把哈佛的网络系统瘫痪，那又怎样? 我什么都不怕.</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/08/social-networking/">
+		
+			社交网络</a>
+	</h2>
+	<div class="entry-content">
+		<p>我的名字叫Mark Zuckerberg，我是一典型卷发犹太人，我成绩优秀，高中最爱编程，造了几个有点小用的软件后，我考上了哈佛. 在大学我什么都不缺，社交？那是上等社会有钱小孩的游戏，我羡慕但我不需要，女朋友？有一个我喜欢无比的女生Erica，但她没我聪明，从她去波士顿大学 就知道了. 我不会甜言蜜语，我向来直言直语，这就是为什么我女朋友会叫我*sshole然后和我分手. 我生气我愤怒，于是我在博客里说了她的坏话，我还专门因此建立一个叫走facemash的网站来表达我对所有女生的不屑. 我1小时内编程出来的网站在两小时内因为流量过大把哈佛的网络系统瘫痪，那又怎样? 我什么都不怕.</p>
 
 <p>两个傻呵呵的兄弟俩找到我告诉我他们想建一个哈佛学生自己的社交网站，他们叫它The Harvard connection. 我觉得这主意不错，所以自己编了另一个网站叫做The facebook, 我和我的好朋友Eduardo Saverin一起合作，他出钱，我出力，我70%的股份他30%. 傻呵呵兄弟不爽了觉得我偷了他们的想法，但我觉得我没做错. 好朋友Eduardo Saverin也不爽了，因为我听信他人的流言蜚语最后把他的股份骗到0.03%而已, 他面对着我在律师的面前说，Mark Zuckerberg,我是你唯一的朋友. 而你背叛了我.</p>
 
@@ -1195,50 +1214,48 @@ ftp_proxy = http://proxy.yoyodyne.com:&#8230;</p>
 
 <p>无意中被论坛的转贴剧透，David Fincher最新的作品,导演过<fight club> <seven> 其中<fight club>看来不下三遍，这部影片从获知一直很期待，本地影院还没有上映，于是打算等网络上高清出来再看，结果现在还没有看电影结局都知道了，sigh，之前有朋友开玩笑威胁我要剧透这部影片的剧情，被我以格式化他笔记本硬盘震慑住了，没想到最后还是被剧透了，世事难料阿。</p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-08T00:00:00+08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/08/social-networking/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/08/social-networking/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/08/other/">晚睡原来是一种病——拖延症 (Procrastination) Procrastination的形成</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-08T00:00:00+08:00">
-			<span class="day"> 8</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <div>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/08/other/">
+		
+			晚睡原来是一种病——拖延症 (Procrastination) Procrastination的形成</a>
+	</h2>
+	<div class="entry-content">
+		<div>
 <strong> </strong>1． 一个人认为自己5天之内可以做完一件事情，所以在离deadline还有15天的时候一点不着急，直到最后只剩5天了才开始。
 
 2． 这种紧迫感和焦虑往往促发人的斗志，会让自己觉得，自己只有在压力状态下才有做事情的状态。
@@ -1259,50 +1276,48 @@ ftp_proxy = http://proxy.yoyodyne.com:&#8230;</p>
 <strong>Procrastination的浅层原因 </strong>
 
 <strong>
+		
+		<a href="/blog/2010/11/08/other/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-08T00:00:00+08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/other/'>Other</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/08/other/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/other/'>Other</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/08/other/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2010/11/07/batch-change-the-extension-for-linux/">Linux下批量修改扩展名</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2010-11-07T00:00:00+08:00">
-			<span class="day"> 7</span><span class="month">Nov</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>这两天在整理一些照片，在Linux下文件名区分大小写，而要处理的照片的扩展名都是JPG导致在软件和上传页面里不能识别，需要将JPG改成jpg，于是发挥电工的智慧通过正则命令批量修改扩展名。</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/07/batch-change-the-extension-for-linux/">
+		
+			Linux下批量修改扩展名</a>
+	</h2>
+	<div class="entry-content">
+		<p>这两天在整理一些照片，在Linux下文件名区分大小写，而要处理的照片的扩展名都是JPG导致在软件和上传页面里不能识别，需要将JPG改成jpg，于是发挥电工的智慧通过正则命令批量修改扩展名。</p>
 
 <p>下面演示将/home/ocean/2010/下JPG文件批量修改为jpg文件.如sam_4533.JPG修改为sam_4533.jpg</p>
 
@@ -1314,70 +1329,59 @@ rename在不同的发行版是不同，此处的是perl-rename，还有c语言�
 </ol>
 
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2010-11-07T00:00:00+08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2010</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2010/11/07/batch-change-the-extension-for-linux/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2010/11/07/batch-change-the-extension-for-linux/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
-
 <nav id="pagenavi">
-	<a href="/blog/page/6/" class="prev alignleft">Prev</a>
-	<a href="/blog/page/8/" class="next alignright">Next</a>
- <div class="clearfix"></div>
-</nav>
-</div>
-	<footer id="footer" class="inner"><div class="social alignright">
-	
-	
-	
-	
-	
-	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-</div>
-<p>&copy; 2013 Ocean</p>
-<div class="clearfix"></div>
-<div style="display:none"> <script language="javascript" type="text/javascript" src="http://js.users.51.la/4388679.js"></script>
-<noscript><a href="http://www.51.la/?4388679" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4388679.asp" style="border:none" /></a></noscript> </div>
-</footer>
-	<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-	(function($){
-		$('.entry-content').each(function(i){
-			var _i = i;
-			$(this).find('img').each(function(){
-				var alt = $(this).attr('alt');
+    
+        <a href="/blog/page/6/" class="prev">Prev</a>
+    
+    
+        <a href="/blog/page/8/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
-				if (alt == '' || typeof alt == 'undefined'){
-					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
-				} else {
-					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
-				}
-			});
-		});
-		$('.fancybox').fancybox();
-	})(jQuery);
-</script>
-<div id="phasebeam">
-	<canvas></canvas>
-	<canvas></canvas>
-	<canvas></canvas>
-</div>
-<script src="/javascripts/phasebeam.js"></script>
+    Ocean
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
 
 
 <script type="text/javascript">
@@ -1388,10 +1392,12 @@ rename在不同的发行版是不同，此处的是perl-rename，还有c语言�
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//go.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
+
+
 
 
 

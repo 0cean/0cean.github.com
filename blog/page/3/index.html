@@ -9,53 +9,86 @@
 	
 	<meta name="description" content="由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理， &hellip;">
 	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="Ocean's Blog" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-	
-
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	
 </head>
 
+
 <body>
-	<header id="header" class="inner"><nav><ul>
-  <li><a href="/">主页</a></li>
-  <li><a href="/blog/archives">文章存档</a></li>
-  <li><a href="/blog/categories">文章分类</a></li>
-  <li><a href="/blog/about">关于</a></li>
+	<header id="header" class="inner"><h1><a href="/">Ocean's Blog</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/about">关于</a></li>
 </ul>
 </nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:blog.nwy.me">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:blog.nwy.me">
+	</form>
+</nav>
+
 </header>
+	
+		
+	
 	<div id="content" class="inner">
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/">SSH自动运行以及端口释放</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-05-02T00:00:00+08:00">
-			<span class="day"> 2</span><span class="month">May</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/">
+		
+			SSH自动运行以及端口释放</a>
+	</h2>
+	<div class="entry-content">
+		<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
 ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -88,50 +121,48 @@ ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将�
 Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
 upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-05-02T00:00:00+08:00" pubdate data-updated="true">May 2<span>nd</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/05/02/automatic-operation-and-the-release-of-ssh-port/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/">解决virtualbox访问usb子系统失败问题的方法</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-04-29T00:00:00+08:00">
-			<span class="day">29</span><span class="month">Apr</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>安装virtualbox后运行虚拟机后发现usb不能识别，提示：
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/">
+		
+			解决virtualbox访问usb子系统失败问题的方法</a>
+	</h2>
+	<div class="entry-content">
+		<p>安装virtualbox后运行虚拟机后发现usb不能识别，提示：
 <code>
 Could not load the Host USB Proxy Service (VERR_FILE_NOT_FOUND). The service might be not installed on the host computer.</p>
 
@@ -153,100 +184,96 @@ IMachine {31f7169f-14da-4c55-8cb6-a3665186e35e}
 
 <p>然后重启电脑，就可以在虚拟机里使用usb</p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-04-29T00:00:00+08:00" pubdate data-updated="true">Apr 29<span>th</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/linux/'>Linux</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/04/19/interesting-sites-google-shell/">有趣的网站：谷歌 Shell</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-04-19T00:00:00+08:00">
-			<span class="day">19</span><span class="month">Apr</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>http://goosh.org 是一个非谷歌官方的基于谷歌服务的web shell，访问者可以通过命令的方式在web shell中使用谷歌的各种服务，甚至可以登录自己的谷歌帐号，但ocean不建议访问者登陆自己的帐号，如本文开始所说，这是一个非谷歌官方的网站，登陆个人谷歌帐号，可能导致用户心信息泄露。
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/19/interesting-sites-google-shell/">
+		
+			有趣的网站：谷歌 Shell</a>
+	</h2>
+	<div class="entry-content">
+		<p>http://goosh.org 是一个非谷歌官方的基于谷歌服务的web shell，访问者可以通过命令的方式在web shell中使用谷歌的各种服务，甚至可以登录自己的谷歌帐号，但ocean不建议访问者登陆自己的帐号，如本文开始所说，这是一个非谷歌官方的网站，登陆个人谷歌帐号，可能导致用户心信息泄露。
 首先我们查看一下基本的命令：
 <img src="http://nwy.me/img/2011/04/goosh.org-the-unofficial-google-shell._1303186503427.png" alt="谷歌shell" />
 alias是命令的别名，方便记忆以及输入。</p>
 
 <p>输入“s+ocean”就可以搜索“ocean”，很遗憾的是ocean的个人博客还没有在谷歌英文搜索结果页面排名第一。谷歌shell还有诸多的功能，搜索新闻，博客，视频，图片，地图等等，这里就不再做逐一介绍。</p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-04-19T00:00:00+08:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/04/19/interesting-sites-google-shell/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/04/19/interesting-sites-google-shell/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/04/19/excellent-unix-administrators-should-have-the-quality-of-9/">优秀的 Unix 管理员应具有的9大品质</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-04-19T00:00:00+08:00">
-			<span class="day">19</span><span class="month">Apr</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>翻译来源链接：http://www.techweb.com.cn/news/2011-03-15/990928.shtml
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/19/excellent-unix-administrators-should-have-the-quality-of-9/">
+		
+			优秀的 Unix 管理员应具有的9大品质</a>
+	</h2>
+	<div class="entry-content">
+		<p>翻译来源链接：http://www.techweb.com.cn/news/2011-03-15/990928.shtml
 英文原文：http://www.infoworld.com/t/unix/nine-traits-the-veteran-unix-admin-276</p>
 
 <p>优秀的Unix管理员应该具有的品质之一：我们不使用sudo</p>
@@ -293,98 +320,94 @@ alias是命令的别名，方便记忆以及输入。</p>
 
 <p>从“谎言”的角度来看，这些品质中的某些品质看起来会有点另类或者难以理解，那是因为他们本来就是如此的。其他人只能看到棘手和困难的时候，我们却看到启示，学习，经验，更重要的是，我们看到了逻辑。</p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-04-19T00:00:00+08:00" pubdate data-updated="true">Apr 19<span>th</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/other/'>Other</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/04/19/excellent-unix-administrators-should-have-the-quality-of-9/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/other/'>Other</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/04/19/excellent-unix-administrators-should-have-the-quality-of-9/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/04/09/notes/">随笔</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-04-09T00:00:00+08:00">
-			<span class="day"> 9</span><span class="month">Apr</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>由于笔记本里逐渐积累的各类资料不断增多，笔记本原来160G的硬盘已经不够用了，购买了一款500G的硬盘，升级后换下来的160G硬盘放在硬盘盒里做移动硬盘。
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/09/notes/">
+		
+			随笔</a>
+	</h2>
+	<div class="entry-content">
+		<p>由于笔记本里逐渐积累的各类资料不断增多，笔记本原来160G的硬盘已经不够用了，购买了一款500G的硬盘，升级后换下来的160G硬盘放在硬盘盒里做移动硬盘。
  因为之前系统安装compiz0.93出错，导致回滚版本后进不了compiz的控制面板，一直也没有找出问题以及其他种种待而未决的问题索性趁这次更换硬盘重装了Ubuntu，加之对系统做了许多修改，如果要重装系统就不得不重新修改，所以系统有种种自己不能解决的问题也不愿去重装系统，这也是自己一直不能改掉的惰性，害怕做出改变后失去现在的现状。之所以这次能下定决心要重装系统，其实是新硬盘安装上后从旧的硬盘恢复之前的备份系统的时候，发现备份脚本有问题，导致恢复备份的系统不能正常运行。好吧，没有退路了，重新开始吧。重装系统后用了近一周才把才把系统定制好，之前的配置都迁移过来了，并作了一些完善，唯一的遗留问题就blogilo的日志数据库打不开了，好在最近才开始用blogilo离线写日志，数据库里的文章博客上也有备份。</p>
 
 <p>最近在学习VIM和正则表达式，VIM的学习曲线确实很陡峭，纷繁的命令，按键组合，强大的插件，到现在也只是可以会用VIM而已，不过随着不断的学习已经彻底对VIM程序员御用文本编辑器所臣服。在firefox下安装vimperator插件后firefox整个也VIM化了，所有的动作就可以不用鼠标快速操作，手就不用在键盘于鼠标之间往返了，有网友甚至夸张说firefox只是vimperator的运行环境。新手学习VIM推荐闲耘写的VIM的wiki，上面有整理了许多VIM的资料：<a href="http://wiki.hotoo.me/Vim.html">http://wiki.hotoo.me/Vim.html</a>，初步了解VIM后可以浏览<a href="http://www.vimer.cn/">Vimer的程序世界</a>，这是我见过的最丰富的VIM中文博客。正则表达式学习过程相对比较顺利，目前可以实现一些简单的语句操作。最开始选的教材是余晟大师的《精通正则表达式》，很详尽，系统的教材，也很厚，于是望而退却选择网上网友写的一些学习笔记，却再次看到余晟大师在infoQ写的<a href="http://www.infoq.com/cn/author/%E4%BD%99%E6%99%9F">正则表达式的系列教程</a>，从中获益匪浅。</p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-04-09T00:00:00+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/04/09/notes/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/04/09/notes/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/">穿越搜索：21世纪最伟大的时代前沿技术</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-04-01T00:00:00+08:00">
-			<span class="day"> 1</span><span class="month">Apr</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <h1>什么是穿越搜索？</h1>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/">
+		
+			穿越搜索：21世纪最伟大的时代前沿技术</a>
+	</h2>
+	<div class="entry-content">
+		<h1>什么是穿越搜索？</h1>
 
 <p>穿越搜索就是让谷歌带你穿越时空，抵达你最想抵达的时间、地点，用身临其境的方式感知你想感知的一切。例如：</p>
 
@@ -401,50 +424,48 @@ alias是命令的别名，方便记忆以及输入。</p>
 <h1>谷歌如何实现穿越搜索？</h1>
 
 
+		
+		<a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-04-01T00:00:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/04/01/search-through-the-greatest-era-of-the-21st-century-cutting-edge-technology/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/03/31/unix-linux-technology-and-to-prevent-the-back-door/">Unix/Linux上的后门技术和防范</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-03-31T00:00:00+08:00">
-			<span class="day">31</span><span class="month">Mar</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>Unix/Linux上的后门技术和防范</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/03/31/unix-linux-technology-and-to-prevent-the-back-door/">
+		
+			Unix/Linux上的后门技术和防范</a>
+	</h2>
+	<div class="entry-content">
+		<p>Unix/Linux上的后门技术和防范</p>
 
 <p>对黑客来讲，入侵一个系统只是万里长征的开始，最主要的是长期占有一个肉鸡（傀儡机）， 所以，后门技术往往非常重要。对于我们来讲，总是处于被动的地位，百密一疏，总有没有做到位的地方，谁都不能保证自己的系统是绝对安全的，所以不能避免我 们可能会被入侵。黑客入侵后肯定会留后门，当然，除了那些高手，境界非常高，入侵只是为了测试或者技术挑战，对于一般黑客来讲，入侵之后留个后门是很重要 的，我们要防范，当然就要了解常用的后门技术，下面就简单的讲将在Unix/Linux系统中比较常见的后门技术。</p>
 
@@ -499,50 +520,48 @@ alias是命令的别名，方便记忆以及输入。</p>
 <p>这种方法比较傻，一般比较容易发现，特别是系统帐户不多的时候。也有的用户名起的比较迷惑人，比如起个r00t的用户名，uid和gid都是0，这样如果不注意，可能就会被蒙混过关了。</p>
 
 
+		
+		<a href="/blog/2011/03/31/unix-linux-technology-and-to-prevent-the-back-door/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-03-31T00:00:00+08:00" pubdate data-updated="true">Mar 31<span>st</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/other/'>Other</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/03/31/unix-linux-technology-and-to-prevent-the-back-door/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/other/'>Other</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/03/31/unix-linux-technology-and-to-prevent-the-back-door/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/03/31/tron2/">《创：战纪》</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-03-31T00:00:00+08:00">
-			<span class="day">31</span><span class="month">Mar</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <pre>电子网络
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/03/31/tron2/">
+		
+			《创：战纪》</a>
+	</h2>
+	<div class="entry-content">
+		<pre>电子网络
 
 The Grid.
 
@@ -602,50 +621,48 @@ You got in. That's right, man. I got in.</pre>
 <img src="http://nwy.me/img/2011/03/shot0002.png" alt="shot0002" />
 <img src="http://nwy.me/img/2011/03/shot0003.png" alt="shot0003" /></p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-03-31T00:00:00+08:00" pubdate data-updated="true">Mar 31<span>st</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/personal/'>Personal</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/03/31/tron2/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/03/31/tron2/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/03/31/remove-with-a-sed-program-code-line-numbers-and-spaces-where/">用SED删除程序代码里的行号以及空格</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-03-31T00:00:00+08:00">
-			<span class="day">31</span><span class="month">Mar</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>有时候在网上搜索到的程序代码复制下来后会有行号，在代码行数较少的情况下可以手动删除，遇到上百行代码的时候要是手动删除就是对体力加毅力的考验，而且不符合电工风格，于是想到使用正则表达式来实现自动删除。
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/03/31/remove-with-a-sed-program-code-line-numbers-and-spaces-where/">
+		
+			用SED删除程序代码里的行号以及空格</a>
+	</h2>
+	<div class="entry-content">
+		<p>有时候在网上搜索到的程序代码复制下来后会有行号，在代码行数较少的情况下可以手动删除，遇到上百行代码的时候要是手动删除就是对体力加毅力的考验，而且不符合电工风格，于是想到使用正则表达式来实现自动删除。
 分别使用VIM和SED实现删除代码里的行号以及空格，最近才开始学正则表达式，语法参数还不是很熟悉，反复调试了几次后才成功的。</p>
 
 <ol>
@@ -666,50 +683,48 @@ You got in. That's right, man. I got in.</pre>
 
 <p>AWK还不会用，学会了在补上</p>
 
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-03-31T00:00:00+08:00" pubdate data-updated="true">Mar 31<span>st</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/shell/'>Shell</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/03/31/remove-with-a-sed-program-code-line-numbers-and-spaces-where/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/shell/'>Shell</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/03/31/remove-with-a-sed-program-code-line-numbers-and-spaces-where/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
 
-	<article class="post"><header>
-  
-  <h1 class="title"><a href="/blog/2011/03/14/how-to-practice-ten-thousand-hours/">怎样练习一万小时</a></h1>
-  
-  
-
-
-
-
-
-
-
-
-	
-		<time datetime="2011-03-14T00:00:00+08:00">
-			<span class="day">14</span><span class="month">Mar</span>
-		</time>
-	
-
-</header>
-<div class="entry-content">
-  
-    <p>同人于野</p>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/03/14/how-to-practice-ten-thousand-hours/">
+		
+			怎样练习一万小时</a>
+	</h2>
+	<div class="entry-content">
+		<p>同人于野</p>
 
 <p>(《新知客》，2010年8月。本来应该等到8月1日再发，但今天突然发现此文已经被在网上泄漏出来了！)</p>
 
@@ -724,70 +739,59 @@ You got in. That's right, man. I got in.</pre>
 <p>天才是怎样炼成的？中国传统思维比较强调一个“苦”字，冬练三九夏练三伏，甚至是头悬梁锥刺股。而近代生活条件越来越好，人们则开始强调一个“爱”字，说兴趣是最好的老师，强调寓教于乐，“哈佛女孩”的家长们纷纷写书，介绍自己的孩子如何一路玩进名校。</p>
 
 
+		
+		<a href="/blog/2011/03/14/how-to-practice-ten-thousand-hours/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  
-  <footer class="meta">
-    
 
 
+<time datetime="2011-03-14T00:00:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2011</time></div>
+	<div class="tags">
 
-	<div class="tags"><a class='category' href='/blog/categories/other/'>Other</a></div>
 
-    
-      
-      <a class="comment" href="/blog/2011/03/14/how-to-practice-ten-thousand-hours/#disqus_thread">Comments</a>
-      
-      
-    
-  </footer>
-  
+	<a class='category' href='/blog/categories/other/'>Other</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/blog/2011/03/14/how-to-practice-ten-thousand-hours/#disqus_thread">Comments</a></div>
+	
 </div>
 </article>
 
-
 <nav id="pagenavi">
-	<a href="/blog/page/2/" class="prev alignleft">Prev</a>
-	<a href="/blog/page/4/" class="next alignright">Next</a>
- <div class="clearfix"></div>
-</nav>
-</div>
-	<footer id="footer" class="inner"><div class="social alignright">
-	
-	
-	
-	
-	
-	<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-</div>
-<p>&copy; 2013 Ocean</p>
-<div class="clearfix"></div>
-<div style="display:none"> <script language="javascript" type="text/javascript" src="http://js.users.51.la/4388679.js"></script>
-<noscript><a href="http://www.51.la/?4388679" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4388679.asp" style="border:none" /></a></noscript> </div>
-</footer>
-	<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-	(function($){
-		$('.entry-content').each(function(i){
-			var _i = i;
-			$(this).find('img').each(function(){
-				var alt = $(this).attr('alt');
+    
+        <a href="/blog/page/2/" class="prev">Prev</a>
+    
+    
+        <a href="/blog/page/4/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
-				if (alt == '' || typeof alt == 'undefined'){
-					$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
-				} else {
-					$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
-				}
-			});
-		});
-		$('.fancybox').fancybox();
-	})(jQuery);
-</script>
-<div id="phasebeam">
-	<canvas></canvas>
-	<canvas></canvas>
-	<canvas></canvas>
-</div>
-<script src="/javascripts/phasebeam.js"></script>
+    Ocean
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
 
 
 <script type="text/javascript">
@@ -798,10 +802,12 @@ You got in. That's right, man. I got in.</pre>
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//go.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
+
+
 
 
 
