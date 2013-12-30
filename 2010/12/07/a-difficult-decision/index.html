@@ -1,0 +1,171 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>一个艰难的决定 - 0cean的个人博客</title>
+	<meta name="author" content="0cean">
+
+	
+	<meta name="description" content="当您看到这篇文章的时候，我刚刚作出了一个非常艰难的决定,在腾讯没有开放Qzone的API的情况下,再次开通QQ空间,同步自己WordPress博客上的文章到Qzone,因为腾讯没有开放Qzone的API,想从自己的WordPress博客上自动同步文章到QQ空间只能另辟蹊径, &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="0cean的个人博客" type="application/xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">0cean的个人博客</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:blog.nwy.me">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:blog.nwy.me">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">一个艰难的决定</h2>
+	<div class="entry-content"><p>当您看到这篇文章的时候，我刚刚作出了一个非常艰难的决定,在腾讯没有开放Qzone的API的情况下,再次开通QQ空间,同步自己WordPress博客上的文章到Qzone,因为腾讯没有开放Qzone的API,想从自己的WordPress博客上自动同步文章到QQ空间只能另辟蹊径,好在腾讯提供了QQ邮件发布的方式,而QQ邮箱支持SMTP协议, WordPress 所包含的 PHPMailer 类可以使用 SMTP 发邮件，所以可以通过使用 PHPMailer 同步 WordPress 博客文章到 Qzone。总之由于腾讯的不开放这个过程曲折坎坷,感谢SMTP协议,感谢腾讯没有对QQ邮箱的SMTP登录做基于IP的验证,否则我的WordPress主机就不能通过PHPMailer类远程登录发送邮件到Qzone.</p>
+
+<p>下一步增加同步WordPress文章的时候把文章的分类也同步到Qzone,目前自动同步过来的文章都会归类在个人日记分类下,等以后同步过来的文章增多的时候,浏览起来会很乱.这个问题比较好解决,看腾讯的帮助文档,邮件发布日志的分类可以在邮件的标题里加上,格式为&#8221;[某分类]文章标题&#8221;,如果所属分类不存在，会自动创建新的分类.回头把WordPress上的PHP博客同步代码修改一下就可以实现.</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-07T00:00:00+08:00" pubdate data-updated="true">Dec 7<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+		
+		
+		
+		
+	</div>
+	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    0cean
+
+<div style="display:none"> <script language="javascript" type="text/javascript" src="http://js.users.51.la/4388679.js"></script>
+<noscript><a href="http://www.51.la/?4388679" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4388679.asp" style="border:none" /></a></noscript> </div></footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.nwy.me/2010/12/07/a-difficult-decision/';
+        var disqus_url = 'http://blog.nwy.me/2010/12/07/a-difficult-decision/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//go.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

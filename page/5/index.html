@@ -1,0 +1,389 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>0cean的个人博客</title>
+	<meta name="author" content="0cean">
+
+	
+	<meta name="description" content="0cean的个人博客，一些随笔，记录生活点滴。">
+	<meta name="keywords" content="学习,技术,生活,工作,网络,随笔,个人博客">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="0cean的个人博客" type="application/xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">0cean的个人博客</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:blog.nwy.me">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:blog.nwy.me">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/11/11/found-an-interesting-site-facial-search-engine/">
+		
+			发现一个有趣的网站：面部搜索引擎</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://cn.pictriev.com/facedb/fs2.php" target="_blank">Pictriev</a>是一个通过面部辨识，在网上查找任何相似的面部的网站. 网站引擎不仅可以搜索相似的面部，还可以通过其特有的算法判断照片中人脸主人的大约年龄，以及性别，用自己的照片测试了一下，对年龄的判断比较准确，性别也识别出来了，99%male，很好奇1%的到哪去了，贴一张搜索引擎识别出来的和我相似的人的照片，本人对引擎的此搜索结果不做任何评论，保留最终解释权。</p>
+
+<p><a href="http://nwy.me/img/2010/11/2.jpg"></a><a href="http://nwy.me/img/2010/11/21.jpg"><img class="aligncenter size-thumbnail wp-image-62449" title="2" src="http://nwy.me/img/2010/11/21-150x150.jpg" alt="" width="150" height="150"></a></p>
+
+<p>最后做总结性的陈述：这一网站的发现填补了广大网友在人肉搜索面部智能识别方面的空白，具有里程碑意义，标志着广大网友的人肉搜索技术与国内MOP，天涯等网站网友的一流技术接轨。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-11T00:00:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/2010/11/11/found-an-interesting-site-facial-search-engine/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/11/07/batch-change-the-extension-for-linux/">
+		
+			Linux下批量修改扩展名</a>
+	</h2>
+	<div class="entry-content">
+		<p>这两天在整理一些照片，在Linux下文件名区分大小写，而要处理的照片的扩展名都是JPG导致在软件和上传页面里不能识别，需要将JPG改成jpg，于是发挥电工的智慧通过正则命令批量修改扩展名。</p>
+
+<p>下面演示将/home/ocean/2010/下JPG文件批量修改为jpg文件.如sam_4533.JPG修改为sam_4533.jpg</p>
+
+<ol>
+<li><p><code lang="bash">for file in <em>.JPG;do mv $file ${file%.</em>}.jpg;done</code></p></li>
+<li><p><code lang="bash">for i in *.JPG; do mv $i <code>basename $i .JPG</code>.jpg ;done</code></p></li>
+<li><p><code lang="bash">rename 'y/A-Z/a-z/' *  </code>
+rename在不同的发行版是不同，此处的是perl-rename，还有c语言的rename</p></li>
+</ol>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-07T00:00:00+08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/2010/11/07/batch-change-the-extension-for-linux/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/11/05/linuxsuspend/">
+		
+			Linux休眠问题</a>
+	</h2>
+	<div class="entry-content">
+		<p><span style="font-size: small;">最近经历了种种事情，索性脱离Windows平台，彻底扎根在linux平台，原来的双系统共存变成了Linux独占天下。格式化了硬盘的几个Windows分区重新安装Linux，分区的时候，单独把tmp和home挂载到了两个格式化的独立分区上，usr有没有挂载到独立分区竟然没有印象了，看来睡眠不足会影响记忆力。这几天安装好后常用的软件，做了相应的配置后发现不能休眠了，Linux真不给力。</span></p>
+
+<p><span style="font-size: small;">技术水平有限，</span>没有找到有原因，不过意外的注意到uswsusp， 这是利用了 2.6.17-rc2 以来的 kernel 新特性所开发的 userland 的挂起系统的工具。uswsusp 利用了系统提供的一个设备文件，通过操作文件，可以 freeze 系统中的进程、读取/恢复内存的镜像、挂起等。这个工具需要 initramfs 支持，需要 2.6.17-rc2 以上内核。参考文档：http://suspend.sourceforge.net/</p>
+
+<p>安装uswsusp：</p>
+
+<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo apt-get install uswsusp</span></div>
+
+
+<p>安装后开机会显示过程中会显示：resume: libgcrypt version: 1.4.4</p>
+
+<p><span style="font-size: small;">在终端里通过s2ram命令休眠会有如下提示：</span></p>
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">
+<span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo s2ram</span>
+<span style="color: #dcdccc;">[sudo] password for ocean:</span>
+<span style="color: #dcdccc;">Machine is unknown.</span>
+<span style="color: #dcdccc;">This machine can be identified by:</span>
+<span style="color: #dcdccc;">sys_vendor   = &#8220;LENOVO&#8221;</span>
+<span style="color: #dcdccc;">sys_product  = &#8220;7661WH2&#8221;</span>
+<span style="color: #dcdccc;">sys_version  = &#8220;ThinkPad T61&#8221;</span>
+<span style="color: #dcdccc;">bios_version = &#8220;7LETC6WW (2.26 )&#8221;</span>
+<span style="color: #dcdccc;">See http://suspend.sf.net/s2ram-support.html for details.</span>
+<span style="color: #dcdccc;">If you report a problem, please include the complete output above.</span>
+</div>
+
+
+<p>不过加了&#8211;force参数倒是可以休眠了，暂时就这样，明天起来了去看看上面代码里给出的链接里有没有解决方法可参考。</p>
+
+<p>使 Gnome(或者说Hal)改用uswsusp方法休眠
+代码:</p>
+
+<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo su</span></div>
+
+
+<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">root@ocean-ThinkPad-T61# echo &#8220;SLEEP_MODULE=uswsusp&#8221;>/etc/pm/config.d/module</div>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-05T00:00:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/2010/11/05/linuxsuspend/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/09/23/inception/">
+		
+			Inception</a>
+	</h2>
+	<div class="entry-content">
+		<p><span style="font-size:small;">      很早就想看Inception，正好中秋放假，事先在网上查了万达Inception今天上午的场次，约了几个好友，一道去看。出发的时候因为吃早餐耽搁了一会，等到影院买好票，电影已经开始了。看完电影，虽然对看懂了大概，不过我向来好奇心很重，遇到喜欢的电影每一个细节都想弄明白，会刻意的去猜测某一句话，某一个动作是否蕴含了导演的特殊寓意。对于喜欢的电影可以不厌其烦的看很多边，每一次温习都有意外的收获，偶尔挖掘出电影中某处不外人知的导演所要表达其想法的情节，更是兴奋不已。对于比较期待的符合自己喜好的电影一般不会去提前去看影评，看完电影回来看了下豆瓣上的影评，其中有一篇“</span><span style="color:#000000;"><a href="http://movie.douban.com/review/3714851/" target="_blank"><span style="font-size:small;">程序员眼中的《盗梦空间》</span></a></span><span style="font-size:small;">”，作者说“</span><span style="font-size:small;">剧情很精巧，感觉和Unix操作系统的模式几乎一样，每一个人都可以是一个进程”。不过一千个人眼中有一千个哈姆雷特，不同职业的人他们会有不同的见解，或许是这个原因作者的这篇独特视角的影评支持认可的的人很少。还有一篇科学松鼠会写的文章“I</span><span style="color:#000000;"><a href="http://songshuhui.net/archives/42661.html" target="_blank"><span style="font-size:small;">nception：一场层层调用的函数大战</span></a></span><span style="font-size:small;">”也很值得一看，文章在最后调侃的说到</span><span style="font-size:small;">那么有没有可能，导演在试图把计算机科学的知识植入到我们的潜意识里面？银幕前面的你，被他的Inception施中了吗？ 通过阅读影评还得到一点确认的信息：电影最后结束的时候旋转的陀螺不会永不停的旋转下去，也就是说过</span><span style="font-size:small;">Cobb</span><span style="font-size:small;">回到孩子身边是发生在真实的世界不是梦境。想来Nolan他也不会用这么老土的手段，据说电影公司最初要求Nolan把Inception拍成3D的</span><span style="font-size:small;">，Nolan拒绝了，理由是：</span><span style="font-size:small;">因为那会「干扰观众欣赏Inception的故事」。</span><span style="font-size:small;">     </span><span style="font-size:small;">说一段观影中的小插曲，当电影放到盗梦组说要搞定Fisher所乘航班——波音的空姐的时候，Saito给出的答复却是直接把波音公司买下，全场爆笑，这个冷幽默和之前在cnbeta上看到Intel收购McAfee新闻的搞笑评论有异曲同工之妙，再贴上来重温一下：Intel CEO: &#8220;We need an antivirus, can someone buy me McAfee?&#8221; Few hours later: &#8220;Done.&#8221; &#8220;Great, which version?&#8221;. &#8220;Version&#8230;?&#8221;。还有一点是在看到Cobb说：“If you jump，I will not jump with you!&#8217;本人邪恶的笑了，当时联想到的是Titanic中Jack对Rose说：“if you jump,I jump”。总之这部在IMDB上评分高达9.1的影片值得各位一看。</span><img src="http://ocean-lan.appspot.com/media/aglvY2Vhbi1sYW5yDAsSBU1lZGlhGJl1DA/inception.jpg" height="600" width="400"><br></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-23T00:00:00+08:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/2010/09/23/inception/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/09/21/ubuntu3dshow/">
+		
+			很早以前录制的Ubuntu3D效果</a>
+	</h2>
+	<div class="entry-content">
+		<p><embed type="application/x-shockwave-flash" classid="clsid:d27cdb6e-ae6d-11cf-96b8-4445535400000" src="http://player.youku.com/player.php/sid/XMzM1ODgzODg=/v.swf" wmode="opaque" quality="high" menu="false" play="true" loop="true" height="400" width="480"></embed></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-21T00:00:00+08:00" pubdate data-updated="true">Sep 21<span>st</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="/2010/09/21/ubuntu3dshow/#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+<nav id="pagenavi">
+    
+        <a href="/page/4/" class="prev">Prev</a>
+    
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    0cean
+
+<div style="display:none"> <script language="javascript" type="text/javascript" src="http://js.users.51.la/4388679.js"></script>
+<noscript><a href="http://www.51.la/?4388679" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4388679.asp" style="border:none" /></a></noscript> </div></footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//go.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

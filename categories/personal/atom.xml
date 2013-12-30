@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Personal | 0cean的个人博客]]></title>
+  <link href="http://blog.nwy.me/categories/personal/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-12-30T19:54:51+08:00</updated>
+  <id>http://blog.nwy.me/</id>
+  <author>
+    <name><![CDATA[0cean]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[2013年下半年读书计划]]></title>
+    <link href="http://blog.nwy.me/2013/08/04/2013nian-xia-ban-nian-du-shu-ji-hua/"/>
+    <updated>2013-08-04T15:23:00+08:00</updated>
+    <id>http://blog.nwy.me/2013/08/04/2013nian-xia-ban-nian-du-shu-ji-hua</id>
+    <content type="html"><![CDATA[<p>冯仑在《开讲了》上说，梦想是什么，梦想就是人生的GPS，它能够为人生指明一个方向，人最恐惧的不是没有钱，不是失败，而是没有方向。一旦迷失了方向，人就会焦虑，然后随时时间的流逝变成了绝望。我一直在焦虑、晚睡，晚睡内心中没有勇气结束这一天，因为又虚度一天，第二天睡起来镜子里看到是一无所成自己。</p>
+
+<p>人最大的惰性在于学会“习惯”，当习惯了上班睡觉再上班再睡觉的重复生活后，似乎一切都是那么地理所当然，可内心深处总是会有一丝不安，生活似乎不应该如此，如果你半夜醒来发现自己已经好长时间没读书，而且没有任何负罪感的时候，你就必须知道，你已经堕落了。不是说书本本身特了不起，而是读书这个行为意味着你没有完全认同于这个现世和现实，你还有追求，还在奋斗，你还有不满，你还在寻找另一种可能性，另一种生活方式。</p>
+
+<p>当我们步入中年，有了孩子，父母老去，第一次真正承担家庭的责任时，我们就很容易陷入迷惘，不知道何去何从。这时的我们，就像是生活在漆黑的隧道里，而梦想就是隧道远处的一线光亮，会给我们无限的勇气，同时也会让我们立刻开始行动，放下许多的累赘往前走。</p>
+
+<p>梦想，从来不是现实，而是对现实的不满，追逐梦想实际上是解决自己对现实不满的过程。</p>
+
+<p>2013年已经过去了215天，剩下的150天内计划读完三十一本书，IT专业技术书籍不适合速读，涉及另一个职业规划，单独再整理一个书单。</p>
+
+<p>快速阅读</p>
+
+<p>杠杆阅读术</p>
+
+<p>别告诉我你会记笔记</p>
+
+<p>开放社会及其敌人</p>
+
+<p>男人来自火星，女人来自金星</p>
+
+<p>如何阅读一本书</p>
+
+<p>少有人走的路</p>
+
+<p>少有人走的路Ⅱ</p>
+
+<p>少有人走的路III</p>
+
+<p>数学之美</p>
+
+<p>从一到无穷大.one,two,three.infinity</p>
+
+<p>吾国与吾民</p>
+
+<p>别闹了，费曼先生</p>
+
+<p>浪潮之巅</p>
+
+<p>拖延心理学</p>
+
+<p>黑客与画家</p>
+
+<p>代码之美</p>
+
+<p>中国近代史</p>
+
+<p>把时间当朋友</p>
+
+<p>学会提问-批判性指南</p>
+
+<p>学习之道</p>
+
+<p>专业主义-大前研一</p>
+
+<p>逻辑思维-夹缝中的80后</p>
+
+<p>心理学与生活</p>
+
+<p>冥想5分钟，等于熟睡一小时</p>
+
+<p>自控力</p>
+
+<p>意志力</p>
+
+<p>此生为何而来</p>
+
+<p>不要等到毕业以后</p>
+
+<p>害羞心理学</p>
+
+<p>大数据</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Arch Linux下webOS开发平台的搭建]]></title>
+    <link href="http://blog.nwy.me/2011/09/19/archlinux-development-platform-to-build-next-webos/"/>
+    <updated>2011-09-19T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/2011/09/19/archlinux-development-platform-to-build-next-webos</id>
+    <content type="html"><![CDATA[<p>作为一个02年开始使用palm的资深palm用户，对palm有着根深蒂固的感情。在palm的陪伴下，经历了高中大学的学生时代，步入社会，开始工作。palm曾经的辉煌也一去不复返，在这个物质，浮躁，快速化的世界，palm系统的单线程，简洁的特性在全球网络化的时代逐渐淡出人们的视线，随后palm公司发布了webOS，被惠普公司收购。发现跑题已经是我写技术文章的特色之一了，言归正传。</p>
+
+<p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;!/bin/sh&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;kill and remove OLD novacomd upstart&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/event.d/novacomd <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>stop novacomd
+</span><span class='line'>rm -f /etc/event.d/novacomd
+</span><span class='line'><span class="k">fi</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;remove novacomd from /usr/local/bin&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /usr/local/bin/novacomd <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>rm -f /usr/local/bin/novacomd
+</span><span class='line'><span class="k">fi</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;check <span class="k">for </span>new upstart&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/init/rc.conf <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/init/palm-novacomd.conf <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>rm -f /etc/init/palm-novacomd.conf
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>cp -a  /opt/Palm/novacom/scripts/novacomd-conf    /etc/init/palm-novacomd.conf
+</span><span class='line'><span class="k">elif</span> <span class="o">[</span> -e /etc/event.d <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>ln -fs /opt/Palm/novacom/scripts/novacomd-upstart /etc/event.d/palm-novacomd
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'><span class="c">#&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;<span class="o">(</span>re<span class="o">)</span>start novacomd&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'>stop palm-novacomd <span class="o">||</span> <span class="nb">true</span>
+</span><span class='line'>killall -v -q novacomd
+</span><span class='line'>start palm-novacomd <span class="o">||</span> <span class="nb">true</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>直接运行脚本显然是不行的，archlinux没有/etc/init/和/etc/event.d/目录，/etc/init/实际是指向/etc/rc.d/int.d/的一个符号链接文件，/etc/event.d/是ubuntu特有的upstart机制的核心目录，archlinux的服务可以通过特有的rc.conf启动，也可以通过/etc/init.d/或者/etc/rc.d/下建立脚本创建服务。了解脚本后将novacomd复制到/etc/rc.d/,novacomd.conf复制到/etc/conf.d/做完archlinux下的改动后，在终端里输入
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;/etc/rc.d/novacom start&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>提示未找的设备，谷歌一番后在http://www.webos-internals.org/wiki/Accessing_Linux_archlinux 上发现解决方法:"novacomd doesn't work under archlinux , so we have to use ubuntu's libusb. "意想不到的是wiki中给出了一条简便方法，从aur下载网友打包好的novacom驱动，汗，之前怎么没有想到在aur里搜索一下。</p>
+
+<!--more-->
+
+
+<p>一番折腾后palm pre在archlinux下的驱动搞定了，解压deb驱动包的时候看到过novaterm的文件，运行后登录到手机shell，webOS是linux核心，busybox中带有linux常用命令，于是可以在电脑上查看手机的运行状态了。</p>
+
+<p><img src="http://nwy.me/img/2011/09/Screenshot-ocean@ocean-laptop.png" alt="Screenshot-ocean@ocean-laptop:~" /></p>
+
+<p>显摆几张手机桌面</p>
+
+<p><img src="http://nwy.me/img/2011/09/Unknown_2011-19-09_040802.png" alt="Unknown_2011-19-09_040802" />
+<img src="http://nwy.me/img/2011/09/Unknown_2011-19-09_040751.png" alt="Unknown_2011-19-09_040751" />
+<img src="http://nwy.me/img/2011/09/Unknown_2011-19-09_040742.png" alt="Unknown_2011-19-09_040742" /></p>
+
+<p> </p>
+
+<p> </p>
+
+<p>接下来安装webOS的SDK，有了之前的经验，直接从aur搜索网友打包好的sdk，下载安装。</p>
+
+<p>手机平台webOS1.45 SDK截图</p>
+
+<p><img src="http://nwy.me/img/2011/09/Screenshot-SDK-1.4.5.465-320x480-Running-Oracle-VM-VirtualBox.png" alt="Screenshot-SDK 1.4.5.465 (320x480) [Running] - Oracle VM VirtualBox" /></p>
+
+<p>TouchPad平板 webOS3.0.2 SDk截图</p>
+
+<p><img src="http://nwy.me/img/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_001.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_001" />
+<img src="http://nwy.me/img/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_003" /></p>
+
+<p>至此，archlinux下webOS的开发环境搭建完成。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[无题]]></title>
+    <link href="http://blog.nwy.me/2011/08/18/untitled/"/>
+    <updated>2011-08-18T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/2011/08/18/untitled</id>
+    <content type="html"><![CDATA[<p>预感有悲剧要发生了，网站本月的15G带宽流量截止今天已经用掉了11.5G，今天才十八号，距月底还有十二天。看了下了访问统计，似乎是CDN服务器消耗掉的，奇怪的是消耗掉的流量主要集中在一个页面。先观察，等月底流量不够再移除这个页面。</p>
+
+<p><img src="http://nwy.me/img/2011/08/traffic_001.png" alt="traffic_001" /></p>
+
+<!--more-->
+
+
+<p><img src="http://nwy.me/img/2011/08/traffic.png" alt="traffic" />
+<img src="http://nwy.me/img/2011/08/traffic_003.png" alt="traffic_003" />
+<img src="http://nwy.me/img/2011/08/traffic_004.png" alt="traffic_004" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[青年领袖灵魂大师王大锤对青年人的教诲]]></title>
+    <link href="http://blog.nwy.me/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people/"/>
+    <updated>2011-08-07T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/2011/08/07/youth-leadership-famous-editor-wang-sledgehammer-soul-masters-teaching-for-young-people</id>
+    <content type="html"><![CDATA[<ol>
+<li><p>他们只会否定。低头看书，抬头看世界，看到不爽就唧唧歪歪。但他们没有社会经验，所以唧唧歪歪起来很烦人，因为那点阅读量的加持，得比德比的，还头头是道，要是有个人帮我cei死丫就太好了。</p></li>
+<li><p>看问题基本上都是消极的。说好听是怀疑精神，说难听点就是啥都不会做。还给人添堵。</p></li>
+<li><p>什么都看不惯，什么都看不上眼。情商不高，耍小聪明。</p></li>
+</ol>
+
+
+<p>标题有些无厘头，王大锤是论坛里一网友的马甲，大师级别的人物，马甲的名字都起的这么德味<sup>_<sup>,据称做过季羡林的编辑，"青年领袖""灵魂大师"也是论坛里的网友给他的称谓。</sup></sup></p>
+
+<p>发现自己三条毛病都有，特转发此文，告诫自己。</p>
+
+<p>PS:上个月换了网络环境，发现被ISP劫持，因为用Fx+Autoproxy，所以就没有注意，后来发现网络中断后再连接的时候会推送广告，无法忍受，果断登录路由指定DNS为Google的DNS，于是世界清静了。需要指出的是用Google的DNS是不能翻墙的，DNS的UDP包也是会被墙劫持篡改的。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[我的一些订阅]]></title>
+    <link href="http://blog.nwy.me/2011/06/20/some-of-my-subscription/"/>
+    <updated>2011-06-20T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/2011/06/20/some-of-my-subscription</id>
+    <content type="html"><![CDATA[<p>虽然平时订阅网站或网友的博客使用的是谷歌阅读器，但是由于在墙内，谷歌的许多服务由于种种原因无法正常访问，在电脑上或手机上都是通过某种类似跨栏运动的方法访问谷歌的服务，于是搭建了一个人的RSS阅读器，将自己谷歌阅读器的订阅复制到上面，这样就可以无障碍阅读自己订阅的一些网站博客。</p>
+
+<p>访问地址：<a href="http://reader.nwy.me">http://reader.nwy.me</a> 或 <a href="http://nwy.me/reader">http://nwy.me/reader</a></p>
+
+<p>第一个地址还在解析中，可能需要做跨栏运动才能访问，怕闪到腰的用后面的网址访问。</p>
+]]></content>
+  </entry>
+  
+</feed>

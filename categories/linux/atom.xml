@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | 0cean的个人博客]]></title>
+  <link href="http://blog.nwy.me/categories/linux/atom.xml" rel="self"/>
+  <link href="http://blog.nwy.me/"/>
+  <updated>2013-12-30T19:54:51+08:00</updated>
+  <id>http://blog.nwy.me/</id>
+  <author>
+    <name><![CDATA[0cean]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[RAM Host的KVM VPS安装CentOS6.2]]></title>
+    <link href="http://blog.nwy.me/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2/"/>
+    <updated>2012-06-07T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2</id>
+    <content type="html"><![CDATA[<p>RAM Host的VPS由于站长也是Linux技术大牛，做过优化，即使低端配置性能也不错，所以销量一直很好，加上站长不超售的原则，往往一放出就告罄，上周末终于抢到一个。购买的时候因为开着代理，被Ram Host的订单系统检测到当作风险订单处理了，最后发ticket和站长解释了一番天朝的网络环境才订单才得以通过。</p>
+
+<p>这次买的是RAM Host的Premium West Coast Los Angeles Virtual Dedicated Server的Standard VPS，512MB内存，这个机房的VPS都是KVM的，没有部署站长优化过得系统，需要先在VPS管理面板里选择引导安装系统的镜像ISO。</p>
+
+<p><img src="http://nwy.me/img/2012/06/%E9%80%89%E5%8C%BA_002.png" alt="系统选择" /></p>
+
+<p>VNC连接主机后进Console，需要注意的是VPS管理面板里VM Console页面给的连接端口是随机的。</p>
+
+<p><img src="http://nwy.me/img/2012/06/QEMU-oceannan-%E5%9C%A8-2012-06-07-003459-%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="QEMU (oceannan) 在 2012-06-07 00:34:59 的屏幕截图" /></p>
+
+<p>这部分就不一一截图了，一路空格加回车，然后重启。</p>
+
+<p>登录系统后需要先配置ip，修改对应网卡的网关的配置文件，</p>
+
+<p><code>vi /etc/sysconfig/Network </code></p>
+
+<p>设置本机连接的网关的IP地址,在VPS管理面板里有给出，加入一行：</p>
+
+<p><code>GATEWAY=10.0.0.1</code></p>
+
+<p>修改对应网卡的IP地址的配置文件：</p>
+
+<p><code>vi /etc/sysconfig/Network-scripts/ifcfg-eth0</code></p>
+
+<p>修改以下内容:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">DEVICE</span><span class="o">=</span>eth0 <span class="c">#描述网卡对应的设备别名，例如ifcfg-eth0的文件中它为eth0</span>
+</span><span class='line'><span class="nv">BOOTPROTO</span><span class="o">=</span>static <span class="c">#设置网卡获得ip地址的方式，可能的选项为static，dhcp或bootp，分别对应静态指定的 ip地址，通过dhcp协议获得的ip地址，通过bootp协议获得的ip地址</span>
+</span><span class='line'><span class="nv">BROADCAST</span><span class="o">=</span>192.168.0.255 <span class="c">#对应的子网广播地址</span>
+</span><span class='line'><span class="nv">HWADDR</span><span class="o">=</span>00:03:E8:04:D8:B3 <span class="c">#对应的网卡物理地址</span>
+</span><span class='line'><span class="nv">IPADDR</span><span class="o">=</span>192.168.1.2 <span class="c">#如果设置网卡获得 ip地址的方式为静态指定，此字段就指定了网卡对应的ip地址</span>
+</span><span class='line'><span class="nv">NETMASK</span><span class="o">=</span>255.255.255.0 <span class="c">#网卡对应的网络掩码</span>
+</span><span class='line'><span class="nv">Network</span><span class="o">=</span>192.168.1.0 <span class="c">#网卡对应的网络地址</span>
+</span><span class='line'><span class="nv">IPV6INIT</span><span class="o">=</span>no
+</span><span class='line'><span class="nv">IPV6_AUTOCONF</span><span class="o">=</span>no
+</span><span class='line'><span class="nv">ONBOOT</span><span class="o">=</span>yes <span class="c">#系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+重启网络，使刚才的设置生效。</p>
+
+<p><code>service Network restart</code></p>
+
+<p>至此Centos6.2就安装完成了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linux下ext4分区格式恢复删除文件]]></title>
+    <link href="http://blog.nwy.me/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/"/>
+    <updated>2011-11-27T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files</id>
+    <content type="html"><![CDATA[<p>作为键盘党，下午在用键盘选择文件夹的时候，没有盯对文件夹就shift+delete删除了一个重要文件夹，之前就发生过丢失数据的悲剧，于是给笔记本增加了一块硬盘，重要数据定时同步到光驱位硬盘，不过今天误删除的文件夹还没同步到光驱位硬盘。在ext2分区格式下有许多文件恢复软件，但是这些软件都不支持ext4，或兼容的不太好，如testdisk，虽然可以看到误删的文件但是恢复出来的文件是损坏的。最后通过一番搜索找到了一款支持ext4的的恢复软件extundelete。</p>
+
+<p>安装extundelete，可以去软件主页http://extundelete.sourceforge.net下载编译，或者从服务器获取，不同的发行版的安装方法不同，这里不再详述。</p>
+
+<p>extundelete --help 查看软件帮助</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Usage: extundelete <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>--<span class="o">]</span> device-file
+</span><span class='line'>Options:
+</span><span class='line'>  --version, -<span class="o">[</span>vV<span class="o">]</span>       Print version and <span class="nb">exit </span>successfully.
+</span><span class='line'>  --help,                Print this <span class="nb">help </span>and <span class="nb">exit </span>successfully.
+</span><span class='line'>  --superblock           Print contents of superblock in addition to the rest.&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     If no action is specified <span class="k">then </span>this option is implied.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  --journal              Show content of journal.
+</span><span class='line'>  --after dtime          Only process entries deleted on or after <span class="s1">&#39;dtime&#39;</span>.
+</span><span class='line'>  --before dtime         Only process entries deleted before <span class="s1">&#39;dtime&#39;</span>.
+</span><span class='line'>Actions:
+</span><span class='line'>  --inode ino            Show info on inode <span class="s1">&#39;ino&#39;</span>.
+</span><span class='line'>  --block blk            Show info on block <span class="s1">&#39;blk&#39;</span>.
+</span><span class='line'>  --restore-inode ino<span class="o">[</span>,ino,...<span class="o">]</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     Restore the file<span class="o">(</span>s<span class="o">)</span> with known inode number <span class="s1">&#39;ino&#39;</span>.
+</span><span class='line'>                     The restored files are created in ./RESTORED_FILES
+</span><span class='line'>                     with their inode number as extension <span class="o">(</span>ie, file.12345<span class="o">)</span>.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  --restore-file <span class="s1">&#39;path&#39;</span>  Will restore file <span class="s1">&#39;path&#39;</span>. <span class="s1">&#39;path&#39;</span> is relative to root&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     of the partition and does not start with a <span class="s1">&#39;/&#39;</span> <span class="o">(</span>it
+</span><span class='line'>                     must be one of the paths returned by --dump-names<span class="o">)</span>.
+</span><span class='line'>                     The restored file is created in the current
+</span><span class='line'>                     directory as <span class="s1">&#39;RECOVERED_FILES/path&#39;</span>.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  --restore-files <span class="s1">&#39;path&#39;</span> Will restore files which are listed in the file <span class="s1">&#39;path&#39;</span>.&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     Each filename should be in the same format as an option
+</span><span class='line'>                     to --restore-file, and there should be one per line.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  --restore-all          Attempts to restore everything.
+</span><span class='line'>  -j journal             Reads an external journal from the named file.
+</span><span class='line'>  -b blocknumber         Uses the backup superblock at blocknumber when opening&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     the file system.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;  -B blocksize           Uses blocksize as the block size when opening the file&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;                     system.  The number should be the number of bytes.
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>软件支持根据时间，文件路径，inode恢复删除的文件，这里指定文件路径恢复误删文件</p>
+
+<p>根据文件路径恢复也有多种方式，如下：</p>
+
+<p>恢复/dev/sda3里一个被误删除的文件</p>
+
+<p><code>
+extundelete /dev/sda3 --restore-file /an/important/file
+</code></p>
+
+<p>恢复/dev/sda3里一个被误删除的文件夹</p>
+
+<p><code>
+extundelete /dev/sda3 --restore-directory /an/important
+</code></p>
+
+<p>恢复/dev/sda3里所有被删除的东西</p>
+
+<p><code>
+extundelete /dev/sda3 --restore-all
+</code></p>
+
+<p>extundelete恢复误删除的文件不需要进入live环境，也不需要umount误删文件所在分区，运行命令后会在你运行命令的目录下产生一个RECOVERED_FILES/的目录，恢复的文件会按照原来的路径创建在该路径下面，所以做恢复操作的时候一定要把终端路径切换到其他分区下，不能在当前误删文件所在分区操作，否则恢复出来的文件会覆盖误删除的文件，导致恢复出来的部分或全部文件损坏。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Arch Linux下webOS开发平台的搭建]]></title>
+    <link href="http://blog.nwy.me/2011/09/19/archlinux-development-platform-to-build-next-webos/"/>
+    <updated>2011-09-19T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/2011/09/19/archlinux-development-platform-to-build-next-webos</id>
+    <content type="html"><![CDATA[<p>作为一个02年开始使用palm的资深palm用户，对palm有着根深蒂固的感情。在palm的陪伴下，经历了高中大学的学生时代，步入社会，开始工作。palm曾经的辉煌也一去不复返，在这个物质，浮躁，快速化的世界，palm系统的单线程，简洁的特性在全球网络化的时代逐渐淡出人们的视线，随后palm公司发布了webOS，被惠普公司收购。发现跑题已经是我写技术文章的特色之一了，言归正传。</p>
+
+<p>在webOS的开发网站上，针对linux环境只提供了ubuntu发行版的驱动和SDK，而我在几个月前从ubuntu阵营转向简洁轻巧的archlinux阵营。两者采用不通的包管理机制。为了让archlinux识别palm pre，需要先安装设备驱动，既然官方没有不提供，尝试用deb2targz转换失败后，只好自己动手解开deb格式的驱动，通过谷歌了解了一下deb的制作方法后，大概理解了deb的安装方式，解压出来的deb包目录下，将data目录的文件按照文件路径名复制到archlinux对应的目录下，control目录下的postinst文件是安装脚本，如下</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;!/bin/sh&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;kill and remove OLD novacomd upstart&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/event.d/novacomd <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>stop novacomd
+</span><span class='line'>rm -f /etc/event.d/novacomd
+</span><span class='line'><span class="k">fi</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;remove novacomd from /usr/local/bin&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /usr/local/bin/novacomd <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>rm -f /usr/local/bin/novacomd
+</span><span class='line'><span class="k">fi</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;check <span class="k">for </span>new upstart&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/init/rc.conf <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> -e /etc/init/palm-novacomd.conf <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>rm -f /etc/init/palm-novacomd.conf
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'>cp -a  /opt/Palm/novacom/scripts/novacomd-conf    /etc/init/palm-novacomd.conf
+</span><span class='line'><span class="k">elif</span> <span class="o">[</span> -e /etc/event.d <span class="o">]</span> ; <span class="k">then</span>
+</span><span class='line'>ln -fs /opt/Palm/novacom/scripts/novacomd-upstart /etc/event.d/palm-novacomd
+</span><span class='line'><span class="k">fi</span>
+</span><span class='line'><span class="c">#&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;<span class="o">(</span>re<span class="o">)</span>start novacomd&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#
+</span><span class='line'>stop palm-novacomd <span class="o">||</span> <span class="nb">true</span>
+</span><span class='line'>killall -v -q novacomd
+</span><span class='line'>start palm-novacomd <span class="o">||</span> <span class="nb">true</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>直接运行脚本显然是不行的，archlinux没有/etc/init/和/etc/event.d/目录，/etc/init/实际是指向/etc/rc.d/int.d/的一个符号链接文件，/etc/event.d/是ubuntu特有的upstart机制的核心目录，archlinux的服务可以通过特有的rc.conf启动，也可以通过/etc/init.d/或者/etc/rc.d/下建立脚本创建服务。了解脚本后将novacomd复制到/etc/rc.d/,novacomd.conf复制到/etc/conf.d/做完archlinux下的改动后，在终端里输入
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;/etc/rc.d/novacom start&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>提示未找的设备，谷歌一番后在http://www.webos-internals.org/wiki/Accessing_Linux_archlinux 上发现解决方法:"novacomd doesn't work under archlinux , so we have to use ubuntu's libusb. "意想不到的是wiki中给出了一条简便方法，从aur下载网友打包好的novacom驱动，汗，之前怎么没有想到在aur里搜索一下。</p>
+
+<!--more-->
+
+
+<p>一番折腾后palm pre在archlinux下的驱动搞定了，解压deb驱动包的时候看到过novaterm的文件，运行后登录到手机shell，webOS是linux核心，busybox中带有linux常用命令，于是可以在电脑上查看手机的运行状态了。</p>
+
+<p><img src="http://nwy.me/img/2011/09/Screenshot-ocean@ocean-laptop.png" alt="Screenshot-ocean@ocean-laptop:~" /></p>
+
+<p>显摆几张手机桌面</p>
+
+<p><img src="http://nwy.me/img/2011/09/Unknown_2011-19-09_040802.png" alt="Unknown_2011-19-09_040802" />
+<img src="http://nwy.me/img/2011/09/Unknown_2011-19-09_040751.png" alt="Unknown_2011-19-09_040751" />
+<img src="http://nwy.me/img/2011/09/Unknown_2011-19-09_040742.png" alt="Unknown_2011-19-09_040742" /></p>
+
+<p> </p>
+
+<p> </p>
+
+<p>接下来安装webOS的SDK，有了之前的经验，直接从aur搜索网友打包好的sdk，下载安装。</p>
+
+<p>手机平台webOS1.45 SDK截图</p>
+
+<p><img src="http://nwy.me/img/2011/09/Screenshot-SDK-1.4.5.465-320x480-Running-Oracle-VM-VirtualBox.png" alt="Screenshot-SDK 1.4.5.465 (320x480) [Running] - Oracle VM VirtualBox" /></p>
+
+<p>TouchPad平板 webOS3.0.2 SDk截图</p>
+
+<p><img src="http://nwy.me/img/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_001.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_001" />
+<img src="http://nwy.me/img/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_003" /></p>
+
+<p>至此，archlinux下webOS的开发环境搭建完成。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SSH自动运行以及端口释放]]></title>
+    <link href="http://blog.nwy.me/2011/05/02/automatic-operation-and-the-release-of-ssh-port/"/>
+    <updated>2011-05-02T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/2011/05/02/automatic-operation-and-the-release-of-ssh-port</id>
+    <content type="html"><![CDATA[<p>由于某墙的原因，之前一直在使用vpn代理国外的网站。由于vpn是全局代理，开了vpn后会影响访问国内网站的速度，甚至有些国内网络服务屏蔽了国外IP，因此还需要配置路由表，访问国外网站的走vpn，国内网站走本地网络。目前改用ssh代理，ssh端口转发配合firefox的autoproxy的实现socks 5代理。autoproxy的自动模式可以根据已有规则对被墙掉的网站自动代理。
+ssh连接每次输入密码很麻烦，索性生成ssh证书用ssh-copy-id 将本地证书上传服务器，这样每次ssh连接验证证书就不用输入密码，不过这样做的缺点是降低了安全性，可能会造成证书泄漏。手动SSH连接也很麻烦，而且ssh掉线或超过Idle时间被ssh服务端踢出后不会自动连接，虽然可以通过脚本定时查看SSH进程是否存在自动重连，但遇到隧道假死也就没办法了，好在后来发现一个小工具autossh可以实现SSH自动连接，于是写了一个脚本，开机自动运行：
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGLEVEL</span><span class="o">=</span>7
+</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_DEBUG</span><span class="o">=</span>DEBUG
+</span><span class='line'><span class="nb">export </span><span class="nv">AUTOSSH_LOGFILE</span><span class="o">=</span>~/.autossh.log
+</span><span class='line'>autossh -M 2000 -N -f -q -D 127.0.0.1:7070 user@hostname
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+autossh支持环境变量，具体参考 http://www.harding.motd.ca/autossh/README ，上面的脚本里指定了debug级别以及debug log存放路径。
+但是每次系统挂起或休眠后再唤醒ssh代理就失效了，查看autossh.log发现是端口占用问题,直接结束占用端口的ssh，重新运行脚本。此处因为
+知道是什么进程占用哪个端口，所以可以直接结束。如果遇到未知的程序占用问题，可以用下列方法查看
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>lsof -i :port
+</span><span class='line'>netstat -an |grep port
+</span><span class='line'>fuser -n tcp/udp port
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+查到后kill掉就可以释放端口，如果是释放mysq的端口则建议使用kill结束指定占用端口的进程而不要killall mysql程序，否则可能会产生数据库碎片。</p>
+
+<p>后续:我写的ssh自动运行脚本是通过系统的启动运行程序来是实现开机自动运行，所以会导致挂起或休眠后再次唤醒ssh隧道无法使用提示端口占用
+Ubuntu下写daemon脚本有两个选择，一种是写传统的/etc/init.d下的脚本，另一种就是Ubuntu特有的upstart脚本。
+upstart是Ubuntu设计用来替换传统的SysV init的软件。upstart的daemon脚本除了更加简洁之外，还支持服务的自动唤醒（respawn）。这样autossh本身如果出错退出了，也会立即被upstart唤醒。避免autossh出错退出导致ssh隧道无法访问。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[解决virtualbox访问usb子系统失败问题的方法]]></title>
+    <link href="http://blog.nwy.me/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems/"/>
+    <updated>2011-04-29T00:00:00+08:00</updated>
+    <id>http://blog.nwy.me/2011/04/29/virtualbox-usb-subsystem-failed-to-resolve-access-problems</id>
+    <content type="html"><![CDATA[<p>安装virtualbox后运行虚拟机后发现usb不能识别，提示：
+<code>
+Could not load the Host USB Proxy Service (VERR_FILE_NOT_FOUND). The service might be not installed on the host computer.</p>
+
+<p>Result Code:
+0x80004005
+Component:
+Host
+Interface:
+IHost {81729c26-1aec-46f5-b7c0-cc7364738fdb}
+Callee:
+IMachine {31f7169f-14da-4c55-8cb6-a3665186e35e}
+</code>
+在网上看到许多方法，都需要修改 /etc/fstab ，实际上最新版的virtualbox已经解决了这些问题，只需要将当前用户添加到vboxusers组：
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo  useradd -g  用户名 vboxusers
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+然后重启电脑，就可以在虚拟机里使用usb</p>
+]]></content>
+  </entry>
+  
+</feed>

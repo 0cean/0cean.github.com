@@ -1,0 +1,205 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Linux休眠问题 - 0cean的个人博客</title>
+	<meta name="author" content="0cean">
+
+	
+	<meta name="description" content="最近经历了种种事情，索性脱离Windows平台，彻底扎根在linux平台，原来的双系统共存变成了Linux独占天下。格式化了硬盘的几个Windows分区重新安装Linux，分区的时候，单独把tmp和home挂载到了两个格式化的独立分区上，usr有没有挂载到独立分区竟然没有印象了， &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="0cean的个人博客" type="application/xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">0cean的个人博客</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:blog.nwy.me">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:blog.nwy.me">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Linux休眠问题</h2>
+	<div class="entry-content"><p><span style="font-size: small;">最近经历了种种事情，索性脱离Windows平台，彻底扎根在linux平台，原来的双系统共存变成了Linux独占天下。格式化了硬盘的几个Windows分区重新安装Linux，分区的时候，单独把tmp和home挂载到了两个格式化的独立分区上，usr有没有挂载到独立分区竟然没有印象了，看来睡眠不足会影响记忆力。这几天安装好后常用的软件，做了相应的配置后发现不能休眠了，Linux真不给力。</span></p>
+
+<p><span style="font-size: small;">技术水平有限，</span>没有找到有原因，不过意外的注意到uswsusp， 这是利用了 2.6.17-rc2 以来的 kernel 新特性所开发的 userland 的挂起系统的工具。uswsusp 利用了系统提供的一个设备文件，通过操作文件，可以 freeze 系统中的进程、读取/恢复内存的镜像、挂起等。这个工具需要 initramfs 支持，需要 2.6.17-rc2 以上内核。参考文档：http://suspend.sourceforge.net/</p>
+
+<p>安装uswsusp：</p>
+
+<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo apt-get install uswsusp</span></div>
+
+
+<p>安装后开机会显示过程中会显示：resume: libgcrypt version: 1.4.4</p>
+
+<p><span style="font-size: small;">在终端里通过s2ram命令休眠会有如下提示：</span></p>
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">
+<span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo s2ram</span>
+<span style="color: #dcdccc;">[sudo] password for ocean:</span>
+<span style="color: #dcdccc;">Machine is unknown.</span>
+<span style="color: #dcdccc;">This machine can be identified by:</span>
+<span style="color: #dcdccc;">sys_vendor   = &#8220;LENOVO&#8221;</span>
+<span style="color: #dcdccc;">sys_product  = &#8220;7661WH2&#8221;</span>
+<span style="color: #dcdccc;">sys_version  = &#8220;ThinkPad T61&#8221;</span>
+<span style="color: #dcdccc;">bios_version = &#8220;7LETC6WW (2.26 )&#8221;</span>
+<span style="color: #dcdccc;">See http://suspend.sf.net/s2ram-support.html for details.</span>
+<span style="color: #dcdccc;">If you report a problem, please include the complete output above.</span>
+</div>
+
+
+<p>不过加了&#8211;force参数倒是可以休眠了，暂时就这样，明天起来了去看看上面代码里给出的链接里有没有解决方法可参考。</p>
+
+<p>使 Gnome(或者说Hal)改用uswsusp方法休眠
+代码:</p>
+
+<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-ThinkPad-T61:~$ sudo su</span></div>
+
+
+<div class="source" style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">root@ocean-ThinkPad-T61# echo &#8220;SLEEP_MODULE=uswsusp&#8221;>/etc/pm/config.d/module</div>
+
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-05T00:00:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+		
+		
+		
+		
+	</div>
+	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    0cean
+
+<div style="display:none"> <script language="javascript" type="text/javascript" src="http://js.users.51.la/4388679.js"></script>
+<noscript><a href="http://www.51.la/?4388679" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4388679.asp" style="border:none" /></a></noscript> </div></footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.nwy.me/2010/11/05/linuxsuspend/';
+        var disqus_url = 'http://blog.nwy.me/2010/11/05/linuxsuspend/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//go.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

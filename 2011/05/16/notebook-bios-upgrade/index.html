@@ -1,0 +1,190 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>升级笔记本BIOS - 0cean的个人博客</title>
+	<meta name="author" content="0cean">
+
+	
+	<meta name="description" content="前几天看到论坛网友讨论联想官方放出T61新的BIOS，看了更新说明:，由于没有做多大的变动，就没有更新。今天看到有国外网友发布了基于这次更新BIOS的版本，做了以下修改： SATA-II 3Gb/s
+SLIC2.1
+whitelist removed
+Dual-IDA support &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="0cean的个人博客" type="application/xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">0cean的个人博客</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:blog.nwy.me">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:blog.nwy.me">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">升级笔记本BIOS</h2>
+	<div class="entry-content"><p>前几天看到论坛网友讨论联想官方放出T61新的BIOS，看了更新说明:，由于没有做多大的变动，就没有更新。今天看到有国外网友发布了基于这次更新BIOS的版本，做了以下修改：</p>
+
+<ol>
+<li>SATA-II 3Gb/s</li>
+<li>SLIC2.1</li>
+<li>whitelist removed</li>
+<li>Dual-IDA support</li>
+</ol>
+
+
+<p>这次升级BIOS的主要原因是：破解了联想的SATA限制，SATA从1.5Gb/s上升到3Gb/s，硬盘读写速度可以从130MB/s达到260MB/s。本次升级是刻盘刷的BIOS，整个过程有惊无险。</p>
+
+<p>虽然之前在Windows XP和Windows PE下刷过BIOS，不过随着年龄的增长，做事有些畏首畏尾了，觉得没必要为了节省一张刻录光盘冒风险，反正手头有一桶莱德的DVD-RW盘。整个过程有些惊险，进入BIOS关闭power on password的时候才发现自己忘记了power on password，平时用的是指纹和super password，于是拆机CMOS放电，中间不小心还把主板上CMOS电池的插座一起拔下来了，好在没有拔断针脚，又小心的插回去了。清除了power on password后，开机放入光盘后，从光盘启动，报错，提示flash over lan没有开启，又重启进BIOS设置，之后等待检测正常后开始升级BIOS，30s左右，伴随长鸣升级完成，笔记本重新启动，正常进入系统。</p>
+
+<p>测试了一下硬盘的读取速度，附图</p>
+
+<p><img src="http://nwy.me/img/2011/05/Screenshot-500-GB-%E7%A1%AC%E7%9B%98-ATA-Hitachi-HTS725050A9A364-%E2%80%93-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.png" alt="Screenshot-500 GB 硬盘 (ATA Hitachi HTS725050A9A364) – 性能测试" />
+附下载链接:
+<a href="http://forum.notebookreview.com/lenovo-ibm/459591-t61-x61-sata-ii-1-5-gb-s-cap-willing-pay-solution-8.html">http://forum.notebookreview.com/lenovo-ibm/459591-t61-x61-sata-ii-1-5-gb-s-cap-willing-pay-solution-8.html</a></p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-05-16T00:00:00+08:00" pubdate data-updated="true">May 16<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/personal/'>Personal</a>
+
+
+</div>
+	
+	<div class="comments"><a href="#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+		
+		
+		
+		
+	</div>
+	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    0cean
+
+<div style="display:none"> <script language="javascript" type="text/javascript" src="http://js.users.51.la/4388679.js"></script>
+<noscript><a href="http://www.51.la/?4388679" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4388679.asp" style="border:none" /></a></noscript> </div></footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.nwy.me/2011/05/16/notebook-bios-upgrade/';
+        var disqus_url = 'http://blog.nwy.me/2011/05/16/notebook-bios-upgrade/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//go.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

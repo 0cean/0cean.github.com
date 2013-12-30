@@ -1,0 +1,290 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ubuntu下的conky配置 - 0cean的个人博客</title>
+	<meta name="author" content="0cean">
+
+	
+	<meta name="description" content="Conky是一种自由软件，用于X视窗系统的系统监视，可以在FreeBSD、OpenBSD和各种Linux发布上使用的自由软件。Conky具有很高的可配置性，可以监视许多系统参数，如：CPU、内存、交换内存、硬盘使用情况等状态；各种硬件的温度；系统的进程（top）；网络状态；电池电量； &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="0cean的个人博客" type="application/xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">0cean的个人博客</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">主页</a></li>
+	<li><a href="/blog/archives">存档</a></li>
+	<li><a href="/blog/categories">分类</a></li>
+	<li><a href="/blog/rpi">树莓派</a></li>
+	<li><a href="/blog/about">关于</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:blog.nwy.me">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:blog.nwy.me">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Ubuntu下的conky配置</h2>
+	<div class="entry-content"><p>Conky是一种自由软件，用于X视窗系统的系统监视，可以在FreeBSD、OpenBSD和各种Linux发布上使用的自由软件。Conky具有很高的可配置性，可以监视许多系统参数，如：CPU、内存、交换内存、硬盘使用情况等状态；各种硬件的温度；系统的进程（top）；网络状态；电池电量；系统信息和邮件收发；各种音乐播放器MPD、XMMS2、BMPx、Audacious）的控制。不像其他系统监视器那样需要高级别的部件工具箱（widget toolkits）来渲染他们的信息，Conky可以直接在X视窗下渲染，这意味着在相同配置下Conky可以消耗更少的资源。</p>
+
+<p><span style="color: #ff0000;">本文的最后提供了截图中的conky配置文件以及桌面的下载.</span></p>
+
+<p>安装conky</p>
+
+<p>ocean@ocean-ThinkPad-T61:~$ sudo apt-get install conky</p>
+
+<p>conky默认没有提供配置文件，需要使用者手动创建配置：</p>
+
+<p>ocean@ocean-ThinkPad-T61:~$ gedit<code> ~/.conkyrc</code></p>
+
+<p>复制下面的代码,并保存,在终端运行conky</p>
+
+<blockquote>
+<pre># .conkyrc - Edited from Russian Conky from Gnome-Look.org
+# Edited by Alpha-Thinker
+# Made specifically for the Lenovo T61 with NVIDIA Quadro NVS 140M discrete graphics
+
+# --- Window Layout & Options --- #
+own_window yes
+own_window_colour brown
+own_window_transparent yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+use_spacer right
+use_xft yes
+alignment top_right
+gap_x 20
+gap_y 45
+
+# --- Colours, Sizes, Fonts & Margins --- #
+update_interval 1.0
+maximum_width 250
+stippled_borders 3
+border_margin 9
+border_width 10
+default_color white
+
+# --- Text --- #
+draw_outline no
+draw_borders no
+font Sans:size=8:weight=bold
+uppercase no
+draw_shades yes
+override_utf8_locale yes
+
+TEXT
+${font Sans:size=14:weight=bold}${color red} ${alignc} ${time %r}
+${font Sans:size=11:weight=bold}${color white} ${alignc} ${time %A} ${time %e} ${time %B} ${time %G}
+
+${font Sans:size=9:weight=bold}${color orange}SYSTEM INFO${hr 2}$color${font Sans:size=8:weight=bold}
+${color orange}Machine$color Thinkpad T61 ${alignr}${color orange} Uptime$color $uptime
+${color orange}Kernel$color  $kernel ${alignr}${color orange}Type$color $machine
+
+${font Sans:size=9:weight=bold}${color orange}Processor ${hr 2}$color
+${font Arial:bold:size=8}${color #ff0000}${execi 99999 cat /proc/cpuinfo | grep "model name" -m1 | cut -d":" -f2 | cut -d" " -f2- | sed 's#Processor ##'}$font$color
+${color orange}Speed:$color${execi 20 sensors |grep "Core0 Temp" | cut -d" " -f4}$font$color$alignr${freq_g 2}Ghz         ${color #c0ff3e}${execi 20 sensors |grep "Core1 Temp" | cut -d" " -f4}  $color${alignr}${color orange}Processes:$color $running_processes/ $processes
+
+${font Sans:size=9:weight=bold}${color orange}CPU Usage ${hr 2}$color
+${color white}Core 1   ${color red}${cpu cpu0}%           ${color white}Core 2   ${color red}${cpu cpu1}% $color
+${cpugraph cpu0 25,120 000000 ff6600 }  ${cpugraph cpu1 25,120 000000 ff6600 }
+${font Sans:size=8:weight=bold}${color red}CPU Temp${color white}              ${acpitemp}小$color
+${font Sans:size=8:weight=bold}${color red}NVIDIA GPU Temp ${color white}  ${execi 30 nvidia-settings -q gpucoretemp | grep '):' | awk '{print $4}' | cut -c -2} C$color
+${font Sans:size=8:weight=bold}${color red}FAN SPEED${color white}             ${ibm_fan} rpm$color
+
+${font Sans:size=9:weight=bold}${color orange}TOP 5 CPU Users ${hr 2}$color${font Sans:size=8:weight=bold}${color #ff0000}
+Process                          ${alignr}ID      ${alignr}CPU  $color
+1. ${top name 1}     ${alignr}${top pid 1}   ${alignr}${top cpu 1}
+2. ${top name 2}     ${alignr}${top pid 2}   ${alignr}${top cpu 2}
+3. ${top name 3}     ${alignr}${top pid 3}   ${alignr}${top cpu 3}
+4. ${top name 4}     ${alignr}${top pid 4}   ${alignr}${top cpu 4}
+5. ${top name 5}     ${alignr}${top pid 5}   ${alignr}${top cpu 5}
+
+${font Sans:size=9:weight=bold}${color orange}TOP 5 RAM Users ${hr 2}$color${font Sans:size=8:weight=bold}${color #ff0000}
+Process                             ${alignr}ID      ${alignr}RAM $color
+1. ${top_mem name 1}     ${alignr}${top_mem pid 1}   ${alignr}${top_mem mem 1}
+2. ${top_mem name 2}     ${alignr}${top_mem pid 2}   ${alignr}${top_mem mem 2}
+3. ${top_mem name 3}     ${alignr}${top_mem pid 3}   ${alignr}${top_mem mem 3}
+4. ${top_mem name 4}     ${alignr}${top_mem pid 4}   ${alignr}${top_mem mem 4}
+5. ${top_mem name 5}     ${alignr}${top_mem pid 5}   ${alignr}${top_mem mem 5}
+
+${font Sans:size=9:weight=bold}${color orange}RAM & SWAP ${hr 2}$color${font Sans:size=8:weight=bold}
+${color white}RAM$color  ${memperc}%  ${color #ff6600}${membar 3.180}
+${color white}SWAP$color  ${swapperc}%  ${color #ff6600}${swapbar 3.180}
+
+${font Sans:size=9:weight=bold}${color orange}LAN (IP: ${addr eth0}) ${hr 2}$color${font Sans:size=8:weight=bold}
+${color white}Down$color ${downspeed eth0}/s${alignr}${color white}Up$color${alignr}    ${upspeed eth0}/s
+${downspeedgraph eth0 25,120 000000 00ff00} ${alignr}${upspeedgraph eth0 25,120 000000 ff0000}$color
+${font Sans:size=9:weight=bold}${color orange}Wi-fi (IP: ${addr wlan0}) ${hr 2}$color${font Sans:size=8:weight=bold}
+${color white}Down$color ${downspeed wlan0}/s${alignr}${color white}Up$color${alignr}    ${upspeed wlan0}/s
+${downspeedgraph wlan0 25,120 000000 00ff00} ${alignr}${upspeedgraph wlan0 25,120 000000 ff0000}$color
+${font Sans:size=9:weight=bold}${color orange}GSM/3G (IP: ${addr ppp0}) ${hr 2}$color${font Sans:size=8:weight=bold}
+${color white}Down$color ${downspeed ppp0}/s${alignr}${color white}Up$color${alignr}    ${upspeed ppp0}/s
+${downspeedgraph ppp0 25,120 000000 00ff00} ${alignr}${upspeedgraph ppp0 25,120 000000 ff0000}$color
+</pre>
+</blockquote>
+
+
+<p>本文最后有文章中的截图的conky配置文件的下载，如果想更进一步定制需要使用者自己动手，当然网上论坛也有大量的配置可以参考。</p>
+
+<p>配置的语法定义在软件官方网站有说明，在本地&#8221;/usr/share/doc/conky-all/&#8221;路径下也有帮助文档。</p>
+
+<p>一些网友提供的配置截图以及相应的配置文件，http://conky.sourceforge.net/screenshots.html</p>
+
+<p>附一张自己定制的conky截图</p>
+
+<p><a href="http://nwy.me/img/2010/11/0cean.jpg"><img class="alignnone size-medium wp-image-62054" title="ocean" src="http://nwy.me/img/2010/11/0cean-97x300.jpg" alt="" width="97" height="300"></a><a href="http://nwy.me/img/2010/11/conky.png"><img class="alignnone size-medium wp-image-62058" title="conky" src="http://nwy.me/img/2010/11/conky-300x225.png" alt="" width="300" height="225"></a></p>
+
+<p>右边的截图是网友评论最帅的conky配置，配置文件见 <a rel="nofollow" href="http://blog.brixandersen.dk/?p=67">http://blog.brixandersen.dk/?p=67</a></p>
+
+<p>配置文件下载:<a href="..http://nwy.me/img/2010/11/conkyrc.tar.gz">.conkyrc.tar</a></p>
+
+<p>壁纸下载:<a href="http://nwy.me/img/2010/11/conky.tar.gz">conky.tar</a></p>
+
+<p>conky默认不会开机自动运行可以创建一个文件,复制下面的内容,并保存为myconky.sh,在系统/首选项/启动应用程序里添加这个文件,延迟十五秒是为了避免conky先于Gonme运行,而无法显示.</p>
+
+<blockquote>#!/bin/bash
+sleep 15 && conky</blockquote>
+
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-16T00:00:00+08:00" pubdate data-updated="true">Nov 16<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/linux/'>Linux</a>
+
+
+</div>
+	
+	<div class="comments"><a href="#disqus_thread">Comments</a></div>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+		
+		
+		
+		
+	</div>
+	
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    0cean
+
+<div style="display:none"> <script language="javascript" type="text/javascript" src="http://js.users.51.la/4388679.js"></script>
+<noscript><a href="http://www.51.la/?4388679" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4388679.asp" style="border:none" /></a></noscript> </div></footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.nwy.me/2010/11/16/conky-configuration-under-ubuntu/';
+        var disqus_url = 'http://blog.nwy.me/2010/11/16/conky-configuration-under-ubuntu/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//go.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>
