@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /javascripts
-Disallow: /font
-Disallow: /assets
+
 Sitemap: http://blog.nwy.me/sitemap.xml 
