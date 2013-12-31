@@ -2,4 +2,6 @@ User-agent: *
 Disallow: /javascripts
 Disallow: /font
 Disallow: /assets
+Disallow: /404.html
+
 Sitemap: http://blog.nwy.me/sitemap.xml 
