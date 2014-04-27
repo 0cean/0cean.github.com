@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>汪洋的个人博客</title>
+  <meta name="author" content="0cean">
+
+  
+  <meta name="description" content="使用ubuntu中文环境的用户自然会发现home下用户目录的“桌面”、“图片”、“视频”、“音乐”都是中文的。 很多时候都喜欢在桌面上放一些要操作的文件，linux里命令行操作又多，难免会用命令行操作桌面上的东西，那么就要 “cd  桌面”，打“桌面”的时候要输入法切换， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.nwy.me/page/7">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="汪洋的个人博客" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner">
+	<div class="header-title"><a href="/">汪洋的个人博客</a></div>
+
+
+	<br><div class="header-subtitle">记录我的世界|关注互联网</div>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">订阅</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.nwy.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/archives">存档</a></li>
+  <li><a href="/categories">分类</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/2010/12/07/ubuntu-convert-the-chinese-environment-the-user-directory-path-for-the-english-in-chinese/">Ubuntu中文环境下转换用户目录里的中文路径为英文</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-07T00:00:00+08:00" pubdate data-updated="true">Dec 7<span>th</span>, 2010</time>
+        
+         | <a href="/2010/12/07/ubuntu-convert-the-chinese-environment-the-user-directory-path-for-the-english-in-chinese/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>使用ubuntu中文环境的用户自然会发现home下用户目录的“桌面”、“图片”、“视频”、“音乐”都是中文的。</p>
+
+<p>很多时候都喜欢在桌面上放一些要操作的文件，linux里命令行操作又多，难免会用命令行操作桌面上的东西，那么就要 “cd  桌面”，打“桌面”的时候要输入法切换，所以就想办法把用户目录下的路径改成英文，而其他的中文不变， 方法如下：
+打开终端，在终端中输入命令:</p>
+
+<blockquote>export LANG=en_US
+
+xdg-user-dirs-gtk-update</blockquote>
+
+
+<p>跳出对话框询问是否将目录转化为英文路径,同意并关闭.</p>
+
+<p>在终端中输入命令:</p>
+
+<blockquote>export LANG=zh_CN</blockquote>
+
+
+<p>关闭终端,并重起.下次进入系统,系统会提示是否把转化好的目录改回中文.选择不再提示,并取消修改.主目录的中文转英文就完成了.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/2010/12/07/a-difficult-decision/">一个艰难的决定</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-07T00:00:00+08:00" pubdate data-updated="true">Dec 7<span>th</span>, 2010</time>
+        
+         | <a href="/2010/12/07/a-difficult-decision/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>当您看到这篇文章的时候，我刚刚作出了一个非常艰难的决定,在腾讯没有开放Qzone的API的情况下,再次开通QQ空间,同步自己WordPress博客上的文章到Qzone,因为腾讯没有开放Qzone的API,想从自己的WordPress博客上自动同步文章到QQ空间只能另辟蹊径,好在腾讯提供了QQ邮件发布的方式,而QQ邮箱支持SMTP协议, WordPress 所包含的 PHPMailer 类可以使用 SMTP 发邮件，所以可以通过使用 PHPMailer 同步 WordPress 博客文章到 Qzone。总之由于腾讯的不开放这个过程曲折坎坷,感谢SMTP协议,感谢腾讯没有对QQ邮箱的SMTP登录做基于IP的验证,否则我的WordPress主机就不能通过PHPMailer类远程登录发送邮件到Qzone.</p>
+
+<p>下一步增加同步WordPress文章的时候把文章的分类也同步到Qzone,目前自动同步过来的文章都会归类在个人日记分类下,等以后同步过来的文章增多的时候,浏览起来会很乱.这个问题比较好解决,看腾讯的帮助文档,邮件发布日志的分类可以在邮件的标题里加上,格式为&#8221;[某分类]文章标题&#8221;,如果所属分类不存在，会自动创建新的分类.回头把WordPress上的PHP博客同步代码修改一下就可以实现.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/2010/11/27/garbage-problem-rhythmbox-mp3-player/">Rhythmbox播放mp3乱码问题</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-27T00:00:00+08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2010</time>
+        
+         | <a href="/2010/11/27/garbage-problem-rhythmbox-mp3-player/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>rhythmbox在更新了本地的mp3文件后会有许多mp3文件在播放列表里显示乱码，原因是软件对mp3文件的id3等标签里的中文信息不识别导致的。通过如下方法可以解决问题。</div>
+
+
+<div>1:安装mid3iconv，在终端里输入：</div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~$ sudo apt-get install python-mutagen</span></div>
+
+
+<div>2:将本地音频文件的id3标签全部转换为gbk，在终端里通过cd命令转到你的MP3目录，输入：</div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~/Data/Music$mid3iconv -e GBK *.mp3</span></div>
+
+
+<div>如果本地的mp3目录包含子目录，可需要将第二步里的命令改成如下格式：</div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;"><span style="color: #dcdccc;">ocean@ocean-laptop:~/Data/Music$mid3iconv -e GBK */*.mp3</span></div>
+
+
+<div>
+
+3.运行rhythmbox后重新导入本地mp3文件
+<div>方法一的拓展:</div>
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">sudo apt-get install convmv iconv python-mutagen
+#文件名由GBK转换为UTF8
+convmv -r -f cp936 -t utf8 &#8211;notest &#8211;nosmart *
+#文件内容由GBK到UTF8
+iconv -f gbk -t utf8 $i > newfile
+#将 mp3 标签编码 由GBK转换至utf-8
+find . -iname &#8220;*.mp3&#8221; -execdir mid3iconv -e GBK {} \;
+#或 mid3iconv -e GBK ×/*.mp3
+# find . \( -iname &#8220;*.mp3&#8221; -o -iname &#8220;*.wma&#8221; \) -exec mid3iconv -e</div>
+</div>
+
+
+<div>推荐第二种方法:</div>
+
+
+<div>二，修改变量法
+以用gstreamer做后端的播放器Rhythmbox为例，可以在系统环境变量或用户的环境变量中增加如下内容：
+vim .profile</div>
+
+
+<div style="font-family: &amp;amp; color: #dcdccc; background-color: #3f3f3f;">
+<div>export GST_ID3_TAG_ENCODING=GBK:UTF-8:GB18030
+export GST_ID3V2_TAG_ENCODING=GBK:UTF-8:GB18030</div>
+</div>
+
+
+<p>保存修改后注销一次电脑,运行Rhythmbox重新导入音频文件.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/2010/11/27/features-plug-in-rhythmbox/">Rhythmbox特色插件</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-27T00:00:00+08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2010</time>
+        
+         | <a href="/2010/11/27/features-plug-in-rhythmbox/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>整理了下自己在用的rhythmbox插件，，贴上来和大家分享。</p>
+
+<p>先说以下rhythmbox插件的安装方法：下载的是非deb安装文件则解压复制文件到插件的目录，插件的目录位置有两个， 手动安装请复制到：
+~/.gnome2/rhythmbox/plugins/</p>
+
+<p>1.resume on restart 顾名思义就是记录rhythmbox上次退出时的播放曲目，便于下次播放。
+插件下载地址：http://people.ksp.sk/~mic/Projects/RhythmboxROR/
+2.豆瓣电台插件 这个插件能够通过你的豆瓣的帐号，连接到豆瓣电台，在线播放随机的歌曲，并支持“喜欢”，“不喜欢”等操作，同步骤到豆瓣电台。
+插件下载地址：http://code.google.com/p/dbfmplugin/
+3.鲁班歌词 这个插件能够下载Rhythmbox当前播放歌曲的歌词，并使用多种方式显示，强烈推荐。
+下载地址：http://code.google.com/p/sogou-lyrics/</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+  
+    
+      <h1 class="entry-title"><a href="/2010/11/21/another-usage-of-firefox/">Firefox的另一种用法</a></h1>
+      
+      
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-21T00:00:00+08:00" pubdate data-updated="true">Nov 21<span>st</span>, 2010</time>
+        
+         | <a href="/2010/11/21/another-usage-of-firefox/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>前言：VIM和Emacs并列成为类Unix系统用户最喜欢的编辑器，不过由于其学习曲线比较陡峭，这意味着开始学习VIM的时候可能会进展缓慢，让许多初学者望而止步，不过在掌握一些基本操作之后，就会发现coding效率有大幅度的提高。之前把学习环境迁移到Linux下，在基本配置好Linux后，熟悉Linux的快捷键的过程中发现了一款很另类的 Firefox插件Vimperator。</p>
+
+<p>Vimperator是Firefox的一个扩展，它为喜欢使用键盘的用户提供了类似于Vim的用户界面，安装后Firefox之后会变成类似于Vim的用户界面。Vimperator另类之处是可以使Firefox使用者不需要鼠标，通过它的Hint模式、及自动补齐的命令行，使用者可以不依赖鼠标而高效的键盘操作。</p>
+
+<p>整理了一些关于Vimperator的学习资料，便于日后复习。
+<a href="http://xbeta.info/vimperator.htm" target="_blank">Pentadactyl/Vimperator：VIM化的Firefox</a>
+<a href="http://blog.chinaunix.net/u3/100881/showart_2085294.html" target="_blank">FireFox超酷插件之Vimperator</a></p>
+
+<p><a href="http://hi.baidu.com/hplonline/blog/item/add4bb35484ea19ba71e12ca.html" target="_blank">Vimperator（简介、配置、进阶、焦点问题）</a></p>
+
+<p><a href="liberator://help/intro" target="_blank">Vim在线帮助文档</a></p>
+
+<p><span style="color: #ff0000;">这里提供一下Vimperator的卸载方法，因为Firefox安装了Vimperator后Firefox的滚动条、地址栏、菜单栏、书签栏都会消失，更囧的是以前Firefox的热键也无效了，许多初次使用者于是发现卸载插件的插件管理器也不知道从何调出，方法如下：在Firefox界面按ESC后键入如下命令“:addons”或“:dialog adons&#8221;.</span></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/page/8/">&larr; 下一页</a>
+    
+    <a href="/archives">博客存档</a>
+    
+    <a class="next" href="/page/6/">上一页 &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2013/08/04/2013nian-xia-ban-nian-du-shu-ji-hua/">2013年下半年读书计划</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/11/05/a-media-converter-fault-caused-by/">一个光纤收发器引发的故障</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/06/07/ram-host-kvm-the-vps-installation-centos6-2/">RAM Host的KVM VPS安装CentOS6.2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/04/05/han-han-addressed-to-each/">韩寒：写给每一个自己</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/11/27/ext4-partition-under-linux-format-to-recover-deleted-files/">Linux下ext4分区格式恢复删除文件</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 -  0cean 
+</p>
+<div style="display:none"> <script language="javascript" type="text/javascript" src="http://js.users.51.la/4388679.js"></script>
+<noscript><a href="http://www.51.la/?4388679" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4388679.asp" style="border:none" /></a></noscript> </div>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'oceanblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
