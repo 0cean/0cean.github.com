@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Personal | 汪洋的个人博客]]></title>
   <link href="http://blog.nwy.me/categories/personal/atom.xml" rel="self"/>
   <link href="http://blog.nwy.me/"/>
-  <updated>2014-04-27T13:35:50+08:00</updated>
+  <updated>2014-04-27T13:38:52+08:00</updated>
   <id>http://blog.nwy.me/</id>
   <author>
     <name><![CDATA[0cean]]></name>
@@ -211,13 +211,13 @@
 
 <p>一番折腾后palm pre在archlinux下的驱动搞定了，解压deb驱动包的时候看到过novaterm的文件，运行后登录到手机shell，webOS是linux核心，busybox中带有linux常用命令，于是可以在电脑上查看手机的运行状态了。</p>
 
-<p><img src="http://nwy.me/img/2011/09/Screenshot-ocean@ocean-laptop.png" alt="Screenshot-ocean@ocean-laptop:~" /></p>
+<p><img src="http://blog.nwy.me/img/2011/09/Screenshot-ocean@ocean-laptop.png" alt="Screenshot-ocean@ocean-laptop:~" /></p>
 
 <p>显摆几张手机桌面</p>
 
-<p><img src="http://nwy.me/img/2011/09/Unknown_2011-19-09_040802.png" alt="Unknown_2011-19-09_040802" />
-<img src="http://nwy.me/img/2011/09/Unknown_2011-19-09_040751.png" alt="Unknown_2011-19-09_040751" />
-<img src="http://nwy.me/img/2011/09/Unknown_2011-19-09_040742.png" alt="Unknown_2011-19-09_040742" /></p>
+<p><img src="http://blog.nwy.me/img/2011/09/Unknown_2011-19-09_040802.png" alt="Unknown_2011-19-09_040802" />
+<img src="http://blog.nwy.me/img/2011/09/Unknown_2011-19-09_040751.png" alt="Unknown_2011-19-09_040751" />
+<img src="http://blog.nwy.me/img/2011/09/Unknown_2011-19-09_040742.png" alt="Unknown_2011-19-09_040742" /></p>
 
 <p> </p>
 
@@ -227,12 +227,12 @@
 
 <p>手机平台webOS1.45 SDK截图</p>
 
-<p><img src="http://nwy.me/img/2011/09/Screenshot-SDK-1.4.5.465-320x480-Running-Oracle-VM-VirtualBox.png" alt="Screenshot-SDK 1.4.5.465 (320x480) [Running] - Oracle VM VirtualBox" /></p>
+<p><img src="http://blog.nwy.me/img/2011/09/Screenshot-SDK-1.4.5.465-320x480-Running-Oracle-VM-VirtualBox.png" alt="Screenshot-SDK 1.4.5.465 (320x480) [Running] - Oracle VM VirtualBox" /></p>
 
 <p>TouchPad平板 webOS3.0.2 SDk截图</p>
 
-<p><img src="http://nwy.me/img/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_001.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_001" />
-<img src="http://nwy.me/img/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_003" /></p>
+<p><img src="http://blog.nwy.me/img/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_001.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_001" />
+<img src="http://blog.nwy.me/img/2011/09/SDK-3.0.2.652-1024x768-Running-Oracle-VM-VirtualBox_003.png" alt="SDK 3.0.2.652 (1024x768) [Running] - Oracle VM VirtualBox_003" /></p>
 
 <p>至此，archlinux下webOS的开发环境搭建完成。</p>
 ]]></content>
@@ -245,14 +245,14 @@
     <id>http://blog.nwy.me/2011/08/18/untitled</id>
     <content type="html"><![CDATA[<p>预感有悲剧要发生了，网站本月的15G带宽流量截止今天已经用掉了11.5G，今天才十八号，距月底还有十二天。看了下了访问统计，似乎是CDN服务器消耗掉的，奇怪的是消耗掉的流量主要集中在一个页面。先观察，等月底流量不够再移除这个页面。</p>
 
-<p><img src="http://nwy.me/img/2011/08/traffic_001.png" alt="traffic_001" /></p>
+<p><img src="http://blog.nwy.me/img/2011/08/traffic_001.png" alt="traffic_001" /></p>
 
 <!--more-->
 
 
-<p><img src="http://nwy.me/img/2011/08/traffic.png" alt="traffic" />
-<img src="http://nwy.me/img/2011/08/traffic_003.png" alt="traffic_003" />
-<img src="http://nwy.me/img/2011/08/traffic_004.png" alt="traffic_004" /></p>
+<p><img src="http://blog.nwy.me/img/2011/08/traffic.png" alt="traffic" />
+<img src="http://blog.nwy.me/img/2011/08/traffic_003.png" alt="traffic_003" />
+<img src="http://blog.nwy.me/img/2011/08/traffic_004.png" alt="traffic_004" /></p>
 ]]></content>
   </entry>
   
